@@ -1,0 +1,11 @@
+{{ define "main" }}
+    <article class="gblog-post">
+        <header class="gblog-post__header">
+            <h1>{{ partial "title" . }}</h1>
+        </header>
+
+        <section class="gblog-markdown">
+            {{ partial "content" . }}
+        </section>
+    </article>
+{{ end }}

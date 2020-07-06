@@ -1,0 +1,31 @@
+<header class="gblog-header">
+    <div class="container flex align-center justify-center">
+        <a class="gblog-header__link" href="{{ .Site.BaseURL }}">
+            <span class="gblog-brand flex align-center justify-center">
+                <img class="gblog-brand__img" src="{{ (default "brand.svg" .Site.Params.GeekblogLogo) | relURL }}" alt="{{ .Site.Title }}" width=60 height=60>
+                {{ .Site.Title }}
+            </span>
+            <span class="gblog-brand__subtitle flex align-center justify-center">Subtitle to describe your blog</span>
+        </a>
+    </div>
+</header>
+<nav class="gblog-nav">
+    <input type="checkbox" id="menu-control" class="hidden">
+    <div class="gblog-nav__control">
+        <label for="menu-control"  class="flex align-center justify-center" style="vertical-align:top">
+            <svg class="icon menu"><use xlink:href="#menu"></use></svg>
+            <svg class="icon clean"><use xlink:href="#clean"></use></svg>
+            <span>Nav</span>
+        </label>
+    </div>
+    <ul class="gblog-nav__list container flex flex-wrap justify-center menu-content">
+        {{ $currentPage := .Permalink }}
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+        <li>
+            <a class="gblog-nav__entry {{ if eq $currentPage .Permalink }} is-active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
+    </ul>
+</nav>

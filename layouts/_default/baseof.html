@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+    {{ partial "head" . }}
+</head>
+
+<body>
+    {{ partial "svg-icon-symbols" . }}
+
+    <div class="wrapper">
+        {{ partial "site-header" . }}
+
+        <main class="gblog-page container">
+            {{ template "main" . }}
+        </main>
+
+        {{ partial "site-footer" . }}
+    </div>
+
+    {{ partial "foot" . }}
+</body>
+</html>

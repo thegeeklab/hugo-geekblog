@@ -24,7 +24,7 @@ steps:
   - hugo-official -s exampleSite/ -b http://localhost/
 
 - name: html-validation
-  image: validator/validator
+  image: xoxys/vnu
   commands:
   - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
 

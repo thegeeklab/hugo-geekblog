@@ -1,0 +1,56 @@
+<article class="gblog-post">
+    <header class="gblog-post__header">
+        <h1><a href="{{ .RelPermalink }}">{{ partial "title" . }}</a></h1>
+    </header>
+
+    <section class="gblog-markdown">
+        {{ .Summary }}
+    </section>
+    <div class="gblog-post__readmore">
+        {{ if .Truncated }}
+        <a class="flex-inline align-center" title="Read the full article" href="{{ .RelPermalink }}">Read more</a>
+        {{ end }}
+    </div>
+
+    <footer class="gblog-post__footer">
+        <span class="no-wrap">
+        <svg class="icon menu"><use xlink:href="#date"></use></svg>
+        <span class="gblog-post__tag">
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+                {{ .Date.Day }} {{ .Date.Month }} {{ .Date.Year }}
+            </time>
+        </span>
+        </span>
+
+        {{ range $i, $name := sort .Params.Authors }}
+        {{ $author := index $.Site.Data.authors $name }}
+        {{ with $.Site.GetPage (printf "/authors/%s" $author.name | urlize) }}
+        {{ if eq $i 0 }}
+        <span class="no-wrap">
+        <svg class="icon menu"><use xlink:href="#person"></use></svg>
+        {{ end }}
+        <span class="gblog-post__tag gblog-button">
+            <a class="gblog-button__link" href="{{ .RelPermalink }}" title="All posts of this author">{{ $author.name }}</a>
+        </span>
+        {{ if eq $i 0 }}
+        </span>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+        {{ range $i, $name := sort .Params.Tags }}
+        {{ if eq $i 0 }}
+        <span class="no-wrap">
+        <svg class="icon menu"><use xlink:href="#tags"></use></svg>
+        {{ end }}
+        <span class="gblog-post__tag gblog-button">
+            {{ with $.Site.GetPage (printf "/tags/%s" $name | urlize) }}
+            <a class="gblog-button__link" href="{{ .RelPermalink }}" title="All posts tagged with '{{ $name }}'">{{ $name }}</a>
+            {{ end }}
+        </span>
+        {{ if eq $i 0 }}
+        </span>
+        {{ end }}
+        {{ end }}
+    </footer>
+</article>

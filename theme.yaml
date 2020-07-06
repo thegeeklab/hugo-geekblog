@@ -1,0 +1,15 @@
+name: "Geekblog"
+license: "MIT"
+licenselink: "https://github.com/xoxys/hugo-geekblog/blob/master/LICENSE"
+description: "Hugo theme made for blogs."
+homepage: "https://geekblog.geekdocs.de"
+tags:
+  - responsive
+  - clean
+  - blog
+features: []
+min_version: "0.65"
+
+author:
+  name: "Robert Kaussow"
+  homepage: "https://geeklabor.de"

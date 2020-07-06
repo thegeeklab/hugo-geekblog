@@ -1,0 +1,19 @@
+@media print {
+  .gblog-nav,
+  .gblog-footer {
+    display: none;
+  }
+
+  main {
+    flex-direction: column-reverse;
+  }
+
+  .gblog-toc {
+    flex: none;
+
+    nav {
+      position: relative;
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,379 @@
+html {
+  font-size: $font-size-base;
+  letter-spacing: 0.33px;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-width: $body-min-width;
+  overflow-x: hidden;
+}
+
+body {
+  color: $body-font-color;
+  background: $body-background;
+
+  font-weight: $body-font-weight;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
+  * {
+    box-sizing: inherit;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $body-font-weight;
+  display: flex;
+  align-items: center;
+
+  > code {
+    border-top: 3px solid $gray-300;
+    font-size: 0.75em !important;
+  }
+}
+
+h4,
+h5,
+h6 {
+  > code {
+    font-size: 0.8rem !important;
+  }
+}
+
+a {
+  text-decoration: underline;
+  color: $color-link;
+
+  &:hover {
+    background: $color-link;
+    color: $white!important;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: $color-link;
+  }
+}
+
+img {
+  vertical-align: middle;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $padding-16;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  position: relative;
+}
+
+.gblog-header {
+  background: $main-color;
+  color: $white;
+  padding: $padding-16 0;
+
+  &__link,
+  &__link:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    background: none;
+  }
+
+  .icon {
+    width: $font-size-32;
+    height: $font-size-32;
+  }
+}
+
+.gblog-brand {
+  font-size: $font-size-32 * 1.5;
+
+  &__subtitle {
+    margin-top: $padding-16;
+    font-size: $font-size-16;
+  }
+
+  &__img {
+    margin-right: $padding-16;
+  }
+}
+
+.gblog-nav {
+  background: $second-color;
+  color: $white;
+
+  .container {
+    padding: $padding-8 $padding-16;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  &__entry {
+    color: $white;
+    text-decoration: none;
+    padding: $padding-4 $padding-8;
+    border: 1px solid;
+    border-radius: $border-radius;
+    display: inline-block;
+    margin: $padding-4;
+
+    &:hover,
+    &.is-active {
+      background: lighten($second-color, 10%);
+    }
+
+    &:visited {
+      color: inherit;
+    }
+  }
+
+  &__control {
+    display: none;
+
+    label {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      top: 0;
+      padding-right: $padding-4;
+    }
+
+    .icon.menu {
+      display: inline-block;
+    }
+    .icon.clean {
+      display: none;
+    }
+  }
+}
+
+.gblog-page {
+  min-width: $body-min-width;
+  flex-grow: 1;
+}
+
+.gblog-post {
+  word-wrap: break-word;
+  border-top: 1px dashed $gray-600;
+  padding: $padding-32 0;
+
+  &__header {
+    h1 {
+      margin-top: 0;
+    }
+
+    a, a:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background: none;
+      text-decoration: underline;
+      color: $body-font-color!important;
+    }
+  }
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  &__readmore {
+    margin: 1.5rem 0 $padding-32 0;
+
+    a {
+      background-image: linear-gradient($color-link, $color-link);
+      background-position: 0 100%;
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      text-decoration: none;
+
+      &:after {
+        font-family: GeekdocIcons;
+        content: "\ea02";
+      }
+    }
+  }
+
+  &__tag {
+    margin: $padding-4 0!important;
+
+    .gblog-button__link {
+      padding: $padding-4 $padding-8;
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+
+  &__anchorwrap {
+    &:hover .gblog-post__anchor {
+      background: none;
+      color: $gray-500!important;
+    }
+  }
+
+  &__anchor {
+    min-width: 30px;
+    color: transparent;
+
+    &--left {
+      position: absolute;
+      margin-left: -25px;
+      text-align: left;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    .icon {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+
+  &__footer {
+    .icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
+.gblog-footer {
+  background: $second-color;
+  color: $white;
+
+  &__item {
+    margin-right: $padding-16;
+    line-height: 1.5rem;
+  }
+
+  &__link {
+    color: $color-link-footer;
+
+    &:hover {
+      background: $color-link-footer;
+      color: $body-font-color!important;
+    }
+
+    &:visited {
+      color: $color-link-footer;
+    }
+  }
+}
+
+.gblog-paging {
+  padding: $padding-16 0;
+}
+
+.gblog-toc {
+  // Classes to hide nested levels of ToC/Menu
+  &__level--1 ul ul,
+  &__level--2 ul ul ul,
+  &__level--3 ul ul ul ul,
+  &__level--4 ul ul ul ul ul,
+  &__level--5 ul ul ul ul ul ul,
+  &__level--6 ul ul ul ul ul ul ul {
+    display: none;
+  }
+
+  a,
+  a:visited {
+    color: $color-link;
+  }
+}
+
+@media screen and (max-width: $sm-breakpoint) {
+  .gblog-nav {
+    color: $white;
+
+    .container {
+      padding: 0;
+    }
+
+    &__list{
+      background: lighten($second-color, 10%);
+      flex-direction: column;
+      justify-content: center;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    &__entry {
+      color: $white;
+      text-decoration: none;
+      padding: $padding-16 0;
+      border: 0;
+      border-radius: 0;
+      display: block;
+      margin: 0;
+      text-align: center;
+
+      &:hover,
+      &.is-active {
+        background: lighten($second-color, 5%);
+      }
+    }
+
+    &__control {
+      display: block;
+      text-align: center;
+
+      label {
+        padding: $padding-16 0;
+      }
+    }
+  }
+}
+
+#menu-control:checked ~ .gblog-nav__list {
+  max-height: 100%;
+}
+
+#menu-control:checked ~ .gblog-nav__control {
+  .icon.menu {
+    display: none;
+  }
+  .icon.clean {
+    display: inline-block;
+  }
+}

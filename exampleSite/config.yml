@@ -1,0 +1,19 @@
+---
+baseURL: https://geekblog.geekdocs.de/
+title: Geekblog
+theme: hugo-geekblog
+pygmentsUseClasses: true
+pygmentsCodeFences: true
+
+# Needed for mermaid/katex shortcodes
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+    endLevel: 9
+
+taxonomies:
+  author: authors
+  tag: tags
