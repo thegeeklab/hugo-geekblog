@@ -22,8 +22,11 @@
         </span>
         </span>
 
-        {{ range $i, $name := sort .Params.Authors }}
-        {{ $author := index $.Site.Data.authors $name }}
+        {{ $.Scratch.Set "author-counter" 0 }}
+        {{ with .Params.authors }}
+        {{ range sort . }}
+        {{ $i := $.Scratch.Get "author-counter" }}
+        {{ $author := index $.Site.Data.authors . }}
         {{ with $.Site.GetPage (printf "/authors/%s" $author.name | urlize) }}
         {{ if eq $i 0 }}
         <span class="no-wrap">
@@ -36,9 +39,15 @@
         </span>
         {{ end }}
         {{ end }}
+        {{ $.Scratch.Set "author-counter" (add ($i) 1) }}
+        {{ end }}
         {{ end }}
 
-        {{ range $i, $name := sort .Params.Tags }}
+        {{ $.Scratch.Set "tag-counter" 0 }}
+        {{ with .Params.tags }}
+        {{ range sort . }}
+        {{ $i := $.Scratch.Get "tag-counter" }}
+        {{ $name := . }}
         {{ if eq $i 0 }}
         <span class="no-wrap">
         <svg class="icon menu"><use xlink:href="#tags"></use></svg>
@@ -50,6 +59,8 @@
         </span>
         {{ if eq $i 0 }}
         </span>
+        {{ end }}
+        {{ $.Scratch.Set "tag-counter" (add ($i) 1) }}
         {{ end }}
         {{ end }}
     </footer>
