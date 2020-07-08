@@ -10,6 +10,8 @@ exampleSite/public/
 layouts/partials/icons-svg-symbols.html
 static/main.*
 static/favicon/
+static/fonts/GeekblogIcons.*
+src/favicon/faviconData.json
 resources/_gen/
 
 # testing
