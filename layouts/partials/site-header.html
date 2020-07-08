@@ -19,11 +19,11 @@
         </label>
     </div>
     <ul class="gblog-nav__list container flex flex-wrap justify-center menu-content">
-        {{ $currentPage := .Permalink }}
+        {{ $currentPage := .RelPermalink }}
         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
         {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
         <li>
-            <a class="gblog-nav__entry {{ if eq $currentPage .Permalink }} is-active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
+            <a class="gblog-nav__entry {{ if eq $currentPage .RelPermalink }} is-active {{ end }}" href="{{ .RelPermalink }}">{{ .Title }}</a>
         </li>
         {{ end }}
         {{ end }}
