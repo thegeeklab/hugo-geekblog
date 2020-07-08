@@ -25,43 +25,51 @@
         {{ $.Scratch.Set "author-counter" 0 }}
         {{ with .Params.authors }}
         {{ range sort . }}
-        {{ $i := $.Scratch.Get "author-counter" }}
-        {{ $author := index $.Site.Data.authors . }}
-        {{ with $.Site.GetPage (printf "/authors/%s" $author.name | urlize) }}
-        {{ if eq $i 0 }}
-        <span class="no-wrap">
-        <svg class="icon menu"><use xlink:href="#person"></use></svg>
-        {{ end }}
-        <span class="gblog-post__tag gblog-button">
-            <a class="gblog-button__link" href="{{ .RelPermalink }}" title="All posts of this author">{{ $author.name }}</a>
-        </span>
-        {{ if eq $i 0 }}
-        </span>
-        {{ end }}
-        {{ end }}
-        {{ $.Scratch.Set "author-counter" (add ($i) 1) }}
+            {{ $ac := $.Scratch.Get "author-counter" }}
+            {{ $author := index $.Site.Data.authors . }}
+            {{ with $.Site.GetPage (printf "/authors/%s" $author.name | urlize) }}
+                {{ if eq $ac 0 }}
+                <span class="no-wrap">
+                <svg class="icon person"><use xlink:href="#person"></use></svg>
+                {{ template "post-author" dict "name" $author.name "page" . }}
+                </span>
+                {{ else }}
+                {{ template "post-author" dict "name" $author.name "page" . }}
+                {{ end }}
+            {{ end }}
+            {{ $.Scratch.Set "author-counter" (add $ac 1) }}
         {{ end }}
         {{ end }}
 
         {{ $.Scratch.Set "tag-counter" 0 }}
         {{ with .Params.tags }}
         {{ range sort . }}
-        {{ $i := $.Scratch.Get "tag-counter" }}
-        {{ $name := . }}
-        {{ if eq $i 0 }}
-        <span class="no-wrap">
-        <svg class="icon menu"><use xlink:href="#tags"></use></svg>
-        {{ end }}
-        <span class="gblog-post__tag gblog-button">
+            {{ $tc := $.Scratch.Get "tag-counter" }}
+            {{ $name := . }}
             {{ with $.Site.GetPage (printf "/tags/%s" $name | urlize) }}
-            <a class="gblog-button__link" href="{{ .RelPermalink }}" title="All posts tagged with '{{ $name }}'">{{ $name }}</a>
+                {{ if eq $tc 0 }}
+                <span class="no-wrap">
+                <svg class="icon tags"><use xlink:href="#tags"></use></svg>
+                {{ template "post-tag" dict "name" $name "page" . }}
+                </span>
+                {{ else }}
+                {{ template "post-tag" dict "name" $name "page" . }}
+                {{ end }}
             {{ end }}
-        </span>
-        {{ if eq $i 0 }}
-        </span>
-        {{ end }}
-        {{ $.Scratch.Set "tag-counter" (add ($i) 1) }}
+            {{ $.Scratch.Set "tag-counter" (add $tc 1) }}
         {{ end }}
         {{ end }}
     </footer>
 </article>
+
+{{ define "post-tag" }}
+<span class="gblog-post__tag gblog-button">
+    <a class="gblog-button__link" href="{{ .page.RelPermalink }}" title="All posts tagged with '{{ .name }}'">{{ .name }}</a>
+</span>
+{{ end }}
+
+{{ define "post-author" }}
+<span class="gblog-post__tag gblog-button">
+    <a class="gblog-button__link" href="{{ .page.RelPermalink }}" title="All posts of this author">{{ .name }}</a>
+</span>
+{{ end }}
