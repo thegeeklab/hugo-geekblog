@@ -152,7 +152,7 @@ steps:
   settings:
     access_key:
       from_secret: s3_access_key
-    bucket: geekblogs
+    bucket: geekdocs
     delete: true
     endpoint: https://sp.rknet.org
     path_style: true
@@ -216,6 +216,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 78541652197f43545aadc64c21034569e81dbe5b4124b1a411eabb5604af9b71
+hmac: 12880ca35134fefa3baf9363fa7484c28dc6c3e9fda2d2c5054de95364fbf9e1
 
 ...
