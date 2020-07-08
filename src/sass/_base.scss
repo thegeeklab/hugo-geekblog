@@ -305,6 +305,39 @@ img {
   padding: $padding-16 0;
 }
 
+.gblog-error {
+  padding: $padding-16 * 6 $padding-16;
+  margin: 0 auto;
+  max-width: 45em;
+
+  .icon {
+    width: $font-size-16 * 6;
+    height: $font-size-16 * 6;
+    color: $gray-700;
+  }
+
+  &__link,
+  &__link:visited {
+    color: $color-link;
+  }
+
+  &__message {
+    padding-left: $padding-16 * 4;
+  }
+
+  &__line {
+    padding: $padding-8 0;
+  }
+
+  &__title {
+    font-size: $font-size-16 * 4;
+  }
+
+  &__code {
+    font-weight: bolder;
+  }
+}
+
 .gblog-toc {
   // Classes to hide nested levels of ToC/Menu
   &__level--1 ul ul,
@@ -361,6 +394,27 @@ img {
       label {
         padding: $padding-16 0;
       }
+    }
+  }
+
+  .gblog-error {
+    padding: $padding-16 * 6 $padding-16;
+
+    .icon {
+      width: $font-size-16 * 4;
+      height: $font-size-16 * 4;
+    }
+
+    &__message {
+      padding-left: $padding-16 * 2;
+    }
+
+    &__line {
+      padding: $padding-4 0;
+    }
+
+    &__title {
+      font-size: $font-size-16 * 2;
     }
   }
 }
