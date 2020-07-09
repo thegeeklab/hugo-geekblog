@@ -138,14 +138,14 @@ steps:
   commands:
   - hugo-official -s exampleSite/
 
-# - name: beautify
-#   image: node:lts-alpine
-#   commands:
-#   - npm install -g js-beautify
-#   - html-beautify -r -f 'exampleSite/public/**/*.html'
-#   environment:
-#     FORCE_COLOR: true
-#     NPM_CONFIG_LOGLEVEL: error
+- name: beautify
+  image: node:lts-alpine
+  commands:
+  - npm install -g js-beautify
+  - html-beautify -r -f 'exampleSite/public/**/*.html'
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
 
 - name: publish
   image: plugins/s3-sync
@@ -216,6 +216,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: ce011bff448074da3a6d32dd762b0e24d3f23dc72c76aeccdc1de62d7d49c230
+hmac: 12880ca35134fefa3baf9363fa7484c28dc6c3e9fda2d2c5054de95364fbf9e1
 
 ...
