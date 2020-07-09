@@ -36,7 +36,7 @@
                 {{ template "post-author" dict "name" $author.name "page" . }}
                 {{ end }}
             {{ end }}
-            {{ add $ac 1 }}
+            {{ $ac = (add $ac 1) }}
         {{ end }}
         {{ end }}
 
@@ -54,7 +54,7 @@
                 {{ template "post-tag" dict "name" $name "page" . }}
                 {{ end }}
             {{ end }}
-            {{ add $tc 1 }}
+            {{ $tc = (add $tc 1) }}
         {{ end }}
         {{ end }}
     </footer>
