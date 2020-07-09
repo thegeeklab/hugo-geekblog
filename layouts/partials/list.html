@@ -22,10 +22,9 @@
         </span>
         </span>
 
-        {{ $.Scratch.Set "author-counter" 0 }}
+        {{ $ac := 0 }}
         {{ with .Params.authors }}
         {{ range sort . }}
-            {{ $ac := $.Scratch.Get "author-counter" }}
             {{ $author := index $.Site.Data.authors . }}
             {{ with $.Site.GetPage (printf "/authors/%s" $author.name | urlize) }}
                 {{ if eq $ac 0 }}
@@ -37,14 +36,13 @@
                 {{ template "post-author" dict "name" $author.name "page" . }}
                 {{ end }}
             {{ end }}
-            {{ $.Scratch.Set "author-counter" (add $ac 1) }}
+            {{ add $ac 1 }}
         {{ end }}
         {{ end }}
 
-        {{ $.Scratch.Set "tag-counter" 0 }}
+        {{ $tc := 0 }}
         {{ with .Params.tags }}
         {{ range sort . }}
-            {{ $tc := $.Scratch.Get "tag-counter" }}
             {{ $name := . }}
             {{ with $.Site.GetPage (printf "/tags/%s" $name | urlize) }}
                 {{ if eq $tc 0 }}
@@ -56,7 +54,7 @@
                 {{ template "post-tag" dict "name" $name "page" . }}
                 {{ end }}
             {{ end }}
-            {{ $.Scratch.Set "tag-counter" (add $tc 1) }}
+            {{ add $tc 1 }}
         {{ end }}
         {{ end }}
     </footer>
