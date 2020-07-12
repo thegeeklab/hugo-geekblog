@@ -2,6 +2,7 @@
 .swp
 .env*
 dist/
+tmp/
 node_modules/
 exampleSite/themes/
 exampleSite/public/

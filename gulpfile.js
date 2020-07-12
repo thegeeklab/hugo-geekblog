@@ -112,9 +112,10 @@ gulp.task('svg-sprite', function () {
               attributes: false,
             },
             spacing: {
-                padding: 0,
+                padding: 5,
                 box: 'content'
             },
+            dest: 'tmp/intermediate-svg',
         },
         svg: {
             xmlDeclaration: false,
@@ -125,7 +126,7 @@ gulp.task('svg-sprite', function () {
         mode: {
             inline: true,
             symbol: {
-                dest: './',
+                dest: 'layouts/partials/',
                 sprite: 'svg-icon-symbols.html',
                 bust: false,
             }
@@ -134,7 +135,7 @@ gulp.task('svg-sprite', function () {
 
     return gulp.src('src/icons/*.svg')
         .pipe(svgSprite(config))
-        .pipe(gulp.dest('layouts/partials/'));
+        .pipe(gulp.dest('.'));
 });
 
 gulp.task('iconfont', function () {

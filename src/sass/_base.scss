@@ -56,7 +56,7 @@ a {
 
   &:hover {
     background: $color-link;
-    color: $white!important;
+    color: $white !important;
     text-decoration: none;
   }
 
@@ -79,13 +79,13 @@ img {
   width: 100%;
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: $padding-16;
+  padding: $padding-16 $padding-16 * 1.5;
 }
 
 .icon {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: 1.3em;
+  height: 1.3em;
   vertical-align: middle;
   stroke-width: 0;
   stroke: currentColor;
@@ -191,7 +191,8 @@ img {
       margin-top: 0;
     }
 
-    a, a:visited {
+    a,
+    a:visited {
       color: inherit;
       text-decoration: none;
     }
@@ -199,7 +200,7 @@ img {
     a:hover {
       background: none;
       text-decoration: underline;
-      color: $body-font-color!important;
+      color: $body-font-color !important;
     }
   }
 
@@ -225,7 +226,7 @@ img {
   }
 
   &__tag {
-    margin: $padding-4 0!important;
+    margin: $padding-4 0 !important;
 
     .gblog-button__link {
       padding: $padding-4 $padding-8;
@@ -239,7 +240,7 @@ img {
   &__anchorwrap {
     &:hover .gblog-post__anchor {
       background: none;
-      color: $gray-500!important;
+      color: $gray-500 !important;
     }
   }
 
@@ -255,6 +256,10 @@ img {
 
     &--right {
       text-align: right;
+    }
+
+    .icon {
+      font-size: $font-size-16 * 1.3;
     }
   }
 
@@ -274,7 +279,7 @@ img {
   color: $white;
 
   &__item {
-    margin: $padding-8 $padding-8;
+    margin: $padding-8 $padding-8 $padding-8 0;
   }
 
   &__link {
@@ -282,7 +287,7 @@ img {
 
     &:hover {
       background: $color-link-footer;
-      color: $body-font-color!important;
+      color: $body-font-color !important;
     }
 
     &:visited {
@@ -352,7 +357,7 @@ img {
       padding: 0;
     }
 
-    &__list{
+    &__list {
       background: lighten($second-color, 10%);
       flex-direction: column;
       justify-content: center;
