@@ -105,6 +105,17 @@ gulp.task('favicon-check-update', function (done) {
 
 gulp.task('svg-sprite', function () {
     config = {
+        shape: {
+            dimension: {
+              maxWidth: 24,
+              maxHeight: 24,
+              attributes: false,
+            },
+            spacing: {
+                padding: 0,
+                box: 'content'
+            },
+        },
         svg: {
             xmlDeclaration: false,
             rootAttributes: {

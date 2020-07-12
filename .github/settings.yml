@@ -2,7 +2,7 @@
 repository:
   name: hugo-geekblog
   description: Hugo theme made for blogs
-  homepage: https://geekblog.geekdocs.de
+  homepage: https://hugo-geekblog.geekdocs.de
   topics: hugo, theme, hugo-theme, blog
 
   private: false

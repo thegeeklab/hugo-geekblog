@@ -107,11 +107,6 @@ img {
   &__link:hover {
     background: none;
   }
-
-  .icon {
-    width: $font-size-32;
-    height: $font-size-32;
-  }
 }
 
 .gblog-brand {
@@ -169,15 +164,13 @@ img {
     }
 
     .icon {
-      width: 1.5rem;
-      height: 1.5rem;
       margin-right: $padding-4;
     }
 
     .icon.menu {
       display: inline-block;
     }
-    .icon.clean {
+    .icon.clear {
       display: none;
     }
   }
@@ -263,17 +256,15 @@ img {
     &--right {
       text-align: right;
     }
-
-    .icon {
-      width: 1.4rem;
-      height: 1.4rem;
-    }
   }
 
   &__footer {
+    :not(:first-child).no-wrap {
+      margin-left: $padding-8;
+    }
+
     .icon {
-      width: 1.5rem;
-      height: 1.5rem;
+      font-size: 1.2em;
     }
   }
 }
@@ -283,8 +274,7 @@ img {
   color: $white;
 
   &__item {
-    margin-right: $padding-16;
-    line-height: 1.5rem;
+    margin: $padding-8 $padding-8;
   }
 
   &__link {
@@ -311,8 +301,7 @@ img {
   max-width: 45em;
 
   .icon {
-    width: $font-size-16 * 6;
-    height: $font-size-16 * 6;
+    font-size: $font-size-32 * 4;
     color: $gray-700;
   }
 
@@ -401,8 +390,7 @@ img {
     padding: $padding-16 * 6 $padding-16;
 
     .icon {
-      width: $font-size-16 * 4;
-      height: $font-size-16 * 4;
+      font-size: $font-size-32 * 2.5;
     }
 
     &__message {
@@ -417,6 +405,12 @@ img {
       font-size: $font-size-16 * 2;
     }
   }
+
+  .gblog-footer {
+    &__item {
+      width: 100%;
+    }
+  }
 }
 
 #menu-control:checked ~ .gblog-nav__list {
@@ -427,7 +421,7 @@ img {
   .icon.menu {
     display: none;
   }
-  .icon.clean {
+  .icon.clear {
     display: inline-block;
   }
 }

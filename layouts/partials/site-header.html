@@ -5,16 +5,18 @@
                 <img class="gblog-brand__img" src="{{ (default "brand.svg" .Site.Params.GeekblogLogo) | relURL }}" alt="{{ .Site.Title }}" width=60 height=60>
                 {{ .Site.Title }}
             </span>
-            <span class="gblog-brand__subtitle flex align-center justify-center">Subtitle to describe your blog</span>
+            {{ with .Site.Params.GeekblogSubtitle }}
+            <span class="gblog-brand__subtitle flex align-center justify-center">{{ . }}</span>
+            {{ end }}
         </a>
     </div>
 </header>
 <nav class="gblog-nav">
     <input type="checkbox" id="menu-control" class="hidden">
     <div class="gblog-nav__control">
-        <label for="menu-control"  class="flex align-center justify-center" style="vertical-align:top">
+        <label for="menu-control"  class="flex align-center justify-center">
             <svg class="icon menu"><use xlink:href="#menu"></use></svg>
-            <svg class="icon clean"><use xlink:href="#clean"></use></svg>
+            <svg class="icon clear"><use xlink:href="#clear"></use></svg>
             <span>Nav</span>
         </label>
     </div>

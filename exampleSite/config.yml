@@ -1,5 +1,5 @@
 ---
-baseURL: https://hugo-geekblog.geekdocs.de/
+baseURL: https://hugo-geekblog.geekblogs.de/
 title: Geekblog
 theme: hugo-geekblog
 pygmentsUseClasses: true
@@ -17,3 +17,47 @@ markup:
 taxonomies:
   author: authors
   tag: tags
+
+mediaTypes:
+  "application/atom+xml":
+    suffixes:
+      - "xml"
+
+outputFormats:
+  Atom:
+    # https://validator.w3.org/feed/docs/atom.html#whatIsAtom
+    name: "Atom"
+    mediaType: "application/atom+xml"
+    # generated file: <baseName>.<mediaType."application/atom+xml".suffixes[0]> = atom.xml
+    baseName: "atom"
+    isPlainText: false
+    rel: "alternate"
+    isHTML: false
+    noUgly: true
+    permalinkable: false
+
+outputs:
+  home:
+    - HTML
+    - ATOM
+  page:
+    - HTML
+  section:
+    - HTML
+  taxonomy:
+    - HTML
+  term:
+    - HTML
+    - ATOM
+
+params:
+  geekblogSubtitle: Subtitle to describe your blog
+  geekblogToC: 3
+  GeekblogAuthor: john-doe
+
+  geekblogDateFormat: "Jan 2, 2006"
+
+  geekblogLegalNotice: https://geeklabor.de/legal-notice/#impressum
+  geekblogPrivacyPolicy: https://geeklabor.de/legal-notice/#datenschutzerkl%C3%A4rung
+
+  geekblogAnchorLeft: true
