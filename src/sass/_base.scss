@@ -32,7 +32,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $body-font-weight;
+  font-weight: 600;
   display: flex;
   align-items: center;
 
@@ -45,9 +45,7 @@ h6 {
 h4,
 h5,
 h6 {
-  > code {
-    font-size: 0.8rem !important;
-  }
+    font-size: 1rem !important;
 }
 
 a {

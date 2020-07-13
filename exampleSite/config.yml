@@ -5,7 +5,7 @@ theme: hugo-geekblog
 pygmentsUseClasses: true
 pygmentsCodeFences: true
 
-paginate: 3
+paginate: 5
 
 # Needed for mermaid/katex shortcodes
 markup:

@@ -14,32 +14,6 @@
     }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: normal;
-    line-height: 1em;
-    margin-top: 1.5em;
-    margin-bottom: $padding-16;
-  }
-
-  h4,
-  h5,
-  h6 {
-    font-weight: bolder;
-  }
-
-  h5 {
-    font-size: 0.875em;
-  }
-
-  h6 {
-    font-size: 0.75em;
-  }
-
   b,
   optgroup,
   strong {
@@ -122,5 +96,15 @@
     padding: 1rem;
     width: 100%;
     overflow: auto;
+  }
+
+  mark {
+    background-color: rgba(255, 221, 102, 1);
+  }
+
+  section.footnotes {
+    margin-top: 3rem;
+    color: $gray-600;
+    font-size: 0.9em;
   }
 }

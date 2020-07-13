@@ -5,7 +5,6 @@ authors:
   - richard-roe
   - john-doe
 tags:
-  - Opinion
   - Hardware
 ---
 
