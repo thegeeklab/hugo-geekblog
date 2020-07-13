@@ -22,13 +22,20 @@
 
         <footer class="gblog-post__footer">
             <span class="no-wrap">
-            <svg class="icon menu"><use xlink:href="#date"></use></svg>
-            <span class="gblog-post__tag">
-                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-                    {{ .Date.Day }} {{ .Date.Month }} {{ .Date.Year }}
-                </time>
+                <svg class="icon menu"><use xlink:href="#date"></use></svg>
+                <span class="gblog-post__tag">
+                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+                        {{ .Date.Day }} {{ .Date.Month }} {{ .Date.Year }}
+                    </time>
+                </span>
             </span>
+
+            {{ if .Params.weight }}
+            <span class="no-wrap">
+                <svg class="icon pin"><use xlink:href="#pin"></use></svg>
+                <span class="gblog-post__tag">Pinned</span>
             </span>
+            {{ end }}
 
             {{ $ac := 0 }}
             {{ with .Params.authors }}
