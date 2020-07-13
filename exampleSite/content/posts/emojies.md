@@ -17,9 +17,9 @@ To enable emoji globally, set `enableEmoji` to `true` in your site's [configurat
 
 <!-- markdownlint-disable -->
 <!-- spellchecker-disable -->
-<span class="nowrap">{{< emojify ":see_no_evil:" >}} <code>:see_no_evil:</code></span>
-<span class="nowrap">{{< emojify ":hear_no_evil:" >}} <code>:hear_no_evil:</code></span>
-<span class="nowrap">{{< emojify ":speak_no_evil:" >}} <code>:speak_no_evil:</code></span>
+<span class="no-wrap">{{< emojify ":see_no_evil:" >}} <code>:see_no_evil:</code></span>
+<span class="no-wrap">{{< emojify ":hear_no_evil:" >}} <code>:hear_no_evil:</code></span>
+<span class="no-wrap">{{< emojify ":speak_no_evil:" >}} <code>:speak_no_evil:</code></span>
 <!-- spellchecker-enable -->
 <!-- markdownlint-restore -->
 
@@ -30,8 +30,9 @@ The [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/) is a useful reference
 The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack.
 {{< /hint >}}
 
-<!-- spellchecker-disable -->
 **Example:**
+
+<!-- spellchecker-disable -->
 {{< highlight html "linenos=table" >}}
 .emoji {
   font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
