@@ -17,11 +17,9 @@ To enable emoji globally, set `enableEmoji` to `true` in your site's [configurat
 
 <!-- markdownlint-disable -->
 <!-- spellchecker-disable -->
-<p>
 <span class="nowrap">{{< emojify ":see_no_evil:" >}} <code>:see_no_evil:</code></span>
 <span class="nowrap">{{< emojify ":hear_no_evil:" >}} <code>:hear_no_evil:</code></span>
 <span class="nowrap">{{< emojify ":speak_no_evil:" >}} <code>:speak_no_evil:</code></span>
-</p>
 <!-- spellchecker-enable -->
 <!-- markdownlint-restore -->
 
