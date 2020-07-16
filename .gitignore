@@ -4,6 +4,7 @@
 dist/
 tmp/
 node_modules/
+lhci_reports/
 exampleSite/themes/
 exampleSite/public/
 

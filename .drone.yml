@@ -36,10 +36,25 @@ steps:
     LINK_VALIDATOR_BASE_DIR: exampleSite/public
 
 - name: page-validation
-  image: patrickhulce/lhci-client
-  user: root
+  image: xoxys/lhci
   commands:
   - lhci autorun
+  environment:
+    LHCI_SERVER_URL: https://example.com/${DRONE_REPO_NAME}/
+
+- name: page-validation-upload
+  image: plugins/s3
+  settings:
+    access_key:
+      from_secret: s3_access_key
+    bucket: drone-artifact
+    endpoint: https://sp.rknet.org
+    path_style: true
+    secret_key:
+      from_secret: s3_secret_access_key
+    source: lhci_reports/dist/
+    strip_prefix: lhci_reports/dist/
+    target: /${DRONE_REPO_NAME}
 
 trigger:
   ref:
@@ -216,6 +231,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 12880ca35134fefa3baf9363fa7484c28dc6c3e9fda2d2c5054de95364fbf9e1
+hmac: 28fffd7ae5434a2cb6369b8a240ee9fc14d02998fc06c7ac3e3ab9a1e3313b05
 
 ...
