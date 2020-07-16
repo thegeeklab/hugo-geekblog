@@ -40,7 +40,7 @@ steps:
   commands:
   - lhci autorun
   environment:
-    LHCI_SERVER_URL: https://example.com/${DRONE_REPO_NAME}/
+    LHCI_SERVER_URL: https://drone-artifact.rknet.org/${DRONE_REPO_NAME}/
 
 - name: page-validation-upload
   image: plugins/s3
@@ -52,7 +52,7 @@ steps:
     path_style: true
     secret_key:
       from_secret: s3_secret_access_key
-    source: lhci_reports/dist/
+    source: lhci_reports/dist/*
     strip_prefix: lhci_reports/dist/
     target: /${DRONE_REPO_NAME}
 
@@ -231,6 +231,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 28fffd7ae5434a2cb6369b8a240ee9fc14d02998fc06c7ac3e3ab9a1e3313b05
+hmac: afff03dfddbd4229cdbbe248fda6eea68f3a5e336064874f74409aefaa1aa17b
 
 ...
