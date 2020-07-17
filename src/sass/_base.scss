@@ -300,21 +300,23 @@ img {
   &__item {
     flex: 1 1 0;
 
-    &--prev {
+    &--next {
       text-align: right;
 
       a:after {
         font-family: GeekblogIcons;
-        content: "\ea02";
+        content: "\ea17";
+        margin-top: -.125em;
       }
     }
 
-    &--next {
+    &--prev {
       text-align: left;
 
       a::before {
         font-family: GeekblogIcons;
-        content: "\ea16";
+        content: "\ea18";
+        margin-top: -.125em;
       }
     }
   }
