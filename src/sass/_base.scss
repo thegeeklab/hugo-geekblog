@@ -67,6 +67,14 @@ img {
   vertical-align: middle;
 }
 
+.fake-link {
+  background-image: linear-gradient($color-link, $color-link);
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -209,17 +217,9 @@ img {
   &__readmore {
     margin: 1.5rem 0 $padding-32 0;
 
-    a {
-      background-image: linear-gradient($color-link, $color-link);
-      background-position: 0 100%;
-      background-size: 100% 1px;
-      background-repeat: no-repeat;
-      text-decoration: none;
-
-      &:after {
-        font-family: GeekblogIcons;
-        content: "\ea02";
-      }
+    a:after {
+      font-family: GeekblogIcons;
+      content: "\ea02";
     }
   }
 
@@ -296,6 +296,28 @@ img {
 
 .gblog-paging {
   padding: $padding-16 0;
+
+  &__item {
+    flex: 1 1 0;
+
+    &--prev {
+      text-align: right;
+
+      a:after {
+        font-family: GeekblogIcons;
+        content: "\ea02";
+      }
+    }
+
+    &--next {
+      text-align: left;
+
+      a::before {
+        font-family: GeekblogIcons;
+        content: "\ea16";
+      }
+    }
+  }
 }
 
 .gblog-error {
