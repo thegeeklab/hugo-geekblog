@@ -7,7 +7,6 @@ pygmentsCodeFences: true
 
 paginate: 5
 
-# Needed for mermaid/katex shortcodes
 markup:
   goldmark:
     renderer:
@@ -55,11 +54,17 @@ outputs:
 params:
   geekblogSubtitle: Subtitle to describe your blog
   geekblogToC: 3
-  GeekblogAuthor: john-doe
+  geekblogAuthor: john-doe
 
-  geekblogDateFormat: "Jan 2, 2006"
+  geekblogAnchorLeft: true
 
   geekblogLegalNotice: https://geeklabor.de/legal-notice/#impressum
   geekblogPrivacyPolicy: https://geeklabor.de/legal-notice/#datenschutzerkl%C3%A4rung
 
-  geekblogAnchorLeft: true
+  geekblogHostedOn:
+    name: Uberspace
+    link: https://uberspace.de/en/
+
+  geekblogContentLicense:
+    name: CC BY-SA 4.0
+    link: https://creativecommons.org/licenses/by-sa/4.0/
