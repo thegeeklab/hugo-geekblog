@@ -41,16 +41,25 @@
 
   table {
     overflow: auto;
-    display: block;
+    display: table;
     border-spacing: 0;
     border-collapse: collapse;
     margin-top: $padding-16;
     margin-bottom: $padding-16;
+    width: 100%;
+    text-align: left;
+
+    thead {
+      border-bottom: 2px solid $gray-200;
+    }
 
     tr th,
     tr td {
       padding: $padding-8 $padding-16;
-      border: $padding-1 solid $gray-200;
+    }
+
+    tr {
+      border-bottom: $padding-1 solid $gray-200;
     }
 
     tr:nth-child(2n) {
