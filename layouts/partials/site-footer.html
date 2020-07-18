@@ -19,6 +19,11 @@
                 <a href="{{ . | relURL }}" class="gblog-footer__link">Privacy Policy</a>
             </span>
             {{ end }}
+            {{ with .Site.Params.GeekblogContentLicense }}
+            <span class="gblog-footer__item">
+                Content licensed under <a href="{{ .link }}" class="gblog-footer__link no-wrap">{{ .name }}</a>
+            </span>
+            {{ end }}
         </div>
         <div class="flex flex-wrap align-center">
             <span class="gblog-footer__item">
@@ -26,5 +31,12 @@
                 <svg class="icon heart"><use xlink:href="#heart"></use></svg>
             </span>
         </div>
+        {{ with .Site.Params.GeekblogHostedOn }}
+        <div class="flex flex-wrap align-center">
+            <span class="gblog-footer__item">
+                Hosted on <a href="{{ .link }}" class="gblog-footer__link">{{ .name }}</a>
+            </span>
+        </div>
+        {{ end }}
     </div>
 </footer>
