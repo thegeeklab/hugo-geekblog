@@ -17,7 +17,9 @@ This post works as a documentation for the features of the theme.
 [![GitHub release](https://img.shields.io/github/v/release/xoxys/hugo-geekblog)](https://github.com/xoxys/hugo-geekblog/releases/latest)
 [![License: MIT](https://img.shields.io/github/license/xoxys/hugo-geekblog)](https://github.com/xoxys/hugo-geekblog/blob/master/LICENSE)
 
+<!-- spellchecker-disable -->
 {{< toc >}}
+<!-- spellchecker-enable -->
 
 ## Features
 

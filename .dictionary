@@ -4,7 +4,7 @@ Kaussow
 DevOps
 glyphs
 Gopherfest
-[B|b]lockquote[s]*
+(B|b)lockquote[s]?
 backticks
-Shortcode[s]*
+(S|s)hortcode[s]?
 emojify

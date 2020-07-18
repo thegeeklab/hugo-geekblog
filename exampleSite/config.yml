@@ -60,11 +60,3 @@ params:
 
   geekblogLegalNotice: https://geeklabor.de/legal-notice/#impressum
   geekblogPrivacyPolicy: https://geeklabor.de/legal-notice/#datenschutzerkl%C3%A4rung
-
-  geekblogHostedOn:
-    name: Uberspace
-    link: https://uberspace.de/en/
-
-  geekblogContentLicense:
-    name: CC BY-SA 4.0
-    link: https://creativecommons.org/licenses/by-sa/4.0/
