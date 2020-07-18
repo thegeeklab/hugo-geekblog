@@ -131,7 +131,7 @@ img {
 
 .gblog-nav {
   background: $second-color;
-  color: $white;
+  color: $gray-200;
 
   .container {
     padding: $padding-8 $padding-16;
@@ -142,7 +142,7 @@ img {
   }
 
   &__entry {
-    color: $white;
+    color: $gray-100;
     text-decoration: none;
     padding: $padding-4 $padding-8;
     border: 1px solid;
@@ -274,7 +274,7 @@ img {
 
 .gblog-footer {
   background: $second-color;
-  color: $white;
+  color: $gray-100;
 
   &__item {
     margin: $padding-8 $padding-8 $padding-8 0;
@@ -368,13 +368,12 @@ img {
   a,
   a:visited {
     color: $color-link;
+    text-decoration: none;
   }
 }
 
 @media screen and (max-width: $sm-breakpoint) {
   .gblog-nav {
-    color: $white;
-
     .container {
       padding: 0;
     }
@@ -388,8 +387,6 @@ img {
     }
 
     &__entry {
-      color: $white;
-      text-decoration: none;
       padding: $padding-16 0;
       border: 0;
       border-radius: 0;
