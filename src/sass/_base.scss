@@ -373,6 +373,10 @@ img {
 }
 
 @media screen and (max-width: $sm-breakpoint) {
+  .gblog-brand {
+    font-size: $font-size-32 * 1.1;
+  }
+
   .gblog-nav {
     .container {
       padding: 0;

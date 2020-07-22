@@ -1,6 +1,4 @@
 - ENHANCEMENT
-  - allow setting some common meta elements e.g. description and authors
-  - prevent duplicate title on the start page
-  - add basic robots.txt
-- BUGFIX
-  - dont display duplicate title on home page
+  - split head partials into smaller parts to allow simple overwrites for e.g. custom favicons
+  - scale down page title on mobile media-query
+  - add missing title to branding image
