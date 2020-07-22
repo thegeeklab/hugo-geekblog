@@ -51,6 +51,8 @@ outputs:
     - HTML
     - ATOM
 
+enableRobotsTXT: true
+
 params:
   geekblogSubtitle: Subtitle to describe your blog
   geekblogToC: 3

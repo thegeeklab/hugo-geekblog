@@ -1,10 +1,12 @@
 <footer class="gblog-footer">
     <div class="container">
         <div class="flex flex-wrap align-center">
+            {{ with .OutputFormats.Get "atom" }}
             <span class="gblog-footer__item">
                 <svg class="icon rss_feed"><use xlink:href="#rss_feed"></use></svg>
-                <a href='{{ "atom.xml" | relURL }}' class="gblog-footer__link">Feed</a>
+                <a href='{{ .Permalink | relURL }}' class="gblog-footer__link">Feed</a>
             </span>
+            {{ end }}
             <span class="gblog-footer__item">
                 <svg class="icon email"><use xlink:href="#email"></use></svg>
                 <a href='{{ "contact" | relURL }}' class="gblog-footer__link">Contact</a>

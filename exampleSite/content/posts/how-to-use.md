@@ -198,6 +198,9 @@ outputs:
     - HTML
     - ATOM
 
+# Required if you want to render robots.txt template
+enableRobotsTXT: true
+
 params:
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)

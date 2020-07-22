@@ -1,5 +1,6 @@
 - ENHANCEMENT
   - allow setting some common meta elements e.g. description and authors
   - prevent duplicate title on the start page
+  - add basic robots.txt
 - BUGFIX
   - dont display duplicate title on home page

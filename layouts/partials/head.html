@@ -20,16 +20,16 @@
     <meta name="author" content="{{ delimit . "," }}">
     {{ end }}
 {{ end }}
-<title>{{ if not (eq .Kind "home") }}{{ partial "title" . }} | {{ end }}{{ .Site.Title -}}</title>
+<title>{{ if not (eq .Kind "home") }}{{ partial "title" . }} | {{ end }}{{ .Site.Title }}</title>
 
 <link rel="icon" href="{{ "favicon/favicon-32x32.png" | relURL }}" type="image/x-icon">
 <link rel="stylesheet" href="{{ "main.min.css" | relURL }}" media="screen">
 <link rel="stylesheet" href="{{ "custom.css" | relURL }}" media="screen">
 
-{{ with .OutputFormats.Get "rss" -}}
+{{ with .OutputFormats.Get "atom" }}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-{{ end -}}
+{{ end }}
 
-{{ "<!--" | safeHTML -}}
+{{ "<!--" | safeHTML }}
     Made with Geekblog theme https://github.com/xoxys/hugo-geekblog
 {{- "-->" | safeHTML }}
