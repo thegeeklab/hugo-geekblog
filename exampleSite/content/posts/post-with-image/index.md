@@ -3,6 +3,7 @@ title: "Post with image"
 date: 2020-06-22T20:00:00+02:00
 authors:
   - richard-roe
+  - john-doe
 tags:
   - Open Source
   - Development

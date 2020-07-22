@@ -128,6 +128,14 @@ enableGitInfo = true
   [geekblogContentLicense]
     name = "CC BY-SA 4.0"
     link = "https://creativecommons.org/licenses/by-sa/4.0/"
+
+  # (Optional, default none) Default meta description used for the start page and as a fallback for
+  # every site without an own description.
+  geekblogDescription = "This is my personal blog about tech."
+
+  # (Optional, default none) Default meta keywords used for the start page and as a fallback for
+  # every site without own keywords. Note: Meta keywords seems to be ignored by most modern search engines.
+  geekblogKeywords =
 ```
 
 {{< /tab >}}
@@ -231,6 +239,14 @@ params:
   geekblogContentLicense:
     name: CC BY-SA 4.0
     link: https://creativecommons.org/licenses/by-sa/4.0/
+
+  # (Optional, default none) Default meta description used for the start page and as a fallback for
+  # every site without an own description.
+  geekblogDescription: "This is my personal blog about tech."
+
+  # (Optional, default none) Default meta keywords used for the start page and as a fallback for
+  # every site without own keywords. Note: Meta keywords seems to be ignored by most modern search engines.
+  geekblogKeywords: []
 ```
 
 {{< /tab >}}

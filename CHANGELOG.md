@@ -1,1 +1,5 @@
-- initial release
+- ENHANCEMENT
+  - allow setting some common meta elements e.g. description and authors
+  - prevent duplicate title on the start page
+- BUGFIX
+  - dont display duplicate title on home page

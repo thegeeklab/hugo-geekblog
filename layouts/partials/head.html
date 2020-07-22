@@ -1,8 +1,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{{ partial "title" . }}">
+{{ $description := default .Site.Params.GeekblogDescription (default .Summary .Description) }}
+{{ $keywords := default .Site.Params.GeekblogKeywords .Keywords }}
+{{ $author := default (slice .Site.Params.GeekblogAuthor) .Params.authors }}
+{{ with $description }}
+<meta name="description" content="{{ . }}">
+{{ end }}
+{{ with $keywords }}
+<meta name="keywords" content="{{ delimit . "," }}">
+{{ end }}
+{{ with $author }}
+    {{ $authors := slice }}
+    {{ range sort . }}
+        {{ $author := index $.Site.Data.authors . }}
+        {{ $authors = $authors | append $author.name }}
+    {{ end }}
 
-<title>{{ partial "title" . }} | {{ .Site.Title -}}</title>
+    {{ with $authors }}
+    <meta name="author" content="{{ delimit . "," }}">
+    {{ end }}
+{{ end }}
+<title>{{ if not (eq .Kind "home") }}{{ partial "title" . }} | {{ end }}{{ .Site.Title -}}</title>
 
 <link rel="icon" href="{{ "favicon/favicon-32x32.png" | relURL }}" type="image/x-icon">
 <link rel="stylesheet" href="{{ "main.min.css" | relURL }}" media="screen">
