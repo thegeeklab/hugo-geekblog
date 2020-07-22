@@ -58,5 +58,5 @@ params:
 
   geekblogAnchorLeft: true
 
-  geekdocLegalNotice: https://thegeeklab.de/legal-notice/#contact-information
-  geekdocPrivacyPolicy: https://thegeeklab.de/legal-notice/#privacy-policy
+  geekblogLegalNotice: https://thegeeklab.de/legal-notice/#contact-information
+  geekblogPrivacyPolicy: https://thegeeklab.de/legal-notice/#privacy-policy
