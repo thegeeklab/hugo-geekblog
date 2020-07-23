@@ -32,7 +32,7 @@ gulp.task('favicon-generate', function (done) {
     realFavicon.generateFavicon({
         masterPicture: 'src/favicon/favicon-master.svg',
         dest: 'static/favicon',
-        iconsPath: '/',
+        iconsPath: '/favicon',
         design: {
             ios: {
                 pictureAspect: 'backgroundAndMargin',
