@@ -1,4 +1,3 @@
 - ENHANCEMENT
-  - split head partials into smaller parts to allow simple overwrites for e.g. custom favicons
-  - scale down page title on mobile media-query
-  - add missing title to branding image
+  - fix base path for auto-generated favicons
+  - add partial to set rel-me links, see https://microformats.org/wiki/rel-me
