@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ "custom.css" | relURL }}" media="screen">
 
 {{ with .OutputFormats.Get "atom" }}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end }}
 
 {{ "<!--" | safeHTML }}
