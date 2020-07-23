@@ -1,3 +1,3 @@
 - ENHANCEMENT
-  - fix base path for auto-generated favicons
-  - add partial to set rel-me links, see https://microformats.org/wiki/rel-me
+  - enable microformats e.g. opengraph and twitter cards by default
+  - add a minimal set of default favicons
