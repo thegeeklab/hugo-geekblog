@@ -1,6 +1,6 @@
 <header class="gblog-header">
     <div class="container flex align-center justify-center">
-        <a class="gblog-header__link" href="{{ .Site.BaseURL }}">
+        <a class="gblog-header__link" rel="me" href="{{ .Site.BaseURL }}">
             <span class="gblog-brand flex align-center justify-center">
                 <img class="gblog-brand__img" title="Branding of {{ .Site.Title }}" src="{{ (default "brand.svg" .Site.Params.GeekblogLogo) | relURL }}" alt="{{ .Site.Title }}" width=60 height=60>
                 {{ .Site.Title }}
