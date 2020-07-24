@@ -88,18 +88,19 @@ enableGitInfo = true
   term = ["HTML", "ATOM"]
 
 [params]
+  subtitle =
   description = "This is my personal blog about tech."
   keywords = []
   images = []
+
+  # (Optional, default static/brand.svg) Set the path to a logo for the Geekblog
+  # relative to your 'static/' folder.
+  logo = logo.png
 
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
   # You can also specify this parameter per page in front matter.
   geekblogToC = 3
-
-  # (Optional, default static/brand.svg) Set the path to a logo for the Geekblog
-  # relative to your 'static/' folder.
-  geekblogLogo = logo.png
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
@@ -198,18 +199,19 @@ outputs:
 enableRobotsTXT: true
 
 params:
+  subtitle:
   description: "This is my personal blog about tech."
   keywords: []
   images: []
+
+  # (Optional, default static/brand.svg) Set the path to a logo for the Geekblog
+  # relative to your 'static/' folder.
+  logo: logo.png
 
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
   # You can also specify this parameter per page in front matter.
   geekblogToC: 3
-
-  # (Optional, default static/brand.svg) Set the path to a logo for the Geekblog
-  # relative to your 'static/' folder.
-  geekblogLogo: logo.png
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.

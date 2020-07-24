@@ -8,7 +8,7 @@
         {{- end -}}
     {{- end -}}
     {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
-    {{ with .Site.Params.GeekblogSubtitle }}
+    {{ with .Site.Params.subtitle }}
         {{ printf `<subtitle type="html"><![CDATA[%s]]></subtitle>` . | safeHTML }}
     {{ end }}
     {{ $output_formats := .OutputFormats }}

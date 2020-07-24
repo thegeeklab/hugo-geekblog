@@ -54,13 +54,13 @@ outputs:
 enableRobotsTXT: true
 
 params:
-  images:
-    - "favicon/android-chrome-512x512.png"
+  subtitle: Subtitle to describe your blog
   description: >
     hugo-geekblog is a simple Hugo theme for personal blogs. This page is theme documentation
     and powered by the latest version of hugo-geekblog itself.
+  images:
+    - "favicon/android-chrome-512x512.png"
 
-  geekblogSubtitle: Subtitle to describe your blog
   geekblogToC: 3
   geekblogAuthor: john-doe
 

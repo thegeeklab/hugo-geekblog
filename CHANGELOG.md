@@ -1,2 +1,6 @@
+- BREAKING
+  - rename description and keyword variables
+  - rename logo variable
+  - rename subtitle variable
 - ENHANCEMENT
-  - move description and keyword variables
+  - add partial for json-ld structured data
