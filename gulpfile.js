@@ -12,7 +12,7 @@ const fs = require('fs');
 const svgSprite = require('gulp-svg-sprite');
 
 var CSSDEST = 'static/'
-var FAVICON_DATA_FILE = 'src/favicon/faviconData.json';
+var FAVICON_DATA_FILE = 'tmp/faviconData.json';
 var TIMESTAMP = Math.round(Date.now() / 1000);
 
 gulp.task('sass', function () {
@@ -175,7 +175,6 @@ gulp.task('default', gulp.series(
     'sass',
     'svg-sprite',
     'iconfont',
-    'favicon-check-update',
     'favicon-generate'
 ));
 
