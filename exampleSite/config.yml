@@ -54,6 +54,9 @@ outputs:
 enableRobotsTXT: true
 
 params:
+  images:
+    - "favicon/android-chrome-512x512.png"
+
   geekblogSubtitle: Subtitle to describe your blog
   geekblogToC: 3
   geekblogAuthor: john-doe
