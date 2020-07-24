@@ -1,3 +1,2 @@
 - ENHANCEMENT
-  - enable microformats e.g. opengraph and twitter cards by default
-  - add a minimal set of default favicons
+  - generate android icons with transparent background
