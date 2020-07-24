@@ -61,9 +61,7 @@ gulp.task('favicon-generate', function (done) {
                 }
             },
             androidChrome: {
-                pictureAspect: 'backgroundAndMargin',
-                margine: '14px',
-                backgroundColor: '#2f333e',
+                pictureAspect: 'shadow',
                 themeColor: '#2f333e',
                 manifest: {
                     display: 'standalone',
