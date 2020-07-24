@@ -1,2 +1,2 @@
 - ENHANCEMENT
-  - generate android icons with transparent background
+  - move description and keyword variables

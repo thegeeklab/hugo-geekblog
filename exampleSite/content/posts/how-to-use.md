@@ -88,6 +88,10 @@ enableGitInfo = true
   term = ["HTML", "ATOM"]
 
 [params]
+  description = "This is my personal blog about tech."
+  keywords = []
+  images = []
+
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
   # You can also specify this parameter per page in front matter.
@@ -128,14 +132,6 @@ enableGitInfo = true
   [geekblogContentLicense]
     name = "CC BY-SA 4.0"
     link = "https://creativecommons.org/licenses/by-sa/4.0/"
-
-  # (Optional, default none) Default meta description used for the start page and as a fallback for
-  # every site without an own description.
-  geekblogDescription = "This is my personal blog about tech."
-
-  # (Optional, default none) Default meta keywords used for the start page and as a fallback for
-  # every site without own keywords. Note: Meta keywords seems to be ignored by most modern search engines.
-  geekblogKeywords =
 ```
 
 {{< /tab >}}
@@ -202,6 +198,10 @@ outputs:
 enableRobotsTXT: true
 
 params:
+  description: "This is my personal blog about tech."
+  keywords: []
+  images: []
+
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
   # You can also specify this parameter per page in front matter.
@@ -242,14 +242,6 @@ params:
   geekblogContentLicense:
     name: CC BY-SA 4.0
     link: https://creativecommons.org/licenses/by-sa/4.0/
-
-  # (Optional, default none) Default meta description used for the start page and as a fallback for
-  # every site without an own description.
-  geekblogDescription: "This is my personal blog about tech."
-
-  # (Optional, default none) Default meta keywords used for the start page and as a fallback for
-  # every site without own keywords. Note: Meta keywords seems to be ignored by most modern search engines.
-  geekblogKeywords: []
 ```
 
 {{< /tab >}}
