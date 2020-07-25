@@ -5,6 +5,4 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end }}
 
-{{ "<!--" | safeHTML }}
-    Made with Geekblog theme https://github.com/xoxys/hugo-geekblog
-{{- "-->" | safeHTML }}
+{{ printf "<!-- %s -->" "Made with Geekblog theme https://github.com/xoxys/hugo-geekblog" | safeHTML }}

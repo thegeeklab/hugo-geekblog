@@ -8,13 +8,19 @@
     {{- end }}
     "name": "{{ .Site.Title }}",
     "url": "{{ .Site.BaseURL }}",
-    "description": "{{ .Site.Params.description }}",
-    "thumbnailUrl": "{{ (default "brand.svg" .Site.Params.logo) | absURL }}"{{ with .Site.Params.GeekblogContentLicense }},
-    "license": "{{ .name }}"{{ end }}
+    {{- with .Site.Params.description }}
+    "description": "{{ . }}",
+    {{- end }}
+    "thumbnailUrl": "{{ (default "brand.svg" .Site.Params.logo) | absURL }}"
+    {{- with .Site.Params.GeekblogContentLicense }},
+    "license": "{{ .name }}"
+    {{- end }}
 }
 </script>
 {{ else if .IsPage }}
 {{ $authors := default (slice .Site.Params.GeekblogAuthor) .Params.authors }}
+{{ $images := default (slice (default "brand.svg" .Site.Params.logo)) .Params.images }}
+{{ $description := default .Site.Params.description (default .Description .Summary) }}
 {{ $ac := 0 }}
 {{ $ac_max := default 0 (len $authors) }}
 <script type="application/ld+json">
@@ -25,15 +31,17 @@
     "name": "{{ .Title | safeJS }}",
     "headline": "{{ .Title | safeJS }}",
     "alternativeHeadline": "{{ .Params.lead }}",
-    "description": "{{ if .Description }}{{ .Description | safeJS }}{{ else }}{{if .IsPage}}{{ .Summary  }}{{ end }}{{ end }}",
+    {{- with $description }}
+    "description": "{{ . }}",
+    {{- end }}
     "inLanguage": {{ .Site.Language.Lang }},
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "{{ .Permalink }}"
     },
+    {{- with $authors }}
     "author" : [
-    {{- with $authors -}}
         {{- range sort . }}
         {{- $ac = (add $ac 1) }}
         {{- $author := index $.Site.Data.authors . }}
@@ -41,9 +49,9 @@
             "@type": "Person",
             "name": "{{ $author.name }}"
         }{{ if lt $ac $ac_max }},{{ end }}
-        {{- end -}}
-    {{- end }}
+        {{- end }}
     ],
+    {{- end }}
     "copyrightHolder" : "{{ .Site.Title }}",
     "copyrightYear" : "{{ .Date.Format "2006" }}",
     "dateCreated": "{{ .Date.Format "2006-01-02T15:04:05.00Z" | safeJS }}",
@@ -60,10 +68,10 @@
             "height":"32"
         }
     },
-    "image": {{ if .Params.images }}[{{ range $i, $e := .Params.images }}{{ if $i }}, {{ end }}{{ $e | absURL }}{{ end }}]{{ else}}{{.Site.Params.logo | absURL }}{{ end }},
+    "image": [{{ range $i, $image := $images }}{{ if $i }}, {{ end }}{{ $image | absURL }}{{ end }}],
     "url" : "{{ .Permalink }}",
     "wordCount" : "{{ .WordCount }}",
-    "genre" : [ {{ range $index, $tag := .Params.tags }}{{ if $index }}, {{ end }}"{{ $tag }}" {{ end }}]
+    "genre" : [ {{ range $i, $tag := .Params.tags }}{{ if $i }}, {{ end }}"{{ $tag }}" {{ end }}]
 }
 </script>
 {{ end }}

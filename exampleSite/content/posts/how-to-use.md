@@ -119,7 +119,7 @@ enableGitInfo = true
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekblogAnchorCopy = true
 
-  # (Optional, default none) Sites main author, used for the site author filed in Atom feeds.
+  # (Optional, default none) Sites main author.
   geekblogAuthor = "john-doe"
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
@@ -230,7 +230,7 @@ params:
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekblogAnchorCopy: true
 
-  # (Optional, default none) Sites main author, used for the site author filed in Atom feeds.
+  # (Optional, default none) Sites main author.
   geekblogAuthor: john-doe
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
