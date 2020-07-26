@@ -1,4 +1,5 @@
 {{ if .IsHome -}}
+{{ $thumbnail := default (default "brand.svg" .Site.Params.logo) (index .Site.Params.images 0) | absURL }}
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -11,7 +12,7 @@
     {{- with .Site.Params.description }}
     "description": "{{ . }}",
     {{- end }}
-    "thumbnailUrl": "{{ (default "brand.svg" .Site.Params.logo) | absURL }}"
+    "thumbnailUrl": "{{ $thumbnail }}"
     {{- with .Site.Params.GeekblogContentLicense }},
     "license": "{{ .name }}"
     {{- end }}
@@ -19,7 +20,6 @@
 </script>
 {{ else if .IsPage }}
 {{ $authors := default (slice .Site.Params.GeekblogAuthor) .Params.authors }}
-{{ $images := default (slice (default "brand.svg" .Site.Params.logo)) .Params.images }}
 {{ $description := default .Site.Params.description (default .Description .Summary) }}
 {{ $ac := 0 }}
 {{ $ac_max := default 0 (len $authors) }}
@@ -68,7 +68,13 @@
             "height":"32"
         }
     },
-    "image": [{{ range $i, $image := $images }}{{ if $i }}, {{ end }}{{ $image | absURL }}{{ end }}],
+    {{- with $images := $.Resources.ByType "image" }}
+    "image": [ {{ range $i, $image := $images }}{{ if $i }}, {{ end }}"{{ $image.Permalink | absURL }}" {{ end }}],
+    {{- else }}
+    {{- with $images := .Params.images }}
+    "image": [ {{ range $i, $image := $images }}{{ if $i }}, {{ end }}"{{ $image | absURL }}" {{ end }}],
+    {{- end }}
+    {{- end }}
     "url" : "{{ .Permalink }}",
     "wordCount" : "{{ .WordCount }}",
     "genre" : [ {{ range $i, $tag := .Params.tags }}{{ if $i }}, {{ end }}"{{ $tag }}" {{ end }}]
