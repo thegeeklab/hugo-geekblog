@@ -261,6 +261,15 @@ img {
     }
   }
 
+  &__figure {
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: $padding-32;
+      object-fit: cover;
+    }
+  }
+
   &__footer {
     :not(:first-child).no-wrap {
       margin-left: $padding-8;
@@ -269,6 +278,13 @@ img {
     .icon {
       font-size: 1.2em;
     }
+  }
+
+  &__credits {
+    margin-top: 1.5rem;
+    color: $gray-600;
+    font-size: 0.9em;
+    list-style-type: none
   }
 }
 
@@ -412,6 +428,11 @@ img {
         padding: $padding-16 0;
       }
     }
+  }
+
+  .gblog-post__figure,
+  .gblog-post__credits {
+    display: none;
   }
 
   .gblog-error {
