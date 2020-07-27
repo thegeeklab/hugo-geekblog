@@ -13,7 +13,8 @@ layouts/partials/icons-svg-symbols.html
 static/main.*
 static/favicon/
 static/fonts/GeekblogIcons.*
-resources/_gen/
+resources/
+exampleSite/resources/
 
 # testing
 .lighthouseci/
