@@ -1,6 +1,6 @@
-- BREAKING
-  - rename description and keyword variables
-  - rename logo variable
-  - rename subtitle variable
+- FEATURE
+  - add feature image handling for blog posts
+  - add image processing shortcode
 - ENHANCEMENT
-  - add partial for json-ld structured data
+  - simplify image handling in json-ld schema
+  - cleanup thumbnail selection

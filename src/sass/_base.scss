@@ -261,12 +261,50 @@ img {
     }
   }
 
-  &__figure {
+  &__feature {
+    position: relative;
+    margin-bottom: $padding-32;
+
     img {
       width: 100%;
-      height: auto;
-      margin-bottom: $padding-32;
+      min-height: 180px;
       object-fit: cover;
+      overflow: hidden;
+    }
+
+    span {
+      background: rgba($gray-900, 0.7);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: $padding-4;
+      font-size: 0.9em;
+      color: $gray-300;
+    }
+
+    a:hover,
+    a:visited {
+      color: $gray-300!important;
+    }
+  }
+
+  &__figure {
+    padding: $padding-4 $padding-4 0 $padding-4;
+    margin: $padding-16 0;
+    background-color: $gray-300;
+    display: table;
+
+    figcaption {
+      display: table-caption;
+      caption-side: bottom;
+      background-color: $gray-300;
+      padding: $padding-4;
+      text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
   }
 
@@ -428,11 +466,6 @@ img {
         padding: $padding-16 0;
       }
     }
-  }
-
-  .gblog-post__figure,
-  .gblog-post__credits {
-    display: none;
   }
 
   .gblog-error {

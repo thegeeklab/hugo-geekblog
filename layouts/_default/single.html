@@ -3,14 +3,16 @@
         <header class="gblog-post__header">
             {{ $source := ($.Resources.ByType "image").GetMatch "{*feature*,*cover*,*thumbnail*}" }}
             {{ with $source }}
-                <picture class="gblog-post__figure">
-                    {{ with $.Resources.GetMatch (replace (.Title) (path.Ext (.Title)) ".webp") }}
-                    <source srcset="{{ .Permalink }}" type="image/webp">
-                    {{ end }}
-                    {{ $featured := .Fill (printf "950x285 %s" (default "Smart" .Params.anchor)) }}
+            <div class="gblog-post__feature">
+                <picture>
+                    {{ $featured := .Fill (printf "910x280 %s" (default "Smart" .Params.anchor)) }}
                     <source srcset="{{ $featured.Permalink }}">
                     <img src="{{ $featured.Permalink }}" alt="{{ default $.Title .Params.description }}" >
                 </picture>
+                {{ with $source.Params.credits }}
+                <span>Credits: {{ . | markdownify | safeHTML }}</span>
+                {{ end }}
+            </div>
             {{ end }}
 
             <h1>{{ partial "title" . }}</h1>
@@ -18,13 +20,6 @@
 
         <section class="gblog-markdown">
             {{ partial "content" . }}
-            {{ with $source }}
-            {{ if .Params.credits }}
-            <ul class="gblog-post__credits">
-                <li>{{ . | humanize }} image: {{ .Params.credits | safeHTML }}</li>
-            </ul>
-            {{ end }}
-            {{ end }}
         </section>
     </article>
 {{ end }}
