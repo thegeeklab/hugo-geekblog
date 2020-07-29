@@ -1,7 +1,7 @@
 <footer class="gblog-footer">
     <div class="container">
         <div class="flex flex-wrap align-center">
-            {{ with .OutputFormats.Get "atom" }}
+            {{ with (.Site.GetPage "home").OutputFormats.Get "atom" }}
             <span class="gblog-footer__item">
                 <svg class="icon rss_feed"><use xlink:href="#rss_feed"></use></svg>
                 <a href='{{ .Permalink | relURL }}' class="gblog-footer__link">Feed</a>

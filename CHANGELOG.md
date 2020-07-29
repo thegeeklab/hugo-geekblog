@@ -1,6 +1,2 @@
-- FEATURE
-  - add feature image handling for blog posts
-  - add image processing shortcode
-- ENHANCEMENT
-  - simplify image handling in json-ld schema
-  - cleanup thumbnail selection
+- BUGFIX
+  - fix default atom feed include
