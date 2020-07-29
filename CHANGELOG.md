@@ -1,2 +1,4 @@
+- BUGFIX
+  - fix default atom feed include
 - ENHANCEMENT
   - increase contrast ratio on feature image overlay
