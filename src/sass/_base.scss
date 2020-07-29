@@ -273,18 +273,18 @@ img {
     }
 
     span {
-      background: rgba($gray-900, 0.7);
+      background: rgba($gray-900, 0.8);
       position: absolute;
       bottom: 0;
       right: 0;
       padding: $padding-4;
-      font-size: 0.9em;
-      color: $gray-300;
+      font-size: 0.8em;
+      color: $gray-200;
     }
 
     a:hover,
     a:visited {
-      color: $gray-300!important;
+      color: $gray-200!important;
     }
   }
 
@@ -316,13 +316,6 @@ img {
     .icon {
       font-size: 1.2em;
     }
-  }
-
-  &__credits {
-    margin-top: 1.5rem;
-    color: $gray-600;
-    font-size: 0.9em;
-    list-style-type: none
   }
 }
 
