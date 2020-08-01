@@ -1,4 +1,2 @@
-- BUGFIX
-  - fix default atom feed include
 - ENHANCEMENT
-  - increase contrast ratio on feature image overlay
+  - include custom twitter-card metadata and switch to `summary` instead of `summary_large_image`
