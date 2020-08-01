@@ -1,4 +1,2 @@
 - ENHANCEMENT
-  - include custom twitter-card metadata and switch to `summary` instead of `summary_large_image`
-- INTERNAL
-  - upgrade CI pipeline to use Hugo v0.74.3
+  - switch back to Hugo internal twitter-card template
