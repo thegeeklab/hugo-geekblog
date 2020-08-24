@@ -30,7 +30,18 @@ outputFormats:
     name: "Atom"
     mediaType: "application/atom+xml"
     # generated file: <baseName>.<mediaType."application/atom+xml".suffixes[0]> = atom.xml
-    baseName: "atom"
+    baseName: "feed"
+    isPlainText: false
+    rel: "alternate"
+    isHTML: false
+    noUgly: true
+    permalinkable: false
+  Json:
+    # https://www.jsonfeed.org/2020/08/07/json-feed-version.html
+    name: "Json"
+    mediaType: "application/json"
+    # generated file: <baseName>.<mediaType."application/feed+json".suffixes[0]> = feed.json
+    baseName: "feed"
     isPlainText: false
     rel: "alternate"
     isHTML: false
@@ -41,6 +52,7 @@ outputs:
   home:
     - HTML
     - ATOM
+    - JSON
   page:
     - HTML
   section:
@@ -50,6 +62,7 @@ outputs:
   term:
     - HTML
     - ATOM
+    - JSON
 
 enableRobotsTXT: true
 

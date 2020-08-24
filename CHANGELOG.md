@@ -1,2 +1,2 @@
 - ENHANCEMENT
-  - switch back to Hugo internal twitter-card template
+  - add template for Json Feeds
