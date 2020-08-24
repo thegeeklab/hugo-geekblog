@@ -31,7 +31,7 @@ This post works as a documentation for the features of the theme.
 - Simple sticky posts
 - Content tags
 - Multiple authors
-- Supports Atom and Json feeds
+- Supports Atom and JSON feeds
 
 ## Configuration
 
