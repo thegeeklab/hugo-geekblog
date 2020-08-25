@@ -4,3 +4,4 @@
     the date on updated posts will be prefixed with `Updated on` string
     modifications from the same day are ignored
   - add read time indicator
+  - add basic post metadata to posts single view

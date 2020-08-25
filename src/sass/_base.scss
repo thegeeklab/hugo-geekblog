@@ -288,6 +288,14 @@ img {
     }
   }
 
+  &__meta {
+    padding-bottom: $padding-16;
+
+    .icon {
+      font-size: 1.2em;
+    }
+  }
+
   &__figure {
     padding: $padding-4 $padding-4 0 $padding-4;
     margin: $padding-16 0;
