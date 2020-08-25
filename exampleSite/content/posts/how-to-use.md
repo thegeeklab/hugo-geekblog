@@ -48,6 +48,7 @@ theme = "hugo-geekblog"
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
 pygmentsCodeFences = true
+enableGitInfo = true
 
 disablePathToLower = true
 enableGitInfo = true
@@ -148,6 +149,7 @@ theme: hugo-geekblog
 # Required to get well formatted code blocks
 pygmentsUseClasses: true
 pygmentsCodeFences: true
+enableGitInfo: true
 
 disablePathToLower: true
 enableGitInfo: true

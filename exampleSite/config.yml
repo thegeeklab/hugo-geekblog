@@ -4,6 +4,7 @@ title: Geekblog
 theme: hugo-geekblog
 pygmentsUseClasses: true
 pygmentsCodeFences: true
+enableGitInfo: true
 
 paginate: 5
 
