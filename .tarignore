@@ -11,3 +11,4 @@ node*
 local*
 dist
 src
+tmp
