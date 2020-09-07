@@ -16,6 +16,7 @@
             {{ end }}
 
             <h1>{{ partial "title" . }}</h1>
+            {{ if eq .Type "posts" }}
             <div class="gblog-post__meta">
                 <span class="no-wrap">
                     <svg class="icon date"><use xlink:href="#date"></use></svg>
@@ -34,6 +35,7 @@
                     <span class="gblog-post__tag">{{ .ReadingTime }} min read</span>
                 </span>
             </div>
+            {{ end }}
         </header>
 
         <section class="gblog-markdown">
