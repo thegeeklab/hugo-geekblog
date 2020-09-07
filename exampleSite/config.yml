@@ -78,7 +78,5 @@ params:
   geekblogToC: 3
   geekblogAuthor: john-doe
 
-  geekblogAnchorLeft: true
-
   geekblogLegalNotice: https://thegeeklab.de/legal-notice/#contact-information
   geekblogPrivacyPolicy: https://thegeeklab.de/legal-notice/#privacy-policy

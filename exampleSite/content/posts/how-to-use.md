@@ -115,9 +115,6 @@ enableGitInfo = true
   # (Optional, default true) Add an anchor link to headlines.
   geekblogAnchor = true
 
-  # (Optional, default false) Move anchor link to the left side of headlines.
-  geekblogAnchorLeft = false
-
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekblogAnchorCopy = true
 
@@ -226,9 +223,6 @@ params:
 
   # (Optional, default true) Add an anchor link to headlines.
   geekblogAnchor: true
-
-  # (Optional, default false) Move anchor link to the left side of headlines.
-  geekblogAnchorLeft: false
 
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekblogAnchorCopy: true
