@@ -1,7 +1,6 @@
+- BREAKING
+  - remove `geekblogAnchorLeft`;
+    for a better spacing left-side anchors were removed
 - ENHANCEMENT
-  - slightly change the date formate displayed on posts
-  - use `.Lastmod` instead of `.Date` on posts
-    the date on updated posts will be prefixed with `Updated on` string
-    modifications from the same day are ignored
-  - add read time indicator
-  - add basic post metadata to posts single view
+  - display page metadata only on content type `posts`
+  - add a small radius to feature images

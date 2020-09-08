@@ -45,7 +45,7 @@ h6 {
 h4,
 h5,
 h6 {
-    font-size: 1rem !important;
+  font-size: 1rem !important;
 }
 
 a {
@@ -271,6 +271,7 @@ img {
       min-height: 180px;
       object-fit: cover;
       overflow: hidden;
+      border-radius: 3px;
     }
 
     span {
@@ -281,11 +282,12 @@ img {
       padding: $padding-4;
       font-size: 0.8em;
       color: $gray-200;
+      border-radius: 3px 0;
     }
 
     a:hover,
     a:visited {
-      color: $gray-200!important;
+      color: $gray-200 !important;
     }
   }
 
@@ -312,8 +314,8 @@ img {
     }
 
     img {
-        max-width: 100%;
-        height: auto;
+      max-width: 100%;
+      height: auto;
     }
   }
 
@@ -362,7 +364,7 @@ img {
       a:after {
         font-family: GeekblogIcons;
         content: "\ea17";
-        margin-top: -.125em;
+        margin-top: -0.125em;
       }
     }
 
@@ -372,7 +374,7 @@ img {
       a::before {
         font-family: GeekblogIcons;
         content: "\ea18";
-        margin-top: -.125em;
+        margin-top: -0.125em;
       }
     }
   }
