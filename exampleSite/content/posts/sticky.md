@@ -1,7 +1,7 @@
 ---
 title: "Simple sticky posts"
 weight: 1
-date: 2021-06-13T00:06:00+02:00
+date: 2020-06-13T00:06:00+02:00
 authors:
   - john-doe
 tags:

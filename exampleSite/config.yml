@@ -6,7 +6,7 @@ pygmentsUseClasses: true
 pygmentsCodeFences: true
 enableGitInfo: true
 
-paginate: 2
+paginate: 5
 
 markup:
   goldmark:
