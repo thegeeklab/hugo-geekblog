@@ -6,7 +6,6 @@ authors:
   - john-doe
 tags:
   - Open Source
-  - DevOps
 ---
 
 Sticky (or pinned) posts implementation is currently really simple and handled by `weight: 1` in a post front matter.

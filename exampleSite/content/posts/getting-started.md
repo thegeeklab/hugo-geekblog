@@ -1,5 +1,5 @@
 ---
-title: "How to use the theme"
+title: "Getting Started"
 date: 2020-07-15T20:00:00+02:00
 authors:
   - john-doe
@@ -8,17 +8,20 @@ tags:
 weight: 1
 ---
 
-This post works as a documentation for the features of the theme.
+This post tells you how to get started with the Geekblog theme, including installation and basic configuration.
 
 <!--more-->
 
 [![Build Status](https://img.shields.io/drone/build/xoxys/hugo-geekblog?logo=drone)](https://cloud.drone.io/xoxys/hugo-geekblog)
 [![Hugo Version](https://img.shields.io/badge/hugo-0.65-blue.svg)](https://gohugo.io)
 [![GitHub release](https://img.shields.io/github/v/release/xoxys/hugo-geekblog)](https://github.com/xoxys/hugo-geekblog/releases/latest)
+[![GitHub contributors](https://img.shields.io/github/contributors/xoxys/hugo-geekblog)](https://github.com/xoxys/hugo-geekblog/graphs/contributors)
 [![License: MIT](https://img.shields.io/github/license/xoxys/hugo-geekblog)](https://github.com/xoxys/hugo-geekblog/blob/master/LICENSE)
 
 <!-- spellchecker-disable -->
+
 {{< toc >}}
+
 <!-- spellchecker-enable -->
 
 ## Features
@@ -32,6 +35,97 @@ This post works as a documentation for the features of the theme.
 - Content tags
 - Multiple authors
 - Supports Atom and JSON feeds
+
+## Install requirements
+
+You need a recent version of Hugo for local builds and previews of sites that use Geekblog. As we are using [gulp](https://gulpjs.com/) as pre-processor the normal version of Hugo is sufficient. If you prefer the extended version of Hugo anyway this will work as well. For comprehensive Hugo documentation, see [gohugo.io](https://gohugo.io/documentation/).
+
+If you want to use the theme from a cloned branch instead of a release tarball you'll need to install `gulp` locally and run the default pipeline once to create all required assets.
+
+```Shell
+# install required packages from package.json
+npm install
+
+# run gulp pipeline to build required assets
+gulp default
+```
+
+## Using the theme
+
+To prepare your new site environment just a few steps are required:
+
+1. Create a new empty Hugo site.
+
+   ```Shell
+   hugo new site demosite
+   ```
+
+2. Switch to the root of the new site.
+
+   ```Shell
+   cd demosite
+   ```
+
+3. Install the Geekblog theme from a [release bundle](#option-1-download-pre-build-release) (recommended) or form [Git branch](#option-2-clone-the-github-repository).
+
+4. Create the minimal required Hugo configuration `config.toml`. For all configuration options see [here](/usage/configuration/).
+
+   ```Toml
+   baseURL = "http://localhost"
+   title = "Geekblog"
+   theme = "hugo-geekblog"
+
+   # Geekblog required configuration
+   pygmentsUseClasses = true
+   pygmentsCodeFences = true
+
+   disablePathToLower = true
+   enableGitInfo=true
+
+   # Needed for mermaid shortcodes
+   [markup]
+     [markup.goldmark.renderer]
+       # Needed for mermaid shortcode
+       unsafe = true
+     [markup.tableOfContents]
+       startLevel = 1
+       endLevel = 9
+   ```
+
+5. Test your site.
+
+   ```Shell
+   hugo server --theme geekblog -D
+   ```
+
+### Option 1: Download pre-build release bundle
+
+Download and extract the latest release bundle into the theme directory.
+
+```Shell
+curl -L https://github.com/xoxys/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz | tar -xz -C themes/hugo-geekblog/ --strip-components=1
+```
+
+### Option 2: Clone the GitHub repository
+
+{{< hint info >}}
+**Info**\
+Keep in mind this method is not recommended and needs some extra steps to get it working.
+If you want to use the Theme as submodule keep in mind that your build process need to
+run the described steps as well.
+{{< /hint >}}
+
+Clone the Geekblog git repository.
+
+```Shell
+git clone https://github.com/xoxys/hugo-geekblog.git themes/geekblog
+```
+
+Build required theme assets e.g. CSS files and SVG sprites with `gulp`.
+
+```Shell
+gulp default
+```
 
 ## Configuration
 
@@ -262,7 +356,7 @@ weight = 1
 authors = ["john-doe"]
 
 # Tags for this post.
-tags = ["Open Source", "DevOps"]
+tags = ["Open Source"]
 
 # Set how many table of contents levels to be showed on page.
 geekblogToC = 3
@@ -291,7 +385,6 @@ authors:
 # Tags for this post.
 tags:
   - Open Source
-  - DevOps
 
 # Set how many table of contents levels to be showed on page.
 geekblogToC: 3
