@@ -85,11 +85,38 @@ To prepare your new site environment just a few steps are required:
    # Needed for mermaid shortcodes
    [markup]
      [markup.goldmark.renderer]
-       # Needed for mermaid shortcode
        unsafe = true
      [markup.tableOfContents]
        startLevel = 1
        endLevel = 9
+
+   [taxonomies]
+     author = authors
+     tag = tags
+
+   [mediaTypes]
+     [mediaTypes."application/atom+xml"]
+       suffixes = ["xml"]
+
+   [outputFormats]
+     [outputFormats.Atom]
+       # https://validator.w3.org/feed/docs/atom.html#whatIsAtom
+       name = "Atom"
+       mediaType = "application/atom+xml"
+       # generated file = <baseName>.<mediaType."application/atom+xml".suffixes[0]> = atom.xml
+       baseName = "atom"
+       isPlainText = false
+       rel = "alternate"
+       isHTML = false
+       noUgly = true
+       permalinkable = false
+
+   [outputFormats.outputs]
+     home = ["HTML", "ATOM"]
+     page = ["HTML"]
+     section = ["HTML"]
+     taxonomy = ["HTML"]
+     term = ["HTML", "ATOM"]
    ```
 
 5. Test your site.
@@ -148,10 +175,9 @@ disablePathToLower = true
 enableGitInfo = true
 
 [markup]
-  [goldmark]
-    [renderer]
+  [markup.goldmark.renderer]
       unsafe = true
-  [tableOfContents]
+  [markup.tableOfContents]
     startLevel = 1
     endLevel = 9
 
@@ -160,11 +186,11 @@ enableGitInfo = true
   tag = tags
 
 [mediaTypes]
-  ["application/atom+xml"]
+  [mediaTypes."application/atom+xml"]
     suffixes = ["xml"]
 
 [outputFormats]
-  [Atom]
+  [outputFormats.Atom]
     # https://validator.w3.org/feed/docs/atom.html#whatIsAtom
     name = "Atom"
     mediaType = "application/atom+xml"
