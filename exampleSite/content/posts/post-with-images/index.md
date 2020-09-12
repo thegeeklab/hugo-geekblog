@@ -9,7 +9,7 @@ tags:
   - Development
 resources:
   - name: testimage
-    src: 'images/testimage.jpg'
+    src: "images/testimage.jpg"
     title: This is a test image
     params:
       credits: "[David Pennington](https://unsplash.com/@dtpennington) on [Unsplash](https://unsplash.com/s/photos/test)"

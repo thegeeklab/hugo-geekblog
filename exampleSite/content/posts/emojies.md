@@ -17,9 +17,11 @@ To enable emoji globally, set `enableEmoji` to `true` in your site's [configurat
 
 <!-- markdownlint-disable -->
 <!-- spellchecker-disable -->
+
 <span class="no-wrap">{{< emojify ":see_no_evil:" >}} <code>:see_no_evil:</code></span>
 <span class="no-wrap">{{< emojify ":hear_no_evil:" >}} <code>:hear_no_evil:</code></span>
 <span class="no-wrap">{{< emojify ":speak_no_evil:" >}} <code>:speak_no_evil:</code></span>
+
 <!-- spellchecker-enable -->
 <!-- markdownlint-restore -->
 
@@ -33,9 +35,11 @@ The above steps enable Unicode Standard emoji characters and sequences in Hugo, 
 **Example:**
 
 <!-- spellchecker-disable -->
+<!-- prettier-ignore -->
 {{< highlight html "linenos=table" >}}
 .emoji {
   font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
 }
 {{< /highlight >}}
+
 <!-- spellchecker-enable -->
