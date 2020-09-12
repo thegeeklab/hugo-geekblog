@@ -6,7 +6,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/xoxys/hugo-geekblog)](https://github.com/xoxys/hugo-geekblog/graphs/contributors)
 [![License: MIT](https://img.shields.io/github/license/xoxys/hugo-geekblog)](https://github.com/xoxys/hugo-geekblog/blob/master/LICENSE)
 
-Geekblog is a simple Hugo theme for personal blogs. It is intentionally designed as a fast and lean theme and may not fit the requirements for more complex websites. If a more feature-complete theme is required there are a lot of got alternatives out there. You can find a demo and the full documentation at [https://hugo-geekblog.geekdocs.de](https://hugo-geekblog.geekdocs.de).
+Geekblog is a simple Hugo theme for personal blogs. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex websites. If a more feature-complete theme is required there are a lot of got alternatives out there. You can find a demo and the full documentation at [https://hugo-geekblog.geekdocs.de](https://hugo-geekblog.geekdocs.de).
 
 ![Desktop and mobile preview](https://github.com/xoxys/hugo-geekblog/blob/master/images/readme.png)
 
