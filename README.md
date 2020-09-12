@@ -8,6 +8,8 @@
 
 Geekblog is a simple Hugo theme for personal blogs. It is intentionally designed as a fast and lean theme and may not fit the requirements for more complex websites. If a more feature-complete theme is required there are a lot of got alternatives out there. You can find a demo and the full documentation at [https://hugo-geekblog.geekdocs.de](https://hugo-geekblog.geekdocs.de).
 
+![Desktop and mobile preview](https://github.com/xoxys/hugo-geekblog/blob/master/images/readme.png)
+
 ## Build and release process
 
 This theme is subject to a CI driven build and release process common for software development. During the release build, all necessary assets are automatically built by [gulp](https://gulpjs.com/) and bundled in a release tarball. You can download the latest release from the GitHub [release page](https://github.com/xoxys/hugo-geekblog/releases).
