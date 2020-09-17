@@ -78,9 +78,7 @@ To prepare your new site environment just a few steps are required:
    # Geekblog required configuration
    pygmentsUseClasses = true
    pygmentsCodeFences = true
-
    disablePathToLower = true
-   enableGitInfo=true
 
    # Needed for mermaid shortcodes
    [markup]
@@ -91,8 +89,9 @@ To prepare your new site environment just a few steps are required:
        endLevel = 9
 
    [taxonomies]
-     author = authors
-     tag = tags
+     author = "authors"
+     tag = "tags"
+     series = "series"
 
    [mediaTypes]
      [mediaTypes."application/atom+xml"]
@@ -122,7 +121,13 @@ To prepare your new site environment just a few steps are required:
 5. Test your site.
 
    ```Shell
-   hugo server --theme geekblog -D
+   hugo server -D
+   ```
+
+   If you want to add some demo data you could use the content from the [Hugo basic example](https://github.com/gohugoio/hugoBasicExample):
+
+   ```Shell
+    curl -L https://github.com/gohugoio/hugoBasicExample/archive/master.tar.gz | tar -xz --exclude "config*" --exclude "LICENSE" --exclude "README*" --strip-components=1
    ```
 
 ### Option 1: Download pre-build release bundle
@@ -130,6 +135,7 @@ To prepare your new site environment just a few steps are required:
 Download and extract the latest release bundle into the theme directory.
 
 ```Shell
+mkdir -p themes/hugo-geekblog/
 curl -L https://github.com/xoxys/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz | tar -xz -C themes/hugo-geekblog/ --strip-components=1
 ```
 
@@ -162,15 +168,13 @@ gulp default
 {{< tab "TOML" >}}
 
 ```Toml
-# ...
-
+baseURL = "http://localhost"
+title = "Geekblog"
 theme = "hugo-geekblog"
 
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
 pygmentsCodeFences = true
-enableGitInfo = true
-
 disablePathToLower = true
 enableGitInfo = true
 
@@ -182,8 +186,9 @@ enableGitInfo = true
     endLevel = 9
 
 [taxonomies]
-  author = authors
-  tag = tags
+  author = "authors"
+  tag = "tags"
+  series = "series"
 
 [mediaTypes]
   [mediaTypes."application/atom+xml"]
@@ -210,14 +215,14 @@ enableGitInfo = true
   term = ["HTML", "ATOM"]
 
 [params]
-  subtitle =
+  subtitle = "Blog about my favorite topics"
   description = "This is my personal blog about tech."
   keywords = []
   images = []
 
   # (Optional, default static/brand.svg) Set the path to a logo for the Geekblog
   # relative to your 'static/' folder.
-  logo = logo.png
+  logo = "logo.png"
 
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
@@ -243,13 +248,13 @@ enableGitInfo = true
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
-  [geekblogHostedOn]
-    name = Uberspace
+  [params.geekblogHostedOn]
+    name = "Uberspace"
     link = "https://uberspace.de/en/"
 
   # (Optional, default none) Adds a "Content licensed under <license>" line to the footer.
   # Could be used if you want to define a default license for your content.
-  [geekblogContentLicense]
+  [params.geekblogContentLicense]
     name = "CC BY-SA 4.0"
     link = "https://creativecommons.org/licenses/by-sa/4.0/"
 ```
@@ -266,8 +271,6 @@ theme: hugo-geekblog
 # Required to get well formatted code blocks
 pygmentsUseClasses: true
 pygmentsCodeFences: true
-enableGitInfo: true
-
 disablePathToLower: true
 enableGitInfo: true
 
@@ -282,6 +285,7 @@ markup:
 taxonomies:
   author: authors
   tag: tags
+  series: series
 
 mediaTypes:
   "application/atom+xml":
@@ -319,7 +323,7 @@ outputs:
 enableRobotsTXT: true
 
 params:
-  subtitle:
+  subtitle: "Blog about my favorite topics"
   description: "This is my personal blog about tech."
   keywords: []
   images: []

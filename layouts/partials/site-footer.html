@@ -7,10 +7,12 @@
                 <a href='{{ .Permalink | relURL }}' class="gblog-footer__link">Feed</a>
             </span>
             {{ end }}
+            {{ if (fileExists "contact.md") }}
             <span class="gblog-footer__item">
                 <svg class="icon email"><use xlink:href="#email"></use></svg>
                 <a href='{{ "contact" | relURL }}' class="gblog-footer__link">Contact</a>
             </span>
+            {{ end }}
             {{ with .Site.Params.GeekblogLegalNotice }}
             <span class="gblog-footer__item">
                 <a href="{{ . | relURL }}" class="gblog-footer__link">Legal Notice</a>
