@@ -1,3 +1,4 @@
-- ENHANCEMENT
-  - the date on updated posts will be prefixed with `Updated on` string
-    modifications within 24 hours are inored
+- BUGFIX
+  - fix missing default values for slices
+- DOCUMENTATION
+  - improve geting started guide and minimal working setup
