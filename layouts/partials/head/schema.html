@@ -1,5 +1,5 @@
 {{ if .IsHome -}}
-{{ $thumbnail := default (default "brand.svg" .Site.Params.logo) (index .Site.Params.images 0) | absURL }}
+{{ $thumbnail := default (default "brand.svg" .Site.Params.logo) (index (default slice .Site.Params.images) 0) | absURL }}
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -43,12 +43,14 @@
     {{- with $authors }}
     "author" : [
         {{- range sort . }}
+        {{- with . -}}
         {{- $ac = (add $ac 1) }}
         {{- $author := index $.Site.Data.authors . }}
         {
             "@type": "Person",
             "name": "{{ $author.name }}"
         }{{ if lt $ac $ac_max }},{{ end }}
+        {{- end -}}
         {{- end }}
     ],
     {{- end }}
