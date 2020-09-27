@@ -12,11 +12,11 @@ This post tells you how to get started with the Geekblog theme, including instal
 
 <!--more-->
 
-[![Build Status](https://img.shields.io/drone/build/xoxys/hugo-geekblog?logo=drone)](https://cloud.drone.io/xoxys/hugo-geekblog)
+[![Build Status](https://img.shields.io/drone/build/thegeeklab/hugo-geekblog?logo=drone)](https://cloud.drone.io/thegeeklab/hugo-geekblog)
 [![Hugo Version](https://img.shields.io/badge/hugo-0.65-blue.svg)](https://gohugo.io)
-[![GitHub release](https://img.shields.io/github/v/release/xoxys/hugo-geekblog)](https://github.com/xoxys/hugo-geekblog/releases/latest)
-[![GitHub contributors](https://img.shields.io/github/contributors/xoxys/hugo-geekblog)](https://github.com/xoxys/hugo-geekblog/graphs/contributors)
-[![License: MIT](https://img.shields.io/github/license/xoxys/hugo-geekblog)](https://github.com/xoxys/hugo-geekblog/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/releases/latest)
+[![GitHub contributors](https://img.shields.io/github/contributors/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/graphs/contributors)
+[![License: MIT](https://img.shields.io/github/license/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/blob/master/LICENSE)
 
 <!-- spellchecker-disable -->
 
@@ -136,7 +136,7 @@ Download and extract the latest release bundle into the theme directory.
 
 ```Shell
 mkdir -p themes/hugo-geekblog/
-curl -L https://github.com/xoxys/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz | tar -xz -C themes/hugo-geekblog/ --strip-components=1
+curl -L https://github.com/thegeeklab/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz | tar -xz -C themes/hugo-geekblog/ --strip-components=1
 ```
 
 ### Option 2: Clone the GitHub repository
@@ -151,7 +151,7 @@ run the described steps as well.
 Clone the Geekblog git repository.
 
 ```Shell
-git clone https://github.com/xoxys/hugo-geekblog.git themes/geekblog
+git clone https://github.com/thegeeklab/hugo-geekblog.git themes/geekblog
 ```
 
 Build required theme assets e.g. CSS files and SVG sprites with `gulp`.
