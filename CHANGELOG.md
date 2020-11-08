@@ -1,8 +1,8 @@
 - ENHANCEMENT
   - add node `gulp` script to package.json
   - remove `title` and set empty `alt` tag on branding image
-  - add minimal working CSS for printing
-  - split out mobile CSS
+  - add minimal working css for printing
+  - split out mobile css
   - load static css/js assets from data template:
     This way users can hash static assets and overwrite the data template
     to deliver the hashed assets. Thats helpful if you have to deal with
