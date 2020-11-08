@@ -60,6 +60,15 @@ steps:
     - failure
     - success
 
+- name: page-validation-link
+  image: thegeeklab/drone-github-comment
+  settings:
+    api_key:
+      from_secret: github_token
+  when:
+    ref:
+    - refs/pull/**
+
 trigger:
   ref:
   - refs/heads/master
@@ -231,6 +240,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 9d9a8eac7e74638129bb170a5262eb0923531449654d616327ec54aaa7db4635
+hmac: 20937ab9306d0bd679187d6cbee7f11e7d9c37fcc4e4eccd156779e9c4c4d80f
 
 ...
