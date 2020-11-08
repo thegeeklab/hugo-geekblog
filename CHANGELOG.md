@@ -1,5 +1,7 @@
 - ENHANCEMENT
   - add node `gulp` script to package.json
-  - remove title and set empty alt tag for page branding
+  - remove `title` and set empty `alt` tag on branding image
+  - add minimal working CSS for printing
+  - split out mobile CSS
 - BUGFIX
   - use relative URL's for fonts
