@@ -7,64 +7,67 @@ platform:
   arch: amd64
 
 steps:
-- name: assets
-  image: node:lts
-  commands:
-  - npm install -g gulp
-  - npm install
-  - gulp default
-  environment:
-    FORCE_COLOR: true
-    NPM_CONFIG_LOGLEVEL: error
+# - name: assets
+#   image: node:lts
+#   commands:
+#   - npm install -g gulp
+#   - npm install
+#   - gulp default
+#   environment:
+#     FORCE_COLOR: true
+#     NPM_CONFIG_LOGLEVEL: error
 
-- name: testbuild
-  image: klakegg/hugo:0.74.3-ext-alpine
-  commands:
-  - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekblog
-  - hugo-official -s exampleSite/ -b http://localhost/
+# - name: testbuild
+#   image: klakegg/hugo:0.74.3-ext-alpine
+#   commands:
+#   - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekblog
+#   - hugo-official -s exampleSite/ -b http://localhost/
 
-- name: html-validation
-  image: thegeeklab/vnu
-  commands:
-  - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
+# - name: html-validation
+#   image: thegeeklab/vnu
+#   commands:
+#   - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
 
-- name: link-validation
-  image: thegeeklab/link-validator
-  commands:
-  - link-validator -ro
-  environment:
-    LINK_VALIDATOR_BASE_DIR: exampleSite/public
+# - name: link-validation
+#   image: thegeeklab/link-validator
+#   commands:
+#   - link-validator -ro
+#   environment:
+#     LINK_VALIDATOR_BASE_DIR: exampleSite/public
 
-- name: page-validation
-  image: thegeeklab/lhci
-  commands:
-  - lhci autorun
-  environment:
-    LHCI_SERVER_URL: https://drone-artifact.rknet.org/${DRONE_REPO_NAME}/
+# - name: page-validation
+#   image: thegeeklab/lhci
+#   commands:
+#   - lhci autorun
+#   environment:
+#     LHCI_SERVER_URL: https://drone-artifact.rknet.org/${DRONE_REPO_NAME}/
 
-- name: page-validation-upload
-  image: plugins/s3
-  settings:
-    access_key:
-      from_secret: s3_access_key
-    bucket: drone-artifact
-    endpoint: https://sp.rknet.org
-    path_style: true
-    secret_key:
-      from_secret: s3_secret_access_key
-    source: lhci_reports/dist/*
-    strip_prefix: lhci_reports/dist/
-    target: /${DRONE_REPO_NAME}
-  when:
-    status:
-    - failure
-    - success
+# - name: page-validation-upload
+#   image: plugins/s3
+#   settings:
+#     access_key:
+#       from_secret: s3_access_key
+#     bucket: drone-artifact
+#     endpoint: https://sp.rknet.org
+#     path_style: true
+#     secret_key:
+#       from_secret: s3_secret_access_key
+#     source: lhci_reports/dist/*
+#     strip_prefix: lhci_reports/dist/
+#     target: /${DRONE_REPO_NAME}
+#   when:
+#     status:
+#     - failure
+#     - success
 
 - name: page-validation-link
   image: thegeeklab/drone-github-comment
   settings:
-    api_key:
+    api-key:
       from_secret: github_token
+    key: pr-${DRONE_PULL_REQUEST}
+    message: lhci_reports/dist/summary.md
+    update: true
   when:
     ref:
     - refs/pull/**
@@ -240,6 +243,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 20937ab9306d0bd679187d6cbee7f11e7d9c37fcc4e4eccd156779e9c4c4d80f
+hmac: 6a4b6cf7a9cf9aad9d41f81925c9c01b3804820c53360a5c3c9a2c7fb90f7d87
 
 ...
