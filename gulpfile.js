@@ -17,7 +17,7 @@ var TIMESTAMP = Math.round(Date.now() / 1000);
 
 gulp.task("sass", function () {
   return gulp
-    .src("src/sass/main.scss")
+    .src("src/sass/{main,print,mobile}.scss")
     .pipe(sass({ errLogToConsole: true }))
     .pipe(cleanCSS({ format: "beautify" }))
     .pipe(

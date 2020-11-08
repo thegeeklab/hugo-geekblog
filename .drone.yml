@@ -56,12 +56,21 @@ steps:
     strip_prefix: lhci_reports/dist/
     target: /${DRONE_REPO_NAME}
   when:
-    ref:
-    - refs/heads/master
-    - refs/tags/**
     status:
     - failure
     - success
+
+- name: page-validation-link
+  image: thegeeklab/drone-github-comment
+  settings:
+    api_key:
+      from_secret: github_token
+    key: pr-${DRONE_PULL_REQUEST}
+    message: lhci_reports/dist/summary.md
+    update: true
+  when:
+    ref:
+    - refs/pull/**
 
 trigger:
   ref:
@@ -234,6 +243,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: d4a14c67312952bf2cba2f41bf5f2b5b7bc2b576bc2ff7cea2aa5442afb673a6
+hmac: aed300317299ce213f8f6369180d0563514592592ab4221299f3410d4f9d0ef3
 
 ...
