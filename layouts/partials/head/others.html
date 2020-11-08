@@ -1,5 +1,17 @@
-<link rel="stylesheet" href="{{ "main.min.css" | relURL }}" media="screen">
-<link rel="stylesheet" href="{{ "custom.css" | relURL }}" media="screen">
+<link rel="preload" as="font" href="{{ "fonts/Metropolis.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="{{ "fonts/LiberationSans.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="{{ "fonts/LiberationSans-Bold.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="{{ "fonts/LiberationSans-BoldItalic.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="{{ "fonts/LiberationSans-Italic.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="{{ "fonts/LiberationMono.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="{{ "fonts/DroidSans.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="{{ "fonts/GeekblogIcons.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
+
+<link rel="preload" href="{{ "main.min.css" | relURL }}" as="style">
+<link rel="stylesheet" href="{{ "main.min.css" | relURL }}" media="print">
+
+<link rel="preload" href="{{ "custom.css" | relURL }}" as="style">
+<link rel="stylesheet" href="{{ "custom.css" | relURL }}" media="print">
 
 {{ with .OutputFormats.Get "atom" }}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
