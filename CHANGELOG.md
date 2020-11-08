@@ -5,3 +5,5 @@
   - split out mobile CSS
 - BUGFIX
   - use relative URL's for fonts
+- INTERNAL
+  - publish Lighthouse CI overwiew to PR's

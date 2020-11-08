@@ -5,6 +5,7 @@ theme: hugo-geekblog
 pygmentsUseClasses: true
 pygmentsCodeFences: true
 enableGitInfo: true
+timeout: 60000
 
 paginate: 5
 
