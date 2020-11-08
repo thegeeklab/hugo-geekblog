@@ -63,8 +63,7 @@ steps:
 - name: page-validation-link
   image: thegeeklab/drone-github-comment
   settings:
-    api-key:
-      from_secret: github_token
+    api_key: "dummy"
     key: pr-${DRONE_PULL_REQUEST}
     message: lhci_reports/dist/summary.md
     update: true
@@ -243,6 +242,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 6a4b6cf7a9cf9aad9d41f81925c9c01b3804820c53360a5c3c9a2c7fb90f7d87
+hmac: def24842a8394087e7ee34f93370366a79184d6faffcd06347f9e6ffbce6ae11
 
 ...
