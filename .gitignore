@@ -15,6 +15,7 @@ static/favicon/
 static/fonts/GeekblogIcons.*
 resources/
 exampleSite/resources/
+data/assets.json
 
 # testing
 .lighthouseci/

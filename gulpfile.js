@@ -10,6 +10,7 @@ const path = require("path");
 const fs = require("fs");
 
 const svgSprite = require("gulp-svg-sprite");
+const rev = require("gulp-rev");
 
 var CSSDEST = "static/";
 var FAVICON_DATA_FILE = "tmp/faviconData.json";
@@ -169,21 +170,39 @@ gulp.task("iconfont", function () {
     .pipe(
       iconfont({
         startUnicode: lastUnicode,
-        fontName: "GeekblogIcons", // required
-        prependUnicode: true, // recommended option
+        fontName: "GeekblogIcons",
+        prependUnicode: true,
         normalize: true,
         fontHeight: 1001,
         centerHorizontally: true,
-        formats: ["woff", "woff2"], // default, 'woff2' and 'svg' are available
-        timestamp: TIMESTAMP, // recommended to get consistent builds when watching files
+        formats: ["woff", "woff2"],
+        timestamp: TIMESTAMP,
       })
     )
     .pipe(gulp.dest("static/fonts/"));
 });
 
+gulp.task("asset-rev", function () {
+  return gulp
+    .src(["static/*!(custom).min.css", "static/js/*.min.js"], {
+      base: "static",
+    })
+    .pipe(gulp.dest("tmp/assets"))
+    .pipe(rev())
+    .pipe(gulp.dest("tmp/assets"))
+    .pipe(
+      rev.manifest("data/assets-static.json", {
+        base: "data",
+        merge: true,
+      })
+    )
+    .pipe(rename("assets.json"))
+    .pipe(gulp.dest("data"));
+});
+
 gulp.task(
   "default",
-  gulp.series("sass", "svg-sprite", "iconfont", "favicon-generate")
+  gulp.series("sass", "svg-sprite", "iconfont", "favicon-generate", "asset-rev")
 );
 
 gulp.task("devel", function () {
