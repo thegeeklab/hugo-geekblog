@@ -4,11 +4,11 @@ const sass = require("gulp-sass");
 const cleanCSS = require("gulp-clean-css");
 const autoprefixer = require("gulp-autoprefixer");
 const iconfont = require("gulp-iconfont");
+const clean = require("gulp-clean");
 
 const realFavicon = require("gulp-real-favicon");
 const path = require("path");
 const fs = require("fs");
-const del = require("del");
 
 const svgSprite = require("gulp-svg-sprite");
 const rev = require("gulp-rev");
@@ -203,16 +203,19 @@ gulp.task("asset-rev", function () {
 
 gulp.task("asset-rm", function () {
   return gulp
-    .src(["build/assets", "static/js/*-*.js", "static/*-*.js"], { read: false })
+    .src(["build/assets", "static/js/*-*.js", "static/*-*.css"], {
+      read: false,
+      allowEmpty: true,
+    })
     .pipe(clean());
 });
 
+gulp.task("asset", gulp.series("asset-rm", "asset-rev"));
+
 gulp.task(
   "default",
-  gulp.series("sass", "svg-sprite", "iconfont", "favicon-generate", "asset-rev")
+  gulp.series("sass", "svg-sprite", "iconfont", "favicon-generate", "asset")
 );
-
-gulp.task("asset", gulp.series("asset-rev", "asset-rm"));
 
 gulp.task("devel", function () {
   gulp.watch("src/sass/**/*.*css", gulp.series("sass", "asset"));
