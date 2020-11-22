@@ -27,7 +27,6 @@
     "gulp-svg-sprite": "1.5.0",
     "prettier": "2.1.2",
     "prettier-plugin-go-template": "0.0.10",
-    "rev-del": "^2.0.0",
     "run-sequence": "2.2.1"
   },
   "browserslist": [
