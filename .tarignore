@@ -11,4 +11,6 @@ node*
 local*
 dist
 src
-tmp
+build
+renovate*
+resources
