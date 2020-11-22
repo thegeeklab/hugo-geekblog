@@ -189,7 +189,7 @@ gulp.task("asset-rev", function () {
     })
     .pipe(gulp.dest("tmp/assets"))
     .pipe(rev())
-    .pipe(gulp.dest("tmp/assets"))
+    .pipe(gulp.dest("static"))
     .pipe(
       rev.manifest("data/assets-static.json", {
         base: "data",
