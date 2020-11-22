@@ -33,6 +33,7 @@
     &__control {
       display: block;
       text-align: center;
+      user-select: none;
 
       label {
         padding: $padding-16 0;
