@@ -8,12 +8,13 @@ const iconfont = require("gulp-iconfont");
 const realFavicon = require("gulp-real-favicon");
 const path = require("path");
 const fs = require("fs");
+const del = require("del");
 
 const svgSprite = require("gulp-svg-sprite");
 const rev = require("gulp-rev");
 
-var CSSDEST = "static/";
-var FAVICON_DATA_FILE = "tmp/faviconData.json";
+var CSSDEST = "assets/";
+var FAVICON_DATA_FILE = "build/faviconData.json";
 var TIMESTAMP = Math.round(Date.now() / 1000);
 
 gulp.task("sass", function () {
@@ -121,7 +122,7 @@ gulp.task("svg-sprite", function () {
         padding: 5,
         box: "content",
       },
-      dest: "tmp/intermediate-svg",
+      dest: "build/intermediate-svg",
     },
     svg: {
       xmlDeclaration: false,
@@ -184,10 +185,10 @@ gulp.task("iconfont", function () {
 
 gulp.task("asset-rev", function () {
   return gulp
-    .src(["static/*!(custom).min.css", "static/js/*.min.js"], {
+    .src(["assets/*.min.css", "assets/js/*.min.js"], {
       base: "static",
     })
-    .pipe(gulp.dest("tmp/assets"))
+    .pipe(gulp.dest("build/assets"))
     .pipe(rev())
     .pipe(gulp.dest("static"))
     .pipe(
@@ -200,11 +201,19 @@ gulp.task("asset-rev", function () {
     .pipe(gulp.dest("data"));
 });
 
+gulp.task("asset-rm", function () {
+  return gulp
+    .src(["build/assets", "static/js/*-*.js", "static/*-*.js"], { read: false })
+    .pipe(clean());
+});
+
 gulp.task(
   "default",
   gulp.series("sass", "svg-sprite", "iconfont", "favicon-generate", "asset-rev")
 );
 
+gulp.task("asset", gulp.series("asset-rev", "asset-rm"));
+
 gulp.task("devel", function () {
-  gulp.watch("src/sass/**/*.*css", gulp.series("sass"));
+  gulp.watch("src/sass/**/*.*css", gulp.series("sass", "asset"));
 });

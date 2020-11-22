@@ -2,7 +2,7 @@
 .swp
 .env*
 dist/
-tmp/
+build/
 node_modules/
 lhci_reports/
 exampleSite/themes/
@@ -10,9 +10,10 @@ exampleSite/public/
 
 # auto-generated files
 layouts/partials/icons-svg-symbols.html
+assets/*.css
 static/*.css
 !static/custom.css
-static/js/*-*.js
+static/js/*.js
 static/favicon/
 static/fonts/GeekblogIcons.*
 resources/
