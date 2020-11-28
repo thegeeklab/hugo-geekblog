@@ -246,6 +246,9 @@ enableGitInfo = true
   # (Optional, default none) Sites main author.
   geekblogAuthor = "john-doe"
 
+  # (Optional, default posts) Set the name of the default content section.
+  geekblogContentSection = "my-pages"
+
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
   [params.geekblogHostedOn]
@@ -353,6 +356,9 @@ params:
 
   # (Optional, default none) Sites main author.
   geekblogAuthor: john-doe
+
+  # (Optional, default posts) Set the name of the default content section.
+  geekblogContentSection: "my-pages"
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
