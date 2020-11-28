@@ -47,7 +47,7 @@ If you want to use the theme from a cloned branch instead of a release tarball y
 npm install
 
 # run gulp pipeline to build required assets
-gulp default
+npx gulp default
 ```
 
 ## Using the theme
