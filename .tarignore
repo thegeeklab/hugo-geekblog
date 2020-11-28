@@ -4,6 +4,8 @@
 .drone*
 .lighthouse*
 .markdownlint*
+.jsbeautify*
+.prettier*
 example*
 gulp*
 package*
