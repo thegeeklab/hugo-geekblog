@@ -1,2 +1,3 @@
 - ENHANCEMENT
-  - disable user selection on nav control button
+  - add new icons for different vcs providers `bitbucket`, `gitlab`
+    and generic `git`
