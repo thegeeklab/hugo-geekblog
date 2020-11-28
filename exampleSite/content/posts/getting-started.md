@@ -8,7 +8,7 @@ tags:
 weight: 1
 ---
 
-This post tells you how to get started with the Geekblog theme, including installation and basic configuration.
+Geekblog is a simple Hugo theme for personal blogs. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex websites. If a more feature-complete theme is required there are a lot of got alternatives out there. This post helps you to get started with the Geekblog theme, including initial setup and basic configuration.
 
 <!--more-->
 
@@ -91,7 +91,6 @@ To prepare your new site environment just a few steps are required:
    [taxonomies]
      author = "authors"
      tag = "tags"
-     series = "series"
 
    [mediaTypes]
      [mediaTypes."application/atom+xml"]
@@ -99,10 +98,8 @@ To prepare your new site environment just a few steps are required:
 
    [outputFormats]
      [outputFormats.Atom]
-       # https://validator.w3.org/feed/docs/atom.html#whatIsAtom
        name = "Atom"
        mediaType = "application/atom+xml"
-       # generated file = <baseName>.<mediaType."application/atom+xml".suffixes[0]> = atom.xml
        baseName = "atom"
        isPlainText = false
        rel = "alternate"
@@ -188,7 +185,6 @@ enableGitInfo = true
 [taxonomies]
   author = "authors"
   tag = "tags"
-  series = "series"
 
 [mediaTypes]
   [mediaTypes."application/atom+xml"]
@@ -246,6 +242,9 @@ enableGitInfo = true
   # (Optional, default none) Sites main author.
   geekblogAuthor = "john-doe"
 
+  # (Optional, default posts) Set the name of the default content section.
+  geekblogContentSection = "my-pages"
+
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
   [params.geekblogHostedOn]
@@ -285,7 +284,6 @@ markup:
 taxonomies:
   author: authors
   tag: tags
-  series: series
 
 mediaTypes:
   "application/atom+xml":
@@ -353,6 +351,9 @@ params:
 
   # (Optional, default none) Sites main author.
   geekblogAuthor: john-doe
+
+  # (Optional, default posts) Set the name of the default content section.
+  geekblogContentSection: "my-pages"
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
