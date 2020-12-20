@@ -154,7 +154,7 @@ git clone https://github.com/thegeeklab/hugo-geekblog.git themes/geekblog
 Build required theme assets e.g. CSS files and SVG sprites with `gulp`.
 
 ```Shell
-gulp default
+npx gulp default
 ```
 
 ## Configuration
