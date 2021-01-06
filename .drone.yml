@@ -10,7 +10,7 @@ steps:
 - name: assets
   image: node:lts
   commands:
-  - npm install
+  - npm install > /dev/null
   - npx gulp default
   environment:
     FORCE_COLOR: true
@@ -92,7 +92,7 @@ steps:
 - name: assets
   image: node:lts
   commands:
-  - npm install
+  - npm install > /dev/null
   - npx gulp default
   environment:
     FORCE_COLOR: true
@@ -253,6 +253,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 72adfe474430919784ba46d405cfc8cfdb80de9e8a6c562938ea9b11113f077d
+hmac: 2c80ed6717554a86c37ecb7dd7ac6fca9ae3e1796fa8442940eb98516b77445f
 
 ...
