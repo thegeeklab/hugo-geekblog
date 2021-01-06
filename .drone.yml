@@ -10,9 +10,8 @@ steps:
 - name: assets
   image: node:lts
   commands:
-  - npm install -g gulp
   - npm install
-  - gulp default
+  - npx gulp default
   environment:
     FORCE_COLOR: true
     NPM_CONFIG_LOGLEVEL: error
@@ -93,9 +92,8 @@ steps:
 - name: assets
   image: node:lts
   commands:
-  - npm install -g gulp
   - npm install
-  - gulp default
+  - npx gulp default
   environment:
     FORCE_COLOR: true
     NPM_CONFIG_LOGLEVEL: error
@@ -255,6 +253,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 5ae8faff2062f7794e3ff249631bde1bfd7dfbda1f6c8dde24c161d1ef4ada58
+hmac: 72adfe474430919784ba46d405cfc8cfdb80de9e8a6c562938ea9b11113f077d
 
 ...
