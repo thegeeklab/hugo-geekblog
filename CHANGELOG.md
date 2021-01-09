@@ -1,8 +1,16 @@
-- ENHANCEMENT
-  - add new icons for different vcs providers `bitbucket`, `gitlab`
-    and generic `git`
-  - add site parameter `GeekblogContentSection` to set a different name
-    for the default content section (defaults to `posts` or `post`)
-- BUGFIX
-  - normalize source icon size for the icon font
-  - fix authors data file handling
+# Changelog
+
+## v0.7.1 (2021-01-09)
+
+### Fixes
+
+- use .GetPage to link contact page if contact.md exists
+
+### Docs
+
+- fix gulp instructions in readme
+- add contributing information
+
+### Others
+
+- use renovate preset config
