@@ -71,9 +71,6 @@ steps:
     ref:
     - refs/pull/**
 
-image_pull_secrets:
-- docker_config
-
 trigger:
   ref:
   - refs/heads/master
@@ -121,9 +118,6 @@ steps:
     note: CHANGELOG.md
     overwrite: true
     title: ${DRONE_TAG}
-
-image_pull_secrets:
-- docker_config
 
 trigger:
   ref:
@@ -197,9 +191,6 @@ steps:
     - refs/heads/master
     - refs/tags/**
 
-image_pull_secrets:
-- docker_config
-
 trigger:
   ref:
   - refs/heads/master
@@ -235,9 +226,6 @@ steps:
     - success
     - failure
 
-image_pull_secrets:
-- docker_config
-
 trigger:
   ref:
   - refs/heads/master
@@ -253,6 +241,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 2c80ed6717554a86c37ecb7dd7ac6fca9ae3e1796fa8442940eb98516b77445f
+hmac: 6c10fcb22b38b6041436150746c4d8f5f32629e2f144cd493359e8d78f8d5ef7
 
 ...
