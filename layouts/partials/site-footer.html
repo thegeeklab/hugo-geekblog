@@ -1,17 +1,14 @@
 <footer class="gblog-footer">
-    <div class="container">
-        <div class="flex flex-wrap align-center">
+    <nav class="container">
+        <section class="flex flex-wrap align-center">
             {{ with (.Site.GetPage "home").OutputFormats.Get "atom" }}
             <span class="gblog-footer__item">
                 <svg class="icon rss_feed"><use xlink:href="#rss_feed"></use></svg>
-                <a href='{{ .Permalink | relURL }}' class="gblog-footer__link">Feed</a>
+                <a href='{{ .Permalink | relURL }}' class="gblog-footer__link">Atom Feed</a>
             </span>
             {{ end }}
-            {{ with .GetPage "contact.md" }}
-            <span class="gblog-footer__item">
-                <svg class="icon email"><use xlink:href="#email"></use></svg>
-                <a href='{{ .Permalink | relURL }}' class="gblog-footer__link">Contact</a>
-            </span>
+            {{ if .Site.Data.menu.more.footer }}
+            {{ partial "menu-more" (dict "current" . "source" .Site.Data.menu.more.footer "target" "footer") }}
             {{ end }}
             {{ with .Site.Params.GeekblogLegalNotice }}
             <span class="gblog-footer__item">
@@ -23,24 +20,19 @@
                 <a href="{{ . | relURL }}" class="gblog-footer__link">Privacy Policy</a>
             </span>
             {{ end }}
-            {{ with .Site.Params.GeekblogContentLicense }}
-            <span class="gblog-footer__item">
-                Content licensed under <a href="{{ .link }}" class="gblog-footer__link no-wrap">{{ .name }}</a>
-            </span>
-            {{ end }}
-        </div>
-        <div class="flex flex-wrap align-center">
+        </section>
+        <section class="flex flex-wrap align-center">
             <span class="gblog-footer__item">
                 Built with <a href="https://gohugo.io/" class="gblog-footer__link">Hugo</a> and
                 <svg class="icon heart"><use xlink:href="#heart"></use></svg>
             </span>
-        </div>
+        </section>
         {{ with .Site.Params.GeekblogHostedOn }}
-        <div class="flex flex-wrap align-center">
+        <section class="flex flex-wrap align-center">
             <span class="gblog-footer__item">
                 Hosted on <a href="{{ .link }}" class="gblog-footer__link">{{ .name }}</a>
             </span>
-        </div>
+        </section>
         {{ end }}
-    </div>
+    </nav>
 </footer>

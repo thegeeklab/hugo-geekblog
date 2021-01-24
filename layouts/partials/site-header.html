@@ -29,5 +29,8 @@
         </li>
         {{ end }}
         {{ end }}
+        {{ if .Site.Data.menu.more.header }}
+        {{ partial "menu-more" (dict "current" . "source" .Site.Data.menu.more.header "target" "header") }}
+        {{ end }}
     </ul>
 </nav>
