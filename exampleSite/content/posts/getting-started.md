@@ -429,3 +429,25 @@ geekblogAnchor: true
 
 {{< /tab >}}
 {{< /tabs >}}
+
+## Menus
+
+### Extra menu
+
+If you want to customize the menus (header and footer), this can be achieved by a data file. This file needs to be written in YAML and placed at data/menu/extra.yml.
+
+**Example:**
+
+```Yaml
+---
+header:
+  - name: Github Profile
+    icon: github
+    ref: "https://github.com/xoxys"
+    external: true
+
+footer:
+  - name: Contact
+    icon: email
+    ref: "/contact"
+```
