@@ -1,0 +1,35 @@
+{{ $current := .current }}
+{{ template "menu-file" dict "sect" .source "current" $current "site" $current.Site "target" .target }}
+
+<!-- template -->
+{{ define "menu-file" }}
+{{ $current := .current }}
+{{ $site := .site }}
+{{ $target := .target }}
+
+{{ range sort (default (seq 0) .sect) "weight" }}
+    {{ if isset . "ref" }}
+        {{ $this := $site.GetPage .ref }}
+        {{ $isCurrent := eq $current $this }}
+        {{ $icon := default false .icon }}
+
+        {{ if eq $target "footer" }}
+        <span class="gblog-footer__item">
+            {{ if $icon }}<svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>{{ end }}
+            <a href="{{ if .external }}{{ .ref }}{{ else }}{{ relref $current .ref }}{{ end }}"
+                class="gblog-footer__link">
+                {{ .name }}
+            </a>
+        </span>
+        {{ else if eq $target "header" }}
+        <li>
+            <a href="{{ if .external }}{{ .ref }}{{ else }}{{ relref $current .ref }}{{ end }}"
+                class="gblog-nav__entry {{ if $isCurrent }}is-active{{ end }}">
+                {{ if $icon }}<svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>{{ end }}
+                {{ .name }}
+            </a>
+        </li>
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ end }}

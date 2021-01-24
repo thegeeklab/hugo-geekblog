@@ -1,0 +1,11 @@
+---
+header:
+  - name: Github Profile
+    icon: github
+    ref: "https://github.com/xoxys"
+    external: true
+
+footer:
+  - name: Contact
+    icon: email
+    ref: "/contact"
