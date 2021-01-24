@@ -1,16 +1,15 @@
 # Changelog
 
-## v0.7.1 (2021-01-09)
+## v0.8.0 (2021-01-24)
 
-### Fixes
+### BREAKING CHANGES
 
-- use .GetPage to link contact page if contact.md exists
+- `contact.md` file auto-detection was removed in favor of the new extra menu, see [docs](https://hugo-geekblog.geekdocs.de/posts/getting-started/#extra-menu)
 
-### Docs
+### Features
 
-- fix gulp instructions in readme
-- add contributing information
+- add optional extra menu to site navigations ([#26](https://github.com/thegeeklab/hugo-geekblog/issues/26))
 
 ### Others
 
-- use renovate preset config
+- **deps:** update dependency gulp-iconfont to v11 ([#24](https://github.com/thegeeklab/hugo-geekblog/issues/24))
