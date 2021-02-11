@@ -107,6 +107,13 @@ steps:
   commands:
   - cd dist/ && sha256sum * > ../sha256sum.txt
 
+- name: changelog
+  image: thegeeklab/git-chglog
+  commands:
+  - git fetch -tq
+  - git-chglog --no-color --no-emoji ${DRONE_TAG:---next-tag unreleased unreleased}
+  - git-chglog --no-color --no-emoji -o CHANGELOG.md ${DRONE_TAG:---next-tag unreleased unreleased}
+
 - name: release
   image: plugins/github-release
   settings:
@@ -118,10 +125,15 @@ steps:
     note: CHANGELOG.md
     overwrite: true
     title: ${DRONE_TAG}
+  when:
+    ref:
+    - refs/tags/**
 
 trigger:
   ref:
+  - refs/heads/master
   - refs/tags/**
+  - refs/pull/**
 
 depends_on:
 - test
@@ -241,6 +253,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 6c10fcb22b38b6041436150746c4d8f5f32629e2f144cd493359e8d78f8d5ef7
+hmac: b1db1110df60514eaf9ba45c1e54cb0491b5136bfc4b9b0b332a2ad3e3697fb1
 
 ...
