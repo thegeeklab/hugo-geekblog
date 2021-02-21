@@ -1,2 +1,7 @@
-{{ $raw := or (hasPrefix .Text "<img") (hasPrefix .Text "<figure") }}
-<a class="gblog-post__link{{ if $raw }}--raw{{ end }}" href="{{ .Destination | safeURL | relURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- $raw := or (hasPrefix .Text "<img") (hasPrefix .Text "<figure") -}}
+{{- $isRemote:= or (in .Destination ":") ( hasPrefix .Destination "//") -}}
+{{- $destination := .Destination | safeURL -}}
+{{- if not $isRemote -}}
+    {{- $destination = $destination | relURL -}}
+{{- end -}}
+<a class="gblog-post__link{{ if $raw }}--raw{{ end }}" href="{{ $destination }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
