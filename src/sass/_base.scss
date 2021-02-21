@@ -329,6 +329,20 @@ img {
       font-size: 1.2em;
     }
   }
+
+  &__link--raw {
+    text-decoration: none;
+    color: $body-font-color;
+
+    &:hover {
+      background: none;
+      color: $body-font-color;
+    }
+
+    &:visited {
+      color: $body-font-color;
+    }
+  }
 }
 
 .gblog-footer {

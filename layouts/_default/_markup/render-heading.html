@@ -1,0 +1,18 @@
+{{ $showAnchor := (and (default true .Page.Params.GeekblogAnchor) (default true .Page.Site.Params.GeekblogAnchor)) }}
+
+{{ if $showAnchor }}
+<div class="gblog-post__anchorwrap">
+    <h{{ .Level }} id="{{ .Anchor | safeURL }}">
+        {{ .Text | safeHTML }}
+        <a data-clipboard-text="{{ .Page.Permalink }}#{{ .Anchor | safeURL }}" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor {{ .Text | safeHTML }}" href="#{{ .Anchor | safeURL }}">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h{{ .Level }}>
+</div>
+{{ else }}
+<div class="gblog-post__anchorwrap">
+    <h{{ .Level }} id="{{ .Anchor | safeURL }}">
+        {{ .Text | safeHTML }}
+    </h{{ .Level }}>
+</div>
+{{ end }}

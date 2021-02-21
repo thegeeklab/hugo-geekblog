@@ -14,7 +14,7 @@
 
 <div class="flex justify-center">
 <figure class="gblog-post__figure">
-    <a href="{{ .RelPermalink }}">
+    <a class="gblog-post__link--raw" href="{{ .RelPermalink }}">
         <img
             {{ with $customSize }}
             src="{{ index $size $customSize }}" alt="{{ $caption }}"
