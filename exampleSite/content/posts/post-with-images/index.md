@@ -24,12 +24,12 @@ If you need more flexibility for your embedded images, you could use the `img` s
 
 **Attributes:**
 
-| Name          | Usage                                                                                                         | default           |
-| ------------- | ------------------------------------------------------------------------------------------------------------- | ----------------- |
-| name (string) | Name of the image resource defined in your front matter.                                                      | empty             |
-| alt (string)  | Description for displayed image.                                                                              | resource `.Title` |
-| size (string) | Thumbnail size (tiny\|small\|medium\|large).                                                                  | empty             |
-| lazy (bool)   | Enable or disable image lazy loading. Can be controlled globally by site parameter `geekdocImageLazyLoading`. | true              |
+| Name          | Usage                                                                                                          | default           |
+| ------------- | -------------------------------------------------------------------------------------------------------------- | ----------------- |
+| name (string) | Name of the image resource defined in your front matter.                                                       | empty             |
+| alt (string)  | Description for displayed image.                                                                               | resource `.Title` |
+| size (string) | Thumbnail size (tiny\|small\|medium\|large).                                                                   | empty             |
+| lazy (bool)   | Enable or disable image lazy loading. Can be controlled globally by site parameter `geekblogImageLazyLoading`. | true              |
 
 **Example:**
 
