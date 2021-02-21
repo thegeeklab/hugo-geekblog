@@ -8,11 +8,11 @@
   }
 
   .gblog-header {
-    border-bottom: 1px solid $gray-300;
+    border-bottom: $border-1 solid $gray-300;
   }
 
   .gblog-footer {
-    border-top: 1px solid $gray-300;
+    border-top: $border-1 solid $gray-300;
   }
 
   .gblog-markdown pre {
@@ -21,7 +21,7 @@
   }
 
   .chroma code {
-    border: 1px solid $gray-300;
+    border: $border-1 solid $gray-300;
     padding: $padding-8 !important;
     font-weight: normal !important;
   }

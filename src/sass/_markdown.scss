@@ -51,7 +51,7 @@
     text-align: left;
 
     thead {
-      border-bottom: 2px solid $gray-200;
+      border-bottom: $border-2 solid $gray-200;
     }
 
     tr th,
@@ -60,7 +60,7 @@
     }
 
     tr {
-      border-bottom: $border-2 solid $gray-200;
+      border-bottom: $border-1 solid $gray-200;
     }
 
     tr:nth-child(2n) {
