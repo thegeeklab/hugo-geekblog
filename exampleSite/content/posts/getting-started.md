@@ -245,6 +245,10 @@ enableGitInfo = true
   # (Optional, default posts) Set the name of the default content section.
   geekblogContentSection = "my-pages"
 
+  # (Optional, default true) Enable or disable image lazy loading for images rendered
+  # by the 'img' shortcode.
+  geekblogImageLazyLoading = true
+
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
   [params.geekblogHostedOn]
@@ -354,6 +358,10 @@ params:
 
   # (Optional, default posts) Set the name of the default content section.
   geekblogContentSection: "my-pages"
+
+  # (Optional, default true) Enable or disable image lazy loading for images rendered
+  # by the 'img' shortcode.
+  geekblogImageLazyLoading: true
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.

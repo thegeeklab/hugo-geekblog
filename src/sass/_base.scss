@@ -272,7 +272,7 @@ img {
       min-height: 180px;
       object-fit: cover;
       overflow: hidden;
-      border-radius: 3px;
+      border-radius: $border-radius;
     }
 
     span {
@@ -283,7 +283,7 @@ img {
       padding: $padding-4;
       font-size: 0.8em;
       color: $gray-200;
-      border-radius: 3px 0;
+      border-radius: $border-radius 0;
     }
 
     a:hover,
@@ -301,17 +301,21 @@ img {
   }
 
   &__figure {
-    padding: $padding-4 $padding-4 0 $padding-4;
+    padding: $padding-4;
     margin: $padding-16 0;
     background-color: $gray-300;
     display: table;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
 
     figcaption {
       display: table-caption;
       caption-side: bottom;
       background-color: $gray-300;
-      padding: $padding-4;
+      padding: 0 $padding-4 $padding-4;
       text-align: center;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
     }
 
     img {

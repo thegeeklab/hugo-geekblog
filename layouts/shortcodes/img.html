@@ -1,6 +1,7 @@
 {{ $source := ($.Page.Resources.ByType "image").GetMatch (printf "*%s*" (.Get "name")) }}
 {{ $customAlt := .Get "alt" }}
 {{ $customSize := .Get "size" }}
+{{ $lazyLoad := default (default true $.Site.Params.GeekblogImageLazyLoading) (.Get "lazy") }}
 
 {{ with $source }}
 {{ $caption := default .Title $customAlt }}
@@ -16,6 +17,7 @@
 <figure class="gblog-post__figure">
     <a class="gblog-post__link--raw" href="{{ .RelPermalink }}">
         <img
+            {{ if $lazyLoad }}loading="lazy"{{ end }}
             {{ with $customSize }}
             src="{{ index $size $customSize }}" alt="{{ $caption }}"
             {{ else }}
