@@ -8,6 +8,10 @@ tags:
   - Open Source
   - Development
 resources:
+  - name: feature
+    src: "images/feature.jpg"
+    params:
+      credits: "[Angelina Litvin](https://unsplash.com/@linalitvina) on [Unsplash](https://unsplash.com/s/photos/writing)"
   - name: testimage
     src: "images/testimage.jpg"
     title: This is a test image

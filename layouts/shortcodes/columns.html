@@ -1,7 +1,7 @@
 <div class="gblog-columns flex flex-wrap">
   {{ range split .Inner "<--->" }}
   <div class="gblog-columns__content gblog-markdown--nested flex-even">
-    {{ . | markdownify }}
+    {{ . | $.Page.RenderString }}
   </div>
   {{ end }}
 </div>

@@ -10,7 +10,7 @@
                     <img src="{{ $featured.Permalink }}" alt="{{ default $.Title .Params.description }}" >
                 </picture>
                 {{ with $source.Params.credits }}
-                <span>Credits: {{ . | markdownify | safeHTML }}</span>
+                <span>Credits: {{ . | $.Page.RenderString | safeHTML }}</span>
                 {{ end }}
             </div>
             {{ end }}

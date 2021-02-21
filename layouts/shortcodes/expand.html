@@ -6,6 +6,6 @@
   </label>
   <input id="{{ $id }}-{{ .Ordinal }}" type="checkbox" class="gblog-expand__control hidden" />
   <div class="gblog-markdown--nested gblog-expand__content">
-    {{ .Inner | markdownify }}
+    {{ .Inner | $.Page.RenderString }}
   </div>
 </div>

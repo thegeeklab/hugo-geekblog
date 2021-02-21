@@ -10,7 +10,7 @@
       {{ $tab.Name }}
     </label>
     <div class="gblog-markdown--nested gblog-tabs__content">
-      {{ .Content | markdownify }}
+      {{ .Content | $.Page.RenderString }}
     </div>
   {{ end }}
 </div>
