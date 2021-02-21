@@ -19,8 +19,37 @@ resources:
       credits: "[David Pennington](https://unsplash.com/@dtpennington) on [Unsplash](https://unsplash.com/s/photos/test)"
 ---
 
-Amalia id per in minimum facility, quid facet modifier ea ma. Ill um select ma ad, en ferric patine sentient vim. Per expendable foreordained interpretations cu, maxim sole pertinacity in ram. Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious copious quo ad. Stet probates in duo.
+If you need more flexibility for your embedded images, you could use the `img` shortcode. It is using Hugo's
+[page resources](https://gohugo.io/content-management/page-resources/) and supports lazy loading of your images.
 
-{{< img name="testimage" size="small" >}}
+**Attributes:**
 
-Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious copious quo ad. Stet probates in duo.
+| Name          | Usage                                                                                                         | default           |
+| ------------- | ------------------------------------------------------------------------------------------------------------- | ----------------- |
+| name (string) | Name of the image resource defined in your front matter.                                                      | empty             |
+| alt (string)  | Description for displayed image.                                                                              | resource `.Title` |
+| size (string) | Thumbnail size (tiny\|small\|medium\|large).                                                                  | empty             |
+| lazy (bool)   | Enable or disable image lazy loading. Can be controlled globally by site parameter `geekdocImageLazyLoading`. | true              |
+
+**Example:**
+
+Define your resources in the page front matter, custom parameter `params.credits` is optional.
+
+<!-- spellchecker-disable -->
+
+```md
+---
+resources:
+  - name: testimage
+    src: "images/testimage.jpg"
+    title: This is a test image
+    params:
+      credits: "[David Pennington](https://unsplash.com/@dtpennington) on [Unsplash](https://unsplash.com/s/photos/test)"
+---
+
+{{</* img name="testimage" size="small" lazy=true */>}}
+```
+
+<!-- spellchecker-enable -->
+
+{{< img name="testimage" size="small" lazy=true >}}

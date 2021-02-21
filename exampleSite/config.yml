@@ -81,3 +81,5 @@ params:
 
   geekblogLegalNotice: https://thegeeklab.de/legal-notice/#contact-information
   geekblogPrivacyPolicy: https://thegeeklab.de/legal-notice/#privacy-policy
+
+  geekblogImageLazyLoading: true
