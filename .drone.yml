@@ -17,10 +17,10 @@ steps:
     NPM_CONFIG_LOGLEVEL: error
 
 - name: testbuild
-  image: klakegg/hugo:0.83.1-ext-alpine-ci
+  image: thegeeklab/hugo:0.83.1
   commands:
   - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekblog
-  - hugo-official -s exampleSite/ -b http://localhost/
+  - hugo -s exampleSite/ -b http://localhost/
 
 - name: html-validation
   image: thegeeklab/vnu
@@ -171,9 +171,9 @@ steps:
   - curl -sSL https://github.com/thegeeklab/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz | tar -xz -C exampleSite/themes/hugo-geekblog/ --strip-components=1
 
 - name: build
-  image: klakegg/hugo:0.83.1-ext-alpine-ci
+  image: thegeeklab/hugo:0.83.1
   commands:
-  - hugo-official -s exampleSite/
+  - hugo -s exampleSite/
 
 - name: beautify
   image: node:lts-alpine
@@ -253,6 +253,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 20f73057e44fee513decc548b17d9d32c61db8ca6caf450dba41493eb8533f87
+hmac: 71586de89a7298276422d89c50ee486183ab60f65111308b070b1777b30c927f
 
 ...
