@@ -25,6 +25,21 @@
     border-radius: $border-radius;
   }
 
+  &__link--raw {
+    text-decoration: none !important;
+    color: $body-font-color !important;
+
+    &:hover {
+      background: none !important;
+      color: $body-font-color !important;
+      text-decoration: none !important;
+    }
+
+    &:visited {
+      color: $body-font-color !important;
+    }
+  }
+
   blockquote {
     margin: $padding-16 0;
     padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
