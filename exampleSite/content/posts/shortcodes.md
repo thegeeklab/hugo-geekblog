@@ -12,7 +12,7 @@ weight: 5
 
 <!-- markdownlint-disable MD024 -->
 
-The theme bundles some handy shortcodes that tries to cover common sitations.
+The theme bundles some handy shortcodes that tries to cover common situations.
 
 <!--more-->
 
