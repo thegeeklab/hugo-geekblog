@@ -75,6 +75,8 @@ To prepare your new site environment just a few steps are required:
    title = "Geekblog"
    theme = "hugo-geekblog"
 
+   pluralizeListTitles = false
+
    # Geekblog required configuration
    pygmentsUseClasses = true
    pygmentsCodeFences = true
