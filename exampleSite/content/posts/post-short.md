@@ -1,5 +1,5 @@
 ---
-title: "Short post"
+title: Short post
 date: 2020-06-22T20:00:00+02:00
 authors:
   - john-doe

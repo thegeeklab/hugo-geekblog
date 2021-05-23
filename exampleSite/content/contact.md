@@ -1,5 +1,5 @@
 ---
-title: "Get in touch"
+title: Get in touch
 ---
 
 - **E-Mail:** <!-- spellchecker-disable -->mail [ett] example.com<!-- spellchecker-enable -->
