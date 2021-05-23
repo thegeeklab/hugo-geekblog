@@ -73,10 +73,10 @@
 }
 
 #menu-control:checked ~ .gblog-nav__control {
-  .icon.menu {
+  .icon.gblog_menu {
     display: none;
   }
-  .icon.clear {
+  .icon.gblog_clear {
     display: inline-block;
   }
 }

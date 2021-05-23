@@ -5,7 +5,7 @@
     <h{{ .Level }} id="{{ .Anchor | safeURL }}">
         {{ .Text | safeHTML }}
         <a data-clipboard-text="{{ .Page.Permalink }}#{{ .Anchor | safeURL }}" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor {{ .Text | safeHTML }}" href="#{{ .Anchor | safeURL }}">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h{{ .Level }}>
 </div>
