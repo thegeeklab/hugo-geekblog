@@ -6,6 +6,7 @@ pygmentsUseClasses: true
 pygmentsCodeFences: true
 enableGitInfo: true
 timeout: 180000
+pluralizeListTitles: false
 
 paginate: 5
 
