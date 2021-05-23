@@ -10,6 +10,8 @@ geekblogToC: 1
 weight: 5
 ---
 
+<!-- markdownlint-disable MD024 -->
+
 The theme bundles some handy shortcodes that tries to cover common sitations.
 
 <!--more-->
