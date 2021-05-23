@@ -179,7 +179,7 @@ steps:
   commands:
   - npm install > /dev/null
   - npx gulp default
-  - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
+  - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekblog
   environment:
     FORCE_COLOR: true
     NPM_CONFIG_LOGLEVEL: error
@@ -270,6 +270,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: d7e404ddf181f0d63949b87eb985151467fb1101984ffecfeed3a67625b679cd
+hmac: 773432bb466f3c71566f171918419bf0f34335c4bd3d923a005336d4857aaf4c
 
 ...
