@@ -22,7 +22,7 @@
 
         <footer class="gblog-post__footer">
             <span class="no-wrap">
-                <svg class="icon date"><use xlink:href="#date"></use></svg>
+                <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
                 <span class="gblog-post__tag">
                     <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
                         {{ if .Lastmod.After (.Date.AddDate 0 0 1) }}
@@ -34,13 +34,13 @@
             </span>
 
             <span class="no-wrap">
-                <svg class="icon timer"><use xlink:href="#timer"></use></svg>
+                <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
                 <span class="gblog-post__tag">{{ .ReadingTime }} min read</span>
             </span>
 
             {{ if .Params.weight }}
             <span class="no-wrap">
-                <svg class="icon pin"><use xlink:href="#pin"></use></svg>
+                <svg class="icon gblog_pin"><use xlink:href="#gblog_pin"></use></svg>
                 <span class="gblog-post__tag">Pinned</span>
             </span>
             {{ end }}
@@ -52,7 +52,7 @@
                 {{ with $.Site.GetPage (printf "/authors/%s" . | urlize) }}
                     {{ if eq $ac 0 }}
                     <span class="no-wrap">
-                    <svg class="icon person"><use xlink:href="#person"></use></svg>
+                    <svg class="icon gblog_person"><use xlink:href="#gblog_person"></use></svg>
                     {{ template "post-author" dict "name" $author.name "page" . }}
                     </span>
                     {{ else }}
@@ -70,7 +70,7 @@
                 {{ with $.Site.GetPage (printf "/tags/%s" $name | urlize) }}
                     {{ if eq $tc 0 }}
                     <span class="no-wrap">
-                    <svg class="icon bookmarks"><use xlink:href="#bookmarks"></use></svg>
+                    <svg class="icon gblog_bookmarks"><use xlink:href="#gblog_bookmarks"></use></svg>
                     {{ template "post-tag" dict "name" $name "page" . }}
                     </span>
                     {{ else }}

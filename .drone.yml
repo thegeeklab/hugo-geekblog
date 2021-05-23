@@ -96,14 +96,14 @@ steps:
     NPM_CONFIG_LOGLEVEL: error
 
 - name: package
-  image: alpine
+  image: thegeeklab/alpine-tools
   commands:
   - mkdir dist/
   - echo "${DRONE_TAG:-latest}" > VERSION
   - tar -zcvf dist/hugo-geekblog.tar.gz -X .tarignore .
 
 - name: checksum
-  image: alpine
+  image: thegeeklab/alpine-tools
   commands:
   - cd dist/ && sha256sum * > ../sha256sum.txt
 
@@ -165,8 +165,10 @@ steps:
     NPM_CONFIG_LOGLEVEL: error
 
 - name: assets
-  image: thegeeklab/alpine-tools
+  image: node:lts
   commands:
+  - npm install > /dev/null
+  - npx gulp svg-sprite-list
   - mkdir -p exampleSite/themes/hugo-geekblog/
   - curl -sSL https://github.com/thegeeklab/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz | tar -xz -C exampleSite/themes/hugo-geekblog/ --strip-components=1
   when:
@@ -179,6 +181,7 @@ steps:
   commands:
   - npm install > /dev/null
   - npx gulp default
+  - npx gulp svg-sprite-list
   - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekblog
   environment:
     FORCE_COLOR: true

@@ -10,7 +10,7 @@ exampleSite/public/
 CHANGELOG.md
 
 # auto-generated files
-layouts/partials/svg-icon-symbols.html
+assets/sprites/
 static/*.min.css
 static/*.min.css.map
 static/js/
@@ -18,6 +18,7 @@ static/favicon/
 static/fonts/GeekblogIcons.*
 resources/
 exampleSite/resources/
+exampleSite/data/sprites/
 data/assets.json
 
 # testing

@@ -18,6 +18,13 @@
   flex-wrap: wrap;
 }
 
+.flex-grid {
+  flex-direction: column;
+  border: $border-1 solid $gray-200;
+  border-radius: $border-radius;
+  background-color: $color-code;
+}
+
 .justify-start {
   justify-content: flex-start;
 }

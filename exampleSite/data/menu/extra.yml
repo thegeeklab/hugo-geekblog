@@ -1,11 +1,11 @@
 ---
 header:
   - name: Github Profile
-    icon: github
+    icon: gblog_github
     ref: "https://github.com/xoxys"
     external: true
 
 footer:
   - name: Contact
-    icon: email
+    icon: gblog_email
     ref: "/contact"

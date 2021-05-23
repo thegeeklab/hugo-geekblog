@@ -1,4 +1,4 @@
-{{ $source := ($.Page.Resources.ByType "image").GetMatch (printf "*%s*" (.Get "name")) }}
+{{ $source := ($.Page.Resources.ByType "image").GetMatch (printf "%s" (.Get "name")) }}
 {{ $customAlt := .Get "alt" }}
 {{ $customSize := .Get "size" }}
 {{ $lazyLoad := default (default true $.Site.Params.GeekblogImageLazyLoading) (.Get "lazy") }}
