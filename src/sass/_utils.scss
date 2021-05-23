@@ -53,3 +53,10 @@
 .hidden {
   display: none;
 }
+
+.svg-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
