@@ -169,6 +169,23 @@ steps:
   commands:
   - mkdir -p exampleSite/themes/hugo-geekblog/
   - curl -sSL https://github.com/thegeeklab/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz | tar -xz -C exampleSite/themes/hugo-geekblog/ --strip-components=1
+  when:
+    ref:
+    - refs/heads/master
+    - refs/tags/**
+
+- name: assets-master
+  image: node:lts
+  commands:
+  - npm install > /dev/null
+  - npx gulp default
+  - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
+  when:
+    ref:
+    - refs/pull/**
 
 - name: build
   image: thegeeklab/hugo:0.83.1
@@ -253,6 +270,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 71586de89a7298276422d89c50ee486183ab60f65111308b070b1777b30c927f
+hmac: d7e404ddf181f0d63949b87eb985151467fb1101984ffecfeed3a67625b679cd
 
 ...
