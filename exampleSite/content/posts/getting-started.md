@@ -251,6 +251,11 @@ enableGitInfo = true
   # by the 'img' shortcode.
   geekblogImageLazyLoading = true
 
+  # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. It might be required
+  # if a subdirectory is used within Hugo's BaseURL.
+  # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
+  geekblogOverwriteHTMLBase = false
+
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
   [params.geekblogHostedOn]
@@ -364,6 +369,11 @@ params:
   # (Optional, default true) Enable or disable image lazy loading for images rendered
   # by the 'img' shortcode.
   geekblogImageLazyLoading: true
+
+  # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. It might be required
+  # if a subdirectory is used within Hugo's BaseURL.
+  # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
+  geekblogOverwriteHTMLBase: false
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
