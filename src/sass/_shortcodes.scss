@@ -82,6 +82,8 @@
 
 // {{< button >}}
 .gblog-button {
+  $root: &;
+
   display: inline-block;
   color: $gray-700;
   border: $border-1 solid $gray-500;
@@ -93,13 +95,32 @@
     display: inline-block;
     color: inherit !important;
     text-decoration: none !important;
-    padding: $padding-4 $padding-16;
+
+    &:hover {
+      background: none;
+    }
   }
 
   &:hover {
-    background: rgba($main-color, 0.9);
+    background: lighten($main-color, 2);
     border-color: $main-color;
     color: $gray-100;
+  }
+
+  &--regular {
+    font-size: $font-size-base;
+
+    #{$root}__link {
+      padding: $padding-4 $padding-8;
+    }
+  }
+
+  &--large {
+    font-size: $font-size-20;
+
+    #{$root}__link {
+      padding: $padding-8 $padding-16;
+    }
   }
 }
 

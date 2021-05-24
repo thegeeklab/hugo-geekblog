@@ -70,6 +70,9 @@ steps:
   when:
     ref:
     - refs/pull/**
+    status:
+    - failure
+    - success
 
 trigger:
   ref:
@@ -273,6 +276,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: ed591d67a16d6ff6ea8b7dbff12194da646bb369903a6c2e62be812e66ae6700
+hmac: ebb333a66d8fd050835b2b5b479e5b9f3316aaa919c48476f5714979567d0e0a
 
 ...

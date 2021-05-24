@@ -1,17 +1,20 @@
 {{ $ref := "" }}
-{{ $target := "" }}
+{{ $size := default "regular" (.Get "size" | lower) }}
+
+{{ if not (in (slice "regular" "large") $size) }}
+{{ $size = "regular" }}
+{{ end }}
 
 {{ with .Get "href" }}
   {{ $ref = . }}
-  {{ $target = "_blank" }}
 {{ end }}
 
 {{ with .Get "relref" }}
   {{ $ref = relref $ . }}
 {{ end }}
 
-<span class="gblog-button{{ with .Get "class" }} {{ . }}{{ end }}">
-<a {{ with $ref }} href="{{.}}" {{ end }} {{ with $target }} target="{{.}}" {{ end }} class="gblog-button__link">
+<span class="gblog-button gblog-button--{{ $size }}{{ with .Get "class" }} {{ . }}{{ end }}">
+<a {{ with $ref }} href="{{.}}" {{ end }} class="gblog-button__link">
   {{ $.Inner }}
 </a>
 </span>
