@@ -73,7 +73,7 @@ steps:
 
 trigger:
   ref:
-  - refs/heads/master
+  - refs/heads/main
   - refs/tags/**
   - refs/pull/**
 
@@ -131,7 +131,7 @@ steps:
 
 trigger:
   ref:
-  - refs/heads/master
+  - refs/heads/main
   - refs/tags/**
   - refs/pull/**
 
@@ -173,10 +173,10 @@ steps:
   - curl -sSL https://github.com/thegeeklab/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz | tar -xz -C exampleSite/themes/hugo-geekblog/ --strip-components=1
   when:
     ref:
-    - refs/heads/master
+    - refs/heads/main
     - refs/tags/**
 
-- name: assets-master
+- name: assets-main
   image: node:lts
   commands:
   - npm install > /dev/null
@@ -220,12 +220,12 @@ steps:
     target: /${DRONE_REPO_NAME}
   when:
     ref:
-    - refs/heads/master
+    - refs/heads/main
     - refs/tags/**
 
 trigger:
   ref:
-  - refs/heads/master
+  - refs/heads/main
   - refs/tags/**
   - refs/pull/**
 
@@ -260,7 +260,7 @@ steps:
 
 trigger:
   ref:
-  - refs/heads/master
+  - refs/heads/main
   - refs/tags/**
   status:
   - success

@@ -16,7 +16,7 @@ Geekblog is a simple Hugo theme for personal blogs. It is intentionally designed
 [![Hugo Version](https://img.shields.io/badge/hugo-0.65-blue.svg)](https://gohugo.io)
 [![GitHub release](https://img.shields.io/github/v/release/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/releases/latest)
 [![GitHub contributors](https://img.shields.io/github/contributors/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/graphs/contributors)
-[![License: MIT](https://img.shields.io/github/license/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/github/license/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/blob/main/LICENSE)
 
 <!-- spellchecker-disable -->
 
@@ -126,7 +126,7 @@ To prepare your new site environment just a few steps are required:
    If you want to add some demo data you could use the content from the [Hugo basic example](https://github.com/gohugoio/hugoBasicExample):
 
    ```Shell
-   curl -L https://github.com/gohugoio/hugoBasicExample/archive/master.tar.gz | tar -xz --exclude "config*" --exclude "LICENSE" --exclude "README*" --strip-components=1
+   curl -L https://github.com/gohugoio/hugoBasicExample/archive/main.tar.gz | tar -xz --exclude "config*" --exclude "LICENSE" --exclude "README*" --strip-components=1
    ```
 
 ### Option 1: Download pre-build release bundle
