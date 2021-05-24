@@ -21,7 +21,7 @@ Add a Makefile to your repository to bundle the required steps.
 
 ```Makefile
 THEME_VERSION := v0.8.2
-THEME := hugo-geekdoc
+THEME := hugo-geekblog
 BASEDIR := docs
 THEMEDIR := $(BASEDIR)/themes
 .PHONY: doc
@@ -73,6 +73,6 @@ If you want to deploy your side to a subdirectory of your domain, some extra ste
 There are two ways to get Markdown links or images working:
 
 - Use the absolute path including your subdirectory e.g. `[testlink](/demo/example-site)`
-- Overwrite the HTML base in your site configuration with `geekdocOverwriteHTMLBase = true` and use the relative path e.g. `[testlink](example-site)`
+- Overwrite the HTML base in your site configuration with `geekblogOverwriteHTMLBase = true` and use the relative path e.g. `[testlink](example-site)`
 
-But there is another special case if you use `geekdocOverwriteHTMLBase = true`. If you use anchors in your Markdown links you have to ensure to always include the page path. As an example `[testlink](#some-anchor)` will resolve to `http://localhost/demo/#some-anchor` and not automatically include the current page!
+But there is another special case if you use `geekblogOverwriteHTMLBase = true`. If you use anchors in your Markdown links you have to ensure to always include the page path. As an example `[testlink](#some-anchor)` will resolve to `http://localhost/demo/#some-anchor` and not automatically include the current page!

@@ -170,7 +170,7 @@ gulp.task("svg-sprite-list", function () {
 
   return gulp
     .src("src/icons/*.svg")
-    .pipe(filelist("exampleSite/data/sprites/geekdoc.json", config))
+    .pipe(filelist("exampleSite/data/sprites/geekblog.json", config))
     .pipe(gulp.dest("."));
 });
 
