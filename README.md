@@ -8,7 +8,7 @@
 
 > **Important:** We have switched to 'main' as default branch. The 'master' branch is no longer maintained and will be removed after June 30, 2021!
 
-Geekblog is a simple Hugo theme for personal blogs. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex websites. If a more feature-complete theme is required there are a lot of got alternatives out there. You can find a demo and the full documentation at [https://hugo-geekblog.geekdocs.de](https://hugo-geekblog.geekdocs.de).
+Geekblog is a simple Hugo theme for personal blogs. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex projects. If a more feature-complete theme is required there are a lot of got alternatives out there. You can find a demo and the full documentation at [https://hugo-geekblog.geekdocs.de](https://hugo-geekblog.geekdocs.de).
 
 ![Desktop and mobile preview](https://github.com/thegeeklab/hugo-geekblog/blob/main/images/readme.png)
 
