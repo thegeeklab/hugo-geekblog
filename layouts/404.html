@@ -3,7 +3,8 @@
 
 <head>
     {{ partial "head/meta" . }}
-    <title>{{ if not (eq .Kind "home") }}{{ partial "title" . }} | {{ end }}{{ .Site.Title }}</title>
+    {{ partial "head/meta" . }}
+    <title>Lost? Don't worry</title>
 
     {{ partial "head/favicons" . }}
     {{ partial "head/others" . }}
