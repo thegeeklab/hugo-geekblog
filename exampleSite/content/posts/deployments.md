@@ -9,6 +9,8 @@ tags:
 weight: 5
 ---
 
+{{< toc >}}
+
 ## Netlify
 
 There are several ways to deploy your site with this theme on Netlify. Regardless of which solution you choose, the main goal is to ensure that the prebuilt theme release tarball is used or to run the [required commands](/posts/getting-started/#option-2-clone-the-github-repository) to prepare the theme assets before running the Hugo build command.
