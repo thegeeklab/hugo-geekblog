@@ -1,4 +1,3 @@
----
 repository:
   name: hugo-geekblog
   description: Hugo theme made for blogs
@@ -9,7 +8,7 @@ repository:
   has_issues: true
   has_projects: false
   has_wiki: false
-  has_downloads: false
+  has_downloads: true
 
   default_branch: main
 
@@ -49,11 +48,10 @@ labels:
 branches:
   - name: main
     protection:
+      required_pull_request_reviews: null
       required_status_checks:
-        strict: true
+        strict: false
         contexts:
           - continuous-integration/drone/pr
-      enforce_admins: false
-      restrictions:
-        users: []
-        teams: []
+      enforce_admins: null
+      restrictions: null
