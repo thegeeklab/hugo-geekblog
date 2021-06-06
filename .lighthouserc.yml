@@ -20,6 +20,7 @@ ci:
       first-contentful-paint: off
       first-meaningful-paint: off
       largest-contentful-paint: off
+      csp-xss: off
   upload:
     target: filesystem
     outputDir: lhci_reports
