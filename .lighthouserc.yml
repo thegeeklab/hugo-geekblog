@@ -1,7 +1,7 @@
 ---
 ci:
   collect:
-    numberOfRuns: 2
+    numberOfRuns: 3
     staticDistDir: exampleSite/public
     url:
       - http://localhost/
@@ -15,12 +15,19 @@ ci:
     preset: "lighthouse:no-pwa"
     assertions:
       uses-long-cache-ttl: off
-      render-blocking-resources: off
-      tap-targets: off
-      first-contentful-paint: off
-      first-meaningful-paint: off
-      largest-contentful-paint: off
       csp-xss: off
+      tap-targets: warn
+      unsized-images: warn
+      # FIXME: https://github.com/GoogleChrome/lighthouse/issues/11460
+      categories:performance:
+        - warn
+        - minScore: 0.95
+      categories:accessibility:
+        - error
+        - minScore: 1
+      categories:seo:
+        - error
+        - minScore: 0.95
   upload:
     target: filesystem
     outputDir: lhci_reports
