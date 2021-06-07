@@ -3,6 +3,7 @@ title: Getting Started
 date: 2020-07-15T20:00:00+02:00
 authors:
   - john-doe
+  - Special User
 tags:
   - Documentation
 weight: 1
@@ -510,6 +511,38 @@ That's it! The theme will auto-load all available SVG sprites provided in the as
 The theme bundles just a small set of hand crafted icons.
 
 {{< sprites >}}
+
+## Setup Authors
+
+The theme supports multiple authors. The required information for each author need to be stored in a single [Hugo data template](https://gohugo.io/templates/data-templates/) per author. These files need to be stored in the `data/authors/` directory in your projects root:
+
+```Shell
+data/
+└── authors
+   ├── john-doe.yml
+   ├── richard-roe.yml
+   └── Special User.yml
+```
+
+The name of the file will be used as the reference later, so if you prefer some kind of naming convention this need to covered by the file names. Example authors file:
+
+```YAML
+name: John Doe
+email: john@example.com
+```
+
+With the defined files, you can add as many authors as you want to the front matter of your posts:
+
+```Markdown
+---
+title: Demo Posts
+authors:
+  - john-doe
+  - Special User
+---
+
+My first demo post.
+```
 
 ## Known Limitations
 
