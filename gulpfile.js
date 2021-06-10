@@ -224,7 +224,6 @@ gulp.task("asset-sync", function () {
   return gulp
     .src([
       "node_modules/clipboard/dist/clipboard.min.js",
-      "node_modules/flexsearch/dist/flexsearch.min.js",
       "node_modules/mermaid/dist/mermaid.min.js",
     ])
     .pipe(replace(/\/\/# sourceMappingURL=.+$/, ""))
