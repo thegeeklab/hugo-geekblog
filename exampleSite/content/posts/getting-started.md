@@ -253,7 +253,7 @@ enableGitInfo = true
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekblogOverwriteHTMLBase = false
 
-  # (Optional, default true) Enabled or disable adding tags automatically to the main menu.
+  # (Optional, default true) Enable or disable adding tags automatically to the main menu.
   geekblogTagsToMenu = true
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
