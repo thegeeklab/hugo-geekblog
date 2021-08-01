@@ -106,7 +106,7 @@ To prepare your new site environment just a few steps are required:
        noUgly = true
        permalinkable = false
 
-   [outputFormats.outputs]
+   [outputs]
      home = ["HTML", "ATOM"]
      page = ["HTML"]
      section = ["HTML"]
@@ -167,6 +167,9 @@ npx gulp default
 baseURL = "http://localhost"
 title = "Geekblog"
 theme = "hugo-geekblog"
+
+paginate = 5
+pluralizeListTitles = false
 
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
@@ -277,6 +280,9 @@ enableGitInfo = true
 # ...
 
 theme: hugo-geekblog
+
+paginate: 5
+pluralizeListTitles: false
 
 # Required to get well formatted code blocks
 pygmentsUseClasses: true
@@ -462,13 +468,13 @@ If you want to customize the menus (header and footer), this can be achieved by 
 ---
 header:
   - name: Github Profile
-    icon: github
+    icon: gblog_github
     ref: "https://github.com/xoxys"
     external: true
 
 footer:
   - name: Contact
-    icon: email
+    icon: gblog_email
     ref: "/contact"
 ```
 
