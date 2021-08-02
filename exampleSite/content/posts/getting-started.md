@@ -99,7 +99,7 @@ To prepare your new site environment just a few steps are required:
      [outputFormats.Atom]
        name = "Atom"
        mediaType = "application/atom+xml"
-       baseName = "atom"
+       baseName = "feed"
        isPlainText = false
        rel = "alternate"
        isHTML = false
@@ -177,6 +177,9 @@ pygmentsCodeFences = true
 disablePathToLower = true
 enableGitInfo = true
 
+# Required if you want to render robots.txt template
+enableRobotsTXT = true
+
 [markup]
   [markup.goldmark.renderer]
       unsafe = true
@@ -198,7 +201,7 @@ enableGitInfo = true
     name = "Atom"
     mediaType = "application/atom+xml"
     # generated file = <baseName>.<mediaType."application/atom+xml".suffixes[0]> = atom.xml
-    baseName = "atom"
+    baseName = "feed"
     isPlainText = false
     rel = "alternate"
     isHTML = false
@@ -290,6 +293,9 @@ pygmentsCodeFences: true
 disablePathToLower: true
 enableGitInfo: true
 
+# Required if you want to render robots.txt template
+enableRobotsTXT: true
+
 markup:
   goldmark:
     renderer:
@@ -313,7 +319,7 @@ outputFormats:
     name: "Atom"
     mediaType: "application/atom+xml"
     # generated file: <baseName>.<mediaType."application/atom+xml".suffixes[0]> = atom.xml
-    baseName: "atom"
+    baseName: "feed"
     isPlainText: false
     rel: "alternate"
     isHTML: false
@@ -333,9 +339,6 @@ outputs:
   term:
     - HTML
     - ATOM
-
-# Required if you want to render robots.txt template
-enableRobotsTXT: true
 
 params:
   subtitle: "Blog about my favorite topics"
