@@ -3,6 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/thegeeklab/hugo-geekblog/blob/main/LICENSE"
 description = "Hugo theme made for blogs"
 homepage = "https://hugo-geekblog.geekdocs.de/"
+demosite = "https://hugo-geekblog.geekdocs.de/"
 tags = ["blog", "responsive", "simple"]
 min_version = "0.65.0"
 
