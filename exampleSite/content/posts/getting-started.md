@@ -384,6 +384,9 @@ params:
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekblogOverwriteHTMLBase: false
 
+  # (Optional, default true) Enable or disable adding tags automatically to the main menu.
+  geekblogTagsToMenu: true
+
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
   geekblogHostedOn:
