@@ -25,12 +25,12 @@ steps:
   - name: html-validation
     image: thegeeklab/vnu
     commands:
-      - vnu --skip-non-html --also-check-css --errors-only --filterfile .vnuignore exampleSite/public
+      - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
 
   - name: link-validation
     image: thegeeklab/link-validator
     commands:
-      - link-validator -ro --exclude "https://github.com/thegeeklab/hugo-geekblog/edit/main/*"
+      - link-validator -ro
     environment:
       LINK_VALIDATOR_BASE_DIR: exampleSite/public
 
@@ -276,6 +276,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: ddd58a068accd7e565b088c95b6948f42f9b83b0cf0cda3a001e85afee2ed0c5
+hmac: 82f00a78b202441f7f4a9504d12506a3360737667668949b70a4b4712fb23fdb
 
 ...

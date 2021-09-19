@@ -30,14 +30,14 @@ local PipelineTest(deps=[],) = {
       name: 'html-validation',
       image: 'thegeeklab/vnu',
       commands: [
-        'vnu --skip-non-html --also-check-css --errors-only --filterfile .vnuignore exampleSite/public',
+        'vnu --skip-non-html --also-check-css --errors-only exampleSite/public',
       ],
     },
     {
       name: 'link-validation',
       image: 'thegeeklab/link-validator',
       commands: [
-        'link-validator -ro --exclude "https://github.com/thegeeklab/hugo-geekblog/edit/main/*"',
+        'link-validator -ro',
       ],
       environment: {
         LINK_VALIDATOR_BASE_DIR: 'exampleSite/public',
