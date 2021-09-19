@@ -213,7 +213,7 @@ steps:
     settings:
       access_key:
         from_secret: s3_access_key
-      bucket: geekblogs-root
+      bucket: geekdocs
       delete: true
       endpoint: https://sp.rknet.org
       path_style: true
@@ -221,6 +221,7 @@ steps:
         from_secret: s3_secret_access_key
       source: exampleSite/public/
       strip_prefix: exampleSite/public/
+      target: /${DRONE_REPO_NAME}
     when:
       ref:
         - refs/heads/main
@@ -276,6 +277,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 82f00a78b202441f7f4a9504d12506a3360737667668949b70a4b4712fb23fdb
+hmac: ccc88d921fbb526ae7398dec081e9a95c86147e328396750636c2837de97260e
 
 ...

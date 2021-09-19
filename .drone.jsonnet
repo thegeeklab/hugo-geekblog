@@ -279,7 +279,7 @@ local PipelineDocs(deps=[],) = {
         access_key: {
           from_secret: 's3_access_key',
         },
-        bucket: 'geekblogs-root',
+        bucket: 'geekdocs',
         delete: true,
         endpoint: 'https://sp.rknet.org',
         path_style: true,
@@ -288,6 +288,7 @@ local PipelineDocs(deps=[],) = {
         },
         source: 'exampleSite/public/',
         strip_prefix: 'exampleSite/public/',
+        target: '/${DRONE_REPO_NAME}',
       },
       when: {
         ref: [
