@@ -13,6 +13,7 @@
       flex-direction: column;
       justify-content: center;
       max-height: 0;
+      visibility: hidden;
       overflow: hidden;
     }
 
@@ -70,6 +71,7 @@
 
 #menu-control:checked ~ .gblog-nav__list {
   max-height: 100%;
+  visibility: visible;
 }
 
 #menu-control:checked ~ .gblog-nav__control {
