@@ -103,12 +103,11 @@ The above steps enable Unicode Standard emoji characters and sequences in Hugo, 
 
 **Styling:**
 
-<!-- prettier-ignore -->
 <!-- spellchecker-disable -->
-
+<!-- prettier-ignore -->
 {{< highlight html "linenos=table" >}}
 .emoji {
-font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
+  font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
 }
 {{< /highlight >}}
 
@@ -167,7 +166,7 @@ There are four colors to choose: `info`, `ok`, `warning` and `danger`.
 {{</* hint [info|warning|danger] */>}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
- Ornateness bland it ex enc, est yeti am bongo detract re.
+Ornateness bland it ex enc, est yeti am bongo detract re.
 {{</* /hint */>}}
 ```
 

@@ -118,10 +118,9 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 
 #### Code block with Hugo's internal highlight Shortcode
 
-<!-- prettier-ignore -->
 <!-- markdownlint-disable -->
 <!-- spellchecker-disable -->
-
+<!-- prettier-ignore -->
 {{< highlight html "linenos=table" >}}
 
 <!doctype html>
