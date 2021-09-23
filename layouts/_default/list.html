@@ -38,7 +38,7 @@
                 <span class="gblog-post__tag">{{ .ReadingTime }} min read</span>
             </span>
 
-            {{ if .Params.weight }}
+            {{ if eq .Params.weight 1 }}
             <span class="no-wrap">
                 <svg class="icon gblog_pin"><use xlink:href="#gblog_pin"></use></svg>
                 <span class="gblog-post__tag">Pinned</span>
