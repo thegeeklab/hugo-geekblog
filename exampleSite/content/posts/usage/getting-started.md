@@ -161,7 +161,7 @@ npx gulp default
 
 ### Netlify
 
-There are several ways to deploy your site with this theme on Netlify. Regardless of which solution you choose, the main goal is to ensure that the prebuilt theme release tarball is used or to run the [required commands](/posts/getting-started/#option-2-clone-the-github-repository) to prepare the theme assets before running the Hugo build command.
+There are several ways to deploy your site with this theme on Netlify. Regardless of which solution you choose, the main goal is to ensure that the prebuilt theme release tarball is used or to run the [required commands](#option-2-clone-the-github-repository) to prepare the theme assets before running the Hugo build command.
 
 Here are some possible solutions:
 
@@ -246,14 +246,14 @@ If you still want to use Hugo's minify flag you should at least exclude HTML fil
 
 There are a lot more things to discover. To get the most out of the Theme we have collected interesting posts covering more advanced topics:
 
-- [Configuration](/posts/usage/configuration)
-- [Menus](/posts/usage/menus)
+- [Configuration](/posts/usage/configuration/)
+- [Menus](/posts/usage/menus/)
 - **Features**
-  - [Icon Sets](/posts/features/icon-sets)
-  - [Theming](/posts/features/theming)
-  - [Authors](/posts/features/Authors)
-  - [Sticky Posts](/posts/features/sticky)
-- [Shortcodes](/posts/advanced/shortcodes)
-  - [Table of Content](/posts/advanced/toc)
-  - [Mermaid](/posts/advanced/mermaid)
-  - [Advanced Images](/posts/post-with-images)
+  - [Icon Sets](/posts/features/icon-sets/)
+  - [Theming](/posts/features/theming/)
+  - [Authors](/posts/features/authors/)
+  - [Sticky Posts](/posts/features/sticky/)
+- [Shortcodes](/posts/advanced/shortcodes/)
+  - [Table of Content](/posts/advanced/toc/)
+  - [Mermaid](/posts/advanced/mermaid/)
+  - [Advanced Images](/posts/post-with-images/)
