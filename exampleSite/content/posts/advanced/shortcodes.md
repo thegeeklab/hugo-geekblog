@@ -7,7 +7,6 @@ tags:
   - Documentation
   - Shortcodes
 geekblogToC: 1
-weight: 5
 ---
 
 <!-- markdownlint-disable MD024 -->
@@ -22,6 +21,7 @@ The theme bundles some handy shortcodes that tries to cover common situations.
 
 Buttons are styled links that can lead to local page or external link.
 
+<!-- prettier-ignore -->
 ```tpl
 {{</* button relref="/" [class="...", size="large|regular"] */>}}Get Home{{</* /button */>}}
 {{</* button href="https://github.com/thegeeklab/hugo-geekblog" */>}}Contribute{{</* /button */>}}
@@ -36,6 +36,7 @@ Buttons are styled links that can lead to local page or external link.
 
 The Columns shortcode can be used to organize content side-by-side (horizontally) for better readability.
 
+<!-- prettier-ignore -->
 ```html
 {{</* columns */>}} <!-- begin columns block -->
 # Left Content
@@ -102,15 +103,16 @@ The above steps enable Unicode Standard emoji characters and sequences in Hugo, 
 
 **Styling:**
 
-<!-- prettier-ignore-start -->
+<!-- prettier-ignore -->
 <!-- spellchecker-disable -->
+
 {{< highlight html "linenos=table" >}}
 .emoji {
-  font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
+font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
 }
 {{< /highlight >}}
+
 <!-- spellchecker-enable -->
-<!-- prettier-ignore-end -->
 
 ## Expand
 
@@ -120,6 +122,7 @@ Expand shortcode can help to decrease clutter on screen by hiding part of text. 
 
 #### Default
 
+<!-- prettier-ignore -->
 ```tpl
 {{</* expand */>}}
 ## Markdown content
@@ -136,6 +139,7 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 
 #### With Custom Label
 
+<!-- prettier-ignore -->
 ```tpl
 {{</* expand "Custom Label" "..." */>}}
 ## Markdown content
@@ -158,6 +162,7 @@ copious quo ad. Stet probates in duo.
 Hint shortcode can be used as hint/alerts/notification block.
 There are four colors to choose: `info`, `ok`, `warning` and `danger`.
 
+<!-- prettier-ignore -->
 ```tpl
 {{</* hint [info|warning|danger] */>}}
 **Markdown content**\
@@ -196,6 +201,7 @@ Ornateness bland it ex enc, est yeti am bongo detract re.
 
 Simple shortcode to include icons from SVG sprites outside of menus.
 
+<!-- prettier-ignore -->
 ```tpl
 {{</* icon "thumbs-up" */>}}
 ```
@@ -214,6 +220,7 @@ Simple shortcode to include icons from SVG sprites outside of menus.
 
 Tabs let you organize content by context, for example installation instructions for each supported platform.
 
+<!-- prettier-ignore -->
 ```tpl
 {{</* tabs "uniqueid" */>}}
 {{</* tab "macOS" */>}} # macOS Content {{</* /tab */>}}

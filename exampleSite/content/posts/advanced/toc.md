@@ -1,16 +1,18 @@
 ---
-title: ToC
+title: Table of Content
 date: 2021-05-23T20:00:00+01:00
 authors:
   - john-doe
 tags:
   - Documentation
   - Shortcodes
-weight: 10
 ---
 
 Simple wrapper to generate a page Table of Content from a shortcode.
 
+<!--more-->
+
+<!-- prettier-ignore -->
 ```tpl
 {{</* toc */>}}
 ```

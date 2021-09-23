@@ -6,7 +6,6 @@ authors:
 tags:
   - Documentation
   - Shortcodes
-weight: 20
 resources:
   - name: feature
     src: "images/feature.jpg"
@@ -51,6 +50,8 @@ resources:
 
 If you need more flexibility for your embedded images, you could use the `img` shortcode. It is using Hugo's
 [page resources](https://gohugo.io/content-management/page-resources/) and supports lazy loading of your images.
+
+<!--more-->
 
 **Attributes:**
 
