@@ -16,27 +16,13 @@
             {{ end }}
 
             <h1>{{ partial "title" . }}</h1>
-            {{ if or (eq .Type (default "posts" .Site.Params.GeekblogContentSection)) (eq .Type "post") }}
-            <div class="gblog-post__meta">
-                <span class="no-wrap">
-                    <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
-                    <span class="gblog-post__tag">
-                        <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-                            {{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}
-                                Updated on
-                            {{ end }}
-                            {{ .Lastmod.Format "Jan 2, 2006" }}
-                        </time>
-                    </span>
-                </span>
-
-                <span class="no-wrap">
-                    <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                    <span class="gblog-post__tag">{{ .ReadingTime }} min read</span>
-                </span>
-            </div>
-            {{ end }}
         </header>
+
+        {{ if or (eq .Type (default "posts" .Site.Params.GeekblogContentSection)) (eq .Type "post") }}
+        <div class="gblog-post__meta">
+            {{ partial "metadata.html" . }}
+        </div>
+        {{ end }}
 
         <section class="gblog-markdown">
             {{ partial "content" . }}

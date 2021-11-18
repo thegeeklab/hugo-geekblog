@@ -1,0 +1,71 @@
+<span class="no-wrap">
+    <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
+    <span class="gblog-post__tag">
+        <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+            {{ if .Lastmod.After (.Date.AddDate 0 0 1) }}
+                Updated on
+            {{ end }}
+            {{ .Lastmod.Format "Jan 2, 2006" }}
+        </time>
+    </span>
+</span>
+
+<span class="no-wrap">
+    <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
+    <span class="gblog-post__tag">{{ .ReadingTime }} min read</span>
+</span>
+
+{{ if eq .Params.weight 1 }}
+<span class="no-wrap">
+    <svg class="icon gblog_pin"><use xlink:href="#gblog_pin"></use></svg>
+    <span class="gblog-post__tag">Pinned</span>
+</span>
+{{ end }}
+
+{{ $ac := 0 }}
+{{ with .Params.authors }}
+{{ range sort . }}
+    {{ $author := index $.Site.Data.authors . }}
+    {{ with $.Site.GetPage (printf "/authors/%s" . | urlize) }}
+        {{ if eq $ac 0 }}
+        <span class="no-wrap">
+        <svg class="icon gblog_person"><use xlink:href="#gblog_person"></use></svg>
+        {{ template "post-author" dict "name" $author.name "page" . }}
+        </span>
+        {{ else }}
+        {{ template "post-author" dict "name" $author.name "page" . }}
+        {{ end }}
+    {{ end }}
+    {{ $ac = (add $ac 1) }}
+{{ end }}
+{{ end }}
+
+{{ $tc := 0 }}
+{{ with .Params.tags }}
+{{ range sort . }}
+    {{ $name := . }}
+    {{ with $.Site.GetPage (printf "/tags/%s" $name | urlize) }}
+        {{ if eq $tc 0 }}
+        <span class="no-wrap">
+        <svg class="icon gblog_bookmarks"><use xlink:href="#gblog_bookmarks"></use></svg>
+        {{ template "post-tag" dict "name" $name "page" . }}
+        </span>
+        {{ else }}
+        {{ template "post-tag" dict "name" $name "page" . }}
+        {{ end }}
+    {{ end }}
+    {{ $tc = (add $tc 1) }}
+{{ end }}
+{{ end }}
+
+{{ define "post-tag" }}
+<span class="gblog-post__tag gblog-button">
+    <a class="gblog-button__link" href="{{ .page.RelPermalink }}" title="All posts tagged with '{{ .name }}'">{{ .name }}</a>
+</span>
+{{ end }}
+
+{{ define "post-author" }}
+<span class="gblog-post__tag gblog-button">
+    <a class="gblog-button__link" href="{{ .page.RelPermalink }}" title="All posts of this author">{{ .name }}</a>
+</span>
+{{ end }}
