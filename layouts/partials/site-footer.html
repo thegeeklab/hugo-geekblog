@@ -34,5 +34,12 @@
             </span>
         </section>
         {{ end }}
+        {{ with .Site.Params.GeekblogContentLicense }}
+        <section class="flex flex-wrap align-center">
+            <span class="gblog-footer__item">
+                Content licensed under <a href="{{ .link }}" class="gblog-footer__link no-wrap">{{ .name }}</a>
+            </span>
+        </section>
+        {{ end }}
     </nav>
 </footer>
