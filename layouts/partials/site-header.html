@@ -9,6 +9,20 @@
             <span class="gblog-brand__subtitle flex align-center justify-center">{{ . }}</span>
             {{ end }}
         </a>
+        <span id="gblog-dark-mode">
+            <svg class="icon gblog_brightness_dark">
+                <title>{{ i18n "button_toggle_dark" }}</title>
+                <use xlink:href="#gblog_brightness_dark"></use>
+            </svg>
+            <svg class="icon gblog_brightness_light">
+                <title>{{ i18n "button_toggle_dark" }}</title>
+                <use xlink:href="#gblog_brightness_light"></use>
+            </svg>
+            <svg class="icon gblog_brightness_auto">
+                <title>{{ i18n "button_toggle_dark" }}</title>
+                <use xlink:href="#gblog_brightness_auto"></use>
+            </svg>
+        </span>
     </div>
 </header>
 <nav class="gblog-nav">

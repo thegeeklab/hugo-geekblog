@@ -78,7 +78,7 @@ resources:
       credits: "[Jay Mantri](https://unsplash.com/@jaymantri) on [Unsplash](https://unsplash.com/s/photos/forest)"
 ---
 
-{{</* img name="forest-1" size="large" lazy=false */>}}
+{{</* img name="forest-1" lazy=false */>}}
 ```
 
 <!-- spellchecker-enable -->
