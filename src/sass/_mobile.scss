@@ -62,6 +62,10 @@
     }
   }
 
+  .flex-mobile-column {
+    flex-direction: column;
+  }
+
   .gblog-footer {
     &__item {
       width: 100%;

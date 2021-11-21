@@ -1,7 +1,6 @@
 .chroma {
   background-color: #ffffff;
   color: #555;
-  margin: 1rem 0;
 }
 .chroma code {
   background-color: $color-code;
@@ -35,7 +34,7 @@
   > pre.chroma code {
     padding: 1rem;
     width: 100%;
-    overflow: auto;
+    overflow-x: auto;
   }
 }
 
