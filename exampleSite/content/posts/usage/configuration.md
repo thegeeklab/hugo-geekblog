@@ -142,9 +142,9 @@ enableRobotsTXT = true
 
 ```Yaml
 ---
-# ...
-
-theme: hugo-geekblog
+baseURL: "http://localhost"
+title: "Geekblog"
+theme: "hugo-geekblog"
 
 paginate: 5
 pluralizeListTitles: false

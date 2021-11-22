@@ -140,6 +140,11 @@ img {
 
 #gblog-dark-mode {
   cursor: pointer;
+
+  .icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 
 .fake-link {
@@ -179,6 +184,15 @@ img {
   color: var(--header-font-color);
   padding: $padding-16 0;
 
+  &__col-1,
+  &__col-3 {
+    flex: 1 1 15%;
+  }
+
+  &__col-2 {
+    flex: 1 1 70%;
+  }
+
   &__link,
   &__link:visited {
     color: inherit;
@@ -191,11 +205,11 @@ img {
 }
 
 .gblog-brand {
-  font-size: $font-size-32 * 1.5;
+  font-size: $font-size-32;
 
   &__subtitle {
     margin-top: $padding-16;
-    font-size: $font-size-16 * 1.2;
+    font-size: $font-size-20;
     font-weight: bolder;
   }
 
