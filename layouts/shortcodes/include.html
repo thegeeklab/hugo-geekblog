@@ -4,7 +4,7 @@
 {{ $language := .Get "language" }}
 {{ $options :=.Get "options" }}
 
-<div class="gdoc-include">
+<div class="gblog-include">
 {{- if (.Get "language") -}}
     {{- highlight ($file | readFile) $language (default "linenos=table" $options) -}}
 {{- else if eq $type "html" -}}
