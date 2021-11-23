@@ -148,7 +148,7 @@ run the described steps as well.
 Clone the Geekblog git repository.
 
 ```Shell
-git clone https://github.com/thegeeklab/hugo-geekblog.git themes/geekblog
+git clone https://github.com/thegeeklab/hugo-geekblog.git themes/hugo-geekblog
 ```
 
 Build required theme assets e.g. CSS files and SVG sprites with `gulp`.
@@ -250,11 +250,13 @@ There are a lot more things to discover. To get the most out of the Theme we hav
 - [Menus](/posts/usage/menus/)
 - **Features**
   - [Code Blocks](/posts/features/code-blocks/)
+  - [Dark Mode](/posts/features/dark-mode/)
   - [Icon Sets](/posts/features/icon-sets/)
   - [Theming](/posts/features/theming/)
   - [Authors](/posts/features/authors/)
   - [Sticky Posts](/posts/features/sticky/)
 - [Shortcodes](/posts/advanced/shortcodes/)
-  - [Table of Content](/posts/advanced/toc/)
-  - [Mermaid](/posts/advanced/mermaid/)
   - [Advanced Images](/posts/post-with-images/)
+  - [Includes](/posts/advanced/includes/)
+  - [Mermaid](/posts/advanced/mermaid/)
+  - [Table of Content](/posts/advanced/toc/)
