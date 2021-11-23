@@ -124,6 +124,9 @@ enableRobotsTXT = true
   # bright spots while using the dark mode.
   geekblogDarkModeDim = false
 
+  # (Optional, default true) Display a "Back to top" link in the site footer.
+  geekblogBackToTop = true
+
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
   [params.geekblogHostedOn]
@@ -252,6 +255,9 @@ params:
   # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
   # bright spots while using the dark mode.
   geekblogDarkModeDim: false
+
+   # (Optional, default true) Display a "Back to top" link in the site footer.
+  geekblogBackToTop: true
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.

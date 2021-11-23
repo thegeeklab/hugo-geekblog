@@ -447,8 +447,19 @@ img {
   background: $second-color;
   color: $gray-100;
 
+  .fake-link {
+    background-image: linear-gradient(
+      var(--footer-link-color),
+      var(--footer-link-color)
+    );
+  }
+
   &__item {
-    margin: $padding-8 $padding-8 $padding-8 0;
+    line-height: 2em;
+
+    &--row {
+      margin-right: $padding-16;
+    }
   }
 
   &__link {

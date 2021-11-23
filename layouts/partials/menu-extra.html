@@ -14,7 +14,7 @@
         {{ $icon := default false .icon }}
 
         {{ if eq $target "footer" }}
-        <span class="gblog-footer__item">
+        <span class="gblog-footer__item gblog-footer__item--row">
             {{ if $icon }}<svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>{{ end }}
             <a href="{{ if .external }}{{ .ref }}{{ else }}{{ relref $current .ref }}{{ end }}"
                 class="gblog-footer__link">
