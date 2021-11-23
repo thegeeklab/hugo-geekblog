@@ -5,7 +5,7 @@
             <a class="gblog-header__link" rel="me" href="{{ .Site.BaseURL }}">
                 <span class="gblog-brand flex align-center justify-center">
                     <img class="gblog-brand__img" src="{{ (default "brand.svg" .Site.Params.logo) | relURL }}" alt="">
-                    {{ .Site.Title }}
+                    <span class="gdoc-brand__title">{{ .Site.Title }}</span>
                 </span>
                 {{ with .Site.Params.subtitle }}
                 <span class="gblog-brand__subtitle flex align-center justify-center">{{ . }}</span>
