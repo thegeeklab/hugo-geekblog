@@ -10,6 +10,10 @@
   flex: 1 1 auto;
 }
 
+.flex-25 {
+  flex: 1 1 25%;
+}
+
 .flex-even {
   flex: 1 1;
 }
@@ -51,6 +55,10 @@
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .no-wrap {
