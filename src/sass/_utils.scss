@@ -20,9 +20,9 @@
 
 .flex-grid {
   flex-direction: column;
-  border: $border-1 solid $gray-200;
+  border: $border-1 solid var(--accent-color);
   border-radius: $border-radius;
-  background-color: $color-code;
+  background: var(--accent-color-lite);
 }
 
 .justify-start {
@@ -66,4 +66,8 @@
   width: 0;
   height: 0;
   overflow: hidden;
+}
+
+.table-wrap {
+  overflow: auto;
 }

@@ -249,6 +249,7 @@ There are a lot more things to discover. To get the most out of the Theme we hav
 - [Configuration](/posts/usage/configuration/)
 - [Menus](/posts/usage/menus/)
 - **Features**
+  - [Code Blocks](/posts/features/code-blocks/)
   - [Icon Sets](/posts/features/icon-sets/)
   - [Theming](/posts/features/theming/)
   - [Authors](/posts/features/authors/)

@@ -1,7 +1,78 @@
+:root,
+:root[color-mode="light"] {
+  --code-max-height: auto;
+
+  @include light_mode;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include light_mode;
+  }
+}
+
+:root[color-mode="dark"] {
+  @include dark_mode;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark_mode;
+  }
+}
+
 html {
   font-size: $font-size-base;
   letter-spacing: 0.33px;
   scroll-behavior: smooth;
+
+  &.color-toggle-hidden {
+    #gblog-dark-mode {
+      .gblog_brightness_auto,
+      .gblog_brightness_dark,
+      .gblog_brightness_light {
+        display: none;
+      }
+    }
+  }
+
+  &.color-toggle-light {
+    #gblog-dark-mode {
+      .gblog_brightness_light {
+        display: inline-block;
+      }
+      .gblog_brightness_auto,
+      .gblog_brightness_dark {
+        display: none;
+      }
+    }
+  }
+
+  &.color-toggle-dark {
+    #gblog-dark-mode {
+      .gblog_brightness_dark {
+        display: inline-block;
+      }
+      .gblog_brightness_auto,
+      .gblog_brightness_light {
+        display: none;
+      }
+    }
+  }
+
+  &.color-toggle-auto {
+    #gblog-dark-mode {
+      .gblog_brightness_light {
+        display: none;
+      }
+      .gblog_brightness_dark {
+        display: none;
+      }
+      .gblog_brightness_auto {
+        display: inline-block;
+      }
+    }
+  }
 }
 
 html,
@@ -11,8 +82,8 @@ body {
 }
 
 body {
-  color: $body-font-color;
-  background: $body-background;
+  color: var(--body-font-color);
+  background: var(--body-background);
 
   font-weight: $body-font-weight;
 
@@ -35,11 +106,6 @@ h6 {
   font-weight: 600;
   display: flex;
   align-items: center;
-
-  > code {
-    border-top: 3px solid $gray-300;
-    font-size: 0.75em !important;
-  }
 }
 
 h4,
@@ -50,16 +116,21 @@ h6 {
 
 a {
   text-decoration: underline;
-  color: $color-link;
+  color: var(--link-color);
 
   &:hover {
-    background: $color-link;
-    color: $white !important;
+    background: var(--link-color);
+    color: $gray-100;
     text-decoration: none;
   }
 
   &:visited {
-    color: $color-link;
+    color: var(--link-color-visited);
+
+    &:hover {
+      background: var(--link-color-visited);
+      color: $gray-100;
+    }
   }
 }
 
@@ -67,8 +138,17 @@ img {
   vertical-align: middle;
 }
 
+#gblog-dark-mode {
+  cursor: pointer;
+
+  .icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
 .fake-link {
-  background-image: linear-gradient($color-link, $color-link);
+  background-image: linear-gradient(var(--link-color), var(--link-color));
   background-position: 0 100%;
   background-size: 100% 1px;
   background-repeat: no-repeat;
@@ -100,9 +180,18 @@ img {
 }
 
 .gblog-header {
-  background: $main-color;
-  color: $white;
+  background: var(--header-background);
+  color: var(--header-font-color);
   padding: $padding-16 0;
+
+  &__col-1,
+  &__col-3 {
+    flex: 1 1 15%;
+  }
+
+  &__col-2 {
+    flex: 1 1 70%;
+  }
 
   &__link,
   &__link:visited {
@@ -116,11 +205,11 @@ img {
 }
 
 .gblog-brand {
-  font-size: $font-size-32 * 1.5;
+  font-size: $font-size-32;
 
   &__subtitle {
     margin-top: $padding-16;
-    font-size: $font-size-16 * 1.2;
+    font-size: $font-size-20;
     font-weight: bolder;
   }
 
@@ -133,7 +222,7 @@ img {
 
 .gblog-nav {
   background: $second-color;
-  color: $gray-200;
+  color: $gray-100;
   min-height: $padding-4;
 
   .container {
@@ -155,7 +244,8 @@ img {
     margin: $padding-4;
 
     &:hover,
-    &.is-active {
+    &.is-active,
+    &:visited:hover {
       background: lighten($second-color, 10%);
     }
 
@@ -193,7 +283,7 @@ img {
 
 .gblog-post {
   word-wrap: break-word;
-  border-top: 1px dashed $gray-600;
+  border-top: $border-2 dashed var(--accent-color-dark);
   padding: $padding-32 0;
 
   &__header {
@@ -210,7 +300,7 @@ img {
     a:hover {
       background: none;
       text-decoration: underline;
-      color: $body-font-color !important;
+      color: var(--body-font-color) !important;
     }
   }
 
@@ -220,6 +310,16 @@ img {
 
   &__readmore {
     margin: 1.5rem 0 $padding-32 0;
+
+    a:visited {
+      color: var(--link-color);
+    }
+
+    a:hover,
+    a:visited:hover {
+      background: var(--link-color);
+      color: $gray-100;
+    }
 
     a:after {
       font-family: GeekblogIcons;
@@ -240,15 +340,13 @@ img {
   }
 
   &__anchorwrap {
-    &:hover .gblog-post__anchor {
-      background: none;
-      color: $gray-500 !important;
+    &:hover .gblog-post__anchor .icon {
+      color: var(--control-icons);
     }
   }
 
   &__anchor {
     min-width: 30px;
-    color: transparent;
 
     &--left {
       position: absolute;
@@ -261,7 +359,14 @@ img {
     }
 
     .icon {
-      font-size: $font-size-16 * 1.3;
+      font-size: $font-size-20;
+      color: transparent;
+    }
+
+    &:hover,
+    &:visited:hover {
+      color: var(--control-icons);
+      background: none;
     }
   }
 
@@ -284,13 +389,14 @@ img {
       right: 0;
       padding: $padding-4;
       font-size: 0.8em;
-      color: $gray-200;
+      color: $gray-100;
       border-radius: $border-radius 0;
     }
 
     a:hover,
-    a:visited {
-      color: $gray-200 !important;
+    a:visited,
+    a:visited:hover {
+      color: $gray-100 !important;
     }
   }
 
@@ -305,7 +411,7 @@ img {
   &__figure {
     padding: $padding-4;
     margin: $padding-16 0;
-    background-color: $gray-300;
+    background-color: var(--accent-color);
     display: table;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
@@ -313,7 +419,7 @@ img {
     figcaption {
       display: table-caption;
       caption-side: bottom;
-      background-color: $gray-300;
+      background-color: var(--accent-color);
       padding: 0 $padding-4 $padding-4;
       text-align: center;
       border-bottom-left-radius: $border-radius;
@@ -346,15 +452,16 @@ img {
   }
 
   &__link {
-    color: $color-link-footer;
+    color: var(--link-color-footer);
 
-    &:hover {
-      background: $color-link-footer;
-      color: $body-font-color !important;
+    &:hover,
+    &:visited:hover {
+      background: var(--link-color-footer);
+      color: $body-font-color;
     }
 
     &:visited {
-      color: $color-link-footer;
+      color: var(--link-color-footer);
     }
   }
 }
@@ -364,6 +471,16 @@ img {
 
   &__item {
     flex: 1 1 0;
+
+    a:visited {
+      color: var(--link-color);
+    }
+
+    a:hover,
+    a:visited:hover {
+      background: var(--link-color);
+      color: $gray-100;
+    }
 
     &--next {
       text-align: right;
@@ -394,12 +511,12 @@ img {
 
   .icon {
     font-size: $font-size-128;
-    color: $gray-700;
+    color: var(--body-font-color);
   }
 
   &__link,
   &__link:visited {
-    color: $color-link;
+    color: var(--link-color);
   }
 
   &__message {
@@ -411,7 +528,7 @@ img {
   }
 
   &__title {
-    font-size: $font-size-16 * 4;
+    font-size: $font-size-64;
   }
 
   &__code {
@@ -430,9 +547,15 @@ img {
     display: none;
   }
 
+  a:hover,
+  a:visited:hover {
+    background: var(--link-color);
+    color: $gray-100;
+  }
+
   a,
   a:visited {
-    color: $color-link;
+    color: var(--link-color);
     text-decoration: none;
   }
 }

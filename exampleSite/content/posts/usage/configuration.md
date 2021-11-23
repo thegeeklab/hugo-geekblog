@@ -120,6 +120,10 @@ enableRobotsTXT = true
   # (Optional, default true) Enable or disable adding tags automatically to the main menu.
   geekblogTagsToMenu = true
 
+  # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
+  # bright spots while using the dark mode.
+  geekblogDarkModeDim = false
+
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
   [params.geekblogHostedOn]
@@ -138,9 +142,9 @@ enableRobotsTXT = true
 
 ```Yaml
 ---
-# ...
-
-theme: hugo-geekblog
+baseURL: "http://localhost"
+title: "Geekblog"
+theme: "hugo-geekblog"
 
 paginate: 5
 pluralizeListTitles: false
@@ -244,6 +248,10 @@ params:
 
   # (Optional, default true) Enable or disable adding tags automatically to the main menu.
   geekblogTagsToMenu: true
+
+  # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
+  # bright spots while using the dark mode.
+  geekblogDarkModeDim: false
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.

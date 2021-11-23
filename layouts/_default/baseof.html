@@ -16,7 +16,7 @@
 <body>
     {{ partial "svg-icon-symbols" . }}
 
-    <div class="wrapper">
+    <div class="wrapper {{ if default false .Site.Params.GeekblogDarkModeDim }}dark-mode-dim{{ end }}">
         {{ partial "site-header" . }}
 
         <main class="gblog-page container">

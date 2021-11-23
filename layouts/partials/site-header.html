@@ -1,14 +1,33 @@
 <header class="gblog-header">
-    <div class="container flex align-center justify-center">
-        <a class="gblog-header__link" rel="me" href="{{ .Site.BaseURL }}">
-            <span class="gblog-brand flex align-center justify-center">
-                <img class="gblog-brand__img" src="{{ (default "brand.svg" .Site.Params.logo) | relURL }}" alt="">
-                {{ .Site.Title }}
+    <div class="container flex flex-wrap">
+        <div class="gblog-header__col-1 flex justify-start hidden-mobile"></div>
+        <div class="gblog-header__col-2 flex align-center justify-center ">
+            <a class="gblog-header__link" rel="me" href="{{ .Site.BaseURL }}">
+                <span class="gblog-brand flex align-center justify-center">
+                    <img class="gblog-brand__img" src="{{ (default "brand.svg" .Site.Params.logo) | relURL }}" alt="">
+                    {{ .Site.Title }}
+                </span>
+                {{ with .Site.Params.subtitle }}
+                <span class="gblog-brand__subtitle flex align-center justify-center">{{ . }}</span>
+                {{ end }}
+            </a>
+        </div>
+        <div class="gblog-header__col-3 flex justify-end">
+            <span id="gblog-dark-mode">
+                <svg class="icon gblog_brightness_dark">
+                    <title>{{ i18n "button_toggle_dark" }}</title>
+                    <use xlink:href="#gblog_brightness_dark"></use>
+                </svg>
+                <svg class="icon gblog_brightness_light">
+                    <title>{{ i18n "button_toggle_dark" }}</title>
+                    <use xlink:href="#gblog_brightness_light"></use>
+                </svg>
+                <svg class="icon gblog_brightness_auto">
+                    <title>{{ i18n "button_toggle_dark" }}</title>
+                    <use xlink:href="#gblog_brightness_auto"></use>
+                </svg>
             </span>
-            {{ with .Site.Params.subtitle }}
-            <span class="gblog-brand__subtitle flex align-center justify-center">{{ . }}</span>
-            {{ end }}
-        </a>
+        </div>
     </div>
 </header>
 <nav class="gblog-nav">
@@ -17,7 +36,7 @@
         <label for="menu-control" class="flex align-center justify-center">
             <svg class="icon gblog_menu"><use xlink:href="#gblog_menu"></use></svg>
             <svg class="icon gblog_clear"><use xlink:href="#gblog_clear"></use></svg>
-            <span>Nav</span>
+            <span>Navigation</span>
         </label>
     </div>
     <ul class="gblog-nav__list container flex flex-wrap justify-center menu-content">
