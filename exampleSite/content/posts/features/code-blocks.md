@@ -16,7 +16,7 @@ There are several ways to add code blocks. Most of them work out of the box, onl
 
 To display an inline shortcode use single quotes:
 
-```plain
+```Plain
 `some code`
 ```
 
@@ -26,7 +26,7 @@ To display an inline shortcode use single quotes:
 
 Code blocks can be uses without language specification:
 
-````markdown
+````Markdown
 ```Plain
 some code
 ```
@@ -40,7 +40,7 @@ some code
 
 ... or if you need language specific syntax highlighting:
 
-````markdown
+````Markdown
 ```Shell
 # some code
 echo "Hello world"
@@ -80,7 +80,7 @@ pygmentsCodeFences: true
 You can use it like every other shortcode:
 
 <!-- prettier-ignore -->
-```markdown
+```Markdown
 {{</* highlight Shell "linenos=table" */>}}
 # some code
 echo "Hello World"
