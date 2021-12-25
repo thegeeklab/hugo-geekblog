@@ -1,0 +1,30 @@
+{
+  "shape": {
+    "id": {
+      "generator": "gblog_%s"
+    },
+    "dimension": {
+      "maxWidth": 22,
+      "maxHeight": 22,
+      "attributes": false
+    },
+    "spacing": {
+      "padding": 5,
+      "box": "content"
+    },
+    "dest": "dist/icons"
+  },
+  "svg": {
+    "xmlDeclaration": false,
+    "rootAttributes": {
+      "class": "svg-sprite"
+    }
+  },
+  "mode": {
+    "defs": {
+      "dest": "dist/sprites/",
+      "sprite": "geekblog.svg",
+      "bust": false
+    }
+  }
+}

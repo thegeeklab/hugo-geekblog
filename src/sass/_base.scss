@@ -134,6 +134,11 @@ a {
   }
 }
 
+i.gblog-icon {
+  font-family: "GeekblogIcons";
+  font-style: normal;
+}
+
 img {
   vertical-align: middle;
 }
@@ -319,11 +324,6 @@ img {
     a:visited:hover {
       background: var(--link-color);
       color: $gray-100;
-    }
-
-    a:after {
-      font-family: GeekblogIcons;
-      content: "\ea02";
     }
   }
 
@@ -535,22 +535,10 @@ img {
 
     &--next {
       text-align: right;
-
-      a:after {
-        font-family: GeekblogIcons;
-        content: "\ea17";
-        margin-top: -0.125em;
-      }
     }
 
     &--prev {
       text-align: left;
-
-      a::before {
-        font-family: GeekblogIcons;
-        content: "\ea18";
-        margin-top: -0.125em;
-      }
     }
   }
 }
