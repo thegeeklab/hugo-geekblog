@@ -4,15 +4,18 @@
   "description": "Hugo theme made for blogs",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean ; npm run svg ; npm run build:webpack",
+    "build": "npm run prep ; npm run svg ; run-s build:*",
     "build:webpack": "webpack --mode=production",
-    "start": "npm run clean ; npm run svg ; npm run start:webpack & npm run start:hugo",
-    "start:hugo": "hugo server -D -F -s exampleSite/",
+    "start": "npm run prep ; npm run svg ; run-p start:*",
     "start:webpack": "webpack --mode=development --watch",
-    "svg": "npm run svg:sprite ; npm run svg:font",
+    "start:hugo": "hugo server -D -F -s exampleSite/",
+    "svg": "run-s svg:*",
     "svg:sprite": "svg-sprite -C svgsprite.config.json 'src/rawicons/*.svg'",
     "svg:font": "svgtofont --sources dist/icons --output dist/fonts",
-    "clean": "del dist/"
+    "prep": "run-s prep:*",
+    "prep:clean": "del dist/ static/",
+    "prep:make": "make-dir dist/icons dist/fonts",
+    "svg-sprite-list": "npm run svg:font ; make-dir exampleSite/data/sprites ; cpy dist/fonts/GeekblogIcons.json exampleSite/data/sprites/ --rename geekblog.json"
   },
   "repository": {
     "type": "git",
@@ -28,9 +31,11 @@
   "devDependencies": {
     "autoprefixer": "10.4.0",
     "copy-webpack-plugin": "10.2.0",
+    "cpy-cli": "3.1.1",
     "css-loader": "6.5.1",
     "del-cli": "4.0.1",
     "favicons-webpack-plugin": "5.0.2",
+    "make-dir-cli": "3.0.0",
     "npm-run-all": "4.1.5",
     "postcss-loader": "6.2.1",
     "prettier": "2.5.1",

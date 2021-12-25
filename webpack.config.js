@@ -3,7 +3,6 @@ const path = require("path");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const { sassFalse } = require("sass");
 
 module.exports = {
   entry: [
@@ -77,7 +76,7 @@ module.exports = {
     }),
 
     new FaviconsWebpackPlugin({
-      logo: path.resolve("src", "favicon", "favicon.svg"),
+      logo: path.resolve("src", "static", "favicon", "favicon.svg"),
       cache: true,
       prefix: "favicon/",
       inject: false,

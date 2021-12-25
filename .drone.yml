@@ -172,6 +172,7 @@ steps:
     image: node:lts
     commands:
       - npm install > /dev/null
+      - npm run svg-sprite-list
       - mkdir -p exampleSite/themes/hugo-geekblog/
       - curl -sSL https://github.com/thegeeklab/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz | tar -xz -C exampleSite/themes/hugo-geekblog/ --strip-components=1
     when:
@@ -184,6 +185,7 @@ steps:
     commands:
       - npm install > /dev/null
       - npm run build
+      - npm run svg-sprite-list
       - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekblog
     environment:
       FORCE_COLOR: true
@@ -275,6 +277,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: f24f556a3ce9fee46f783b26ae2bedb04aa8170fe137b837d3d8c8d6c8b1e8e0
+hmac: 27415c2917920a9dbf1d2dd5ef2fc35a0f92c8eafc8e999225d089dd05ca109f
 
 ...
