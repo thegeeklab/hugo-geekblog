@@ -1,10 +1,11 @@
 const path = require("path");
 
 const WebpackAssetsManifest = require("webpack-assets-manifest");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const { sassFalse } = require("sass");
 
 module.exports = {
-  mode: "production",
   entry: [
     path.resolve("src", "sass", "main.scss"),
     path.resolve("src", "sass", "mobile.scss"),
@@ -16,6 +17,9 @@ module.exports = {
     path: path.join(__dirname, "static"),
     publicPath: "",
     clean: true,
+  },
+  watchOptions: {
+    ignored: ["/exampleSite/", "/node_modules/"],
   },
   module: {
     rules: [
@@ -70,6 +74,26 @@ module.exports = {
       output: "../data/assets.json",
       integrity: true,
       integrityHashes: ["sha512"],
+    }),
+
+    new FaviconsWebpackPlugin({
+      logo: path.resolve("src", "favicon", "favicon.svg"),
+      cache: true,
+      prefix: "favicon/",
+      inject: false,
+      favicons: {
+        background: "#2f333e",
+        theme_color: "#2f333e",
+        icons: {
+          android: { offset: 10 },
+          appleIcon: { offset: 10 },
+          appleStartup: { offset: 10 },
+          favicons: true,
+          windows: { offset: 10 },
+          yandex: false,
+          coast: false,
+        },
+      },
     }),
   ],
 };
