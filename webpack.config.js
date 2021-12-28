@@ -26,11 +26,11 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        use: ["babel-loader"],
-        exclude: /node_modules/
-      },
+      // {
+      //   test: /\.js$/,
+      //   use: ["babel-loader"],
+      //   exclude: /node_modules/
+      // },
       {
         test: /\.(sa|sc|c)ss$/,
         exclude: /node_modules/,
