@@ -10,12 +10,13 @@
     "start:webpack": "webpack --mode=development --watch",
     "start:hugo": "hugo server -D -F -s exampleSite/",
     "svg": "run-s svg:*",
-    "svg:sprite": "svg-sprite -C svgsprite.config.json 'src/rawicons/*.svg'",
+    "svg:sprite": "svg-sprite -C svgsprite.config.json 'src/icons/*.svg'",
     "svg:font": "svgtofont --sources dist/icons --output dist/fonts",
     "prep": "run-s prep:*",
     "prep:clean": "del dist/ static/",
     "prep:make": "make-dir dist/icons dist/fonts",
-    "svg-sprite-list": "npm run svg:font ; make-dir exampleSite/data/sprites ; cpy dist/fonts/GeekblogIcons.json exampleSite/data/sprites/ --rename geekblog.json"
+    "svg-sprite-list": "npm run svg:font ; make-dir exampleSite/data/sprites ; cpy dist/fonts/GeekblogIcons.json exampleSite/data/sprites/ --rename geekblog.json",
+    "lint": "eslint src/js/ --color"
   },
   "repository": {
     "type": "git",
@@ -29,11 +30,18 @@
     "store2": "2.13.1"
   },
   "devDependencies": {
+    "@babel/core": "7.16.5",
+    "@babel/preset-env": "7.16.5",
     "autoprefixer": "10.4.0",
+    "babel-loader": "8.2.3",
     "copy-webpack-plugin": "10.2.0",
+    "core-js": "3.20.1",
     "cpy-cli": "3.1.1",
     "css-loader": "6.5.1",
     "del-cli": "4.0.1",
+    "eslint": "8.5.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
     "favicons-webpack-plugin": "5.0.2",
     "make-dir-cli": "3.0.0",
     "npm-run-all": "4.1.5",
@@ -46,7 +54,8 @@
     "svgtofont": "3.13.1",
     "webpack": "5.65.0",
     "webpack-assets-manifest": "5.0.6",
-    "webpack-cli": "4.9.1"
+    "webpack-cli": "4.9.1",
+    "webpack-remove-empty-scripts": "0.7.2"
   },
   "browserslist": [
     "last 2 version",

@@ -1,4 +1,4 @@
-<script src="{{ index .Site.Data.assets "js/darkmode.min.js" | relURL }}"></script>
+<script src="{{ index (index .Site.Data.assets "bundle.js") "src" | relURL }}"></script>
 
 <link rel="preload" as="font" href="{{ "fonts/Metropolis.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" as="font" href="{{ "fonts/LiberationSans.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">

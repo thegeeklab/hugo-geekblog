@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "amd": true
+  },
+  "extends": ["plugin:prettier/recommended"],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module"
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "require-await": "warn"
+  },
+  "globals": {
+    "require": false,
+    "requirejs": false
+  }
+}
