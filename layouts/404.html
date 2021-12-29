@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" class="color-toggle-hidden">
 
 <head>
     {{ partial "head/meta" . }}
@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    {{ partial "svg-icon-symbols" . }}
+    {{ partial "svg-sprites" . }}
 
     <div class="wrapper">
         {{ partial "site-header" . }}

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    {{ partial "svg-icon-symbols" . }}
+    {{ partial "svg-sprites" . }}
 
     <div class="wrapper {{ if default false .Site.Params.GeekblogDarkModeDim }}dark-mode-dim{{ end }}">
         {{ partial "site-header" . }}
@@ -25,7 +25,5 @@
 
         {{ partial "site-footer" . }}
     </div>
-
-    {{ partial "foot" . }}
 </body>
 </html>

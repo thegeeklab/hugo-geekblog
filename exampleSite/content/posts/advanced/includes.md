@@ -8,9 +8,11 @@ tags:
   - Shortcodes
 ---
 
-{{< toc >}}
-
 Include shortcode can include files of different types. By specifying a language, the included file will have syntax highlighting.
+
+<!--more-->
+
+{{< toc >}}
 
 ```tpl
 {{</* include file="relative/path/from/hugo/root" language="go" markdown=[false|true] */>}}

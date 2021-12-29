@@ -99,9 +99,6 @@ enableRobotsTXT = true
   # (Optional, default true) Add an anchor link to headlines.
   geekblogAnchor = true
 
-  # (Optional, default true) Copy anchor url to clipboard on click.
-  geekblogAnchorCopy = true
-
   # (Optional, default none) Sites main author.
   geekblogAuthor = "john-doe"
 
@@ -230,9 +227,6 @@ params:
 
   # (Optional, default true) Add an anchor link to headlines.
   geekblogAnchor: true
-
-  # (Optional, default true) Copy anchor url to clipboard on click.
-  geekblogAnchorCopy: true
 
   # (Optional, default none) Sites main author.
   geekblogAuthor: john-doe
