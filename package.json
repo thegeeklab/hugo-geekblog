@@ -17,7 +17,7 @@
     "prep": "run-s prep:*",
     "prep:clean": "del build/ static/",
     "prep:make": "make-dir build/icons build/fonts",
-    "svg-sprite-list": "run-s prep svg:font ; make-dir exampleSite/data/sprites ; cpy build/fonts/GeekblogIcons.json exampleSite/data/sprites/ --rename geekblog.json",
+    "svg-sprite-list": "run-s prep svg ; make-dir exampleSite/data/sprites ; cpy build/fonts/GeekblogIcons.json exampleSite/data/sprites/ --rename geekblog.json",
     "lint": "eslint src/js/ --color"
   },
   "repository": {
