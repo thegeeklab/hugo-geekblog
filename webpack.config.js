@@ -26,11 +26,6 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.js$/,
-      //   use: ["babel-loader"],
-      //   exclude: /node_modules/
-      // },
       {
         test: /\.(sa|sc|c)ss$/,
         exclude: /node_modules/,
@@ -70,12 +65,12 @@ module.exports = {
         },
         {
           from: "fonts/*.{woff,woff2}",
-          context: path.resolve(__dirname, "dist")
+          context: path.resolve(__dirname, "build")
         },
         {
           from: "sprites/*.svg",
           to: path.resolve(__dirname, "assets"),
-          context: path.resolve(__dirname, "dist")
+          context: path.resolve(__dirname, "build")
         }
       ]
     }),

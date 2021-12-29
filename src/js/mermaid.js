@@ -1,7 +1,10 @@
+import Storage from "store2"
+
 import { DARK_MODE, THEME, AUTO_MODE } from "./app.js"
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  let currentMode = localStorage.getItem(THEME)
+  let lstore = Storage.namespace(THEME)
+  let currentMode = lstore.get("color-mode")
   let darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)")
   let primaryColor = "#ececff"
   let darkMode = false
@@ -12,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 
   import("mermaid")
-    .then(({ default: Swal }) => {
-      Swal.initialize({
+    .then(({ default: md }) => {
+      md.initialize({
         flowchart: { useMaxWidth: true },
         theme: "base",
         themeVariables: {

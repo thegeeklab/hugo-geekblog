@@ -12,7 +12,7 @@
       "padding": 5,
       "box": "content"
     },
-    "dest": "dist/icons"
+    "dest": "build/icons"
   },
   "svg": {
     "xmlDeclaration": false,
@@ -22,7 +22,7 @@
   },
   "mode": {
     "defs": {
-      "dest": "dist/sprites/",
+      "dest": "build/sprites/",
       "sprite": "geekblog.svg",
       "bust": false
     }

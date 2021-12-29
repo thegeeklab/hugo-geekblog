@@ -1,6 +1,3 @@
-import "core-js/stable"
-import "regenerator-runtime/runtime"
-
 import { applyTheme } from "./darkmode"
 import { createCopyButton } from "./copycode.js"
 
@@ -16,7 +13,7 @@ export const TOGGLE_MODES = [AUTO_MODE, DARK_MODE, LIGHT_MODE]
 })()
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  var clipboard = new Clipboard(".clip")
+  let clipboard = new Clipboard(".clip")
 
   clipboard.on("success", function (e) {
     const trigger = e.trigger

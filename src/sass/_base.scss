@@ -488,10 +488,7 @@ img {
   color: $gray-100;
 
   .fake-link {
-    background-image: linear-gradient(
-      var(--footer-link-color),
-      var(--footer-link-color)
-    );
+    background-image: linear-gradient(var(--footer-link-color), var(--footer-link-color));
   }
 
   &__item {

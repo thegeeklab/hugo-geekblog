@@ -10,7 +10,8 @@
 .prettier*
 .chglog
 example*
-gulp*
+webpack*
+svgsprite*
 package*
 node*
 local*
