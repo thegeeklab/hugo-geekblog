@@ -5,9 +5,11 @@
     "amd": true
   },
   "extends": ["plugin:prettier/recommended"],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
-    "parser": "babel-eslint",
-    "sourceType": "module"
+    "sourceType": "module",
+    "requireConfigFile": false,
+    "allowImportExportEverywhere": true
   },
   "plugins": ["prettier"],
   "rules": {

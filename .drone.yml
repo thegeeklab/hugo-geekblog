@@ -7,6 +7,15 @@ platform:
   arch: amd64
 
 steps:
+  - name: eslint
+    image: node:lts
+    commands:
+      - npm install > /dev/null
+      - npm run lint
+    environment:
+      FORCE_COLOR: true
+      NPM_CONFIG_LOGLEVEL: error
+
   - name: assets
     image: node:lts
     commands:
@@ -277,6 +286,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 27415c2917920a9dbf1d2dd5ef2fc35a0f92c8eafc8e999225d089dd05ca109f
+hmac: 74a7e960eb8af67b40992bb60bb75db699d44e81ac28189f01e1c27e1ad74988
 
 ...

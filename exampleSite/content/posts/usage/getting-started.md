@@ -36,16 +36,16 @@ Geekblog is a simple Hugo theme for personal blogs. It is intentionally designed
 
 ## Setup requirements
 
-You need a recent version of Hugo for local builds and previews of sites that use Geekblog. As we are using [gulp](https://gulpjs.com/) as pre-processor the normal version of Hugo is sufficient. If you prefer the extended version of Hugo anyway this will work as well. For comprehensive Hugo documentation, see [gohugo.io](https://gohugo.io/documentation/).
+You need a recent version of Hugo for local builds and previews of sites that use Geekblog. As we are using [webpack](https://webpack.js.org/) as pre-processor, the normal version of Hugo is sufficient. If you prefer the extended version of Hugo anyway this will work as well. For comprehensive Hugo documentation, see [gohugo.io](https://gohugo.io/documentation/).
 
-If you want to use the theme from a cloned branch instead of a release tarball you'll need to install `gulp` locally and run the default pipeline once to create all required assets.
+If you want to use the theme from a cloned branch instead of a release tarball you'll need to install `webpack` locally and run the default pipeline once to create all required assets.
 
 ```Shell
 # install required packages from package.json
 npm install
 
-# run gulp pipeline to build required assets
-npx gulp default
+# run the build script to build required assets
+npm run build
 ```
 
 ## Using the theme
@@ -151,10 +151,11 @@ Clone the Geekblog git repository.
 git clone https://github.com/thegeeklab/hugo-geekblog.git themes/hugo-geekblog
 ```
 
-Build required theme assets e.g. CSS files and SVG sprites with `gulp`.
+Build required theme assets e.g. CSS files and SVG sprites.
 
 ```Shell
-npx gulp default
+npm install
+npm run build
 ```
 
 ## Deployments
