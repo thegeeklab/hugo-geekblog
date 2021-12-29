@@ -1,4 +1,5 @@
 const path = require("path")
+const webpack = require("webpack")
 
 const WebpackAssetsManifest = require("webpack-assets-manifest")
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
@@ -6,6 +7,7 @@ const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts")
 const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
+  devtool: false,
   entry: {
     css: [
       path.resolve("src", "sass", "main.scss"),
@@ -47,6 +49,9 @@ module.exports = {
             loader: "sass-loader",
             options: {
               sassOptions: {
+                // FIXME: https://github.com/webpack-contrib/sass-loader/issues/962#issuecomment-1002675051
+                sourceMap: true,
+                sourceMapEmbed: true,
                 outputStyle: "compressed"
               }
             }
@@ -100,6 +105,8 @@ module.exports = {
           coast: false
         }
       }
-    })
+    }),
+
+    new webpack.SourceMapDevToolPlugin({})
   ]
 }
