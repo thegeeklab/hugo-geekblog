@@ -7,7 +7,6 @@ const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts")
 const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
-  devtool: false,
   entry: {
     css: [
       path.resolve("src", "sass", "main.scss"),
@@ -105,8 +104,6 @@ module.exports = {
           coast: false
         }
       }
-    }),
-
-    new webpack.SourceMapDevToolPlugin({})
+    })
   ]
 }
