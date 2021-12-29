@@ -1,6 +1,6 @@
 import Storage from "store2"
 
-import { TOGGLE_MODES, THEME, AUTO_MODE } from "./app.js"
+import { TOGGLE_MODES, THEME, AUTO_MODE } from "./config.js"
 
 document.addEventListener("DOMContentLoaded", (event) => {
   const darkModeToggle = document.getElementById("gblog-dark-mode")

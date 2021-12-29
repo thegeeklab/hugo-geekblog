@@ -1,6 +1,6 @@
 import Storage from "store2"
 
-import { DARK_MODE, THEME, AUTO_MODE } from "./app.js"
+import { DARK_MODE, THEME, AUTO_MODE } from "./config.js"
 
 document.addEventListener("DOMContentLoaded", function (event) {
   let lstore = Storage.namespace(THEME)

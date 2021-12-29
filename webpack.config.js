@@ -1,5 +1,4 @@
 const path = require("path")
-const webpack = require("webpack")
 
 const WebpackAssetsManifest = require("webpack-assets-manifest")
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
