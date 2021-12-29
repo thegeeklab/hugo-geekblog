@@ -5,7 +5,7 @@ const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
 const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts")
 const CopyPlugin = require("copy-webpack-plugin")
 
-module.exports = {
+var config = {
   entry: {
     css: [
       path.resolve("src", "sass", "main.scss"),
@@ -24,39 +24,6 @@ module.exports = {
   },
   watchOptions: {
     ignored: ["/exampleSite/", "/node_modules/"]
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(sa|sc|c)ss$/,
-        exclude: /node_modules/,
-        type: "asset/resource",
-        generator: {
-          filename: "[name]-[contenthash:8].min.css"
-        },
-        use: [
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: ["autoprefixer"]
-              }
-            }
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sassOptions: {
-                // FIXME: https://github.com/webpack-contrib/sass-loader/issues/962#issuecomment-1002675051
-                sourceMap: true,
-                sourceMapEmbed: true,
-                outputStyle: "compressed"
-              }
-            }
-          }
-        ]
-      }
-    ]
   },
   plugins: [
     new RemoveEmptyScriptsPlugin(),
@@ -105,4 +72,46 @@ module.exports = {
       }
     })
   ]
+}
+
+module.exports = (env, argv) => {
+  if (argv.mode === "development") {
+    config.devtool = "eval-cheap-source-map"
+  }
+
+  config.module = {
+    rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        exclude: /node_modules/,
+        type: "asset/resource",
+        generator: {
+          filename: "[name]-[contenthash:8].min.css"
+        },
+        use: [
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: ["autoprefixer"]
+              }
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                // FIXME: https://github.com/webpack-contrib/sass-loader/issues/962#issuecomment-1002675051
+                sourceMap: argv.mode === "development" ? true : false,
+                sourceMapEmbed: argv.mode === "development" ? true : false,
+                outputStyle: "compressed"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+
+  return config
 }
