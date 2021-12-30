@@ -1,29 +1,34 @@
 {{ define "main" }}
-    {{ $pages := where .RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ if (eq .Kind "home") }}
-        {{ $pages = where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ end }}
+  {{ $pages := where .RegularPages "Type" "in" .Site.Params.mainSections }}
+  {{ if (eq .Kind "home") }}
+    {{ $pages = where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+  {{ end }}
 
-    {{ $paginator := .Paginate $pages }}
-    {{ range $paginator.Pages }}
+  {{ $paginator := .Paginate $pages }}
+  {{ range $paginator.Pages }}
     <article class="gblog-post">
-        <header class="gblog-post__header">
-            <h1><a href="{{ .RelPermalink }}">{{ partial "title" . }}</a></h1>
-        </header>
+      <header class="gblog-post__header">
+        <h1><a href="{{ .RelPermalink }}">{{ partial "title" . }}</a></h1>
+      </header>
 
-        <section class="gblog-markdown">
-            {{ .Summary }}
-        </section>
-        <div class="gblog-post__readmore">
-            {{ if .Truncated }}
-            <a class="flex-inline align-center fake-link" title="Read full post" href="{{ .RelPermalink }}">Read full post<i class="gblog-icon">gblog_arrow_right</i></a>
-            {{ end }}
-        </div>
+      <section class="gblog-markdown">
+        {{ .Summary }}
+      </section>
+      <div class="gblog-post__readmore">
+        {{ if .Truncated }}
+          <a
+            class="flex-inline align-center fake-link"
+            title="Read full post"
+            href="{{ .RelPermalink }}"
+            >Read full post<i class="gblog-icon">gblog_arrow_right</i></a
+          >
+        {{ end }}
+      </div>
 
-        <footer class="gblog-post__footer">
-            {{ partial "metadata.html" . }}
-        </footer>
+      <footer class="gblog-post__footer">
+        {{ partial "metadata.html" . }}
+      </footer>
     </article>
-    {{ end }}
-    {{ partial "pagination.html" . }}
+  {{ end }}
+  {{ partial "pagination.html" . }}
 {{ end }}

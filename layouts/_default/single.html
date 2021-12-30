@@ -1,31 +1,33 @@
 {{ define "main" }}
-    <article class="gblog-post">
-        <header class="gblog-post__header">
-            {{ $source := ($.Resources.ByType "image").GetMatch "{*feature*,*cover*,*thumbnail*}" }}
-            {{ with $source }}
-            <div class="gblog-post__feature">
-                <picture>
-                    {{ $featured := .Fill (printf "910x280 %s" (default "Smart" .Params.anchor)) }}
-                    <source srcset="{{ $featured.Permalink }}">
-                    <img src="{{ $featured.Permalink }}" alt="{{ default $.Title .Params.description }}" >
-                </picture>
-                {{ with $source.Params.credits }}
-                <span>Credits: {{ . | $.Page.RenderString | safeHTML }}</span>
-                {{ end }}
-            </div>
-            {{ end }}
-
-            <h1>{{ partial "title" . }}</h1>
-        </header>
-
-        {{ if or (eq .Type (default "posts" .Site.Params.GeekblogContentSection)) (eq .Type "post") }}
-        <div class="gblog-post__meta">
-            {{ partial "metadata.html" . }}
+  <article class="gblog-post">
+    <header class="gblog-post__header">
+      {{ $source := ($.Resources.ByType "image").GetMatch "{*feature*,*cover*,*thumbnail*}" }}
+      {{ with $source }}
+        <div class="gblog-post__feature">
+          <picture>
+            {{ $featured := .Fill (printf "910x280 %s" (default "Smart" .Params.anchor)) }}
+            <source srcset="{{ $featured.Permalink }}" />
+            <img src="{{ $featured.Permalink }}" alt="{{ default $.Title .Params.description }}" />
+          </picture>
+          {{ with $source.Params.credits }}
+            <span>Credits: {{ . | $.Page.RenderString | safeHTML }}</span>
+          {{ end }}
         </div>
-        {{ end }}
+      {{ end }}
 
-        <section class="gblog-markdown">
-            {{ partial "content" . }}
-        </section>
-    </article>
+
+      <h1>{{ partial "title" . }}</h1>
+    </header>
+
+    {{ if or (eq .Type (default "posts" .Site.Params.GeekblogContentSection)) (eq .Type "post") }}
+      <div class="gblog-post__meta">
+        {{ partial "metadata.html" . }}
+      </div>
+    {{ end }}
+
+
+    <section class="gblog-markdown">
+      {{ partial "content" . }}
+    </section>
+  </article>
 {{ end }}
