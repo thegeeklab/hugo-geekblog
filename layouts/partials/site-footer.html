@@ -1,56 +1,60 @@
 <footer class="gblog-footer">
-    <nav class="container flex">
-        <div>
-            <section class="flex flex-wrap align-center">
-                {{ with (.Site.GetPage "home").OutputFormats.Get "atom" }}
-                <span class="gblog-footer__item gblog-footer__item--row">
-                    <svg class="icon gblog_rss_feed"><use xlink:href="#gblog_rss_feed"></use></svg>
-                    <a href='{{ .Permalink | relURL }}' class="gblog-footer__link">Atom Feed</a>
-                </span>
-                {{ end }}
-                {{ if .Site.Data.menu.extra.footer }}
-                {{ partial "menu-extra" (dict "current" . "source" .Site.Data.menu.extra.footer "target" "footer") }}
-                {{ end }}
-                {{ with .Site.Params.GeekblogLegalNotice }}
-                <span class="gblog-footer__item gblog-footer__item--row">
-                    <a href="{{ . | relURL }}" class="gblog-footer__link">Legal Notice</a>
-                </span>
-                {{ end }}
-                {{ with .Site.Params.GeekblogPrivacyPolicy }}
-                <span class="gblog-footer__item gblog-footer__item--row">
-                    <a href="{{ . | relURL }}" class="gblog-footer__link">Privacy Policy</a>
-                </span>
-                {{ end }}
-            </section>
-            <section class="flex flex-wrap align-center">
-                <span class="gblog-footer__item">
-                    Built with <a href="https://gohugo.io/" class="gblog-footer__link">Hugo</a> and
-                    <svg class="icon gblog_heart"><use xlink:href="#gblog_heart"></use></svg>
-                </span>
-            </section>
-            {{ with .Site.Params.GeekblogHostedOn }}
-            <section class="flex flex-wrap align-center">
-                <span class="gblog-footer__item">
-                    Hosted on <a href="{{ .link }}" class="gblog-footer__link">{{ .name }}</a>
-                </span>
-            </section>
-            {{ end }}
-            {{ with .Site.Params.GeekblogContentLicense }}
-            <section class="flex flex-wrap align-center">
-                <span class="gblog-footer__item">
-                    Content licensed under <a href="{{ .link }}" class="gblog-footer__link no-wrap">{{ .name }}</a>
-                </span>
-            </section>
-            {{ end }}
-        </div>
-        {{ if (default true .Site.Params.GeekblogBackToTop) }}
-        <div class="flex flex-25 justify-end">
-            <span class="gblog-footer__item text-right">
-                <a class="gblog-footer__link fake-link" href="#" aria-label="Back to top">
-                    <svg class="icon gblog_keyborad_arrow_up"><use xlink:href="#gblog_keyborad_arrow_up"></use></svg> <span class="hidden-mobile">Back to top</span>
-                </a>
-            </span>
-        </div>
+  <nav class="container flex">
+    <div>
+      <section class="flex flex-wrap align-center">
+        {{ with (.Site.GetPage "home").OutputFormats.Get "atom" }}
+          <span class="gblog-footer__item gblog-footer__item--row">
+            <svg class="icon gblog_rss_feed"><use xlink:href="#gblog_rss_feed"></use></svg>
+            <a href="{{ .Permalink | relURL }}" class="gblog-footer__link">Atom Feed</a>
+          </span>
         {{ end }}
-    </nav>
+        {{ if .Site.Data.menu.extra.footer }}
+          {{ partial "menu-extra" (dict "current" . "source" .Site.Data.menu.extra.footer "target" "footer") }}
+        {{ end }}
+        {{ with .Site.Params.GeekblogLegalNotice }}
+          <span class="gblog-footer__item gblog-footer__item--row">
+            <a href="{{ . | relURL }}" class="gblog-footer__link">Legal Notice</a>
+          </span>
+        {{ end }}
+        {{ with .Site.Params.GeekblogPrivacyPolicy }}
+          <span class="gblog-footer__item gblog-footer__item--row">
+            <a href="{{ . | relURL }}" class="gblog-footer__link">Privacy Policy</a>
+          </span>
+        {{ end }}
+      </section>
+      <section class="flex flex-wrap align-center">
+        <span class="gblog-footer__item">
+          Built with <a href="https://gohugo.io/" class="gblog-footer__link">Hugo</a> and
+          <svg class="icon gblog_heart"><use xlink:href="#gblog_heart"></use></svg>
+        </span>
+      </section>
+      {{ with .Site.Params.GeekblogHostedOn }}
+        <section class="flex flex-wrap align-center">
+          <span class="gblog-footer__item">
+            Hosted on <a href="{{ .link }}" class="gblog-footer__link">{{ .name }}</a>
+          </span>
+        </section>
+      {{ end }}
+      {{ with .Site.Params.GeekblogContentLicense }}
+        <section class="flex flex-wrap align-center">
+          <span class="gblog-footer__item">
+            Content licensed under
+            <a href="{{ .link }}" class="gblog-footer__link no-wrap">{{ .name }}</a>
+          </span>
+        </section>
+      {{ end }}
+    </div>
+    {{ if (default true .Site.Params.GeekblogBackToTop) }}
+      <div class="flex flex-25 justify-end">
+        <span class="gblog-footer__item text-right">
+          <a class="gblog-footer__link fake-link" href="#" aria-label="Back to top">
+            <svg class="icon gblog_keyborad_arrow_up">
+              <use xlink:href="#gblog_keyborad_arrow_up"></use>
+            </svg>
+            <span class="hidden-mobile">Back to top</span>
+          </a>
+        </span>
+      </div>
+    {{ end }}
+  </nav>
 </footer>
