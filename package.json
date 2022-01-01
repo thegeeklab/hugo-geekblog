@@ -38,7 +38,7 @@
     "cpy-cli": "3.1.1",
     "css-loader": "6.5.1",
     "del-cli": "4.0.1",
-    "eslint": "8.5.0",
+    "eslint": "8.6.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
     "favicons-webpack-plugin": "5.0.2",
