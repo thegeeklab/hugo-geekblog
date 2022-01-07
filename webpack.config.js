@@ -1,9 +1,13 @@
 const path = require("path")
+const glob = require("glob")
 
-const WebpackAssetsManifest = require("webpack-assets-manifest")
+const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
 const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts")
 const CopyPlugin = require("copy-webpack-plugin")
+const SRIPlugin = require("./webpack.plugins")
+
+const nodeModulesPath = path.resolve(__dirname, "node_modules")
 
 var config = {
   entry: {
@@ -26,8 +30,6 @@ var config = {
     ignored: ["/exampleSite/", "/node_modules/"]
   },
   plugins: [
-    new RemoveEmptyScriptsPlugin(),
-
     new CopyPlugin({
       patterns: [
         {
@@ -44,12 +46,6 @@ var config = {
           context: path.resolve(__dirname, "build")
         }
       ]
-    }),
-
-    new WebpackAssetsManifest({
-      output: "../data/assets.json",
-      integrity: true,
-      integrityHashes: ["sha512"]
     }),
 
     new FaviconsWebpackPlugin({
@@ -70,6 +66,31 @@ var config = {
           coast: false
         }
       }
+    }),
+
+    new RemoveEmptyScriptsPlugin(),
+
+    new WebpackManifestPlugin({
+      fileName: "../data/assets.json",
+      publicPath: "",
+      writeToFileEmit: true,
+      generate(seed, files) {
+        let manifest = {}
+
+        files.forEach(function (element, index) {
+          if (element.name.endsWith(".svg")) return
+
+          Object.assign(manifest, {
+            [element.name]: { src: element.path }
+          })
+        })
+
+        return manifest
+      }
+    }),
+
+    new SRIPlugin({
+      sourceFile: "data/assets.json"
     })
   ]
 }
@@ -82,8 +103,14 @@ module.exports = (env, argv) => {
   config.module = {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/,
-        exclude: /node_modules/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][ext]"
+        }
+      },
+      {
+        test: /\.(sa|sc|c)ss$/i,
         type: "asset/resource",
         generator: {
           filename: "[name]-[contenthash:8].min.css"
@@ -104,7 +131,8 @@ module.exports = (env, argv) => {
                 // FIXME: https://github.com/webpack-contrib/sass-loader/issues/962#issuecomment-1002675051
                 sourceMap: argv.mode === "development" ? true : false,
                 sourceMapEmbed: argv.mode === "development" ? true : false,
-                outputStyle: "compressed"
+                outputStyle: "compressed",
+                includePaths: [nodeModulesPath]
               }
             }
           }
