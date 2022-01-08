@@ -4,6 +4,6 @@
 {{ end }}
 
 
-<pre class="gblog-mermaid mermaid{{ with .Get "class" }}{{ . }}{{ end }}">
+<pre class="gblog-mermaid mermaid {{ with .Get "class" }}{{ . }}{{ end }}">
   {{- .Inner -}}
 </pre>

@@ -64,15 +64,16 @@
       class="gblog-button__link"
       href="{{ .page.RelPermalink }}"
       title="All posts tagged with '{{ .name }}'"
-      >{{ .name }}</a
     >
+      {{ .name }}
+    </a>
   </span>
 {{ end }}
 
 {{ define "post-author" }}
   <span class="gblog-post__tag gblog-button">
-    <a class="gblog-button__link" href="{{ .page.RelPermalink }}" title="All posts of this author"
-      >{{ .name }}</a
-    >
+    <a class="gblog-button__link" href="{{ .page.RelPermalink }}" title="All posts of this author">
+      {{ .name }}
+    </a>
   </span>
 {{ end }}
