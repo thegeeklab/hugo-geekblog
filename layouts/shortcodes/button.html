@@ -14,7 +14,11 @@
 {{ end }}
 
 
-<span class="gblog-button gblog-button--{{ $size }}{{ with .Get "class" }}{{ . }}{{ end }}">
+<span
+  class="gblog-button gblog-button--{{ $size }}{{ with .Get "class" }}
+    {{ printf " %s" . }}
+  {{ end }}"
+>
   <a {{ with $ref }}href="{{ . }}"{{ end }} class="gblog-button__link">
     {{ $.Inner }}
   </a>

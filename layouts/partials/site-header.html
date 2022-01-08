@@ -52,8 +52,9 @@
             <a
               class="gblog-nav__entry {{ if eq $currentPage .RelPermalink }}is-active{{ end }}"
               href="{{ .RelPermalink }}"
-              >{{ .Title }}</a
             >
+              {{ .Title }}
+            </a>
           </li>
         {{ end }}
       {{ end }}

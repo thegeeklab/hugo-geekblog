@@ -12,9 +12,9 @@
   <div class="gblog-paging__state">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</div>
   <div class="gblog-paging__item gblog-paging__item--next">
     {{ if $pag.HasNext }}
-      <a class="flex-inline align-center fake-link no-wrap" href="{{ $pag.Next.URL }}"
-        >NEXT<i class="gblog-icon">gblog_keyboard_arrow_right</i></a
-      >
+      <a class="flex-inline align-center fake-link no-wrap" href="{{ $pag.Next.URL }}">
+        NEXT<i class="gblog-icon">gblog_keyboard_arrow_right</i>
+      </a>
     {{ end }}
   </div>
 </nav>
