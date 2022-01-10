@@ -87,7 +87,7 @@ In some situations, it can be helpful to include Markdown files that also contai
 
 1. First you need to create a directory **within** your content directory. For this example site `_includes` is used.
 2. Place your Markdown files within the `_includes` folder e.g. `/_includes/include-page.md`. Make sure to name it `*.md`.
-3. Include the page using `{{</* include file="/_includes/include-page.md" */>}}`.
+3. Include the page using `{{</* include file="/_includes/include-page.md" type="page" */>}}`.
 
 Resulting structure should look like this:
 
@@ -95,13 +95,6 @@ Resulting structure should look like this:
 _includes/
  ├── include-page.md
  └── _index.md
-```
-
-Specify the page include:
-
-<!-- prettier-ignore -->
-```tpl
-{{</* include file="/_includes/include-page.md" type="page" */>}}
 ```
 
 {{< include file="/_includes/include-page.md" type="page" >}}
