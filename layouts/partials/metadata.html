@@ -47,7 +47,7 @@
     {{ with $.Site.GetPage (printf "/tags/%s" $name | urlize) }}
       {{ if eq $tc 0 }}
         <span class="no-wrap">
-          <svg class="icon gblog_bookmarks"><use xlink:href="#gblog_bookmarks"></use></svg>
+          <svg class="icon gblog_bookmark"><use xlink:href="#gblog_bookmark"></use></svg>
           {{ template "post-tag" dict "name" $name "page" . }}
         </span>
       {{ else }}
