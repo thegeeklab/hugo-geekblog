@@ -408,6 +408,16 @@ img {
     }
   }
 
+  &__footer {
+    :not(:first-child).no-wrap {
+      margin-left: $padding-8;
+    }
+
+    .icon {
+      font-size: 1.2em;
+    }
+  }
+
   &__figure {
     padding: $padding-4;
     margin: $padding-16 0;
@@ -429,16 +439,6 @@ img {
     img {
       max-width: 100%;
       height: auto;
-    }
-  }
-
-  &__footer {
-    :not(:first-child).no-wrap {
-      margin-left: $padding-8;
-    }
-
-    .icon {
-      font-size: 1.2em;
     }
   }
 
