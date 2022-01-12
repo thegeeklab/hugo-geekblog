@@ -4,16 +4,18 @@
 <nav class="gblog-paging flex flex-even align-center" role="navigation">
   <div class="gblog-paging__item gblog-paging__item--prev">
     {{ if $pag.HasPrev }}
-      <a class="flex-inline align-center fake-link no-wrap" href="{{ $pag.Prev.URL }}"
-        ><i class="gblog-icon">gblog_keyboard_arrow_left</i>PREV</a
-      >
+      <a class="flex-inline align-center fake-link no-wrap" href="{{ $pag.Prev.URL }}">
+        <i class="gblog-icon">gblog_keyboard_arrow_left</i>
+        PREV
+      </a>
     {{ end }}
   </div>
   <div class="gblog-paging__state">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</div>
   <div class="gblog-paging__item gblog-paging__item--next">
     {{ if $pag.HasNext }}
       <a class="flex-inline align-center fake-link no-wrap" href="{{ $pag.Next.URL }}">
-        NEXT<i class="gblog-icon">gblog_keyboard_arrow_right</i>
+        NEXT
+        <i class="gblog-icon">gblog_keyboard_arrow_right</i>
       </a>
     {{ end }}
   </div>
