@@ -28,7 +28,7 @@
   "license": "MIT",
   "dependencies": {
     "clipboard": "2.0.8",
-    "mermaid": "8.13.8",
+    "mermaid": "8.13.10",
     "store2": "2.13.1"
   },
   "devDependencies": {
