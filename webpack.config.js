@@ -23,7 +23,6 @@ var config = {
     filename: "js/[name].bundle.min.js",
     chunkFilename: "js/[name].chunk.min.js",
     path: path.join(__dirname, "static"),
-    publicPath: "/",
     clean: true
   },
   watchOptions: {
