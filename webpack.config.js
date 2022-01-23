@@ -16,12 +16,12 @@ var config = {
       path.resolve("src", "sass", "mobile.scss"),
       path.resolve("src", "sass", "print.scss")
     ],
-    bundle: path.resolve("src", "js", "app.js"),
+    main: path.resolve("src", "js", "app.js"),
     mermaid: path.resolve("src", "js", "mermaid.js")
   },
   output: {
-    filename: "js/[name].bundle.min.js",
-    chunkFilename: "js/[name].chunk.min.js",
+    filename: "js/[name]-[contenthash:8].bundle.min.js",
+    chunkFilename: "js/[name]-[contenthash:8].chunk.min.js",
     path: path.join(__dirname, "static"),
     publicPath: "/",
     clean: true
