@@ -21,7 +21,8 @@
         <span class="flex align-center no-wrap">
           <svg class="icon gblog_star"><use xlink:href="#gblog_star"></use></svg>
           <span>
-            {{ with index .Pages.ByDate 0 }}
+            {{ $latet := index .Pages.ByDate 0 }}
+            {{ with $latet }}
               <a href="{{ .RelPermalink }}">{{ partial "title" . }}</a>
             {{ end }}
             <i>by</i>
