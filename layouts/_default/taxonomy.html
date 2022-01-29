@@ -21,8 +21,9 @@
         <span class="flex align-center no-wrap">
           <svg class="icon gblog_star"><use xlink:href="#gblog_star"></use></svg>
           <span>
-            {{ $latet := index .Pages.ByDate 0 }}
-            <a href="{{ $latet.RelPermalink }}">{{ partial "title" $latet }}</a>
+            {{ with index .Pages.ByDate 0 }}
+              <a href="{{ .RelPermalink }}">{{ partial "title" . }}</a>
+            {{ end }}
             <i>by</i>
             {{ $ac := 0 }}
             {{ with $latet.Params.authors }}
