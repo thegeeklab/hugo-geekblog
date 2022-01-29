@@ -291,10 +291,8 @@ img {
   border-top: $border-2 dashed var(--accent-color-dark);
   padding: $padding-32 0;
 
-  &__header {
-    h1 {
-      margin-top: 0;
-    }
+  &__title {
+    margin-top: 0;
 
     a,
     a:visited {
@@ -324,18 +322,6 @@ img {
     a:visited:hover {
       background: var(--link-color);
       color: $gray-100;
-    }
-  }
-
-  &__tag {
-    margin: $padding-4 0 !important;
-
-    .gblog-button__link {
-      padding: $padding-4 $padding-8;
-
-      &:hover {
-        background: none;
-      }
     }
   }
 
@@ -401,20 +387,24 @@ img {
   }
 
   &__meta {
-    padding-bottom: $padding-16;
-
-    .icon {
-      font-size: 1.2em;
+    span:first-child .icon {
+      margin-left: -5px;
     }
-  }
 
-  &__footer {
     :not(:first-child).no-wrap {
       margin-left: $padding-8;
     }
 
     .icon {
       font-size: 1.2em;
+    }
+
+    .gblog-button {
+      margin-left: $padding-4;
+    }
+
+    &--head {
+      padding-bottom: $padding-16;
     }
   }
 

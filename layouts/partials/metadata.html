@@ -1,4 +1,4 @@
-<span class="no-wrap">
+<span class="flex align-center no-wrap">
   <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
   <span class="gblog-post__tag">
     <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
@@ -10,13 +10,13 @@
   </span>
 </span>
 
-<span class="no-wrap">
+<span class="flex align-center no-wrap">
   <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
   <span class="gblog-post__tag">{{ .ReadingTime }} min read</span>
 </span>
 
 {{ if eq .Params.weight 1 }}
-  <span class="no-wrap">
+  <span class="flex align-center no-wrap">
     <svg class="icon gblog_pin"><use xlink:href="#gblog_pin"></use></svg>
     <span class="gblog-post__tag">Pinned</span>
   </span>
@@ -28,7 +28,7 @@
     {{ $author := index $.Site.Data.authors . }}
     {{ with $.Site.GetPage (printf "/authors/%s" . | urlize) }}
       {{ if eq $ac 0 }}
-        <span class="no-wrap">
+        <span class="flex align-center no-wrap">
           <svg class="icon gblog_person"><use xlink:href="#gblog_person"></use></svg>
           {{ template "post-author" dict "name" $author.name "page" . }}
         </span>
@@ -46,7 +46,7 @@
     {{ $name := . }}
     {{ with $.Site.GetPage (printf "/tags/%s" $name | urlize) }}
       {{ if eq $tc 0 }}
-        <span class="no-wrap">
+        <span class="flex align-center no-wrap">
           <svg class="icon gblog_bookmark"><use xlink:href="#gblog_bookmark"></use></svg>
           {{ template "post-tag" dict "name" $name "page" . }}
         </span>
@@ -59,7 +59,7 @@
 {{ end }}
 
 {{ define "post-tag" }}
-  <span class="gblog-post__tag gblog-button">
+  <span class="gblog-post__tag gblog-button gblog-button--regular">
     <a
       class="gblog-button__link"
       href="{{ .page.RelPermalink }}"
@@ -71,7 +71,7 @@
 {{ end }}
 
 {{ define "post-author" }}
-  <span class="gblog-post__tag gblog-button">
+  <span class="gblog-post__tag gblog-button gblog-button--regular">
     <a class="gblog-button__link" href="{{ .page.RelPermalink }}" title="All posts of this author">
       {{ .name }}
     </a>

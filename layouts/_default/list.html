@@ -8,7 +8,9 @@
   {{ range $paginator.Pages }}
     <article class="gblog-post">
       <header class="gblog-post__header">
-        <h1><a href="{{ .RelPermalink }}">{{ partial "title" . }}</a></h1>
+        <h1 class="gblog-post__title">
+          <a href="{{ .RelPermalink }}">{{ partial "title" . }}</a>
+        </h1>
       </header>
 
       <section class="gblog-markdown">
@@ -28,7 +30,9 @@
       </div>
 
       <footer class="gblog-post__footer">
-        {{ partial "metadata.html" . }}
+        <div class="flex flex-wrap align-center gblog-post__meta">
+          {{ partial "metadata.html" . }}
+        </div>
       </footer>
     </article>
   {{ end }}
