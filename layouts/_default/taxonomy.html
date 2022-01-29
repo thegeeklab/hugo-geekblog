@@ -1,0 +1,49 @@
+{{ define "main" }}
+  {{ $paginator := .Paginate .Paginator.Pages }}
+  {{ range $paginator.Pages.ByTitle }}
+    <article class="gblog-post">
+      <header class="gblog-post__header">
+        <h1 class="gblog-post__title">
+          <a href="{{ .RelPermalink }}">{{ partial "title" . }}</a>
+        </h1>
+      </header>
+
+      <footer class="gblog-post__meta flex align-center">
+        <span class="flex align-center no-wrap">
+          {{ $pageCount := len .Pages }}
+          <svg class="icon gblog_tag"><use xlink:href="#gblog_tag"></use></svg>
+          <span class="gblog-post__tag">
+            {{ $pageCount }}
+            post{{ if ne $pageCount 1 }}s{{ end }}
+          </span>
+        </span>
+
+        <span class="flex align-center no-wrap">
+          <svg class="icon gblog_star"><use xlink:href="#gblog_star"></use></svg>
+          <span>
+            {{ $latet := index .Pages.ByDate 0 }}
+            {{ with $latet }}
+              <a href="{{ .RelPermalink }}">{{ partial "title" . }}</a>
+            {{ end }}
+            <i>by</i>
+            {{ $ac := 0 }}
+            {{ with $latet.Params.authors }}
+              {{ range sort . }}
+                {{ $author := index $.Site.Data.authors . }}
+                {{ with $.Site.GetPage (printf "/authors/%s" . | urlize) }}
+                  {{ if eq $ac 0 }}
+                    {{ template "post-author" dict "name" $author.name "page" . }}
+                  {{ else }}
+                    {{ template "post-author" dict "name" $author.name "page" . }}
+                  {{ end }}
+                {{ end }}
+                {{ $ac = (add $ac 1) }}
+              {{ end }}
+            {{ end }}
+          </span>
+        </span>
+      </footer>
+    </article>
+  {{ end }}
+  {{ partial "pagination.html" . }}
+{{ end }}
