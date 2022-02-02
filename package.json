@@ -27,7 +27,7 @@
   "author": "Robert Kaussow",
   "license": "MIT",
   "dependencies": {
-    "clipboard": "2.0.9",
+    "clipboard": "2.0.10",
     "mermaid": "8.13.10",
     "store2": "2.13.1"
   },
