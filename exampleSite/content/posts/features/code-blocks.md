@@ -20,10 +20,7 @@ To display an inline shortcode use single quotes:
 `some code`
 ```
 
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable-next-line MD042 -->
 **Example:** `some code` with a [`link`](#)
-<!-- prettier-ignore-end -->
 
 ## Code blocks
 
