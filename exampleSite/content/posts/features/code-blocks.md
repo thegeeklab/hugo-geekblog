@@ -17,7 +17,7 @@ There are several ways to add code blocks. Most of them work out of the box, onl
 To display an inline shortcode use single quotes:
 
 ```Plain
-`some code` with a
+`some code`
 ```
 
 <!-- prettier-ignore-start -->
