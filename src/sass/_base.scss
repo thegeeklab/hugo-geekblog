@@ -312,7 +312,7 @@ img {
   }
 
   &__readmore {
-    margin: 1.5rem 0 $padding-32 0;
+    margin: $padding-16 0;
 
     a:visited {
       color: var(--link-color);
@@ -369,20 +369,29 @@ img {
     }
 
     span {
-      background: rgba($gray-900, 0.8);
+      background: $gray-800;
       position: absolute;
       bottom: 0;
       right: 0;
-      padding: $padding-4;
+      padding: $padding-4 $padding-8;
       font-size: 0.8em;
       color: $gray-100;
       border-radius: $border-radius 0;
     }
 
-    a:hover,
+    a {
+      text-decoration: none;
+      color: $link-color-dark;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      background: none;
+    }
+
     a:visited,
     a:visited:hover {
-      color: $gray-100 !important;
+      color: $link-color-dark;
     }
   }
 

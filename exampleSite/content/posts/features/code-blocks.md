@@ -17,10 +17,13 @@ There are several ways to add code blocks. Most of them work out of the box, onl
 To display an inline shortcode use single quotes:
 
 ```Plain
-`some code`
+`some code` with a
 ```
 
-**Example:** `some code`
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable-next-line MD042 -->
+**Example:** `some code` with a [`link`](#)
+<!-- prettier-ignore-end -->
 
 ## Code blocks
 
