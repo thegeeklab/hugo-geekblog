@@ -12,7 +12,6 @@ img
 JSON
 SVG
 YAML
-pre-processor
 pre-build
 submodule
 GPL
@@ -34,4 +33,4 @@ whitespace
 Theming
 Favicon[s]?
 webpack
-pre-processor(s)
+pre-processor[s]?
