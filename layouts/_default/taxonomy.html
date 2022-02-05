@@ -4,7 +4,7 @@
     <article class="gblog-post">
       <header class="gblog-post__header">
         <h1 class="gblog-post__title">
-          <a href="{{ .RelPermalink }}">{{ partial "title" . }}</a>
+          <a href="{{ .RelPermalink }}">{{ partial "utils/title" . }}</a>
         </h1>
       </header>
 
@@ -23,7 +23,7 @@
           <span>
             {{ $latet := index .Pages.ByDate 0 }}
             {{ with $latet }}
-              <a href="{{ .RelPermalink }}">{{ partial "title" . }}</a>
+              <a href="{{ .RelPermalink }}">{{ partial "utils/title" . }}</a>
             {{ end }}
             <i>by</i>
             {{ $ac := 0 }}

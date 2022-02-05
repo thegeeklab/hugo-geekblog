@@ -18,18 +18,9 @@
   {{- end -}}
 {{- end }}
 <meta name="twitter:title" content="{{ .Title }}" />
-<meta
-  name="twitter:description"
-  content="{{ with .Description }}
-    {{ . }}
-  {{ else }}
-    {{ if .IsPage }}
-      {{ .Summary }}
-    {{ else }}
-      {{ with .Site.Params.description }}{{ . }}{{ end }}
-    {{ end }}
-  {{ end -}}"
-/>
-{{ with .Site.Social.twitter -}}
+{{- with partial "utils/description" . }}
+  <meta name="twitter:description" content="{{ trim (. | plainify) "\n" }}" />
+{{- end }}
+{{- with .Site.Social.twitter -}}
   <meta name="twitter:site" content="@{{ . }}" />
-{{ end -}}
+{{- end }}
