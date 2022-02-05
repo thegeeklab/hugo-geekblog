@@ -26,6 +26,9 @@
   },
   "author": "Robert Kaussow",
   "license": "MIT",
+  "engines": {
+    "node": ">=15 <17"
+  },
   "dependencies": {
     "clipboard": "2.0.10",
     "mermaid": "8.13.10",
