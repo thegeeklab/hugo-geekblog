@@ -1,16 +1,7 @@
 <meta property="og:title" content="{{ .Title }}" />
-<meta
-  property="og:description"
-  content="{{ with .Description }}
-    {{ . }}
-  {{ else }}
-    {{ if .IsPage }}
-      {{ .Summary }}
-    {{ else }}
-      {{ with .Site.Params.description }}{{ . }}{{ end }}
-    {{ end }}
-  {{ end }}"
-/>
+{{ with partial "utils/description" . }}
+  <meta property="og:description" content="{{ trim (. | plainify) "\n" }}" />
+{{ end }}
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 
