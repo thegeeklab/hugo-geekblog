@@ -53,7 +53,7 @@
               class="gblog-nav__entry {{ if eq $currentPage .RelPermalink }}is-active{{ end }}"
               href="{{ .RelPermalink }}"
             >
-              {{ .Title }}
+              {{ partial "utils/title" . }}
             </a>
           </li>
         {{ end }}

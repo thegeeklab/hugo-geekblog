@@ -66,12 +66,16 @@
   media="all"
 />
 
-{{ with .OutputFormats.Get "atom" }}
-  {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-{{ end }}
+{{- with (.Site.GetPage "home").OutputFormats.Get "atom" }}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s Atom Feed">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{- end }}
 
-{{ if (default false $.Site.Params.GeekblogOverwriteHTMLBase) }}
+{{- with (.Site.GetPage "home").OutputFormats.Get "json" }}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s JSON Feed">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{- end }}
+
+{{- if (default false $.Site.Params.GeekblogOverwriteHTMLBase) }}
   <base href="{{ .Site.BaseURL }}" />
-{{ end }}
+{{- end }}
 
 {{ printf "<!-- %s -->" "Made with Geekblog theme https://github.com/thegeeklab/hugo-geekblog" | safeHTML }}

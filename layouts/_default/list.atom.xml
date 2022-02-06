@@ -2,10 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom"{{ with .Site.Language.Lang }} xml:lang="{{ . }}"{{ end }}>
     <generator uri="https://gohugo.io/" version="{{ hugo.Version }}">Hugo</generator>
     {{- $title := .Site.Title -}}
-    {{- with .Title -}}
-        {{- if (not (eq . $title)) -}}
-            {{- $title = printf `%s on %s` . $title -}}
-        {{- end -}}
+    {{- if not (eq .Kind "home") -}}
+        {{- $title = printf `%s on %s` (partial "utils/title" .) $title -}}
     {{- end -}}
     {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
     {{ with .Site.Params.subtitle }}
@@ -37,7 +35,7 @@
     {{- range $pages }}
         {{ $page := . }}
         <entry>
-            {{ printf `<title type="html"><![CDATA[%s]]></title>` .Title | safeHTML }}
+            {{ printf `<title type="html"><![CDATA[%s]]></title>` (partial "utils/title" .) | safeHTML }}
             <link href="{{ .Permalink }}?utm_source=atom_feed" rel="alternate" type="text/html" {{ with .Site.Language.Lang }} hreflang="{{ . }}"{{ end }} />
             <id>{{ .Permalink }}</id>
             {{ with .Params.authors -}}
