@@ -66,6 +66,8 @@
   media="all"
 />
 
+<link rel="canonical" href="{{ .Permalink }}" />
+
 {{- with (.Site.GetPage "home").OutputFormats.Get "atom" }}
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s Atom Feed">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{- end }}
