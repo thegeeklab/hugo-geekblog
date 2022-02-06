@@ -65,15 +65,14 @@
   href="{{ index (index .Site.Data.assets "custom.css") "src" | relURL }}"
   media="all"
 />
-
-<link rel="canonical" href="{{ .Permalink }}" />
-
-{{- with (.Site.GetPage "home").OutputFormats.Get "atom" }}
-  {{ printf `<link rel="%s" type="%s" href="%s" title="%s Atom Feed">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{- with .OutputFormats.Get "html" }}
+  {{ printf `<link href=%q rel=%q type=%q />` .Permalink .Rel .MediaType.Type | safeHTML }}
 {{- end }}
-
-{{- with (.Site.GetPage "home").OutputFormats.Get "json" }}
-  {{ printf `<link rel="%s" type="%s" href="%s" title="%s JSON Feed">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{- $output_formats := (.Site.GetPage "home").OutputFormats }}
+{{- range $format := (.Site.GetPage "home").OutputFormats }}
+  {{- if not (eq $format.Rel "canonical") }}
+    {{ printf `<link href=%q rel=%q type=%q title="%s %s Feed" />` $format.Permalink $format.Rel $format.MediaType.Type $.Site.Title $format.Name | safeHTML }}
+  {{- end }}
 {{- end }}
 
 {{- if (default false $.Site.Params.GeekblogOverwriteHTMLBase) }}
