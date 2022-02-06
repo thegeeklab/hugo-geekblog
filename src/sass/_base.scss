@@ -312,7 +312,7 @@ img {
   }
 
   &__readmore {
-    margin: $padding-16 0;
+    margin: $padding-32 0;
 
     a:visited {
       color: var(--link-color);
@@ -396,12 +396,15 @@ img {
   }
 
   &__meta {
-    span:first-child .icon {
+    span .icon {
       margin-left: -5px;
     }
 
-    :not(:first-child).no-wrap {
-      margin-left: $padding-8;
+    > span {
+      margin: $padding-4 0;
+      &:not(:last-child) {
+        margin-right: $padding-8;
+      }
     }
 
     .icon {
@@ -409,11 +412,11 @@ img {
     }
 
     .gblog-button {
-      margin-left: $padding-4;
+      margin: 0 $padding-2 0 0;
     }
 
     &--head {
-      padding-bottom: $padding-16;
+      margin-bottom: $padding-32;
     }
   }
 
