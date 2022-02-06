@@ -1,4 +1,4 @@
-<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:title" content="{{ partial "utils/title" . }}" />
 {{ with partial "utils/description" . }}
   <meta property="og:description" content="{{ trim (. | plainify) "\n" }}" />
 {{ end }}

@@ -17,7 +17,7 @@
     {{- end -}}
   {{- end -}}
 {{- end }}
-<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:title" content="{{ partial "utils/title" . }}" />
 {{- with partial "utils/description" . }}
   <meta name="twitter:description" content="{{ trim (. | plainify) "\n" }}" />
 {{- end }}

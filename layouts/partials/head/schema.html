@@ -29,8 +29,8 @@
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "articleSection": "{{ .Section }}",
-      "name": "{{ .Title | safeJS }}",
-      "headline": "{{ .Title | safeJS }}",
+      "name": "{{ (partial "utils/title" .) | safeJS }}",
+      "headline": "{{ (partial "utils/title" .) | safeJS }}",
       {{- with .Params.lead }}
       "alternativeHeadline": "{{ . }}",
       {{- end }}
