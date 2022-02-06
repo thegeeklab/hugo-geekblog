@@ -3,25 +3,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 {{ hugo.Generator }}
 
-{{ $keywords := default .Site.Params.Keywords .Keywords }}
-{{ $authors := default (slice .Site.Params.GeekblogAuthor) .Params.authors }}
+{{- $keywords := default .Site.Params.Keywords .Keywords -}}
+{{- $authors := default (slice .Site.Params.GeekblogAuthor) .Params.authors -}}
 
-{{ with partial "utils/description" . }}
+{{- with partial "utils/description" . }}
   <meta name="description" content="{{ trim (. | plainify) "\n" }}" />
-{{ end }}
-{{ with $keywords }}
+{{- end }}
+{{- with $keywords }}
   <meta name="keywords" content="{{ delimit . "," }}" />
-{{ end }}
-{{ with $authors }}
-  {{ $list := slice }}
-  {{ range sort . }}
-    {{ with . }}
-      {{ $author := index $.Site.Data.authors . }}
-      {{ $list = $list | append $author.name }}
-    {{ end }}
-  {{ end }}
+{{- end }}
+{{- with $authors }}
+  {{- $list := slice -}}
+  {{- range sort . }}
+    {{- with . }}
+      {{- $author := index $.Site.Data.authors . -}}
+      {{- $list = $list | append $author.name -}}
+    {{- end }}
+  {{- end }}
 
-  {{ with $list }}
+  {{- with $list }}
     <meta name="author" content="{{ delimit . "," }}" />
-  {{ end }}
-{{ end }}
+  {{- end }}
+{{- end }}
