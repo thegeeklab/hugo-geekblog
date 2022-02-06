@@ -40,10 +40,14 @@
             {{- end }}"
             class="gblog-nav__entry{{ if $isCurrent }}{{ printf " %s" "is-active" }}{{ end }}"
           >
-            {{ if $icon }}
-              <svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
-            {{ end }}
-            {{ .name }}
+            <span class="flex align-center">
+              {{ if $icon }}
+                <svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
+              {{ end }}
+              <span>
+                {{ .name }}
+              </span>
+            </span>
           </a>
         </li>
       {{ end }}
