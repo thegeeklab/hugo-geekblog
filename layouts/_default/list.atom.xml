@@ -1,51 +1,49 @@
-{{ printf `<?xml version="1.0" encoding="utf-8"?>` | safeHTML }} {{/* ref: https://validator.w3.org/feed/docs/atom.html */}}
+{{ printf `<?xml version="1.0" encoding="utf-8"?>` | safeHTML }}
 <feed xmlns="http://www.w3.org/2005/Atom"{{ with .Site.Language.Lang }} xml:lang="{{ . }}"{{ end }}>
     <generator uri="https://gohugo.io/" version="{{ hugo.Version }}">Hugo</generator>
     {{- $title := .Site.Title -}}
-    {{- if not (eq .Kind "home") -}}
+    {{- if not (eq .Kind "home") }}
         {{- $title = printf `%s on %s` (partial "utils/title" .) $title -}}
-    {{- end -}}
-    {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
-    {{ with .Site.Params.subtitle }}
-        {{ printf `<subtitle type="html"><![CDATA[%s]]></subtitle>` . | safeHTML }}
-    {{ end }}
-    {{ $output_formats := .OutputFormats }}
-    {{ range $output_formats -}}
+    {{- end }}
+    <title>{{ trim ($title | plainify) "\n" }}</title>
+    {{- with .Site.Params.subtitle }}
+        <subtitle>{{ trim (. | plainify) "\n" }}</subtitle>
+    {{- end }}
+    {{- $output_formats := .OutputFormats -}}
+    {{- range $output_formats -}}
         {{- $rel := (or (and (eq "atom" (.Name | lower)) "self") "alternate") -}}
-        {{ with $output_formats.Get .Name }}
+        {{- with $output_formats.Get .Name }}
             {{ printf `<link href=%q rel=%q type=%q title=%q />` .Permalink $rel .MediaType.Type .Name | safeHTML }}
-        {{- end -}}
+        {{- end }}
     {{- end }}
     <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
-    <generator uri="https://gohugo.io" version="{{ hugo.Version }}">Hugo</generator>
-    {{ with .Site.Params.GeekblogAuthor -}}
-        {{ with index $.Site.Data.authors . }}
+    {{- with .Site.Params.GeekblogAuthor -}}
+        {{- with index $.Site.Data.authors . }}
         <author>
             <name>{{ .name }}</name>
-            {{ with .email }}
+            {{- with .email }}
                 <email>{{ . }}</email>
-            {{ end -}}
+            {{- end }}
         </author>
-        {{ end }}
+        {{- end }}
     {{- end }}
     <id>{{ .Permalink }}</id>
     {{- $pages := where .RegularPages "Type" "in" .Site.Params.mainSections -}}
     {{- if (eq .Kind "home") -}}
         {{- $pages = where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
     {{- end -}}
-    {{- range $pages }}
-        {{ $page := . }}
+    {{- range $page := $pages }}
         <entry>
-            {{ printf `<title type="html"><![CDATA[%s]]></title>` (partial "utils/title" .) | safeHTML }}
-            <link href="{{ .Permalink }}?utm_source=atom_feed" rel="alternate" type="text/html" {{ with .Site.Language.Lang }} hreflang="{{ . }}"{{ end }} />
+            <title>{{ trim (partial "utils/title" . | plainify) "\n" }}</title>
+            <link href="{{ .Permalink }}" rel="alternate" type="text/html" {{ with .Site.Language.Lang }} hreflang="{{ . }}"{{ end }} />
             <id>{{ .Permalink }}</id>
-            {{ with .Params.authors -}}
-                {{- range sort . -}}
-                    {{ $author := index $.Site.Data.authors . }}
+            {{- with .Params.authors }}
+                {{- range sort . }}
+                    {{- $author := index $.Site.Data.authors . }}
                     <author>
                         <name>{{ $author.name }}</name>
                     </author>
-                {{- end -}}
+                {{- end }}
             {{- end }}
             <published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
             <updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
@@ -54,20 +52,22 @@
                 {{- $featured := .Fill (printf "910x280 %s" (default "Smart" .Params.anchor)) -}}
                 {{- $img = printf `<img src="%s" width="%d" height="%d" alt="%s" /><br/>` $featured.Permalink $featured.Width $featured.Height (default (partial "utils/title" $page) .Params.description) -}}
             {{- end }}
-            {{ printf `<content type="html"><![CDATA[%s%s]]></content>` $img .Content | safeHTML }}
-            {{ with .Site.Taxonomies }}
-                {{ range $taxo,$_ := . }} <!-- Defaults taxos: "tags", "categories" -->
-                    {{ with $page.Param $taxo }}
-                        {{ $taxo_list := . }} <!-- $taxo_list will be the tags/categories list -->
-                        {{ with $.Site.GetPage (printf "/%s" $taxo) }}
-                            {{ $taxonomy_page := . }}
-                            {{ range $taxo_list }} <!-- Below, assuming pretty URLs -->
+            <content type="html">
+                {{ printf "%s%s" $img .Content | htmlEscape | safeHTML }}
+            </content>
+            {{- with .Site.Taxonomies }}
+                {{- range $taxo,$_ := . }} <!-- Defaults taxos: "tags", "categories" -->
+                    {{- with $page.Param $taxo }}
+                        {{- $taxo_list := . -}} <!-- $taxo_list will be the tags/categories list -->
+                        {{- with $.Site.GetPage (printf "/%s" $taxo) }}
+                            {{- $taxonomy_page := . -}}
+                            {{- range $taxo_list }} <!-- Below, assuming pretty URLs -->
                                 <category scheme="{{ printf "%s%s" $taxonomy_page.Permalink (. | urlize) }}" term="{{ (. | urlize) }}" label="{{ . }}" />
-                            {{ end }}
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-            {{ end }}
+                            {{- end }}
+                        {{- end }}
+                    {{- end }}
+                {{- end }}
+            {{- end }}
         </entry>
-    {{ end }}
+    {{- end }}
 </feed>
