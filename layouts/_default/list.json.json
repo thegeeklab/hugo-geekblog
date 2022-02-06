@@ -36,6 +36,10 @@
             "date_modified" : {{ (.Lastmod.Format "2006-01-02T15:04:05Z07:00") | jsonify }},
             "id" : "{{ .Permalink }}",
             "url" : "{{ .Permalink }}",
+            {{- with ($page.Resources.ByType "image").GetMatch "{*feature*,*cover*,*thumbnail*}" }}
+            {{- $featured := .Fill (printf "910x280 %s" (default "Smart" .Params.anchor)) -}}
+            "image" : "{{ $featured.Permalink }}",
+            {{- end }}
             {{- with .Params.authors -}}
             "authors" : [
                 {{- $authors := (sort .) }}

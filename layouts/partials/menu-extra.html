@@ -20,11 +20,11 @@
             <svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
           {{ end }}
           <a
-            href="{{ if .external }}
+            href="{{ if .external -}}
               {{ .ref }}
-            {{ else }}
+            {{- else -}}
               {{ relref $current .ref }}
-            {{ end }}"
+            {{- end }}"
             class="gblog-footer__link"
           >
             {{ .name }}
@@ -33,12 +33,12 @@
       {{ else if eq $target "header" }}
         <li>
           <a
-            href="{{ if .external }}
+            href="{{ if .external -}}
               {{ .ref }}
-            {{ else }}
+            {{- else -}}
               {{ relref $current .ref }}
-            {{ end }}"
-            class="gblog-nav__entry {{ if $isCurrent }}is-active{{ end }}"
+            {{- end }}"
+            class="gblog-nav__entry{{ if $isCurrent }}{{ printf " %s" "is-active" }}{{ end }}"
           >
             {{ if $icon }}
               <svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>

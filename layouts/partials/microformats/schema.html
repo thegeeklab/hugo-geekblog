@@ -1,5 +1,5 @@
-{{ if eq .Kind "home" }}
-  {{ $thumbnail := default (default "brand.svg" .Site.Params.logo) (index (default slice .Site.Params.images) 0) | absURL }}
+{{- if eq .Kind "home" }}
+  {{- $thumbnail := default (default "brand.svg" .Site.Params.logo) (index (default slice .Site.Params.images) 0) | absURL -}}
 
   <script type="application/ld+json">
   {
@@ -19,10 +19,10 @@
       {{- end }}
   }
   </script>
-{{ else if .IsPage }}
-  {{ $authors := default (slice .Site.Params.GeekblogAuthor) .Params.authors }}
-  {{ $ac := 0 }}
-  {{ $ac_max := default 0 (len $authors) }}
+{{- else if .IsPage }}
+  {{- $authors := default (slice .Site.Params.GeekblogAuthor) .Params.authors -}}
+  {{- $ac := 0 -}}
+  {{- $ac_max := default 0 (len $authors) -}}
 
   <script type="application/ld+json">
   {
@@ -87,4 +87,4 @@
       {{- end }}
   }
   </script>
-{{- end -}}
+{{- end }}
