@@ -1,6 +1,4 @@
 {{- if eq .Kind "home" }}
-  {{- $thumbnail := default (default "brand.svg" .Site.Params.logo) (index (default slice .Site.Params.images) 0) | absURL -}}
-
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
@@ -9,14 +7,17 @@
       {{ with index $.Site.Data.authors . }}"author": "{{ .name }}",{{ end }}
       {{- end }}
       "name": "{{ .Site.Title }}",
-      "url": "{{ .Site.BaseURL }}",
+      "url": {{ .Site.BaseURL | jsonify | safeJS }},
       {{- with partial "utils/description" . }}
-      "description": "{{ trim (. | plainify) "\n" | safeHTML }}",
+      "description": {{ trim (. | plainify) "\n" | jsonify | safeJS }},
       {{- end }}
-      "thumbnailUrl": "{{ $thumbnail }}"
-      {{- with .Site.Params.GeekblogContentLicense }},
-      "license": "{{ .name }}"
+      {{- with partial "utils/featured" . }}
+      "thumbnailUrl": {{ . | jsonify | safeJS }},
       {{- end }}
+      {{- with .Site.Params.GeekblogContentLicense }}
+      "license": "{{ .name }}",
+      {{- end }}
+      "inLanguage": {{ .Lang }}
   }
   </script>
 {{- else if .IsPage }}
@@ -30,19 +31,30 @@
       "@type": "BlogPosting",
       "articleSection": "{{ .Section | humanize | title }}",
       "name": "{{ (partial "utils/title" .) | safeJS }}",
+      "url" : {{ .Permalink | jsonify | safeJS }},
       "headline": "{{ (partial "utils/title" .) | safeJS }}",
       {{- with .Params.lead }}
       "alternativeHeadline": "{{ . }}",
       {{- end }}
       {{- with partial "utils/description" . }}
-      "description": "{{ trim (. | plainify) "\n" | safeHTML }}",
+      "description": {{ trim (. | plainify) "\n" | jsonify | safeJS }},
       {{- end }}
-      "inLanguage": {{ .Site.Language.Lang }},
+      {{- with partial "utils/featured" . }}
+      "thumbnailUrl": {{ . | jsonify | safeJS }},
+      {{- end }}
+      "wordCount" : "{{ .WordCount }}",
+      {{- with .Site.Params.GeekblogContentLicense }}
+      "license": "{{ .name }}",
+      {{- end }}
+      "inLanguage": {{ .Lang }},
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "{{ .Permalink }}"
+          "@id": {{ .Permalink | jsonify | safeJS }}
       },
+      {{- with $tags := .Params.tags }}
+      "keywords" : [ {{ range $i, $tag := $tags }}{{ if $i }}, {{ end }}"{{ $tag }}" {{ end }}],
+      {{- end }}
       {{- with $authors }}
       "author" : [
           {{- range sort . }}
@@ -65,26 +77,14 @@
       "publisher":{
           "@type":"Organization",
           "name": {{ .Site.Title }},
-          "url": {{ .Site.BaseURL }},
+          "url": {{ .Site.BaseURL | jsonify | safeJS }},
           "logo": {
               "@type": "ImageObject",
-              "url": "{{ (default "brand.svg" .Site.Params.logo) | absURL }}",
+              "url": {{ (default "brand.svg" .Site.Params.logo) | absURL | jsonify | safeJS }},
               "width":"32",
               "height":"32"
           }
-      },
-      {{- with $images := $.Resources.ByType "image" }}
-      "image": [ {{ range $i, $image := $images }}{{ if $i }}, {{ end }}"{{ $image.Permalink | absURL }}" {{ end }}],
-      {{- else }}
-      {{- with $images := .Params.images }}
-      "image": [ {{ range $i, $image := $images }}{{ if $i }}, {{ end }}"{{ $image | absURL }}" {{ end }}],
-      {{- end }}
-      {{- end }}
-      "url" : "{{ .Permalink }}",
-      "wordCount" : "{{ .WordCount }}",
-      {{- with $tags := .Params.tags }}
-      "genre" : [ {{ range $i, $tag := $tags }}{{ if $i }}, {{ end }}"{{ $tag }}" {{ end }}]
-      {{- end }}
+      }
   }
   </script>
 {{- end }}
