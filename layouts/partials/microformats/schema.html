@@ -6,13 +6,13 @@
       {{ with .Site.Params.GeekblogAuthor -}}
       {{ with index $.Site.Data.authors . }}"author": "{{ .name }}",{{ end }}
       {{- end }}
-      "name": "{{ .Site.Title }}",
-      "url": {{ .Site.BaseURL | jsonify | safeJS }},
+      "name": {{ .Site.Title }},
+      "url": {{ .Site.BaseURL }},
       {{- with partial "utils/description" . }}
-      "description": {{ trim (. | plainify) "\n" | jsonify | safeJS }},
+      "description": "{{ . | plainify | htmlUnescape | chomp }}",
       {{- end }}
       {{- with partial "utils/featured" . }}
-      "thumbnailUrl": {{ . | jsonify | safeJS }},
+      "thumbnailUrl": {{ . }},
       {{- end }}
       {{- with .Site.Params.GeekblogContentLicense }}
       "license": "{{ .name }}",
@@ -30,17 +30,17 @@
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "articleSection": "{{ .Section | humanize | title }}",
-      "name": "{{ (partial "utils/title" .) | safeJS }}",
-      "url" : {{ .Permalink | jsonify | safeJS }},
-      "headline": "{{ (partial "utils/title" .) | safeJS }}",
+      "name": {{ partial "utils/title" . }},
+      "url" : {{ .Permalink }},
+      "headline": {{ partial "utils/title" . }},
       {{- with .Params.lead }}
-      "alternativeHeadline": "{{ . }}",
+      "alternativeHeadline": {{ . }},
       {{- end }}
-      {{- with partial "utils/description" . }}
-      "description": {{ trim (. | plainify) "\n" | jsonify | safeJS }},
+      {{- with .Summary }}
+      "description": "{{ . | plainify | htmlUnescape | chomp }}",
       {{- end }}
       {{- with partial "utils/featured" . }}
-      "thumbnailUrl": {{ . | jsonify | safeJS }},
+      "thumbnailUrl": {{ . }},
       {{- end }}
       "wordCount" : "{{ .WordCount }}",
       {{- with .Site.Params.GeekblogContentLicense }}
@@ -50,7 +50,7 @@
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": {{ .Permalink | jsonify | safeJS }}
+          "@id": {{ .Permalink }}
       },
       {{- with $tags := .Params.tags }}
       "keywords" : [ {{ range $i, $tag := $tags }}{{ if $i }}, {{ end }}"{{ $tag }}" {{ end }}],
@@ -77,10 +77,10 @@
       "publisher":{
           "@type":"Organization",
           "name": {{ .Site.Title }},
-          "url": {{ .Site.BaseURL | jsonify | safeJS }},
+          "url": {{ .Site.BaseURL }},
           "logo": {
               "@type": "ImageObject",
-              "url": {{ (default "brand.svg" .Site.Params.logo) | absURL | jsonify | safeJS }},
+              "url": {{ (default "brand.svg" .Site.Params.logo) | absURL }},
               "width":"32",
               "height":"32"
           }

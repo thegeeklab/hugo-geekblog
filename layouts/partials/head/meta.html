@@ -7,7 +7,7 @@
 {{- $authors := default (slice .Site.Params.GeekblogAuthor) .Params.authors -}}
 
 {{- with partial "utils/description" . }}
-  <meta name="description" content="{{ trim (. | plainify) "\n" | safeHTMLAttr }}" />
+  <meta name="description" content="{{ . | plainify | htmlUnescape | chomp }}" />
 {{- end }}
 {{- with $keywords }}
   <meta name="keywords" content="{{ delimit . "," }}" />
