@@ -5,9 +5,9 @@
     {{- if not (eq .Kind "home") }}
         {{- $title = printf `%s on %s` (partial "utils/title" .) $title -}}
     {{- end }}
-    <title>{{ trim ($title | plainify) "\n" | safeHTML }}</title>
+    <title>{{ $title }}</title>
     {{- with .Site.Params.subtitle }}
-        <subtitle>{{ trim (. | plainify) "\n" | safeHTML }}</subtitle>
+        <subtitle>{{ . }}</subtitle>
     {{- end }}
     {{- $output_formats := .OutputFormats -}}
     {{- range $output_formats -}}
@@ -34,7 +34,7 @@
     {{- end -}}
     {{- range $page := $pages }}
         <entry>
-            <title>{{ trim (partial "utils/title" . | plainify) "\n" | safeHTML }}</title>
+            <title>{{ partial "utils/title" . }}</title>
             <link href="{{ .Permalink }}" rel="alternate" type="text/html" {{ with .Site.Language.Lang }} hreflang="{{ . }}"{{ end }} />
             <id>{{ .Permalink }}</id>
             {{- with .Params.authors }}
