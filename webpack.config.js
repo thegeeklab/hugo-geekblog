@@ -17,7 +17,10 @@ var config = {
       path.resolve("src", "sass", "print.scss")
     ],
     main: path.resolve("src", "js", "app.js"),
-    mermaid: path.resolve("src", "js", "mermaid.js")
+    mermaid: path.resolve("src", "js", "mermaid.js"),
+    katex: [path.resolve("src", "js", "katex.js")].concat(
+      glob.sync(path.join(nodeModulesPath, "katex", "dist", "fonts", "*.{woff,woff2}"))
+    )
   },
   output: {
     filename: "js/[name]-[contenthash:8].bundle.min.js",
