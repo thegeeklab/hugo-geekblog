@@ -1,3 +1,4 @@
+<!-- prettier-ignore-start -->
 {{ if not (.Page.Scratch.Get "katex") }}
   <!-- Include katex only first time -->
   <link
@@ -7,8 +8,9 @@
   <script defer src="{{ index (index .Site.Data.assets "katex.js") "src" | relURL }}"></script>
   {{ .Page.Scratch.Set "katex" true }}
 {{ end }}
+<!-- prettier-ignore-end -->
 
-<span class="gblog-katex">
+<span class="gdoc-katex katex{{ with .Get "class" }}{{ . }}{{ end }}">
   {{ cond (in .Params "display") "\\[" "\\(" -}}
   {{- trim .Inner "\n" -}}
   {{- cond (in .Params "display") "\\]" "\\)" }}
