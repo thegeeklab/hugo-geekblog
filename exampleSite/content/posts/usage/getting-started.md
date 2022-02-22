@@ -259,5 +259,4 @@ There are a lot more things to discover. To get the most out of the Theme we hav
 - [Shortcodes](/posts/advanced/shortcodes/)
   - [Advanced Images](/posts/post-with-images/)
   - [Includes](/posts/advanced/includes/)
-  - [Mermaid](/posts/advanced/mermaid/)
   - [Table of Content](/posts/advanced/toc/)
