@@ -23,6 +23,8 @@ toc
 ToC
 relref
 href
+KaTeX
+katex
 Emojify
 Netlify
 Makefile

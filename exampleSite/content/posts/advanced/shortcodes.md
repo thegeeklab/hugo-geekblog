@@ -266,3 +266,41 @@ investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad
 prompts feud gait, quid exercise emeritus bis e. In pro quints consequent.
 {{< /tab >}}
 {{< /tabs >}}
+
+## KaTeX
+
+[KaTeX](https://katex.org/) shortcode let you render math typesetting in markdown document.
+
+### Example
+
+{{< columns >}}
+
+```latex
+{{</* katex [display] [class="text-center"] */>}}
+f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+{{</* /katex */>}}
+```
+
+<--->
+
+<!-- spellchecker-disable -->
+<!-- prettier-ignore -->
+{{< katex display >}}
+f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+{{< /katex >}}
+
+<!-- spellchecker-enable -->
+
+{{< /columns >}}
+
+KaTeX can also be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter:
+
+<!-- spellchecker-disable -->
+<!-- prettier-ignore -->
+{{< katex display >}}
+f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+{{< /katex >}}
+
+<!-- spellchecker-enable -->
+
+Text continues here.
