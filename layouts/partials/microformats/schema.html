@@ -36,7 +36,7 @@
       {{- with .Params.lead }}
       "alternativeHeadline": {{ . }},
       {{- end }}
-      {{- with .Summary }}
+      {{- with partial "utils/description" . }}
       "description": "{{ . | plainify | htmlUnescape | chomp }}",
       {{- end }}
       {{- with partial "utils/featured" . }}

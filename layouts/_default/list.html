@@ -14,7 +14,7 @@
       </header>
 
       <section class="gblog-markdown">
-        {{ partial "utils/description" . }}
+        {{ .Summary }}
       </section>
       <div class="gblog-post__readmore">
         {{ if .Truncated }}
