@@ -26,10 +26,10 @@ steps:
       NPM_CONFIG_LOGLEVEL: error
 
   - name: testbuild
-    image: thegeeklab/hugo:0.91.0
+    image: thegeeklab/hugo:0.93.2
     commands:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekblog
-      - hugo -s exampleSite/ -b http://localhost/
+      - hugo --panicOnWarning -s exampleSite/ -b http://localhost/
 
   - name: html-validation
     image: thegeeklab/vnu
@@ -203,9 +203,9 @@ steps:
         - refs/pull/**
 
   - name: build
-    image: thegeeklab/hugo:0.91.0
+    image: thegeeklab/hugo:0.93.2
     commands:
-      - hugo -s exampleSite/
+      - hugo --panicOnWarning -s exampleSite/
 
   - name: beautify
     image: node:lts-alpine
@@ -285,6 +285,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 281ff2f1156c56a0aaecc0e0bc11a85b84ed73cad76520c1494f25194b1c293d
+hmac: 81346082b0ec800862167cfbe219ed2369e774b0fa15371febc103b0d30f9f09
 
 ...
