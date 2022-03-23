@@ -3,13 +3,13 @@
 
 <!-- prettier-ignore-start -->
 {{- if $showAnchor -}}
-<div class="gblog-post__anchorwrap">
+<div class="gblog-post__anchorwrap flex align-center">
     <h{{ .Level }} id="{{ .Anchor | safeURL }}">
         {{ .Text | safeHTML }}
-        <a data-clipboard-text="{{ .Page.Permalink }}#{{ .Anchor | safeURL }}" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor {{ .Text | safeHTML }}" href="#{{ .Anchor | safeURL }}">
-            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
-        </a>
     </h{{ .Level }}>
+    <a data-clipboard-text="{{ .Page.Permalink }}#{{ .Anchor | safeURL }}" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor {{ .Text | safeHTML }}" href="#{{ .Anchor | safeURL }}">
+        <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+    </a>
 </div>
 {{- else -}}
 <div class="gblog-post__anchorwrap">

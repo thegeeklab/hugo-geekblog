@@ -8,6 +8,7 @@
 /exampleSite/themes/
 /exampleSite/public/
 CHANGELOG.md
+.hugo_build.lock
 
 # auto-generated files
 /data/
