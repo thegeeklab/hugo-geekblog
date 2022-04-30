@@ -96,7 +96,7 @@ The [emojify](https://gohugo.io/functions/emojify/) function can be called direc
 
 The [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/) is a useful reference for emoji shorthand codes.
 
-{{< hint info >}}
+{{< hint type=note >}}
 **Info**\
 The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack.
 {{< /hint >}}
@@ -159,42 +159,70 @@ copious quo ad. Stet probates in duo.
 ## Hint
 
 Hint shortcode can be used as hint/alerts/notification block.
-There are four colors to choose: `info`, `ok`, `warning` and `danger`.
 
-<!-- prettier-ignore -->
+Attributes:
+
+| Name             | Usage                                                                                   | default               |
+| ---------------- | --------------------------------------------------------------------------------------- | --------------------- |
+| type             | color types to choose from                                                              | note                  |
+| icon (optional)  | custom icon to use                                                                      | undefined (type name) |
+| title (optional) | custom icon to use, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined (type name) |
+
+Syntax:
+
+<!-- prettier-ignore-start -->
 ```tpl
-{{</* hint [info|ok|warning|danger] */>}}
+{{</* hint type=[note|tip|important|caution|warning] (icon=gblog_github) (title=GitHub) */>}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
-Ornateness bland it ex enc, est yeti am bongo detract re.
+ Ornateness bland it ex enc, est yeti am bongo detract re.
 {{</* /hint */>}}
 ```
+<!-- prettier-ignore-end -->
 
 ### Example
 
-{{< hint info >}}
+{{< hint type=note >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
-{{< hint danger >}}
+{{< hint type=caution >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
+
+{{< hint type=warning >}}
+**Markdown content**\
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+Ornateness bland it ex enc, est yeti am bongo detract re.
+{{< /hint >}}
+
+Example with a custom icon and title:
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< hint type=note icon=gblog_github title=GitHub >}}
+**Markdown content**\
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+Ornateness bland it ex enc, est yeti am bongo detract re.
+{{< /hint >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
 
 ## Icon
 

@@ -1,0 +1,61 @@
+.admonitionblock {
+  @each $name, $color in $hint-colors {
+    &.#{$name} {
+      border-left-color: $color;
+      background-color: scale-color($color, $lightness: 95%, $saturation: -30%);
+      color: $body-font-color;
+    }
+  }
+
+  margin: $padding-16 0;
+  padding: 0;
+
+  border-left: $border-4 solid var(--accent-color);
+  border-radius: $border-radius;
+
+  table {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    tr {
+      border: 0 !important;
+    }
+
+    td {
+      &:first-child {
+        background-color: scale-color($gray-600, $alpha: -95%);
+        font-weight: bold;
+
+        &.icon {
+          .title {
+            display: flex;
+            align-items: center;
+          }
+
+          i.fa::after {
+            content: attr(title);
+            font-style: normal;
+            padding-left: $padding-24;
+          }
+
+          i.fa {
+            color: $black;
+            background-size: auto 90%;
+            background-repeat: no-repeat;
+            filter: invert(30%);
+            margin-left: -5px;
+          }
+
+          @each $name, $icon in $hint-icons {
+            i.fa.icon-#{$name} {
+              background-image: url(img/geekdoc-stack.svg##{$icon});
+            }
+          }
+        }
+      }
+
+      display: flex;
+      padding: $padding-4 $padding-16 !important;
+    }
+  }
+}
