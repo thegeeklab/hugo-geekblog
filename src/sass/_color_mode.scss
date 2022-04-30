@@ -96,8 +96,14 @@
 
   .gblog-markdown {
     .gblog-hint,
+    .admonitionblock,
     .gblog-post__codecopy--success {
       filter: saturate(2.5) brightness(0.85);
+    }
+
+    .gblog-hint__title,
+    .admonitionblock table td:first-child {
+      background-color: scale-color($gray-600, $alpha: -85%);
     }
   }
 }

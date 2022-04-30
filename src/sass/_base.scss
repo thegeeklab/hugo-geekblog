@@ -542,7 +542,7 @@ svg.gblog-icon {
 }
 
 .gblog-error {
-  padding: $padding-16 * 6 $padding-16;
+  padding: $padding-96 $padding-16;
   margin: 0 auto;
   max-width: 45em;
 
@@ -557,7 +557,7 @@ svg.gblog-icon {
   }
 
   &__message {
-    padding-left: $padding-16 * 4;
+    padding-left: $padding-64;
   }
 
   &__line {

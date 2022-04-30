@@ -86,3 +86,8 @@ params:
   geekblogImageLazyLoading: true
   geekblogDarkModeDim: true
   geekblogTagsToMenu: true
+
+security:
+  exec:
+    allow:
+      - "^asciidoctor$"

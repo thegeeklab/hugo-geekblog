@@ -138,7 +138,7 @@ curl -L https://github.com/thegeeklab/hugo-geekblog/releases/latest/download/hug
 
 ### Option 2: Clone the GitHub repository
 
-{{< hint info >}}
+{{< hint type=note >}}
 **Info**\
 Keep in mind this method is not recommended and needs some extra steps to get it working.
 If you want to use the Theme as submodule keep in mind that your build process need to
@@ -210,7 +210,7 @@ command = "command1 && command 2 && command3 && hugo"
 
 ### Subdirectories
 
-{{< hint danger >}}
+{{< hint type=important >}}
 **Warning**\
 As deploying Hugo sites on subdirectories is not as robust as on subdomains, we do not recommend this.
 If you have a choice, using a domain/subdomain should always be the preferred solution!
@@ -260,3 +260,6 @@ There are a lot more things to discover. To get the most out of the Theme we hav
   - [Advanced Images](/posts/post-with-images/)
   - [Includes](/posts/advanced/includes/)
   - [Table of Content](/posts/advanced/toc/)
+- **Asciidoc**
+  - [Admonitions](/posts/asciidoc/admonitions/)
+  - [Admonition Icons](/posts/asciidoc/admonition-icons/)
