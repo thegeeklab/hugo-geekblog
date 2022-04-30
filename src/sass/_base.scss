@@ -144,7 +144,7 @@ img {
 #gblog-dark-mode {
   cursor: pointer;
 
-  .icon {
+  svg.gblog-icon {
     width: 2.5rem;
     height: 2.5rem;
   }
@@ -171,7 +171,7 @@ img {
   padding: $padding-16;
 }
 
-.icon {
+svg.gblog-icon {
   display: inline-block;
   width: 1.3em;
   height: 1.3em;
@@ -267,14 +267,14 @@ img {
       }
     }
 
-    .icon {
+    svg.gblog-icon {
       margin-right: $padding-4;
     }
 
-    .icon.gblog_menu {
+    svg.gblog-icon.gblog_menu {
       display: inline-block;
     }
-    .icon.gblog_clear {
+    svg.gblog-icon.gblog_clear {
       display: none;
     }
   }
@@ -325,7 +325,7 @@ img {
   }
 
   &__anchorwrap {
-    &:hover .gblog-post__anchor .icon {
+    &:hover .gblog-post__anchor svg.gblog-icon {
       color: var(--control-icons);
     }
   }
@@ -343,7 +343,7 @@ img {
       text-align: right;
     }
 
-    .icon {
+    svg.gblog-icon {
       font-size: $font-size-20;
       color: transparent;
     }
@@ -395,7 +395,7 @@ img {
   }
 
   &__meta {
-    span .icon {
+    span svg.gblog-icon {
       margin-left: -5px;
     }
 
@@ -406,7 +406,7 @@ img {
       }
     }
 
-    .icon {
+    svg.gblog-icon {
       font-size: 1.2em;
     }
 
@@ -463,7 +463,7 @@ img {
     width: 2.2rem;
     height: 2.2rem;
 
-    .icon {
+    svg.gblog-icon {
       top: 0;
       width: $font-size-20;
       height: $font-size-20;
@@ -477,7 +477,7 @@ img {
     &--success {
       border-color: var(--code-copy-success-color);
 
-      .icon {
+      svg.gblog-icon {
         color: var(--code-copy-success-color);
       }
     }
@@ -546,7 +546,7 @@ img {
   margin: 0 auto;
   max-width: 45em;
 
-  .icon {
+  svg.gblog-icon {
     font-size: $font-size-128;
     color: var(--body-font-color);
   }
