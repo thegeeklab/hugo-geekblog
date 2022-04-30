@@ -17,7 +17,7 @@
       {{ if eq $target "footer" }}
         <span class="gblog-footer__item gblog-footer__item--row">
           {{ if $icon }}
-            <svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
+            <svg class="gblog-icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
           {{ end }}
           <a
             href="{{ if .external -}}
@@ -42,7 +42,7 @@
           >
             <span class="flex align-center">
               {{ if $icon }}
-                <svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
+                <svg class="gblog-icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
               {{ end }}
               <span>
                 {{ .name }}

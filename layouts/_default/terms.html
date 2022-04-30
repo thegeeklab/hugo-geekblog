@@ -11,7 +11,7 @@
       <footer class="gblog-post__meta flex align-center">
         <span class="flex align-center no-wrap">
           {{ $pageCount := len .Pages }}
-          <svg class="icon gblog_tag"><use xlink:href="#gblog_tag"></use></svg>
+          <svg class="gblog-icon gblog_tag"><use xlink:href="#gblog_tag"></use></svg>
           <span class="gblog-post__tag">
             {{ $pageCount }}
             post{{ if ne $pageCount 1 }}s{{ end }}
@@ -19,7 +19,7 @@
         </span>
 
         <span class="flex align-center no-wrap">
-          <svg class="icon gblog_star"><use xlink:href="#gblog_star"></use></svg>
+          <svg class="gblog-icon gblog_star"><use xlink:href="#gblog_star"></use></svg>
           <span>
             {{ $latet := index .Pages.ByDate 0 }}
             {{ with $latet }}

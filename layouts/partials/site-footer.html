@@ -4,7 +4,7 @@
       <section class="flex flex-wrap align-center">
         {{ with (.Site.GetPage "home").OutputFormats.Get "atom" }}
           <span class="gblog-footer__item gblog-footer__item--row">
-            <svg class="icon gblog_rss_feed"><use xlink:href="#gblog_rss_feed"></use></svg>
+            <svg class="gblog-icon gblog_rss_feed"><use xlink:href="#gblog_rss_feed"></use></svg>
             <a href="{{ .Permalink | relURL }}" class="gblog-footer__link">Atom Feed</a>
           </span>
         {{ end }}
@@ -25,7 +25,7 @@
       <section class="flex flex-wrap align-center">
         <span class="gblog-footer__item">
           Built with <a href="https://gohugo.io/" class="gblog-footer__link">Hugo</a> and
-          <svg class="icon gblog_heart"><use xlink:href="#gblog_heart"></use></svg>
+          <svg class="gblog-icon gblog_heart"><use xlink:href="#gblog_heart"></use></svg>
         </span>
       </section>
       {{ with .Site.Params.GeekblogHostedOn }}
@@ -48,7 +48,7 @@
       <div class="flex flex-25 justify-end">
         <span class="gblog-footer__item text-right">
           <a class="gblog-footer__link fake-link" href="#" aria-label="Back to top">
-            <svg class="icon gblog_keyboard_arrow_up">
+            <svg class="gblog-icon gblog_keyboard_arrow_up">
               <use xlink:href="#gblog_keyboard_arrow_up"></use>
             </svg>
             <span class="hidden-mobile">Back to top</span>

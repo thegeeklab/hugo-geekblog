@@ -11,8 +11,8 @@ export function createCopyButton(highlightDiv) {
   button.classList.add("flex", "align-center", "justify-center", "clip", "gblog-post__codecopy")
   button.type = "button"
   button.innerHTML =
-    '<svg class="icon copy"><use xlink:href="#gblog_copy"></use></svg>' +
-    '<svg class="icon check hidden"><use xlink:href="#gblog_check"></use></svg>'
+    '<svg class="gblog-icon copy"><use xlink:href="#gblog_copy"></use></svg>' +
+    '<svg class="gblog-icon check hidden"><use xlink:href="#gblog_check"></use></svg>'
   button.setAttribute("data-clipboard-text", codeToCopy)
   button.setAttribute("data-copy-feedback", "Copied!")
   button.setAttribute("role", "button")

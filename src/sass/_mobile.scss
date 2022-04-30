@@ -60,7 +60,7 @@
   .gblog-error {
     padding: $padding-16 * 6 $padding-16;
 
-    .icon {
+    svg.gblog-icon {
       font-size: $font-size-96;
     }
 
@@ -97,10 +97,10 @@
   }
 
   #menu-control:checked ~ .gblog-nav__control {
-    .icon.gblog_menu {
+    svg.gblog-icon.gblog_menu {
       display: none;
     }
-    .icon.gblog_clear {
+    svg.gblog-icon.gblog_clear {
       display: inline-block;
     }
   }
