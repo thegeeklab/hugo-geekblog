@@ -60,7 +60,7 @@ steps:
       path_style: true
       secret_key:
         from_secret: s3_secret_access_key
-      source: lhci_reports/dist/*
+      source: lhci_reports/dist/
       strip_prefix: lhci_reports/dist/
       target: /${DRONE_REPO_NAME}
     when:
@@ -285,6 +285,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: de2f24aed11874ed0db1d2083ea6328fb4bb0777dd0401ae2884c1ed0361a380
+hmac: ce5c4b48ef6ba2d81c094a1db7da5361a6e11859abac77c751a87cd588563dfa
 
 ...
