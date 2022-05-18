@@ -39,7 +39,7 @@ steps:
   - name: link-validation
     image: thegeeklab/link-validator
     commands:
-      - link-validator -ro
+      - link-validator --nice --external --skip-file .linkcheckignore
     environment:
       LINK_VALIDATOR_BASE_DIR: exampleSite/public
 
@@ -285,6 +285,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: ce5c4b48ef6ba2d81c094a1db7da5361a6e11859abac77c751a87cd588563dfa
+hmac: 4d4ec9a4392e90dbdddec417d6efbd2b3c4c60e42bb7c35540493a016181d9c8
 
 ...

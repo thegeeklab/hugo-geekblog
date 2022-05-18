@@ -66,7 +66,7 @@ To prepare your new site environment just a few steps are required:
 
 3. Install the Geekblog theme from a [release bundle](#option-1-download-pre-build-release-bundle) (recommended) or form [Git branch](#option-2-clone-the-github-repository).
 
-4. Create the minimal required Hugo configuration `config.toml`. For all configuration options see [here](#configuration).
+4. Create the minimal required Hugo configuration `config.toml`. For all configuration options see [here](/posts/usage/configuration/#site-configuration).
 
    ```Toml
    baseURL = "http://localhost"
@@ -190,7 +190,7 @@ clean:
    rm -rf $(BASEDIR)/public
 ```
 
-This Makefile can be used in your `netlify.toml`, take a look at the Netlify [example](https://docs.netlify.com/configure-builds/file-based-configuration/#sample-file) for more information:
+This Makefile can be used in your `netlify.toml`, take a look at the Netlify [example](https://docs.netlify.com/configure-builds/file-based-configuration/#sample-netlify-toml-file) for more information:
 
 ```toml
 [build]
