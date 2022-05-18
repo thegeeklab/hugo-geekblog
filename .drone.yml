@@ -29,7 +29,7 @@ steps:
     image: thegeeklab/hugo:0.97.3
     commands:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekblog
-      - hugo --panicOnWarning -s exampleSite/ -b http://localhost/
+      - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
 
   - name: html-validation
     image: thegeeklab/vnu
@@ -285,6 +285,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 4d4ec9a4392e90dbdddec417d6efbd2b3c4c60e42bb7c35540493a016181d9c8
+hmac: 3e780b3be08ae7123cf388b2f513f528966b7774a32d1e8ed7d70831efc709fe
 
 ...
