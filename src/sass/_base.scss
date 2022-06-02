@@ -1,23 +1,31 @@
 :root,
-:root[color-mode="light"] {
+:root[color-theme="light"] {
   --code-max-height: none;
 
-  @include light_mode;
+  @include color_theme_light;
+  @include code_theme_light;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    @include light_mode;
+    @include color_theme_light;
+    @include code_theme_light;
   }
 }
 
-:root[color-mode="dark"] {
-  @include dark_mode;
+:root[color-theme="dark"] {
+  @include color_theme_dark;
+  @include code_theme_dark;
+}
+
+:root[code-theme="dark"] {
+  @include code_theme_dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    @include dark_mode;
+    @include color_theme_dark;
+    @include code_theme_dark;
   }
 }
 
@@ -27,7 +35,7 @@ html {
   scroll-behavior: smooth;
 
   &.color-toggle-hidden {
-    #gblog-dark-mode {
+    #gblog-color-theme {
       .gblog_brightness_auto,
       .gblog_brightness_dark,
       .gblog_brightness_light {
@@ -37,7 +45,7 @@ html {
   }
 
   &.color-toggle-light {
-    #gblog-dark-mode {
+    #gblog-color-theme {
       .gblog_brightness_light {
         display: inline-block;
       }
@@ -49,7 +57,7 @@ html {
   }
 
   &.color-toggle-dark {
-    #gblog-dark-mode {
+    #gblog-color-theme {
       .gblog_brightness_dark {
         display: inline-block;
       }
@@ -61,7 +69,7 @@ html {
   }
 
   &.color-toggle-auto {
-    #gblog-dark-mode {
+    #gblog-color-theme {
       .gblog_brightness_light {
         display: none;
       }
@@ -141,7 +149,7 @@ img {
   vertical-align: middle;
 }
 
-#gblog-dark-mode {
+#gblog-color-theme {
   cursor: pointer;
 
   svg.gblog-icon {

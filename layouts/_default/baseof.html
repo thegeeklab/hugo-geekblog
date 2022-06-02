@@ -4,6 +4,7 @@
   itemtype="http://schema.org/WebPage"
   lang="{{ .Site.Language.Lang }}"
   class="color-toggle-hidden"
+  {{ if default false .Site.Params.GeekblogDarkModeCode }}code-theme="dark"{{ end }}
 >
   <head>
     {{ partial "head/meta" . }}
