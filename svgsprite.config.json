@@ -28,7 +28,7 @@
     },
     "stack": {
       "dest": "build/img/",
-      "sprite": "geekdoc-stack.svg",
+      "sprite": "geekblog-stack.svg",
       "bust": false
     }
   }

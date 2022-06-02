@@ -165,7 +165,7 @@
 
     @each $name, $icon in $hint-icons {
       i.fa.#{$name} {
-        background-image: url(img/geekdoc-stack.svg##{$icon});
+        background-image: url(img/geekblog-stack.svg##{$icon});
       }
     }
 
