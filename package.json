@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "clipboard": "2.0.11",
-    "katex": "0.15.6",
+    "katex": "0.16.0",
     "mermaid": "9.1.1",
     "store2": "2.13.2"
   },
