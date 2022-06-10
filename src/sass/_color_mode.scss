@@ -14,10 +14,6 @@
   --link-color-visited: #{$link-color-visited};
   --link-color-footer: #{$link-color-footer};
 
-  --code-copy-font-color: #{lighten($body-font-color, 24)};
-  --code-copy-border-color: #{lighten($body-font-color, 48)};
-  --code-copy-success-color: #{map.get($hint-colors, "ok")};
-
   --accent-color-dark: #{$gray-600};
   --accent-color: #{$gray-200};
   --accent-color-lite: #{$gray-100};
@@ -82,8 +78,7 @@
 
   .gblog-markdown {
     .gblog-hint,
-    .admonitionblock,
-    .gblog-post__codecopy--success {
+    .admonitionblock {
       filter: saturate(2.5) brightness(0.85);
     }
 
@@ -101,6 +96,11 @@
   --code-accent-color: #{darken($code-background-dark, 4)};
   --code-accent-color-lite: #{darken($code-background-dark, 2)};
   --code-font-color: #{$code-font-color-dark};
+
+  --code-copy-background: #{$body-background-dark};
+  --code-copy-font-color: #{lighten($body-font-color, 24)};
+  --code-copy-border-color: #{lighten($body-font-color, 24)};
+  --code-copy-success-color: #{scale-color(map.get($hint-colors, "ok"), $alpha: -55%)};
 }
 
 @mixin code_theme_light {
@@ -110,4 +110,9 @@
   --code-accent-color: #{darken($code-background, 6)};
   --code-accent-color-lite: #{darken($code-background, 2)};
   --code-font-color: #{$code-font-color};
+
+  --code-copy-background: #{$code-background};
+  --code-copy-font-color: #{lighten($body-font-color, 24)};
+  --code-copy-border-color: #{lighten($body-font-color, 48)};
+  --code-copy-success-color: #{map.get($hint-colors, "ok")};
 }
