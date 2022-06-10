@@ -339,17 +339,7 @@ svg.gblog-icon {
   }
 
   &__anchor {
-    min-width: 30px;
-
-    &--left {
-      position: absolute;
-      margin-left: -25px;
-      text-align: left;
-    }
-
-    &--right {
-      text-align: right;
-    }
+    margin-left: $padding-8;
 
     svg.gblog-icon {
       font-size: $font-size-20;
@@ -357,7 +347,8 @@ svg.gblog-icon {
     }
 
     &:hover,
-    &:visited:hover {
+    &:visited:hover,
+    &:focus svg.gblog-icon {
       color: var(--control-icons);
       background: none;
     }
@@ -463,11 +454,11 @@ svg.gblog-icon {
     visibility: hidden;
     position: absolute;
     top: 0.5rem;
-    right: 0.5rem;
+    right: 1rem;
 
     border: $border-2 solid var(--code-copy-border-color);
     border-radius: $border-radius;
-    background: var(--code-background);
+    background: var(--code-copy-background);
     width: 2.2rem;
     height: 2.2rem;
 
