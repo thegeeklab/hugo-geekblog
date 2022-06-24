@@ -1,4 +1,5 @@
 {{- $ref := "" }}
+{{- $class := "" }}
 {{- $size := default "regular" (.Get "size" | lower) }}
 
 {{- if not (in (slice "regular" "large") $size) }}
@@ -13,11 +14,12 @@
   {{- $ref = relref $ . }}
 {{- end }}
 
+{{- with .Get "class" }}
+  {{- $class = . }}
+{{- end }}
 
-<span
-  class="gblog-button gblog-button--{{ $size }}
-  {{- with .Get "class" }}{{ printf " %s" . }}{{ end }}"
->
+
+<span class="gblog-button gblog-button--{{ $size }}{{ with $class }}{{ printf " %s" . }}{{ end }}">
   <a
     class="gblog-button__link"
     {{- with $ref }}{{ printf " href=\"%s\"" . | safeHTMLAttr }}{{ end }}
