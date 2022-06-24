@@ -1,25 +1,27 @@
-{{ $ref := "" }}
-{{ $size := default "regular" (.Get "size" | lower) }}
+{{- $ref := "" }}
+{{- $size := default "regular" (.Get "size" | lower) }}
 
-{{ if not (in (slice "regular" "large") $size) }}
-  {{ $size = "regular" }}
-{{ end }}
+{{- if not (in (slice "regular" "large") $size) }}
+  {{- $size = "regular" }}
+{{- end }}
 
-{{ with .Get "href" }}
-  {{ $ref = . }}
-{{ end }}
+{{- with .Get "href" }}
+  {{- $ref = . }}
+{{- end }}
 
-{{ with .Get "relref" }}
-  {{ $ref = relref $ . }}
-{{ end }}
+{{- with .Get "relref" }}
+  {{- $ref = relref $ . }}
+{{- end }}
 
 
 <span
-  class="gblog-button gblog-button--{{ $size }}{{ with .Get "class" }}
-    {{ printf " %s" . }}
-  {{ end }}"
+  class="gblog-button gblog-button--{{ $size }}
+  {{- with .Get "class" }}{{ printf " %s" . }}{{ end }}"
 >
-  <a {{ with $ref }}href="{{ . }}"{{ end }} class="gblog-button__link">
+  <a
+    class="gblog-button__link"
+    {{- with $ref }}{{ printf " href=\"%s\"" . | safeHTMLAttr }}{{ end }}
+  >
     {{ $.Inner }}
   </a>
 </span>
