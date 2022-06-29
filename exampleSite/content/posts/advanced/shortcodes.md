@@ -94,7 +94,7 @@ The [emojify](https://gohugo.io/functions/emojify/) function can be called direc
 | {{< emojify ":hear_no_evil:" >}}  | `:hear_no_evil:`  | `{{</* emojify ":hear_no_evil:" */>}}`  |
 | {{< emojify ":speak_no_evil:" >}} | `:speak_no_evil:` | `{{</* emojify ":speak_no_evil:" */>}}` |
 
-The [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/) is a useful reference for emoji shorthand codes.
+The [Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet) is a useful reference for emoji shorthand codes.
 
 {{< hint type=note >}}
 **Info**\
