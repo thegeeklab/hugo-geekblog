@@ -34,7 +34,7 @@
       </a>
       {{ with $caption }}
         <figcaption>
-          {{ . }}{{ with $source.Params.credits }}({{ . | $.Page.RenderString }}){{ end }}
+          {{ . }}{{ with $source.Params.credits }} ({{ . | $.Page.RenderString }}){{ end }}
         </figcaption>
       {{ end }}
     </figure>
