@@ -301,11 +301,11 @@ Boxes can be used to create a simple grid.
 
 ### Attributes
 
-| Name             | Description                                                                        | default   |
-| ---------------- | ---------------------------------------------------------------------------------- | --------- |
-| size             | size of each box (regular\|large)                                                  | regular   |
-| icon (optional)  | titlebar icon, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
-| title (optional) | titlebar text                                                                      | undefined |
+| Name             | Description                                                                         | default   |
+| ---------------- | ----------------------------------------------------------------------------------- | --------- |
+| size             | size of each box (regular\|large)                                                   | regular   |
+| icon (optional)  | title bar icon, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
+| title (optional) | title bar text                                                                      | undefined |
 
 ### Usage
 
@@ -321,12 +321,16 @@ Boxes can be used to create a simple grid.
 
 ### Example
 
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
 {{< boxes "contact" >}}
 {{< box size=large title=E-Mail icon=gblog_email >}}mail@example.com{{< /box >}}
 {{< box size=large title=Matrix icon=gblog_matrix >}}@john:example.com{{< /box >}}
 {{< box size=large title=XMPP icon=gblog_xmpp >}}john@example.com{{< /box >}}
 {{< box size=large title=Others >}}You can also find us on the Fediverse.{{< /box >}}
 {{< /boxes >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
 
 ## Mermaid
 
