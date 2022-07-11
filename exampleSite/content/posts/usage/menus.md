@@ -27,7 +27,7 @@ header:
     external: true
 
 footer:
-  - name: Contact
+  - name: About
     icon: gblog_email
-    ref: "/contact"
+    ref: "/about"
 ```
