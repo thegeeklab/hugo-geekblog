@@ -20,18 +20,18 @@ Include shortcode can include files of different types. By specifying a language
 ```
 <!-- prettier-ignore-end -->
 
-Attributes:
+## Attributes
 
-| Name     | Usage                                                                                                                               | default                          |
+| Name     | Description                                                                                                                         | default                          |
 | -------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
 | file     | path to the included file relative to the Hugo root                                                                                 | undefined                        |
 | language | language for [syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) | undefined                        |
 | type     | special include type (`html,page`)                                                                                                  | undefined (rendered as markdown) |
 | options  | highlighting [options](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)                               | `linenos=table`                  |
 
-## Examples
+## Usage
 
-### Markdown file (default)
+## Markdown file (default)
 
 If no other options are specified, files will be rendered as Markdown using the `RenderString` [function](https://gohugo.io/functions/renderstring/).
 
@@ -51,7 +51,7 @@ If you include markdown files that should not get a menu entry, place them outsi
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
-### Language files
+## Language files
 
 This method can be used to include source code files and keep them automatically up to date.
 
@@ -68,9 +68,9 @@ Result:
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
-### Special include types
+## Special include types
 
-#### HTML
+### HTML
 
 HTML content will be filtered by the `safeHTML` filter and added to the rendered page output.
 
@@ -81,7 +81,7 @@ HTML content will be filtered by the `safeHTML` filter and added to the rendered
 
 {{< include file="/static/_includes/example.html.part" type="html" >}}
 
-#### Pages
+### Pages
 
 In some situations, it can be helpful to include Markdown files that also contain shortcodes. While the [default method](#markdown-file-default) works fine to render plain Markdown, shortcodes are not parsed. The only way to get this to work is to use Hugo pages. There are several ways to structure these include pages, so whatever you do, keep in mind that Hugo needs to be able to render and serve these files as regular pages! How it works:
 
