@@ -295,6 +295,39 @@ prompts feud gait, quid exercise emeritus bis e. In pro quints consequent.
 {{< /tab >}}
 {{< /tabs >}}
 
+## Boxes
+
+Boxes can be used to create a simple grid.
+
+### Attributes
+
+| Name             | Description                                                                        | default   |
+| ---------------- | ---------------------------------------------------------------------------------- | --------- |
+| size             | size of each box (regular\|large)                                                  | regular   |
+| icon (optional)  | titlebar icon, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
+| title (optional) | titlebar text                                                                      | undefined |
+
+### Usage
+
+<!-- prettier-ignore -->
+```tpl
+{{</* boxes "contact" */>}}
+{{</* box size=large [title=E-Mail icon=gblog_email] */>}}mail@example.com{{</* /box */>}}
+{{</* box size=large title=Matrix icon=gblog_matrix */>}}@john:example.com{{</* /box */>}}
+{{</* box size=large title=XMPP icon=gblog_xmpp */>}}john@example.com{{</* /box */>}}
+{{</* box size=large title=Others */>}}You can also find us on the Fediverse.{{</* /box */>}}
+{{</* /boxes */>}}
+```
+
+### Example
+
+{{< boxes "contact" >}}
+{{< box size=large title=E-Mail icon=gblog_email >}}mail@example.com{{< /box >}}
+{{< box size=large title=Matrix icon=gblog_matrix >}}@john:example.com{{< /box >}}
+{{< box size=large title=XMPP icon=gblog_xmpp >}}john@example.com{{< /box >}}
+{{< box size=large title=Others >}}You can also find us on the Fediverse.{{< /box >}}
+{{< /boxes >}}
+
 ## Mermaid
 
 [Mermaid](https://mermaidjs.github.io/) is library for generating SVG charts and diagrams from text.

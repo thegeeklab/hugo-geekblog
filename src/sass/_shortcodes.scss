@@ -132,6 +132,44 @@
   }
 }
 
+// {{< box >}}
+.gblog-box {
+  background: var(--accent-color-lite);
+  border: $border-1 solid var(--accent-color);
+  border-radius: $border-radius;
+  text-align: center;
+  flex: 1 1 0;
+
+  &--regular {
+    font-size: $font-size-base;
+    padding: $padding-4 $padding-8;
+    min-width: 8rem;
+  }
+
+  &--large {
+    font-size: $font-size-20;
+    padding: $padding-8 $padding-16;
+    min-width: 12rem;
+  }
+
+  &__title {
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    gap: $padding-8;
+
+    svg.gblog-icon {
+      width: 1.3rem;
+      height: 1.3rem;
+      min-width: 1.3rem;
+    }
+  }
+
+  &__text {
+    margin: $padding-8 0;
+    font-size: $font-size-16;
+  }
+}
+
 // {{< hint >}}
 .gblog-hint {
   @each $name, $color in $hint-colors {
