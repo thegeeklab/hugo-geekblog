@@ -111,7 +111,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: $body-font-weight;
+  display: flex;
+  align-items: center;
 }
 
 h4,
