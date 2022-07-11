@@ -36,9 +36,17 @@ Buttons are styled links that can lead to local page or external link.
 
 The Columns shortcode can be used to organize content side-by-side (horizontally) for better readability.
 
+### Attributes
+
+| Name            | Description                                      | default |
+| --------------- | ------------------------------------------------ | ------- |
+| size (optional) | size of the first column (small\|regular\|large) | regular |
+
+### Usage
+
 <!-- prettier-ignore -->
 ```html
-{{</* columns */>}} <!-- begin columns block -->
+{{</* columns [size="small|regular|large"] */>}} <!-- begin columns block -->
 # Left Content
 Dolor sit, sumo unique argument um no ...
 
@@ -160,19 +168,19 @@ copious quo ad. Stet probates in duo.
 
 Hint shortcode can be used as hint/alerts/notification block.
 
-Attributes:
+### Attributes
 
-| Name             | Usage                                                                                   | default               |
-| ---------------- | --------------------------------------------------------------------------------------- | --------------------- |
-| type             | color types to choose from                                                              | note                  |
-| icon (optional)  | custom icon to use                                                                      | undefined (type name) |
-| title (optional) | custom icon to use, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined (type name) |
+| Name             | Description                                                                            | default   |
+| ---------------- | -------------------------------------------------------------------------------------- | --------- |
+| type             | hint type                                                                              | note      |
+| icon (optional)  | custom icon to use,need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
+| title (optional) | hint title                                                                             | undefined |
 
-Syntax:
+### Usage
 
 <!-- prettier-ignore-start -->
 ```tpl
-{{</* hint type=[note|tip|important|caution|warning] (icon=gblog_github) (title=GitHub) */>}}
+{{</* hint type="note|tip|important|caution|warning" [icon="gblog_github" title="GitHub"] */>}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
  Ornateness bland it ex enc, est yeti am bongo detract re.
@@ -307,7 +315,7 @@ prompts feud gait, quid exercise emeritus bis e. In pro quints consequent.
 
 <!-- prettier-ignore -->
 ```tpl
-{{</* mermaid class="text-center"*/>}}
+{{</* mermaid class="text-center" */>}}
 sequenceDiagram
     Alice->>Bob: Hello Bob, how are you?
     alt is sick
