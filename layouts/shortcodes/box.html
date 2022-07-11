@@ -1,0 +1,19 @@
+{{ if .Parent }}
+  {{- $group := printf "grid-%s" (.Parent.Get 0) }}
+  {{- $class := default "" (.Get "class") }}
+  {{- $size := default "regular" (.Get "size" | lower) }}
+  {{- $icon := default "" (.Get "icon") }}
+  {{- $title := default "" (.Get "title") }}
+
+  {{- if not (in (slice "regular" "large") $size) }}
+    {{- $size = "regular" }}
+  {{- end }}
+
+  {{ if not (.Parent.Scratch.Get $group) }}
+    {{ .Parent.Scratch.Set $group slice }}
+  {{ end }}
+
+  {{ .Parent.Scratch.Add $group (dict "Class" $class "Size" $size "Icon" $icon "Title" $title "Content" .Inner) }}
+{{ else }}
+  {{ errorf "%q: 'box' shortcode must be inside 'boxes' shortcode" .Page.Path }}
+{{ end }}
