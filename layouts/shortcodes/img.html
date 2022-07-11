@@ -30,7 +30,7 @@
             {{- end }}
           />
           <img
-            {{- if $lazyLoad }}{{ . | print " loading=\"lazy\"" | safeHTMLAttr }}{{- end }}
+            {{- if $lazyLoad }}{{ print " loading=\"lazy\"" | safeHTMLAttr }}{{- end }}
             src="{{ $size.large }}"
             alt="{{ $caption }}"
           />
