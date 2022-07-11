@@ -1,4 +1,11 @@
-<div class="gblog-columns flex flex-wrap flex-mobile-column">
+{{- $size := default "regular" (.Get "size" | lower) }}
+
+{{- if not (in (slice "regular" "large" "small") $size) }}
+  {{- $size = "regular" }}
+{{- end }}
+
+
+<div class="gblog-columns gblog-columns--{{ $size }} flex flex-gap flex-mobile-column">
   {{ range split .Inner "<--->" }}
     <div class="gblog-columns__content gblog-markdown--nested flex-even">
       {{ . | $.Page.RenderString }}
