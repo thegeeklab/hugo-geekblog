@@ -30,8 +30,7 @@ See the [Getting Started Guide](https://hugo-geekblog.geekdocs.de/posts/usage/ge
 
 ## Contributors
 
-Special thanks goes to all [contributors](https://github.com/thegeeklab/hugo-geekblog/graphs/contributors). If you would like to contribute,
-please see the [instructions](https://github.com/thegeeklab/hugo-geekblog/blob/main/CONTRIBUTING.md).
+Special thanks to all [contributors](https://github.com/thegeeklab/hugo-geekblog/graphs/contributors). If you would like to contribute, please see the [instructions](https://github.com/thegeeklab/hugo-geekblog/blob/main/CONTRIBUTING.md).
 
 ## License
 
