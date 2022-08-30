@@ -1,15 +1,15 @@
-{{- $value := default 0 (.Get "value") }}
-{{- $title := .Get "title" }}
+{{- $value := default 0 (.Get "value") -}}
+{{- $title := .Get "title" -}}
 {{- $icon := .Get "icon" -}}
 
 
 <div class="gblog-progress">
   <div class="gblog-progress__label flex justify-between">
     <div class="gblog-progress__label--name flex align-center">
-      {{- with $icon -}}
+      {{ with $icon -}}
         <svg class="gblog-icon {{ . }}"><use xlink:href="#{{ . }}"></use></svg>
-      {{- end -}}
-      {{- with $title -}}<span>{{ . }}</span>{{- end -}}
+      {{- end }}
+      {{ with $title }}<span>{{ . }}</span>{{ end }}
     </div>
     <div>{{ $value }}%</div>
   </div>
