@@ -118,7 +118,6 @@ steps:
       FORCE_COLOR: true
       NPM_CONFIG_LOGLEVEL: error
 
-
   - name: checksum
     image: thegeeklab/alpine-tools
     commands:
@@ -288,6 +287,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: edaa3b55fd0fa9e3ee94e26ec12386e405da77c12f648862d8cdf5a86ece2adf
+hmac: a3c1af6ac4b291e8aa1e7f9cbccb1a7c7edbf75163a36ed811c0694227a4f792
 
 ...
