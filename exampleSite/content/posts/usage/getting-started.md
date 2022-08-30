@@ -46,6 +46,9 @@ npm install
 
 # run the build script to build required assets
 npm run build
+
+# build release tarball
+npm run pack
 ```
 
 ## Using the theme
