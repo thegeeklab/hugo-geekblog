@@ -17,6 +17,7 @@ CHANGELOG.md
 /resources/
 /exampleSite/resources/
 /exampleSite/data/sprites/
+VERSION
 
 # testing
 .lighthouseci/

@@ -102,17 +102,22 @@ steps:
   - name: assets
     image: node:lts
     commands:
+      - git fetch -tq
       - npm install > /dev/null
       - npm run build
+      - cat VERSION
     environment:
       FORCE_COLOR: true
       NPM_CONFIG_LOGLEVEL: error
 
   - name: package
-    image: thegeeklab/alpine-tools
+    image: node:lts
     commands:
-      - echo "${DRONE_TAG:-latest}" > VERSION
-      - tar -zcvf dist/hugo-geekblog.tar.gz -X .tarignore .
+      - npm run pack
+    environment:
+      FORCE_COLOR: true
+      NPM_CONFIG_LOGLEVEL: error
+
 
   - name: checksum
     image: thegeeklab/alpine-tools

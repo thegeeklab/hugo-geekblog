@@ -24,6 +24,9 @@ npm install
 
 # run the build script to build required assets
 npm run build
+
+# build release tarball
+npm run pack
 ```
 
 See the [Getting Started Guide](https://hugo-geekblog.geekdocs.de/posts/usage/getting-started/) for details about the different setup options.
