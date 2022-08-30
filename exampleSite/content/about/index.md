@@ -50,6 +50,15 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 
 ---
 
+## Skills
+
+{{< progress title=Hacking value=95 icon=gblog_search >}}
+{{< progress title=Cyber-Things value=80 icon=gblog_cloud_off >}}
+{{< progress title=Coding value=65 icon=gblog_code >}}
+{{< progress title=Eating value=85 icon=gblog_heart >}}
+
+---
+
 ## Contact
 
 <!-- prettier-ignore-start -->
