@@ -7,7 +7,7 @@
     "build": "run-s prep:clean prep:make svg build:webpack",
     "build:webpack": "webpack --mode=production",
     "build:webpack-devel": "webpack --mode=development",
-    "pack": "tar -zcvf dist/hugo-geekdoc.tar.gz -X .tarignore .",
+    "pack": "tar -zcvf dist/hugo-geekblog.tar.gz -X .tarignore .",
     "start": "run-s prep:clean prep:make svg build:webpack-devel ; run-p start:webpack start:hugo",
     "start:webpack": "webpack --mode=development --watch",
     "start:build": "webpack --mode=development",
