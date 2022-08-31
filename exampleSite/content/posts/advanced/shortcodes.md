@@ -476,4 +476,8 @@ Text continues here.
 
 ### Example
 
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
 {{< progress title=Eating value=65 icon=gblog_heart >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
