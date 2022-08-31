@@ -170,11 +170,11 @@ Hint shortcode can be used as hint/alerts/notification block.
 
 ### Attributes
 
-| Name             | Description                                                                            | default   |
-| ---------------- | -------------------------------------------------------------------------------------- | --------- |
-| type             | hint type                                                                              | note      |
-| icon (optional)  | custom icon to use,need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
-| title (optional) | hint title                                                                             | undefined |
+| Name             | Description                                                                             | default   |
+| ---------------- | --------------------------------------------------------------------------------------- | --------- |
+| type             | hint type                                                                               | note      |
+| icon (optional)  | custom icon to use, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
+| title (optional) | hint title                                                                              | undefined |
 
 ### Usage
 
@@ -455,3 +455,29 @@ f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 <!-- spellchecker-enable -->
 
 Text continues here.
+
+## Progress
+
+### Attributes
+
+| Name             | Description                                                                      | default   |
+| ---------------- | -------------------------------------------------------------------------------- | --------- |
+| value            | progress value                                                                   | 0         |
+| icon (optional)  | icon to use, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
+| title (optional) | progress title                                                                   | undefined |
+
+### Usage
+
+<!-- prettier-ignore-start -->
+```tpl
+{{</* progress title=Eating value=65 icon=gblog_heart */>}}
+```
+<!-- prettier-ignore-end -->
+
+### Example
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< progress title=Eating value=65 icon=gblog_heart >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
