@@ -28,7 +28,7 @@ ci:
         - minScore: 1
       categories:seo:
         - error
-        - minScore: 0.95
+        - minScore: 0.93
   upload:
     target: filesystem
     outputDir: lhci_reports
