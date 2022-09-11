@@ -1,5 +1,4 @@
 User-agent: *
 Disallow: /categories/*
 Disallow: /tags/*
-Disallow: 404.html
 Sitemap: {{ "sitemap.xml" | absURL }}
