@@ -127,6 +127,10 @@ enableRobotsTXT = true
   # (Optional, default true) Display a "Back to top" link in the site footer.
   geekblogBackToTop = true
 
+  # (Optional, default ["taxonomy", "section", "term", "404"])
+  # Page types to exclude from the sitemap and set to noindex,nofollow.
+  geekblogSeoIgnore = ["taxonomy", "section"]
+
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.
   [params.geekblogHostedOn]
@@ -258,6 +262,12 @@ params:
 
    # (Optional, default true) Display a "Back to top" link in the site footer.
   geekblogBackToTop: true
+
+  # (Optional, default ["taxonomy", "section", "term", "404"])
+  # Page types to exclude from the sitemap and set to noindex,nofollow.
+  geekblogSeoIgnore:
+    - "taxonomy"
+    - "section"
 
   # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
   # Could be used if you want to give credits to your hosting provider.

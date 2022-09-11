@@ -69,24 +69,6 @@ outputs:
 
 enableRobotsTXT: true
 
-params:
-  subtitle: Subtitle to describe your blog
-  description: >
-    hugo-geekblog is a simple Hugo theme for personal blogs. This page is theme documentation
-    and powered by the latest version of hugo-geekblog itself.
-  images:
-    - "socialmedia2.png"
-
-  geekblogToC: 3
-  geekblogAuthor: john-doe
-
-  geekblogLegalNotice: https://thegeeklab.de/legal-notice/#contact-information
-  geekblogPrivacyPolicy: https://thegeeklab.de/legal-notice/#privacy-policy
-
-  geekblogImageLazyLoading: true
-  geekblogDarkModeDim: true
-  geekblogTagsToMenu: true
-
 security:
   exec:
     allow:

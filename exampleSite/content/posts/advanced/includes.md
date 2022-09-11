@@ -64,7 +64,7 @@ Result:
 
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
-{{< include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" >}}
+{{< include file="config/_default/config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" >}}
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 

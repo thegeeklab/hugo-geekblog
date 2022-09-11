@@ -5,7 +5,13 @@
 
 {{- $keywords := default .Site.Params.Keywords .Keywords -}}
 {{- $authors := default (slice .Site.Params.GeekblogAuthor) .Params.authors -}}
+{{- $seoIgnore := default (slice "taxonomy" "section" "term" "404") .Site.Params.GeekblogSeoIgnore -}}
 
+{{- if not (in $seoIgnore .Kind) }}
+  <meta name="robots" content="index, follow" />
+{{- else }}
+  <meta name="robots" content="noindex, nofollow" />
+{{- end }}
 {{- with partial "utils/description" . }}
   <meta name="description" content="{{ . | plainify | htmlUnescape | chomp }}" />
 {{- end }}
@@ -20,7 +26,6 @@
       {{- $list = $list | append $author.name -}}
     {{- end }}
   {{- end }}
-
   {{- with $list }}
     <meta name="author" content="{{ delimit . "," }}" />
   {{- end }}

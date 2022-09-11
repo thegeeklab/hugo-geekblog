@@ -3,19 +3,14 @@
   <head>
     {{ partial "head/meta" . }}
     <title>Lost? Don't worry</title>
-
     {{ partial "head/favicons" . }}
     {{ partial "head/others" . }}
   </head>
 
   <body>
     {{ partial "svg-sprites" . }}
-
-
     <div class="wrapper">
       {{ partial "site-header" . }}
-
-
       <main class="gblog-error flex-even">
         <div class="flex align-center justify-center">
           <div class="gblog-error__icon">
@@ -31,9 +26,7 @@
           </div>
         </div>
       </main>
-
       {{ partial "site-footer" . }}
-
     </div>
   </body>
 </html>
