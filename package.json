@@ -45,8 +45,7 @@
     "eslint": "8.23.1",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
-    "favicons": "6.2.2",
-    "favicons-webpack-plugin": "5.0.2",
+    "favicons": "7.0.0",
     "npm-run-all": "4.1.5",
     "postcss-loader": "7.0.1",
     "prettier": "2.7.1",
@@ -58,6 +57,7 @@
     "svgtofont": "3.18.0",
     "webpack": "5.74.0",
     "webpack-cli": "4.10.0",
+    "webpack-favicons": "^1.3.8",
     "webpack-manifest-plugin": "5.0.0",
     "webpack-remove-empty-scripts": "0.8.4"
   },
