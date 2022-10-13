@@ -348,8 +348,6 @@ Boxes can be used to create a simple grid.
 
 ### Example
 
-{{< columns >}}
-
 <!-- prettier-ignore -->
 ```tpl
 {{</*/* mermaid class="text-center" */*/>}}
@@ -366,8 +364,6 @@ sequenceDiagram
 {{</*/* /mermaid */*/>}}
 ```
 
-<--->
-
 <!-- spellchecker-disable -->
 <!-- prettier-ignore -->
 {{< mermaid class="text-center" >}}
@@ -382,10 +378,6 @@ sequenceDiagram
         Bob->>Alice: Thanks for asking
     end
 {{< /mermaid >}}
-
-<!-- spellchecker-enable -->
-
-{{< /columns >}}
 
 As an alternative to shortcodes, code blocks can be used for markdown as well.
 
@@ -424,16 +416,12 @@ C -->|Two| E[Result 2]
 
 ### Example
 
-{{< columns >}}
-
 ```latex
 {{</*/* katex [display] [class="text-center"] */*/>}}
 f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 {{</*/* /katex */*/>}}
 ```
 
-<--->
-
 <!-- spellchecker-disable -->
 <!-- prettier-ignore -->
 {{< katex display >}}
@@ -442,17 +430,7 @@ f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 
 <!-- spellchecker-enable -->
 
-{{< /columns >}}
-
-KaTeX can also be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter (e.g. `display: block`):
-
-<!-- spellchecker-disable -->
-<!-- prettier-ignore -->
-{{< katex display >}}
-f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
-{{< /katex >}}
-
-<!-- spellchecker-enable -->
+KaTeX can also be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter (see above).
 
 Text continues here.
 
