@@ -430,7 +430,7 @@ f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 
 <!-- spellchecker-enable -->
 
-KaTeX can also be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter (see above).
+KaTeX can be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter (see above).
 
 Text continues here.
 
