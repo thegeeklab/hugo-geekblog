@@ -5,7 +5,7 @@
   <div class="gblog-paging__item gblog-paging__item--prev">
     {{ if $pag.HasPrev }}
       <a class="flex-inline align-center fake-link no-wrap" href="{{ $pag.Prev.URL }}">
-        <i class="gblog-icon">gblog_keyboard_arrow_left</i>
+        <svg class="gblog-icon"><use xlink:href="#gblog_keyboard_arrow_left"></use></svg>
         PREV
       </a>
     {{ end }}
@@ -15,7 +15,7 @@
     {{ if $pag.HasNext }}
       <a class="flex-inline align-center fake-link no-wrap" href="{{ $pag.Next.URL }}">
         NEXT
-        <i class="gblog-icon">gblog_keyboard_arrow_right</i>
+        <svg class="gblog-icon"><use xlink:href="#gblog_keyboard_arrow_right"></use></svg>
       </a>
     {{ end }}
   </div>
