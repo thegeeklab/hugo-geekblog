@@ -36,11 +36,7 @@ html {
 
   &.color-toggle-hidden {
     #gblog-color-theme {
-      .gblog_brightness_auto,
-      .gblog_brightness_dark,
-      .gblog_brightness_light {
-        display: none;
-      }
+      display: none;
     }
   }
 

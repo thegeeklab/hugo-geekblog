@@ -114,6 +114,10 @@ enableRobotsTXT = true
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekblogOverwriteHTMLBase = false
 
+  # (Optional, default true) Enable or disable the JavaScript based color theme toggle switch. The CSS based
+  # user preference mode still works.
+  geekblogDarkModeToggle = false
+
   # (Optional, default true) Enable or disable adding tags automatically to the main menu.
   geekblogTagsToMenu = true
 
@@ -249,6 +253,10 @@ params:
   # if a subdirectory is used within Hugo's BaseURL.
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekblogOverwriteHTMLBase: false
+
+  # (Optional, default true) Enable or disable the JavaScript based color theme toggle switch. The CSS based
+  # user preference mode still works.
+  geekblogDarkModeToggle: false
 
   # (Optional, default true) Enable or disable adding tags automatically to the main menu.
   geekblogTagsToMenu: true
