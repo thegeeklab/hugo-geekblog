@@ -14,6 +14,9 @@
   --link-color-visited: #{$link-color-visited};
   --link-color-footer: #{$link-color-footer};
 
+  --hint-link-color: #{$link-color};
+  --hint-link-color-visited: #{$link-color-visited};
+
   --accent-color-dark: #{$gray-600};
   --accent-color: #{$gray-200};
   --accent-color-lite: #{$gray-100};
@@ -54,6 +57,9 @@
   --link-color-visited: #{$link-color-visited-dark};
   --link-color-footer: #{$link-color-footer};
 
+  --hint-link-color: #{$link-color};
+  --hint-link-color-visited: #{$link-color-visited};
+
   --code-copy-font-color: #{lighten($body-font-color, 48)};
   --code-copy-border-color: #{lighten($body-font-color, 32)};
   --code-copy-success-color: #{map.get($hint-colors, "ok")};
@@ -80,6 +86,24 @@
     .gblog-hint,
     .admonitionblock {
       filter: saturate(2.5) brightness(0.85);
+
+      a {
+        color: var(--hint-link-color);
+
+        &:hover {
+          background: var(--hint-link-color);
+          color: $gray-100;
+        }
+
+        &:visited {
+          color: var(--hint-link-color-visited);
+
+          &:hover {
+            background: var(--hint-link-color-visited);
+            color: $gray-100;
+          }
+        }
+      }
     }
 
     .gblog-hint__title,
