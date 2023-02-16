@@ -6,9 +6,9 @@
 
 
 <div class="gblog-columns gblog-columns--{{ $size }} flex flex-gap flex-mobile-column">
-  {{ range split .Inner "<--->" }}
+  {{- range split .Inner "<--->" }}
     <div class="gblog-columns__content gblog-markdown--nested flex-even">
       {{ . | $.Page.RenderString }}
     </div>
-  {{ end }}
+  {{- end }}
 </div>
