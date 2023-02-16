@@ -6,7 +6,7 @@
 <div class="flex flex-gap flex-fill">
   {{- range $index, $box := .Scratch.Get $group }}
     <div
-      class="gblog-box gblog-box--{{ $box.Size }}
+      class="flex justify-center gblog-box gblog-box--{{ $box.Size }}
         {{ with $box.Class }}{{ printf " %s" . }}{{ end }}"
     >
       {{ if or $box.Title $box.Icon }}
