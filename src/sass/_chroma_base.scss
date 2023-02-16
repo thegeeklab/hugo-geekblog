@@ -10,7 +10,6 @@
 
   .highlight {
     pre.chroma {
-      margin: 0;
       width: 100%;
       overflow: auto;
       max-height: var(--code-max-height);
@@ -32,6 +31,7 @@
     pre.chroma {
       max-height: none;
       border-radius: 0;
+      margin: 0;
     }
   }
   .chroma .lntable td:first-child {
@@ -45,6 +45,6 @@
   }
   .chroma .lntable td:nth-child(2) {
     width: 100%;
-    margin-left: 2em;
+    margin-left: $padding-32;
   }
 }

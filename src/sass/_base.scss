@@ -115,7 +115,7 @@ h6 {
 h4,
 h5,
 h6 {
-  font-size: 1rem !important;
+  font-size: $font-size-16 !important;
 }
 
 a {
@@ -179,8 +179,8 @@ img {
 
 svg.gblog-icon {
   display: inline-block;
-  width: 1.3em;
-  height: 1.3em;
+  width: $padding-24;
+  height: $padding-24;
   vertical-align: middle;
   stroke-width: 0;
   stroke: currentColor;
@@ -244,7 +244,7 @@ svg.gblog-icon {
   }
 
   &__entry {
-    line-height: 1.3em;
+    line-height: $padding-24;
     color: $gray-100;
     text-decoration: none;
     padding: $padding-4 $padding-8;
@@ -370,7 +370,6 @@ svg.gblog-icon {
       bottom: 0;
       right: 0;
       padding: $padding-4 $padding-8;
-      font-size: 0.8em;
       color: $gray-100;
       border-radius: $border-radius 0;
     }
@@ -404,7 +403,7 @@ svg.gblog-icon {
     }
 
     svg.gblog-icon {
-      font-size: 1.2em;
+      font-size: $font-size-20;
     }
 
     .gblog-button {
@@ -456,14 +455,14 @@ svg.gblog-icon {
   &__codecopy {
     visibility: hidden;
     position: absolute;
-    top: 0.5rem;
-    right: 1rem;
+    top: $padding-8;
+    right: $padding-8;
 
     border: $border-2 solid var(--code-copy-border-color);
     border-radius: $border-radius;
     background: var(--code-copy-background);
-    width: 2.2rem;
-    height: 2.2rem;
+    width: $padding-32;
+    height: $padding-32;
 
     svg.gblog-icon {
       top: 0;
@@ -495,7 +494,7 @@ svg.gblog-icon {
   }
 
   &__item {
-    line-height: 2em;
+    line-height: $padding-32;
 
     &--row {
       margin-right: $padding-16;
@@ -576,6 +575,8 @@ svg.gblog-icon {
 }
 
 .gblog-toc {
+  margin: $padding-16 0;
+
   // Classes to hide nested levels of ToC/Menu
   &__level--1 ul ul,
   &__level--2 ul ul ul,

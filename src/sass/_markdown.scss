@@ -1,23 +1,5 @@
 .gblog-markdown {
-  line-height: 1.6em;
-
-  > :first-child {
-    margin-top: 0 !important;
-  }
-
-  &--nested {
-    :first-child {
-      margin-top: 0;
-    }
-
-    > pre {
-      margin-top: 0 !important;
-    }
-
-    > :last-child {
-      margin-bottom: 0;
-    }
-  }
+  line-height: $padding-24;
 
   h1,
   h2,
@@ -29,7 +11,7 @@
 
     > code {
       border-top: $border-4 solid var(--accent-color);
-      font-size: 0.75em !important;
+      font-size: $font-size-12 !important;
     }
   }
 
@@ -37,7 +19,7 @@
   h5,
   h6 {
     > code {
-      font-size: 0.8rem !important;
+      font-size: $font-size-14 !important;
     }
   }
 
@@ -91,21 +73,13 @@
 
     border-left: $border-4 solid var(--accent-color);
     border-radius: $border-radius;
-
-    :first-child {
-      margin-top: 0;
-    }
-    :last-child {
-      margin-bottom: 0;
-    }
   }
 
   table:not(.lntable) {
     display: table;
     border-spacing: 0;
     border-collapse: collapse;
-    margin-top: $padding-16;
-    margin-bottom: $padding-16;
+    margin: $padding-16 0;
     width: 100%;
     text-align: left;
 
@@ -149,12 +123,8 @@
     }
   }
 
-  pre {
-    margin: 1rem 0;
-  }
-
   code {
-    padding: 0.2em 0.4em;
+    padding: $padding-4 $padding-8;
   }
 
   pre,
@@ -162,13 +132,13 @@
     background-color: var(--code-background);
     border-radius: $border-radius;
     color: var(--code-font-color);
-    font-size: 0.85rem;
-    line-height: 1.45em;
+    font-size: $font-size-14;
+    line-height: $padding-16;
   }
 
   pre code {
     display: block;
-    padding: 1rem;
+    padding: $padding-16;
     width: 100%;
   }
 
@@ -177,7 +147,7 @@
   }
 
   section.footnotes {
-    margin-top: 3rem;
+    margin-top: $padding-32;
     color: var(--body-font-color);
     font-size: $font-size-14;
   }
