@@ -39,7 +39,7 @@ steps:
   - name: link-validation
     image: thegeeklab/link-validator
     commands:
-      - link-validator --color=always --rate-limit 10 -e https://github.com/thegeeklab/hugo-geekblog/edit/main/.*
+      - link-validator --color=always --rate-limit 10 -e https://github.com/thegeeklab/hugo-geekblog/edit/main/.* -e https://unsplash.com.*
     environment:
       LINK_VALIDATOR_BASE_DIR: exampleSite/public
       LINK_VALIDATOR_RETRIES: 3
@@ -288,6 +288,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 2a09d72217187ec12ccf2cd37e58bb4b4d9dcf71b8023817cf46eb5c6fed1f43
+hmac: 8cd0be1e342f0c4630d15fff1b5ee18451b3ac678be2ddbad54443f60c99ef70
 
 ...
