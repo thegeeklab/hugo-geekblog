@@ -69,7 +69,7 @@ To prepare your new site environment just a few steps are required:
 
 3. Install the Geekblog theme from a [release bundle](#option-1-download-pre-build-release-bundle) (recommended) or from [Git branch](#option-2-clone-the-github-repository).
 
-4. Create the minimal required Hugo configuration `config.toml`. For all configuration options take a look at the [configuration](/usage/configuration/) page.
+4. Create the minimal required Hugo configuration `config.toml`. For all configuration options take a look at the [configuration](/posts/usage/configuration/) page.
 
    ```Toml
    baseURL = "http://localhost"
