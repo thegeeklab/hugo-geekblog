@@ -14,7 +14,7 @@ tags:
 
 If you want to customize the theme's color scheme to give it your individual touch, you are only a few lines of CSS away. Generally, you need to override the default settings. The easiest way to do this is to create a file named `static/custom.css` right at the root of your site.
 
-All the necessary CSS customization properties are listed below. If you want to customize elements that don't use these properties, you can always look up the class name and override it directly. For inspiration, you can also take a look at [https://www.color-hex.com/color-palettes/](https://www.color-hex.com/). In this simple example, we'll use the [_Beach_](https://www.color-hex.com/color-palette/895) color palette.
+All the necessary CSS customization properties are listed below. If you want to customize elements that don't use these properties, you can always look up the class name and override it directly. For inspiration, you can also take a look at [https://www.color-hex.com](https://www.color-hex.com/color-palettes/). In this simple example, we'll use the [_Beach_](https://www.color-hex.com/color-palette/895) color palette.
 
 [![Beach Color Palette](images/theme-example.png)](images/theme-example.png)
 
@@ -59,9 +59,9 @@ If you want to add more Favicon formats you have to [overwrite](https://gohugo.i
 <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon/favicon-32x32.png" | relURL }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon/favicon-16x16.png" | relURL }}">
 <link rel="manifest" href="{{ "favicon/site.webmanifest" | relURL }}">
-<link rel="mask-icon" href="{{ "favicon/safari-pinned-tab.svg" | relURL }}" color="#2f333e">
-<meta name="msapplication-TileColor" content="#2f333e">
-<meta name="theme-color" content="#2f333e">
+<link rel="mask-icon" href="{{ "favicon/safari-pinned-tab.svg" | relURL }}" color="#efefef">
+<meta name="msapplication-TileColor" content="#efefef">
+<meta name="theme-color" content="#efefef">
 ```
 
 Happy customizing!
