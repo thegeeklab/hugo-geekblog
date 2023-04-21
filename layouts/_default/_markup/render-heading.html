@@ -4,7 +4,10 @@
 <!-- prettier-ignore-start -->
 {{- if $showAnchor -}}
 <div class="gblog-post__anchorwrap">
-    <h{{ .Level }} id="{{ .Anchor | safeURL }}">
+    <h{{ .Level }} id="{{ .Anchor | safeURL }}" {{- with .Attributes.class }}
+        class="{{ . }}"
+    {{- end }}
+    >
         {{ .Text | safeHTML }}
         <a data-clipboard-text="{{ .Page.Permalink }}#{{ .Anchor | safeURL }}" class="gblog-post__anchor clip flex align-center" aria-label="Anchor {{ .Text | safeHTML }}" href="#{{ .Anchor | safeURL }}">
             <svg class="gblog-icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
@@ -13,7 +16,10 @@
 </div>
 {{- else -}}
 <div class="gblog-post__anchorwrap">
-    <h{{ .Level }} id="{{ .Anchor | safeURL }}">
+    <h{{ .Level }} id="{{ .Anchor | safeURL }}" {{- with .Attributes.class }}
+        class="{{ . }}"
+    {{- end }}
+    >
         {{ .Text | safeHTML }}
     </h{{ .Level }}>
 </div>
