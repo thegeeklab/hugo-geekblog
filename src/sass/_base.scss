@@ -503,16 +503,16 @@ svg.gblog-icon {
   }
 
   &__link {
-    color: var(--link-color-footer);
+    color: var(--footer-link-color);
 
     &:hover,
     &:visited:hover {
-      background: var(--link-color-footer);
+      background: var(--footer-link-color);
       color: $body-font-color;
     }
 
     &:visited {
-      color: var(--link-color-footer);
+      color: var(--footer-link-color);
     }
   }
 }
