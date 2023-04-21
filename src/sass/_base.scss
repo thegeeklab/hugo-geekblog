@@ -174,7 +174,7 @@ img {
   width: 100%;
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: $padding-16;
+  padding: $padding-20;
 }
 
 svg.gblog-icon {
@@ -577,6 +577,10 @@ svg.gblog-icon {
 
 .gblog-toc {
   margin: $padding-16 0;
+
+  li {
+    margin: $padding-4 0;
+  }
 
   // Classes to hide nested levels of ToC/Menu
   &__level--1 ul ul,

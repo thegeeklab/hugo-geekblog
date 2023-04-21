@@ -45,7 +45,7 @@ steps:
       LINK_VALIDATOR_RETRIES: 3
 
   - name: page-validation
-    image: thegeeklab/lhci
+    image: thegeeklab/lhci:0.11
     commands:
       - lhci autorun
     environment:
