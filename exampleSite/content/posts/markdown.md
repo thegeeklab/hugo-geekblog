@@ -17,6 +17,7 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
 <!-- spellchecker-disable -->
+<!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 
 # H1
@@ -56,6 +57,7 @@ The blockquote element represents content that is quoted from another source, op
 
 ### Blockquote with attribution
 
+<!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 
 > Don't communicate by sharing memory, share memory by communicating.<br>
@@ -99,6 +101,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 
 #### Code block indented with four spaces
 
+<!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 <!-- spellchecker-disable -->
 
@@ -118,6 +121,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 
 #### Code block with Hugo's internal highlight Shortcode
 
+<!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 <!-- spellchecker-disable -->
 <!-- prettier-ignore -->
@@ -164,6 +168,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 ## Other Elements — abbr, sub, sup, kbd, mark
 
 <!-- spellchecker-disable -->
+<!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.

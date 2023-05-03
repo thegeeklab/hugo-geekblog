@@ -29,8 +29,13 @@ Buttons are styled links that can lead to local page or external link.
 
 ### Example
 
+<!-- prettier-ignore-start -->
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
 {{< button relref="/" >}}Get Home{{< /button >}}
 {{< button href="https://github.com/thegeeklab/hugo-geekblog" >}}Contribute{{< /button >}}
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
 ## Columns
 
@@ -333,12 +338,15 @@ Boxes can be used to create a simple grid.
 
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
 {{< boxes "contact" >}}
 {{< box size=large title=E-Mail icon=gblog_email >}}mail@example.com{{< /box >}}
 {{< box size=large title=Matrix icon=gblog_matrix >}}@john:example.com{{< /box >}}
 {{< box size=large title=XMPP icon=gblog_xmpp >}}john@example.com{{< /box >}}
 {{< box size=large title=Others >}}You can also find us on the Fediverse.{{< /box >}}
 {{< /boxes >}}
+<!-- markdownlint-restore -->
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
