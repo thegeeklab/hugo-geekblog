@@ -67,10 +67,12 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
+<!-- markdownlint-disable -->
 {{< boxes "contact" >}}
 {{< box size=large title=E-Mail icon=gblog_email >}}mail [ett] example.com{{< /box >}}
 {{< box size=large title=Matrix icon=gblog_matrix >}}@john:example.com{{< /box >}}
 {{< box size=large title=XMPP icon=gblog_xmpp >}}john@example.com{{< /box >}}
 {{< /boxes >}}
+<!-- markdownlint-enable -->
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
