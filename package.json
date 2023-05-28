@@ -33,7 +33,7 @@
   "dependencies": {
     "clipboard": "2.0.11",
     "katex": "0.16.7",
-    "mermaid": "10.1.0",
+    "mermaid": "10.2.0",
     "store2": "2.14.2"
   },
   "devDependencies": {
