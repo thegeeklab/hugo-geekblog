@@ -15,7 +15,7 @@ Sticky (or pinned) posts can be used to permanently pin important posts to the t
 
 **Example:**
 
-```YAML
+```yaml
 ---
 title: Simple sticky posts
 weight: 1

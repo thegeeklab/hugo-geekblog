@@ -4,8 +4,8 @@
 {{ hugo.Generator }}
 
 {{- $keywords := default .Site.Params.Keywords .Keywords -}}
-{{- $authors := default (slice .Site.Params.GeekblogAuthor) .Params.authors -}}
-{{- $seoIgnore := default (slice "taxonomy" "section" "term" "404") .Site.Params.GeekblogSeoIgnore -}}
+{{- $authors := default (slice .Site.Params.geekblogAuthor) .Params.authors -}}
+{{- $seoIgnore := default (slice "taxonomy" "section" "term" "404") .Site.Params.geekblogSeoIgnore -}}
 
 {{- if not (in $seoIgnore .Kind) }}
   <meta name="robots" content="index, follow" />

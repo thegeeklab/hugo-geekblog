@@ -1,4 +1,4 @@
-{{- if default true .Site.Params.GeekblogDarkModeToggle }}
+{{- if default true .Site.Params.geekblogDarkModeToggle }}
   <script src="{{ index (index .Site.Data.assets "colortheme.js") "src" | relURL }}"></script>
 {{- end }}
 <script src="{{ index (index .Site.Data.assets "main.js") "src" | relURL }}"></script>
@@ -78,7 +78,7 @@
   {{- end }}
 {{- end }}
 
-{{- if (default false $.Site.Params.GeekblogOverwriteHTMLBase) }}
+{{- if (default false $.Site.Params.geekblogOverwriteHTMLBase) }}
   <base href="{{ .Site.BaseURL }}" />
 {{- end }}
 

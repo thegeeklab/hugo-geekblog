@@ -40,7 +40,7 @@ You need a recent version of Hugo for local builds and previews of sites that us
 
 If you want to use the theme from a cloned branch instead of a release tarball you'll need to install `webpack` locally and run the build script once to create all required assets.
 
-```Shell
+```shell
 # install required packages from package.json
 npm install
 
@@ -57,13 +57,13 @@ To prepare your new site environment just a few steps are required:
 
 1. Create a new empty Hugo site.
 
-   ```Shell
+   ```shell
    hugo new site demosite
    ```
 
 2. Switch to the root of the new site.
 
-   ```Shell
+   ```shell
    cd demosite
    ```
 
@@ -71,7 +71,7 @@ To prepare your new site environment just a few steps are required:
 
 4. Create the minimal required Hugo configuration `config.toml`. For all configuration options take a look at the [configuration](/posts/usage/configuration/) page.
 
-   ```Toml
+   ```toml
    baseURL = "http://localhost"
    title = "Geekblog"
    theme = "hugo-geekblog"
@@ -120,13 +120,13 @@ To prepare your new site environment just a few steps are required:
 
 5. Test your site.
 
-   ```Shell
+   ```shell
    hugo server -D
    ```
 
    If you want to add some demo data you could use the content from the [Hugo basic example](https://github.com/gohugoio/hugoBasicExample):
 
-   ```Shell
+   ```shell
    curl -L https://github.com/gohugoio/hugoBasicExample/archive/master.tar.gz | tar -xz --exclude "config*" --exclude "LICENSE" --exclude "README*" --strip-components=1
    ```
 
@@ -134,7 +134,7 @@ To prepare your new site environment just a few steps are required:
 
 Download and extract the latest release bundle into the theme directory.
 
-```Shell
+```shell
 mkdir -p themes/hugo-geekblog/
 curl -L https://github.com/thegeeklab/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz | tar -xz -C themes/hugo-geekblog/ --strip-components=1
 ```
@@ -150,13 +150,13 @@ run the described steps as well.
 
 Clone the Geekblog git repository.
 
-```Shell
+```shell
 git clone https://github.com/thegeeklab/hugo-geekblog.git themes/hugo-geekblog
 ```
 
 Build required theme assets e.g. CSS files and SVG sprites.
 
-```Shell
+```shell
 npm install
 npm run build
 ```
@@ -173,7 +173,7 @@ Here are some possible solutions:
 
 Add a Makefile to your repository to bundle the required steps.
 
-```Makefile
+```makefile
 THEME_VERSION := v0.8.2
 THEME := hugo-geekblog
 BASEDIR := docs

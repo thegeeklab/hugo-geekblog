@@ -91,7 +91,7 @@ In some situations, it can be helpful to include Markdown files that also contai
 
 Resulting structure should look like this:
 
-```Shell
+```shell
 _includes/
  ├── include-page.md
  └── _index.md

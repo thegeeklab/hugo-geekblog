@@ -12,7 +12,7 @@ The theme supports multiple authors. The required information for each author ne
 
 <!--more-->
 
-```Shell
+```shell
 data/
 └── authors
    ├── john-doe.yml
@@ -22,14 +22,14 @@ data/
 
 The name of the file will be used as the reference later, so if you prefer some kind of naming convention this need to covered by the file names. Example authors file:
 
-```YAML
+```yaml
 name: John Doe
 email: john@example.com
 ```
 
 With the defined files, you can add as many authors as you want to the front matter of your posts:
 
-```Markdown
+```markdown
 ---
 title: Demo Posts
 authors:

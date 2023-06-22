@@ -21,7 +21,7 @@ Overview of all available site and page configuration options provided by the th
 {{< tabs "site-config" >}}
 {{< tab "TOML" >}}
 
-```Toml
+```toml
 baseURL = "http://localhost"
 title = "Geekblog"
 theme = "hugo-geekblog"
@@ -151,7 +151,7 @@ enableRobotsTXT = true
 {{< /tab >}}
 {{< tab "YAML" >}}
 
-```Yaml
+```yaml
 ---
 baseURL: "http://localhost"
 title: "Geekblog"
@@ -266,9 +266,10 @@ params:
   geekblogDarkModeDim: false
 
   # (Optional, default false) Enforce code blocks to always use the dark color theme.
-  geekblogDarkModeCode: false
+  geekblogDarkModeCode:
+    false
 
-   # (Optional, default true) Display a "Back to top" link in the site footer.
+    # (Optional, default true) Display a "Back to top" link in the site footer.
   geekblogBackToTop: true
 
   # (Optional, default ["taxonomy", "section", "term", "404"])
@@ -298,7 +299,7 @@ params:
 {{< tabs "page-config" >}}
 {{< tab "TOML" >}}
 
-```Toml
+```toml
 # Title of your post. If not set, filename will be used.
 title = My first post
 
@@ -321,7 +322,7 @@ geekblogAnchor = true
 {{< /tab >}}
 {{< tab "YAML" >}}
 
-```Yaml
+```yaml
 # Title of your post. If not set, filename will be used.
 title: My first post
 
