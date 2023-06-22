@@ -16,7 +16,7 @@ There are several ways to add code blocks. Most of them work out of the box, onl
 
 To display an inline shortcode use single quotes:
 
-```Plain
+```plain
 `some code`
 ```
 
@@ -26,22 +26,22 @@ To display an inline shortcode use single quotes:
 
 Code blocks can be uses without language specification:
 
-````Markdown
-```Plain
+````markdown
+```plain
 some code
 ```
 ````
 
 **Example:**
 
-```Plain
+```plain
 some code
 ```
 
 ... or if you need language specific syntax highlighting:
 
-````Markdown
-```Shell
+````markdown
+```shell
 # some code
 echo "Hello world"
 ```
@@ -49,7 +49,7 @@ echo "Hello world"
 
 **Example:**
 
-```Shell
+```shell
 # some code
 echo "Hello World"
 ```
@@ -61,7 +61,7 @@ Hugo has a build-in shortcode for syntax highlighting. To work properly with thi
 {{< tabs "uniqueid" >}}
 {{< tab "TOML" >}}
 
-```TOML
+```toml
 pygmentsUseClasses=true
 pygmentsCodeFences=true
 ```
@@ -69,7 +69,7 @@ pygmentsCodeFences=true
 {{< /tab >}}
 {{< tab "YAML" >}}
 
-```YAML
+```yaml
 pygmentsUseClasses: true
 pygmentsCodeFences: true
 ```
@@ -80,7 +80,7 @@ pygmentsCodeFences: true
 You can use it like every other shortcode:
 
 <!-- prettier-ignore -->
-```Markdown
+```markdown
 {{</* highlight Shell "linenos=table" */>}}
 # some code
 echo "Hello World"

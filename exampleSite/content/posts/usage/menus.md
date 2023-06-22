@@ -18,7 +18,7 @@ If you want to customize the menus (header and footer), this can be achieved by 
 
 **Example:**
 
-```Yaml
+```yaml
 ---
 header:
   - name: Github Profile

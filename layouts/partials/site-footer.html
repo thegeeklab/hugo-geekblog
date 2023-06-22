@@ -11,12 +11,12 @@
         {{ if .Site.Data.menu.extra.footer }}
           {{ partial "menu-extra" (dict "current" . "source" .Site.Data.menu.extra.footer "target" "footer") }}
         {{ end }}
-        {{ with .Site.Params.GeekblogLegalNotice }}
+        {{ with .Site.Params.geekblogLegalNotice }}
           <span class="gblog-footer__item gblog-footer__item--row">
             <a href="{{ . | relURL }}" class="gblog-footer__link">Legal Notice</a>
           </span>
         {{ end }}
-        {{ with .Site.Params.GeekblogPrivacyPolicy }}
+        {{ with .Site.Params.geekblogPrivacyPolicy }}
           <span class="gblog-footer__item gblog-footer__item--row">
             <a href="{{ . | relURL }}" class="gblog-footer__link">Privacy Policy</a>
           </span>
@@ -28,14 +28,14 @@
           <svg class="gblog-icon gblog_heart"><use xlink:href="#gblog_heart"></use></svg>
         </span>
       </section>
-      {{ with .Site.Params.GeekblogHostedOn }}
+      {{ with .Site.Params.geekblogHostedOn }}
         <section class="flex flex-wrap align-center">
           <span class="gblog-footer__item">
             Hosted on <a href="{{ .link }}" class="gblog-footer__link">{{ .name }}</a>
           </span>
         </section>
       {{ end }}
-      {{ with .Site.Params.GeekblogContentLicense }}
+      {{ with .Site.Params.geekblogContentLicense }}
         <section class="flex flex-wrap align-center">
           <span class="gblog-footer__item">
             Content licensed under
@@ -44,7 +44,7 @@
         </section>
       {{ end }}
     </div>
-    {{ if (default true .Site.Params.GeekblogBackToTop) }}
+    {{ if (default true .Site.Params.geekblogBackToTop) }}
       <div class="flex flex-25 justify-end">
         <span class="gblog-footer__item text-right">
           <a class="gblog-footer__link fake-link" href="#" aria-label="Back to top">

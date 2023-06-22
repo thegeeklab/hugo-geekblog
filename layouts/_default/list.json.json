@@ -12,7 +12,7 @@
     {{- with .OutputFormats.Get "json" }}
     "feed_url" : "{{ .Permalink }}",
     {{- end }}
-    {{- with .Site.Params.GeekblogAuthor -}}
+    {{- with .Site.Params.geekblogAuthor -}}
     {{ with index $.Site.Data.authors . }}
     "authors" : [
         {

@@ -45,7 +45,7 @@
   </div>
   <ul class="gblog-nav__list container flex flex-wrap justify-center menu-content">
     {{ $currentPage := .RelPermalink }}
-    {{ if default true .Site.Params.GeekblogTagsToMenu }}
+    {{ if default true .Site.Params.geekblogTagsToMenu }}
       {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
         {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
           <li>
