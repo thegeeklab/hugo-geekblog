@@ -303,6 +303,8 @@ params:
 # Title of your post. If not set, filename will be used.
 title = My first post
 
+# Hugo predefined front matter variable, to re-arrange items in file-tree menu.
+# See weights section of https://gohugo.io/content-management/front-matter/#predefined
 # Set weigth to 1 to mark this post as sticky post.
 weight = 1
 
