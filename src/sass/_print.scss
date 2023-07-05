@@ -1,18 +1,19 @@
 @media print {
   .gblog-nav,
-  .gblog-footer .container div:not(:last-child),
+  .gblog-header,
+  .gblog-footer,
   .gblog-paging,
   .gblog-post__readmore,
-  .gblog-post__anchor {
+  .gblog-post__anchor,
+  .gblog-post__codecopy,
+  .gblog-post__meta--author,
+  .gblog-post__meta--tag,
+  .gblog-post__meta--pinned {
     display: none;
   }
 
-  .gblog-header {
-    border-bottom: $border-1 solid $gray-300;
-  }
-
-  .gblog-footer {
-    border-top: $border-1 solid $gray-300;
+  .gblog-post {
+    padding: 0.5em 0;
   }
 
   .gblog-markdown pre {
@@ -21,7 +22,6 @@
   }
 
   .chroma code {
-    border: $border-1 solid $gray-300;
     padding: $padding-8 !important;
     font-weight: normal !important;
   }
@@ -31,8 +31,23 @@
   }
 
   a,
+  a:visited,
   a:visited {
-    color: inherit !important;
-    text-decoration: none !important;
+    color: var(--link-color) !important;
+    background: none !important;
+    text-decoration: underline !important;
+  }
+
+  h2,
+  h3,
+  h4,
+  .no-break-after {
+    break-after: avoid;
+  }
+
+  pre,
+  blockquote,
+  .no-break-inside {
+    break-inside: avoid;
   }
 }
