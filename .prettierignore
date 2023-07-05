@@ -7,3 +7,4 @@ list.json.json
 /static/js/
 /src/favicon/
 LICENSE
+**/*.html
