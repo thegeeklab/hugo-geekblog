@@ -7,6 +7,8 @@ resources:
       credits: "[Angelina Litvin](https://unsplash.com/@linalitvina) on [Unsplash](https://unsplash.com/s/photos/writing)"
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 {{< columns size=small >}}
 
 {{< img name=profile lazy=false size=profile >}}
@@ -50,7 +52,7 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 
 ---
 
-<div class="no-page-break-inside">
+<div class="no-break-inside">
 
 ## Skills
 
@@ -67,7 +69,7 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 
 ---
 
-<div class="no-page-break-inside">
+<div class="no-break-inside">
 
 ## Contact
 

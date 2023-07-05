@@ -4,12 +4,16 @@
   .gblog-footer,
   .gblog-paging,
   .gblog-post__readmore,
-  .gblog-post__anchor {
+  .gblog-post__anchor,
+  .gblog-post__codecopy,
+  .gblog-post__meta--author,
+  .gblog-post__meta--tag,
+  .gblog-post__meta--pinned {
     display: none;
   }
 
   .gblog-post {
-    padding: 0;
+    padding: 0.5em 0;
   }
 
   .gblog-markdown pre {
@@ -18,7 +22,6 @@
   }
 
   .chroma code {
-    border: $border-1 solid $gray-300;
     padding: $padding-8 !important;
     font-weight: normal !important;
   }
@@ -35,15 +38,16 @@
     text-decoration: underline !important;
   }
 
+  h2,
   h3,
   h4,
-  .no-page-break-after {
-    page-break-after: avoid;
+  .no-break-after {
+    break-after: avoid;
   }
 
   pre,
   blockquote,
-  .no-page-break-inside {
-    page-break-inside: avoid;
+  .no-break-inside {
+    break-inside: avoid;
   }
 }
