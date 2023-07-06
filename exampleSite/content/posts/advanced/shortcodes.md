@@ -450,7 +450,8 @@ Text continues here.
 
 | Name             | Description                                                                      | default   |
 | ---------------- | -------------------------------------------------------------------------------- | --------- |
-| value            | progress value                                                                   | 0         |
+| value            | progress value (0-100)                                                           | 0         |
+| label            | value to display                                                                 | value     |
 | icon (optional)  | icon to use, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
 | title (optional) | progress title                                                                   | undefined |
 
