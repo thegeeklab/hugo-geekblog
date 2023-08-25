@@ -9,14 +9,15 @@ ci:
       - http://localhost/posts/usage/getting-started/
     settings:
       chromeFlags: "--no-sandbox"
+      skipAudits:
+        - uses-long-cache-ttl
+        - csp-xss
+        # FIXME: https://github.com/GoogleChrome/lighthouse/issues/14957
+        - bf-cache
+        - is-crawlable
   assert:
     preset: "lighthouse:no-pwa"
     assertions:
-      uses-long-cache-ttl: off
-      csp-xss: off
-      # FIXME: https://github.com/GoogleChrome/lighthouse/issues/14957
-      bf-cache: off
-      is-crawlable: off
       tap-targets: warn
       unsized-images: warn
       # FIXME: https://github.com/GoogleChrome/lighthouse/issues/11460
