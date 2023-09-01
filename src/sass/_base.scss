@@ -483,6 +483,10 @@ svg.gblog-icon {
         color: var(--code-copy-success-color);
       }
     }
+
+    &--out {
+      transition: visibility 2s ease-out;
+    }
   }
 }
 

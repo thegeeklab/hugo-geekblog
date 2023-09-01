@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const trigger = e.trigger
 
     if (trigger.hasAttribute("data-copy-feedback")) {
-      trigger.classList.add("gblog-post__codecopy--success")
+      trigger.classList.add("gblog-post__codecopy--success", "gblog-post__codecopy--out")
       trigger.querySelector(".gblog-icon.copy").classList.add("hidden")
       trigger.querySelector(".gblog-icon.check").classList.remove("hidden")
 
       setTimeout(function () {
-        trigger.classList.remove("gblog-post__codecopy--success")
+        trigger.classList.remove("gblog-post__codecopy--success", "gblog-post__codecopy--out")
         trigger.querySelector(".gblog-icon.copy").classList.remove("hidden")
         trigger.querySelector(".gblog-icon.check").classList.add("hidden")
       }, 3000)
