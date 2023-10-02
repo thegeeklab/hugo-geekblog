@@ -14,7 +14,7 @@ Geekblog is a simple Hugo theme for personal blogs. It is intentionally designed
 
 <!--more-->
 
-[![Build Status](https://img.shields.io/drone/build/thegeeklab/hugo-geekblog?logo=drone&server=https%3A%2F%2Fdrone.thegeeklab.de)](https://drone.thegeeklab.de/thegeeklab/hugo-geekblog)
+[![Build Status](https://ci.thegeeklab.de/api/badges/thegeeklab/hugo-geekblog/status.svg)](https://ci.thegeeklab.de/repos/thegeeklab/hugo-geekblog)
 [![Hugo Version](https://img.shields.io/badge/hugo-0.93-blue.svg)](https://gohugo.io)
 [![GitHub release](https://img.shields.io/github/v/release/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/releases/latest)
 [![GitHub contributors](https://img.shields.io/github/contributors/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/graphs/contributors)
