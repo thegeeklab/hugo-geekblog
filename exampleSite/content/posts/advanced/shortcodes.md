@@ -528,7 +528,7 @@ The supported attributes can be taken from the following example:
 
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
-{{< propertylist name=shortcode-buttons sort=name order=asc >}}
+{{< propertylist name=shortcode-propertylist sort=name order=asc >}}
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 

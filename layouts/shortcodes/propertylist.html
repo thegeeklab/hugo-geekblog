@@ -11,7 +11,8 @@
         {{- $properties = (sort $properties . $order) }}
       {{- end }}
       {{- range $properties }}
-        <dt class="flex flex-wrap align-center gblog-props__meta"{{ if $showAnchor }} id="{{ anchorize .name }}"{{ end }}>
+        {{- $uniqueAnchor := anchorize (printf "%s-%s" $name .name) | safeHTML }}
+        <dt class="flex flex-wrap align-center gblog-props__meta"{{ if $showAnchor }} id="{{ $uniqueAnchor }}"{{ end }}>
           <span class="gblog-props__title">{{ .name }}</span>
           {{- if .required }}
             <span class="gblog-props__tag warning">required</span>
@@ -28,7 +29,7 @@
             {{- end }}
           {{- end }}
           {{- if $showAnchor }}
-          <a data-clipboard-text="{{ .Page.Permalink }}#{{ anchorize .name | safeHTML }}" class="gblog-post__anchor clip flex align-center" title="{{ i18n "title_anchor_prefix" }} {{ .name | safeHTML }}" aria-label="{{ i18n "title_anchor_prefix" }} {{ .name | safeHTML }}" href="#{{ anchorize .name | safeHTML }}">
+          <a data-clipboard-text="{{ .Page.Permalink }}#{{ $uniqueAnchor }}" class="gblog-post__anchor clip flex align-center" title="Anchor to: {{ .name | safeHTML }}" aria-label="Anchor to: {{ .name | safeHTML }}" href="#{{ $uniqueAnchor | safeHTML }}">
             <svg class="gblog-icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
           </a>
           {{- end }}
