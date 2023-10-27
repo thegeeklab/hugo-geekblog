@@ -1,0 +1,32 @@
+---
+properties:
+  - name: prop1
+    type: string
+    description: Dummy description of the prop1 string property.
+    required: true
+
+  - name: prop2
+    type: int
+    defaultValue: 10
+    description: Another description for the integer property called prop2.
+    required: false
+    tags:
+      - tag1
+      - tag2
+
+  - name: prop3
+    type: bool
+    defaultValue: false
+    description: |
+      A `bool` property with a complex multiline description and embedded Markdown:
+
+      - List item 1
+      - List item 2
+
+      More description how to use this property.
+    required: false
+
+  - name: a-prop
+    type: string
+    description: Property to demonstrate sorting.
+    required: true
