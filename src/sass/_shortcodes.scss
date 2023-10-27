@@ -230,7 +230,7 @@
     padding: $padding-4 $padding-16;
   }
 
-  .gblog-page__anchor {
+  .gblog-post__anchor {
     display: none;
   }
 }
@@ -243,6 +243,47 @@
   > svg {
     height: 100%;
     padding: $padding-8;
+  }
+}
+
+// {{< propertylist >}}
+.gblog-props {
+  &__title,
+  &__default {
+    padding: 0;
+    margin: 0;
+    font-family: "Liberation Mono", monospace;
+  }
+
+  &__meta {
+    gap: 0.5em;
+    line-height: normal;
+    margin-bottom: $padding-4;
+
+    &:hover .gblog-post__anchor svg.gblog-icon {
+      color: var(--control-icons);
+    }
+  }
+
+  @each $name, $color in $hint-colors {
+    &__tag.#{$name} {
+      border-color: scale-color($color, $lightness: 90%, $saturation: -30%);
+      background-color: scale-color($color, $lightness: 95%, $saturation: -30%);
+    }
+  }
+
+  &__tag {
+    font-size: $font-size-14;
+    font-weight: normal;
+    background-color: $gray-100;
+    border: $border-1 solid $gray-200;
+    border-radius: $border-radius;
+    padding: $padding-2 $padding-4;
+    color: $body-font-color;
+  }
+
+  &__default {
+    font-size: $font-size-14;
   }
 }
 
