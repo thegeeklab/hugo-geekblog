@@ -21,11 +21,21 @@ The theme bundles some handy shortcodes that tries to cover common situations.
 
 Buttons are styled links that can lead to local page or external link.
 
+### Usage
+
 <!-- prettier-ignore -->
 ```tpl
 {{</* button relref="/" [class="...", size="large|regular"] */>}}Get Home{{</* /button */>}}
 {{</* button href="https://github.com/thegeeklab/hugo-geekblog" */>}}Contribute{{</* /button */>}}
 ```
+
+#### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-buttons sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
 
 ### Example
 
@@ -40,12 +50,6 @@ Buttons are styled links that can lead to local page or external link.
 ## Columns
 
 The Columns shortcode can be used to organize content side-by-side (horizontally) for better readability.
-
-### Attributes
-
-| Name            | Description                                      | default |
-| --------------- | ------------------------------------------------ | ------- |
-| size (optional) | size of the first column (small\|regular\|large) | regular |
 
 ### Usage
 
@@ -66,6 +70,14 @@ Dolor sit, sumo unique argument um no ...
 Dolor sit, sumo unique argument um no ...
 {{</* /columns */>}}
 ```
+
+#### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-columns sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
 
 ### Example
 
@@ -99,9 +111,11 @@ copious quo ad. Stet probates in duo.
 
 Emoji can be enabled in a Hugo project in a number of ways.
 
-The [emojify](https://gohugo.io/functions/emojify/) function can be called directly in templates or [Inline Shortcodes](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes). To enable emoji globally, set `enableEmoji` to `true` in your site's [configuration](https://gohugo.io/getting-started/configuration/) and then you can type emoji shorthand codes directly in content files:
+The [emojify](https://gohugo.io/functions/emojify/) function can be called directly in templates or [Inline Shortcodes](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes). To enable emoji globally, set `enableEmoji` to `true` in your site's [configuration](https://gohugo.io/getting-started/configuration/) and then you can type emoji shorthand codes directly in content files.
 
-| Result                            | Inline            | Shortcode                               |
+### Example
+
+| Output                            | Inline            | Shortcode                               |
 | --------------------------------- | ----------------- | --------------------------------------- |
 | {{< emojify ":see_no_evil:" >}}   | `:see_no_evil:`   | `{{</* emojify ":see_no_evil:" */>}}`   |
 | {{< emojify ":hear_no_evil:" >}}  | `:hear_no_evil:`  | `{{</* emojify ":hear_no_evil:" */>}}`  |
@@ -110,58 +124,55 @@ The [emojify](https://gohugo.io/functions/emojify/) function can be called direc
 The [Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet) is a useful reference for emoji shorthand codes.
 
 {{< hint type=note >}}
-**Info**\
 The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack.
 {{< /hint >}}
 
-**Styling:**
-
+<!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
-<!-- prettier-ignore -->
 {{< highlight html "linenos=table" >}}
 .emoji {
   font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
 }
 {{< /highlight >}}
-
 <!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
 
 ## Expand
 
 Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
 
-### Example
+### Usage
 
-#### Default
-
-<!-- prettier-ignore -->
 ```tpl
 {{</* expand */>}}
-## Markdown content
+### Markdown content
 Dolor sit, sumo unique ...
 {{</* /expand */>}}
 ```
 
+It is also possible to use a custom label and symbol.
+
+<!-- prettier-ignore-start -->
+
+```tpl
+{{</* expand "Custom Label" "..." */>}}
+### More markdown
+Dolor sit, sumo unique ...
+{{</* /expand */>}}
+```
+
+### Example
+
 {{< expand >}}
 
-##### Markdown content
+#### Markdown content
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /expand >}}
 
-#### With Custom Label
-
-<!-- prettier-ignore -->
-```tpl
-{{</* expand "Custom Label" "..." */>}}
-## Markdown content
-Dolor sit, sumo unique ...
-{{</* /expand */>}}
-```
-
 {{< expand "Custom Label" "..." >}}
 
-##### More markdown
+#### More markdown
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
 investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
@@ -173,24 +184,24 @@ copious quo ad. Stet probates in duo.
 
 Hint shortcode can be used as hint/alerts/notification block.
 
-### Attributes
-
-| Name             | Description                                                                             | default   |
-| ---------------- | --------------------------------------------------------------------------------------- | --------- |
-| type             | hint type                                                                               | note      |
-| icon (optional)  | custom icon to use, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
-| title (optional) | hint title                                                                              | undefined |
-
 ### Usage
 
 <!-- prettier-ignore-start -->
 ```tpl
-{{</* hint type="note|tip|important|caution|warning" [icon="gblog_github" title="GitHub"] */>}}
+{{</* hint type=[note|tip|important|caution|warning] (icon=gblog_github) (title=GitHub) */>}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
  Ornateness bland it ex enc, est yeti am bongo detract re.
 {{</* /hint */>}}
 ```
+<!-- prettier-ignore-end -->
+
+#### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-hints sort=name order=asc >}}
+<!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
 ### Example
@@ -243,14 +254,17 @@ Ornateness bland it ex enc, est yeti am bongo detract re.
 
 Simple shortcode to include icons from SVG sprites outside of menus.
 
-<!-- prettier-ignore -->
+### Usage
+
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* icon "thumbs-up" */>}}
 ```
+<!-- prettier-ignore-end -->
 
 ### Example
 
-| Result                     | Usage                            |
+| Output                     | Code                             |
 | -------------------------- | -------------------------------- |
 | {{< icon "thumbs-up" >}}   | `{{</* icon "thumbs-up" */>}}`   |
 | {{< icon "thumbs-down" >}} | `{{</* icon "thumbs-down" */>}}` |
@@ -262,7 +276,9 @@ Simple shortcode to include icons from SVG sprites outside of menus.
 
 Tabs let you organize content by context, for example installation instructions for each supported platform.
 
-<!-- prettier-ignore -->
+### Usage
+
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* tabs "uniqueid" */>}}
 {{</* tab "macOS" */>}} # macOS Content {{</* /tab */>}}
@@ -270,6 +286,7 @@ Tabs let you organize content by context, for example installation instructions 
 {{</* tab "Windows" */>}} # Windows Content {{</* /tab */>}}
 {{</* /tabs */>}}
 ```
+<!-- prettier-ignore-end -->
 
 ### Example
 
@@ -314,14 +331,6 @@ prompts feud gait, quid exercise emeritus bis e. In pro quints consequent.
 
 Boxes can be used to create a simple grid.
 
-### Attributes
-
-| Name             | Description                                                                         | default   |
-| ---------------- | ----------------------------------------------------------------------------------- | --------- |
-| size             | size of each box (regular\|large)                                                   | regular   |
-| icon (optional)  | title bar icon, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
-| title (optional) | title bar text                                                                      | undefined |
-
 ### Usage
 
 <!-- prettier-ignore -->
@@ -333,6 +342,14 @@ Boxes can be used to create a simple grid.
 {{</* box size=large title=Others */>}}You can also find us on the Fediverse.{{</* /box */>}}
 {{</* /boxes */>}}
 ```
+
+#### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-boxes sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
 
 ### Example
 
@@ -354,13 +371,11 @@ Boxes can be used to create a simple grid.
 
 [Mermaid](https://mermaidjs.github.io/) is library for generating SVG charts and diagrams from text.
 
-<!--more-->
-
-### Example
+### Usage
 
 <!-- prettier-ignore -->
 ```tpl
-{{</*/* mermaid class="text-center" */*/>}}
+{{</* mermaid class="text-center" */>}}
 sequenceDiagram
     Alice->>Bob: Hello Bob, how are you?
     alt is sick
@@ -371,8 +386,18 @@ sequenceDiagram
     opt Extra response
         Bob->>Alice: Thanks for asking
     end
-{{</*/* /mermaid */*/>}}
+{{</* /mermaid */>}}
 ```
+
+#### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-mermaid sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
+
+### Example
 
 <!-- spellchecker-disable -->
 <!-- prettier-ignore -->
@@ -388,6 +413,8 @@ sequenceDiagram
         Bob->>Alice: Thanks for asking
     end
 {{< /mermaid >}}
+
+<!-- spellchecker-enable -->
 
 As an alternative to shortcodes, code blocks can be used for markdown as well.
 
@@ -424,13 +451,23 @@ C -->|Two| E[Result 2]
 
 [KaTeX](https://katex.org/) shortcode let you render math typesetting in markdown document.
 
-### Example
+### Usage
 
 ```latex
-{{</*/* katex [display] [class="text-center"] */*/>}}
+{{</* katex [display] [class="text-center"] */>}}
 f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
-{{</*/* /katex */*/>}}
+{{</* /katex */>}}
 ```
+
+#### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-katex sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
+
+### Example
 
 <!-- spellchecker-disable -->
 <!-- prettier-ignore -->
@@ -440,27 +477,23 @@ f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 
 <!-- spellchecker-enable -->
 
-KaTeX can be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter (see above).
-
-Text continues here.
+KaTeX can be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter as above.
 
 ## Progress
 
-### Attributes
-
-| Name             | Description                                                                      | default   |
-| ---------------- | -------------------------------------------------------------------------------- | --------- |
-| value            | progress value (0-100)                                                           | 0         |
-| label            | value to display                                                                 | value     |
-| icon (optional)  | icon to use, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
-| title (optional) | progress title                                                                   | undefined |
-
 ### Usage
 
-<!-- prettier-ignore-start -->
+<!-- prettier-ignore -->
 ```tpl
 {{</* progress title=Eating value=65 icon=gblog_heart */>}}
 ```
+
+#### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-progress sort=name order=asc >}}
+<!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
 ### Example
@@ -468,5 +501,41 @@ Text continues here.
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
 {{< progress title=Eating value=65 icon=gblog_heart >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
+
+## Properties
+
+The property list shortcode creates a custom HTML description list that can be used to display properties or variables and general dependent information. The shortcode requires a data file in `data/properties/`, e.g. `data/properties/demo.yaml`.
+
+### Usage
+
+<!-- prettier-ignore-start -->
+```tpl
+{{</* propertylist name=demo (sort=name) (order=[asc|desc]) */>}}
+```
+<!-- prettier-ignore-end -->
+
+The supported attributes can be taken from the following example:
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< include file="/data/properties/demo.yaml" language="Yaml" options="linenos=table" >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
+
+#### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-buttons sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
+
+### Example
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=demo sort=name order=asc >}}
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
