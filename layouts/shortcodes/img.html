@@ -16,7 +16,7 @@
     {{- $data.SetInMap "size" "medium" "1200" }}
     {{- $data.SetInMap "size" "large" "1800" }}
   {{- else }}
-    {{- $data.SetInMap "size" "profile" (.Fill "180x180 Center").Permalink }}
+    {{- $data.SetInMap "size" "profile" (.Fill "180x180 Smart").Permalink }}
     {{- $data.SetInMap "size" "tiny" (.Resize "320x").Permalink }}
     {{- $data.SetInMap "size" "small" (.Resize "600x").Permalink }}
     {{- $data.SetInMap "size" "medium" (.Resize "1200x").Permalink }}
