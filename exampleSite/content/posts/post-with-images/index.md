@@ -60,12 +60,13 @@ If you need more flexibility for your embedded images, you could use the `img` s
 
 ## Attributes
 
-| Name | Description                                                  | default           |
-| ---- | ------------------------------------------------------------ | ----------------- |
-| name | name of the image resource defined in your front matter      | empty             |
-| alt  | description for displayed image                              | resource `.Title` |
-| size | Thumbnail size (origin\|profile\|tiny\|small\|medium\|large) | empty             |
-| lazy | enable or disable image lazy loading                         | true              |
+| Name   | Description                                                                      | default           |
+| ------ | -------------------------------------------------------------------------------- | ----------------- |
+| name   | name of the image resource defined in your front matter                          | empty             |
+| alt    | description for displayed image                                                  | resource `.Title` |
+| size   | Thumbnail size (origin\|profile\|tiny\|small\|medium\|large)                     | empty             |
+| lazy   | enable or disable image lazy loading                                             | true              |
+| anchor | anchor to determine the placement of the crop box (only used for `profile` size) | smart             |
 
 ## Usage
 
