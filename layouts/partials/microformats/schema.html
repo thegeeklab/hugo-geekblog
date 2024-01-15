@@ -7,7 +7,7 @@
       {{ with index $.Site.Data.authors . }}"author": "{{ .name }}",{{ end }}
       {{- end }}
       "name": {{ .Site.Title }},
-      "url": {{ .Site.BaseURL }},
+      "url": {{ .Site.Home.Permalink }},
       {{- with partial "utils/description" . }}
       "description": "{{ . | plainify | htmlUnescape | chomp }}",
       {{- end }}
@@ -77,7 +77,7 @@
       "publisher":{
           "@type":"Organization",
           "name": {{ .Site.Title }},
-          "url": {{ .Site.BaseURL }},
+          "url": {{ .Site.Home.Permalink }},
           "logo": {
               "@type": "ImageObject",
               "url": {{ (default "brand.svg" .Site.Params.logo) | absURL }},

@@ -79,7 +79,7 @@
 {{- end }}
 
 {{- if (default false $.Site.Params.geekblogOverwriteHTMLBase) }}
-  <base href="{{ .Site.BaseURL }}" />
+  <base href="{{ .Site.Home.Permalink }}" />
 {{- end }}
 
 {{ printf "<!-- %s -->" "Made with Geekblog theme https://github.com/thegeeklab/hugo-geekblog" | safeHTML }}
