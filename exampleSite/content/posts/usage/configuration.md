@@ -109,7 +109,7 @@ enableRobotsTXT = true
   # by the 'img' shortcode.
   geekblogImageLazyLoading = true
 
-  # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. It might be required
+  # (Optional, default false) Set HTMl <base> to .Site.Home.Permalink if enabled. It might be required
   # if a subdirectory is used within Hugo's BaseURL.
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekblogOverwriteHTMLBase = false
@@ -249,7 +249,7 @@ params:
   # by the 'img' shortcode.
   geekblogImageLazyLoading: true
 
-  # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. It might be required
+  # (Optional, default false) Set HTMl <base> to .Site.Home.Permalink if enabled. It might be required
   # if a subdirectory is used within Hugo's BaseURL.
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekblogOverwriteHTMLBase: false
