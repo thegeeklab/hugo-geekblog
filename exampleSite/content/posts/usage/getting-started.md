@@ -124,6 +124,8 @@ To prepare your new site environment just a few steps are required:
    hugo server -D
    ```
 
+   The `-D` or `--buildDrafts` option is used to include content marked as draft during the build. It is used because content pages created with the `hugo new content` command have the `draft` flag set by default and this can lead to build errors in newly created projects. For projects with a production-ready content structure, this flag is not required in most cases and can be omitted.
+
    If you want to add some demo data you could use the content from the [Hugo basic example](https://github.com/gohugoio/hugoBasicExample):
 
    ```shell
