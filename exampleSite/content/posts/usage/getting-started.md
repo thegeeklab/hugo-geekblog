@@ -142,7 +142,6 @@ curl -L https://github.com/thegeeklab/hugo-geekblog/releases/latest/download/hug
 ### Option 2: Clone the GitHub repository
 
 {{< hint type=note >}}
-**Info**\
 Keep in mind this method is not recommended and needs some extra steps to get it working.
 If you want to use the Theme as submodule keep in mind that your build process need to
 run the described steps as well.
@@ -169,31 +168,40 @@ There are several ways to deploy your site with this theme on Netlify. Regardles
 
 Here are some possible solutions:
 
-**Use a Makefile:**
+#### Use a Makefile
 
 Add a Makefile to your repository to bundle the required steps.
 
+{{< hint type=important >}}
+The `Makefile` is only an example. Depending on your project structure, `BASEDIR` or `THEMEDIR` may need to be adapted.
+{{< /hint >}}
+
 ```makefile
-THEME_VERSION := v0.8.2
+# Please change the theme version to the latest release version.
+THEME_VERSION := v0.26.1
 THEME := hugo-geekblog
 BASEDIR := docs
 THEMEDIR := $(BASEDIR)/themes
+
 .PHONY: doc
 doc: doc-assets doc-build
+
 .PHONY: doc-assets
 doc-assets:
-   mkdir -p $(THEMEDIR)/$(THEME)/ ; \
-   curl -sSL "https://github.com/thegeeklab/$(THEME)/releases/download/${THEME_VERSION}/$(THEME).tar.gz" | tar -xz -C $(THEMEDIR)/$(THEME)/ --strip-components=1
+	mkdir -p $(THEMEDIR)/$(THEME)/ ; \
+	curl -sSL "https://github.com/thegeeklab/$(THEME)/releases/download/${THEME_VERSION}/$(THEME).tar.gz" | tar -xz -C $(THEMEDIR)/$(THEME)/ --strip-components=1
+
 .PHONY: doc-build
 doc-build:
-        cd $(BASEDIR); hugo
+	cd $(BASEDIR); hugo
+
 .PHONY: clean
 clean:
-   rm -rf $(THEMEDIR) && \
-   rm -rf $(BASEDIR)/public
+	rm -rf $(THEMEDIR) && \
+	rm -rf $(BASEDIR)/public
 ```
 
-This Makefile can be used in your `netlify.toml`, take a look at the Netlify [example](https://docs.netlify.com/configure-builds/file-based-configuration/#sample-netlify-toml-file) for more information:
+This Makefile can be used in your `netlify.toml`, take a look at the [Netlify example](https://docs.netlify.com/configure-builds/file-based-configuration/#sample-netlify-toml-file) for more information:
 
 ```toml
 [build]
@@ -201,7 +209,7 @@ publish = "docs/public"
 command = "make doc"
 ```
 
-**Chain required commands:**
+#### Chain required commands
 
 Chain all required commands to prepare the theme and build your site on the `command` option in your `netlify.toml` like this:
 
@@ -214,7 +222,6 @@ command = "command1 && command 2 && command3 && hugo"
 ### Subdirectories
 
 {{< hint type=important >}}
-**Warning**\
 As deploying Hugo sites on subdirectories is not as robust as on subdomains, we do not recommend this.
 If you have a choice, using a domain/subdomain should always be the preferred solution!
 {{< /hint >}}
