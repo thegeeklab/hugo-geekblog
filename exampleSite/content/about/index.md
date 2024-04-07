@@ -1,8 +1,8 @@
 ---
 title: About Me
 resources:
-  - name: profile
-    src: "images/profile.jpg"
+  - name: avatar
+    src: "images/avatar.jpg"
     params:
       credits: "[Angelina Litvin](https://unsplash.com/@linalitvina) on [Unsplash](https://unsplash.com/s/photos/writing)"
 ---
@@ -11,7 +11,7 @@ resources:
 
 {{< columns size=small >}}
 
-{{< img name=profile lazy=false size=profile >}}
+{{< avatar name=avatar size=tiny >}}
 
 <--->
 

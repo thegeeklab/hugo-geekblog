@@ -1,5 +1,5 @@
 ---
-title: Post with images
+title: Advanced Images
 date: 2020-06-22T20:00:00+02:00
 authors:
   - john-doe
@@ -58,16 +58,6 @@ If you need more flexibility for your embedded images, you could use the `img` s
 
 <!--more-->
 
-## Attributes
-
-| Name   | Description                                                                      | default           |
-| ------ | -------------------------------------------------------------------------------- | ----------------- |
-| name   | name of the image resource defined in your front matter                          | empty             |
-| alt    | description for displayed image                                                  | resource `.Title` |
-| size   | Thumbnail size (origin\|profile\|tiny\|small\|medium\|large)                     | empty             |
-| lazy   | enable or disable image lazy loading                                             | true              |
-| anchor | anchor to determine the placement of the crop box (only used for `profile` size) | smart             |
-
 ## Usage
 
 Define your resources in the page front matter, custom parameter `params.credits` is optional.
@@ -88,6 +78,14 @@ resources:
 ```
 
 <!-- spellchecker-enable -->
+
+## Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-images sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
 
 ## Example
 

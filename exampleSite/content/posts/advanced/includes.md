@@ -14,6 +14,8 @@ Include shortcode can include files of different types. By specifying a language
 
 {{< toc >}}
 
+## Usage
+
 <!-- prettier-ignore-start -->
 ```tpl
 {{</* include file="relative/path/from/hugo/root" language="go" */>}}
@@ -22,16 +24,15 @@ Include shortcode can include files of different types. By specifying a language
 
 ## Attributes
 
-| Name     | Description                                                                                                                         | default                          |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| file     | path to the included file relative to the Hugo root                                                                                 | undefined                        |
-| language | language for [syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) | undefined                        |
-| type     | special include type (`html,page`)                                                                                                  | undefined (rendered as markdown) |
-| options  | highlighting [options](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)                               | `linenos=table`                  |
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-includes sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
 
-## Usage
+## Examples
 
-## Markdown file (default)
+### Markdown files (default)
 
 If no other options are specified, files will be rendered as Markdown using the `RenderString` [function](https://gohugo.io/functions/renderstring/).
 
@@ -51,7 +52,7 @@ If you include markdown files that should not get a menu entry, place them outsi
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
-## Language files
+### Language files
 
 This method can be used to include source code files and keep them automatically up to date.
 
@@ -83,7 +84,7 @@ HTML content will be filtered by the `safeHTML` filter and added to the rendered
 
 ### Pages
 
-In some situations, it can be helpful to include Markdown files that also contain shortcodes. While the [default method](#markdown-file-default) works fine to render plain Markdown, shortcodes are not parsed. The only way to get this to work is to use Hugo pages. There are several ways to structure these include pages, so whatever you do, keep in mind that Hugo needs to be able to render and serve these files as regular pages! How it works:
+In some situations, it can be helpful to include Markdown files that also contain shortcodes. While the [default method](#markdown-files-default) works fine to render plain Markdown, shortcodes are not parsed. The only way to get this to work is to use Hugo pages. There are several ways to structure these include pages, so whatever you do, keep in mind that Hugo needs to be able to render and serve these files as regular pages! How it works:
 
 1. First you need to create a directory **within** your content directory. For this example site `_includes` is used.
 2. Place your Markdown files within the `_includes` folder e.g. `/_includes/include-page.md`. Make sure to name it `*.md`.
