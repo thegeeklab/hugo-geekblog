@@ -1,0 +1,18 @@
+---
+properties:
+  - name: name
+    type: string
+    description: Name of the image resource defined in page front matter.
+    required: true
+  - name: alt
+    type: string
+    description: Description text for the image.
+    required: false
+  - name: size
+    type: string
+    description: Thumbnail size. Supported values are `origin|tiny|small|medium|large`.
+    required: false
+  - name: anchor
+    type: string
+    description: "[Anchor](https://gohugo.io/content-management/image-processing/#anchor) to determine the placement of the crop box."
+    required: false

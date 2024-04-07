@@ -269,6 +269,7 @@ There are a lot more things to discover. To get the most out of the Theme we hav
   - [Authors](/posts/features/authors/)
   - [Sticky Posts](/posts/features/sticky/)
 - [Shortcodes](/posts/advanced/shortcodes/)
+  - [Avatar Images](/posts/avatar-images/)
   - [Advanced Images](/posts/post-with-images/)
   - [Includes](/posts/advanced/includes/)
   - [Table of Content](/posts/advanced/toc/)
