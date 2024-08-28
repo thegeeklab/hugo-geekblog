@@ -1,7 +1,7 @@
 # Geekblog
 
 [![Build Status](https://ci.thegeeklab.de/api/badges/thegeeklab/hugo-geekblog/status.svg)](https://ci.thegeeklab.de/repos/thegeeklab/hugo-geekblog)
-[![Hugo Version](https://img.shields.io/badge/hugo-0.93-blue.svg)](https://gohugo.io)
+[![Hugo Version](https://img.shields.io/badge/hugo-0.124-blue.svg)](https://gohugo.io)
 [![GitHub release](https://img.shields.io/github/v/release/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/releases/latest)
 [![GitHub contributors](https://img.shields.io/github/contributors/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/graphs/contributors)
 [![License: MIT](https://img.shields.io/github/license/thegeeklab/hugo-geekblog)](https://github.com/thegeeklab/hugo-geekblog/blob/main/LICENSE)
