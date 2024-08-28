@@ -72,4 +72,5 @@ enableRobotsTXT: true
 security:
   exec:
     allow:
+      - "^git$"
       - "^asciidoctor$"
