@@ -1,9 +1,9 @@
-const fs = require("fs")
-const crypto = require("crypto")
-const path = require("path")
-const { validate } = require("schema-utils")
+import fs from "fs"
+import crypto from "crypto"
+import path from "path"
+import { validate } from "schema-utils"
 
-class SRIPlugin {
+export default class SRIPlugin {
   static defaultOptions = {
     algorithm: "sha512",
     sourceFile: "assets.json"
@@ -53,5 +53,3 @@ class SRIPlugin {
     })
   }
 }
-
-module.exports = SRIPlugin
