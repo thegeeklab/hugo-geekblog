@@ -262,7 +262,7 @@ svg.gblog-icon {
     &:hover,
     &.is-active,
     &:visited:hover {
-      background: lighten($second-color, 10%);
+      background: color.scale($second-color, $lightness: 10%);
     }
 
     &:visited {
