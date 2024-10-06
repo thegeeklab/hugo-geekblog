@@ -23,7 +23,7 @@
     }
 
     &__list {
-      background: lighten($second-color, 10%);
+      background: color.scale($second-color, $lightness: 10%);
       flex-direction: column;
       justify-content: center;
       max-height: 0;
@@ -42,7 +42,7 @@
       &:hover,
       &:visited:hover,
       &.is-active {
-        background: lighten($second-color, 5%);
+        background: color.scale($second-color, $lightness: 5%);
       }
     }
 
