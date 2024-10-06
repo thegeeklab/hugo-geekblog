@@ -45,10 +45,12 @@ $link-color-visited: rgba(119, 73, 191, 1) !default;
 $link-color-footer: rgba(246, 107, 14, 1) !default;
 
 $body-background: white !default;
+$body-font-family: "Liberation Sans", sans-serif !default;
 $body-font-color: $gray-800 !default;
 $body-font-weight: normal !default;
 $body-min-width: 20rem !default;
 
+$code-font-family: "Liberation Mono", monospace !default;
 $code-font-color: rgba(95, 95, 95, 1) !default;
 $code-font-color-dark: rgba(185, 185, 185, 1) !default;
 
@@ -67,6 +69,7 @@ $link-color-visited-dark: rgba(186, 142, 240) !default;
 $code-background: lighten($gray-200, 4) !default;
 $code-background-dark: darken($body-background-dark, 3) !default;
 
+$header-font-family: "Metropolis", sans-serif !default;
 $header-height: 3.5rem !default;
 $menu-width: 16rem !default;
 
