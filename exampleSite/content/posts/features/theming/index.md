@@ -92,3 +92,5 @@ The font registration is done in the `custom.css` file. There are also a few cus
   --code-font-family: "DancingScript";
 }
 ```
+
+Happy customizing!
