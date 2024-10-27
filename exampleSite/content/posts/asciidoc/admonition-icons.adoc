@@ -7,6 +7,8 @@ date = 2020-06-22T20:00:00+02:00
 
 By default, the admonition is rendered with a plain text label. To enable font icons the document attribute `:icons: font` need to be set.
 
+<!--more-->
+
 == Example
 
 [NOTE]

@@ -26,7 +26,9 @@ baseURL = "http://localhost"
 title = "Geekblog"
 theme = "hugo-geekblog"
 
-paginate = 5
+[pagination]
+pagerSize = 5
+
 pluralizeListTitles = false
 
 # Required to get well formatted code blocks
@@ -157,7 +159,9 @@ baseURL: "http://localhost"
 title: "Geekblog"
 theme: "hugo-geekblog"
 
-paginate: 5
+pagination:
+  pagerSize: 5
+
 pluralizeListTitles: false
 
 # Required to get well formatted code blocks
