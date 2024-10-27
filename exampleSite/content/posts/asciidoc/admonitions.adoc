@@ -6,6 +6,10 @@ date = 2020-06-22T20:00:00+02:00
 :toc:
 :toclevels: 2
 
+AsciiDoc admonitions are special callout blocks that highlight important information in documentation using distinct visual styles and icons.
+
+<!--more-->
+
 {{< toc >}}
 
 == Admonition types

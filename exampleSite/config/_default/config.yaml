@@ -8,7 +8,8 @@ enableGitInfo: true
 timeout: 180000
 pluralizeListTitles: false
 
-paginate: 5
+pagination:
+  pagerSize: 5
 
 markup:
   goldmark:
