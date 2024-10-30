@@ -5,8 +5,8 @@ description = "Hugo theme made for blogs"
 homepage = "https://hugo-geekblog.geekdocs.de/"
 demosite = "https://hugo-geekblog.geekdocs.de/"
 tags = ["blog", "responsive", "simple"]
-min_version = "0.124"
+min_version = "0.128"
 
 [author]
-    name = "Robert Kaussow"
-    homepage = "https://thegeeklab.de/"
+name = "Robert Kaussow"
+homepage = "https://thegeeklab.de/"
