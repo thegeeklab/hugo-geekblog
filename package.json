@@ -60,7 +60,7 @@
     "shx": "0.4.0",
     "svg-sprite": "2.0.4",
     "svgtofont": "6.4.0",
-    "uuid": "11.1.0",
+    "uuid": "12.0.0",
     "webpack": "5.101.3",
     "webpack-cli": "6.0.1",
     "webpack-manifest-plugin": "5.0.1",
