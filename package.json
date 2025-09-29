@@ -55,7 +55,7 @@
     "npm-run-all2": "8.0.4",
     "postcss-loader": "8.2.0",
     "prettier": "3.6.2",
-    "sass": "1.93.0",
+    "sass": "1.93.2",
     "sass-loader": "16.0.5",
     "shx": "0.4.0",
     "svg-sprite": "2.0.4",
