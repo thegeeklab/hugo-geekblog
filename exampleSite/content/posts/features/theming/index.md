@@ -6,6 +6,7 @@ authors:
 tags:
   - Documentation
   - Features
+# cspell:ignore msapplication
 ---
 
 {{< toc >}}
@@ -21,9 +22,9 @@ All the necessary CSS customization properties are listed below. If you want to 
 **Custom CSS:**
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< include file="/static/custom.css.example" language="CSS" options="linenos=table" >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Favicons

@@ -6,6 +6,7 @@ authors:
 tags:
   - Documentation
 weight: 10
+# cspell:ignore Gopherfest
 ---
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
@@ -16,7 +17,7 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 
@@ -40,20 +41,20 @@ Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptio
 
 Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
 
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 
-## Blockquotes
+## Blockquote
 
 The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
 
 ### Blockquote without attribution
 
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 
 ### Blockquote with attribution
 
@@ -87,7 +88,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 ### Code block with backticks
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -103,7 +104,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 
     <!doctype html>
     <html lang="en">
@@ -116,14 +117,14 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
     </body>
     </html>
 
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- markdownlint-restore -->
 
 #### Code block with Hugo's internal highlight Shortcode
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 <!-- prettier-ignore -->
 {{< highlight html "linenos=table" >}}
 
@@ -138,7 +139,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 </body>
 </html>
 {{< /highlight >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- markdownlint-restore -->
 
 ## List Types
@@ -167,7 +168,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 
@@ -182,4 +183,4 @@ Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the ses
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
 
 <!-- markdownlint-restore -->
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->

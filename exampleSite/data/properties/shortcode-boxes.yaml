@@ -4,7 +4,7 @@ properties:
     type: string
     description: Size of each box. Supported values are `regular|large`.
     required: false
-    devaultValue: regular
+    defaultValue: regular
   - name: icon
     type: string
     description: Icon to use. The value need to be an icon from an [SVG sprite](/features/icon-sets/).

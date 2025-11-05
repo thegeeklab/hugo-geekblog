@@ -3,6 +3,8 @@ title = "Admonitions"
 date = 2020-06-22T20:00:00+02:00
 +++
 
+// cspell:ignore toclevels
+
 :toc:
 :toclevels: 2
 
