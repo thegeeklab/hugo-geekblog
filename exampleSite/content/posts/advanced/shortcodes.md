@@ -7,6 +7,7 @@ tags:
   - Documentation
   - Shortcodes
 geekblogToC: 1
+# cspell:ignore Emojify infty
 ---
 
 <!-- markdownlint-disable MD024 -->
@@ -32,9 +33,9 @@ Buttons are styled links that can lead to local page or external link.
 #### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< propertylist name=shortcode-buttons sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ### Example
@@ -59,12 +60,12 @@ The Columns shortcode can be used to organize content side-by-side (horizontally
 # Left Content
 Dolor sit, sumo unique argument um no ...
 
-<---> <!-- magic sparator, between columns -->
+<---> <!-- magic separator, between columns -->
 
 # Mid Content
 Dolor sit, sumo unique argument um no ...
 
-<---> <!-- magic sparator, between columns -->
+<---> <!-- magic separator, between columns -->
 
 # Right Content
 Dolor sit, sumo unique argument um no ...
@@ -74,9 +75,9 @@ Dolor sit, sumo unique argument um no ...
 #### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< propertylist name=shortcode-columns sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ### Example
@@ -128,13 +129,13 @@ The above steps enable Unicode Standard emoji characters and sequences in Hugo, 
 {{< /hint >}}
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< highlight html "linenos=table" >}}
 .emoji {
   font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
 }
 {{< /highlight >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Expand
@@ -199,9 +200,9 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 #### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< propertylist name=shortcode-hints sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ### Example
@@ -241,13 +242,13 @@ Romanesque acclimates investiture.
 Example with a custom icon and title:
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< hint type=note icon=gblog_github title=GitHub >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Icon
@@ -346,15 +347,15 @@ Boxes can be used to create a simple grid.
 #### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< propertylist name=shortcode-boxes sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ### Example
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 {{< boxes "contact" >}}
@@ -364,7 +365,7 @@ Boxes can be used to create a simple grid.
 {{< box size=large title=Others >}}You can also find us on the Fediverse.{{< /box >}}
 {{< /boxes >}}
 <!-- markdownlint-restore -->
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Mermaid
@@ -392,14 +393,14 @@ sequenceDiagram
 #### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< propertylist name=shortcode-mermaid sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ### Example
 
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 <!-- prettier-ignore -->
 {{< mermaid class="text-center" >}}
 sequenceDiagram
@@ -414,7 +415,7 @@ sequenceDiagram
     end
 {{< /mermaid >}}
 
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 
 As an alternative to shortcodes, code blocks can be used for markdown as well.
 
@@ -433,7 +434,7 @@ C -->|Two| E[Result 2]
 
 <--->
 
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 <!-- prettier-ignore -->
 ```mermaid
 flowchart LR
@@ -443,7 +444,7 @@ C -->|One| D[Result 1]
 C -->|Two| E[Result 2]
 ```
 
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 
 {{< /columns >}}
 
@@ -462,20 +463,20 @@ f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 #### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< propertylist name=shortcode-katex sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ### Example
 
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 <!-- prettier-ignore -->
 {{< katex display >}}
 f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 {{< /katex >}}
 
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 
 KaTeX can be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter as above.
 
@@ -491,17 +492,17 @@ KaTeX can be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used 
 #### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< propertylist name=shortcode-progress sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ### Example
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< progress title=Eating value=65 icon=gblog_heart >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Properties
@@ -519,23 +520,23 @@ The property list shortcode creates a custom HTML description list that can be u
 The supported attributes can be taken from the following example:
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< include file="/data/properties/demo.yaml" language="Yaml" options="linenos=table" >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 #### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< propertylist name=shortcode-propertylist sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 ### Example
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{< propertylist name=demo sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->

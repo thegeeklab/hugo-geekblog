@@ -5,6 +5,7 @@ resources:
     src: "images/avatar.jpg"
     params:
       credits: "[Angelina Litvin](https://unsplash.com/@linalitvina) on [Unsplash](https://unsplash.com/s/photos/writing)"
+# cspell:ignore Litvin
 ---
 
 <!-- markdownlint-disable MD033 -->
@@ -57,12 +58,12 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 ## Skills
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 {{% progress title=Hacking value=95 icon=gblog_search %}}
 {{% progress title=Cyber-Things value=80 icon=gblog_cloud_off %}}
 {{% progress title=Coding value=65 icon=gblog_code %}}
 {{% progress title=Eating value=85 icon=gblog_heart %}}
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 </div>
@@ -74,7 +75,7 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 ## Contact
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cSpell:disable -->
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 {{< boxes "contact" >}}
@@ -83,7 +84,7 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 {{< box size=large title=XMPP icon=gblog_xmpp >}}john@example.com{{< /box >}}
 {{< /boxes >}}
 <!-- markdownlint-restore -->
-<!-- spellchecker-enable -->
+<!-- cSpell:enable -->
 <!-- prettier-ignore-end -->
 
 </div>
