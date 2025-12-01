@@ -10,6 +10,8 @@ tags:
 
 Say hello to the dark mode of the Geekblog theme!
 
+<!--more-->
+
 [![Geekblog in dark mode](images/geekblog-dark.png)](images/geekblog-dark.png)
 
 The dark mode can be used in two different ways. If you have JavaScript disabled in your browser, the dark mode automatically detects the preferred system settings via the `prefers-color-scheme` parameter. Depending on the value, the theme will automatically switch between dark and light mode if this feature is supported by your operating system and browser.

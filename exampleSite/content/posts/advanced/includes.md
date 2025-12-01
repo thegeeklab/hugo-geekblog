@@ -34,7 +34,7 @@ Include shortcode can include files of different types. By specifying a language
 
 ### Markdown files (default)
 
-If no other options are specified, files will be rendered as Markdown using the `RenderString` [function](https://gohugo.io/functions/renderstring/).
+If no other options are specified, files will be rendered as Markdown using the `RenderString` [function](https://gohugo.io/methods/page/renderstring/).
 
 {{< hint type=important >}}
 **Location of markdown files**\
