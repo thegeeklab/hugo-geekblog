@@ -8,7 +8,7 @@ tags:
   - Features
 ---
 
-The theme supports multiple authors. The required information for each author need to be stored in a single [Hugo data template](https://gohugo.io/templates/data-templates/) per author.These files need to be stored in the `data/authors/` directory in your projects root.
+The theme supports multiple authors. The required information for each author need to be stored in a single [Hugo data template](https://gohugo.io/content-management/data-sources/) per author.These files need to be stored in the `data/authors/` directory in your projects root.
 
 <!--more-->
 
