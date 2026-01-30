@@ -8,22 +8,22 @@
     {{- with .Site.Params.subtitle }}
     "description": {{ . | jsonify }},
     {{- end }}
-    "home_page_url" : "{{ .Site.Home.Permalink }}",
+    "home_page_url": "{{ .Site.Home.Permalink }}",
     {{- with .OutputFormats.Get "json" }}
-    "feed_url" : "{{ .Permalink }}",
+    "feed_url": "{{ .Permalink }}",
     {{- end }}
     {{- with .Site.Params.geekblogAuthor -}}
     {{ with index $.Site.Data.authors . }}
-    "authors" : [
+    "authors": [
         {
-            "name" : "{{ .name }}"{{ with .url }},
+            "name": "{{ .name }}"{{ with .url }},
             "url": "{{ . }}"{{ end }}{{ with .avatar }},
             "avatar": "{{ . }}"{{ end }}
         }
     ],
     {{- end }}
     {{- end }}
-    "items" : [
+    "items": [
     {{- $pages := where .RegularPages "Type" "in" .Site.Params.mainSections -}}
     {{- if (eq .Kind "home") -}}
         {{- $pages = where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
@@ -31,28 +31,28 @@
     {{- $len := (len $pages) }}
     {{- range $i, $page := $pages }}
         {
-            "title" : {{ (partial "utils/title" .) | jsonify }},
-            "date_published" : {{ (.Date.Format "2006-01-02T15:04:05Z07:00") | jsonify }},
-            "date_modified" : {{ (.Lastmod.Format "2006-01-02T15:04:05Z07:00") | jsonify }},
-            "id" : "{{ .Permalink }}",
-            "url" : "{{ .Permalink }}",
+            "title": {{ (partial "utils/title" .) | jsonify }},
+            "date_published": {{ (.Date.Format "2006-01-02T15:04:05Z07:00") | jsonify }},
+            "date_modified": {{ (.Lastmod.Format "2006-01-02T15:04:05Z07:00") | jsonify }},
+            "id": "{{ .Permalink }}",
+            "url": "{{ .Permalink }}",
             {{- with ($page.Resources.ByType "image").GetMatch "{*feature*,*cover*,*thumbnail*}" }}
             {{- $featured := .Fill (printf "910x280 %s" (default "Smart" .Params.anchor)) -}}
-            "image" : "{{ $featured.Permalink }}",
+            "image": "{{ $featured.Permalink }}",
             {{- end }}
             {{- with .Params.authors -}}
-            "authors" : [
+            "authors": [
                 {{- $authors := (sort .) }}
                 {{- $authors_len := (len $authors) }}
                 {{- range $i, $element := $authors -}}
                 {{- $author := index $.Site.Data.authors $element }}
                 {
-                    "name" : "{{ $author.name }}"
+                    "name": "{{ $author.name }}"
                 }{{ if ne (add $i 1) $authors_len }},{{ end }}
                 {{- end }}
             ],
             {{- end }}
-            "content_html" : {{ .Content | jsonify }}
+            "content_html": {{ .Content | jsonify }}
         }{{ if ne (add $i 1) $len }},{{ end }}
     {{- end }}
     ]
