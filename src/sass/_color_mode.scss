@@ -114,7 +114,7 @@
 }
 
 @mixin code_theme_dark {
-  @include chroma_dark;
+  @include chroma_dark.chroma_dark;
 
   & {
     --code-background: #{defaults.$code-background-dark};
@@ -130,7 +130,7 @@
 }
 
 @mixin code_theme_light {
-  @include chroma_github;
+  @include chroma_light.chroma_github;
 
   & {
     --code-background: #{defaults.$code-background};

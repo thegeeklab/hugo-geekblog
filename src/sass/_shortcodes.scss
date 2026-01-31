@@ -141,7 +141,7 @@
     font-size: defaults.$font-size-20;
 
     #{$root}__link {
-      padding: defaults.$padding-8 $padding-16;
+      padding: defaults.$padding-8 defaults.$padding-16;
     }
   }
 }
@@ -157,13 +157,13 @@
 
   &--regular {
     font-size: defaults.$font-size-base;
-    padding: defaults.$padding-4 $padding-8;
+    padding: defaults.$padding-4 defaults.$padding-8;
     min-width: 8rem;
   }
 
   &--large {
     font-size: defaults.$font-size-20;
-    padding: defaults.$padding-8 $padding-16;
+    padding: defaults.$padding-8 defaults.$padding-16;
     min-width: 12rem;
   }
 

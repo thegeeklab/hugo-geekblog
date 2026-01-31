@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:meta";
 @use "sass:map";
 @use "color_mode";
@@ -13,30 +14,30 @@
 
 :root,
 :root[color-theme="light"] {
-  @include color_theme_light;
-  @include code_theme_light;
+  @include color_mode.color_theme_light;
+  @include color_mode.code_theme_light;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    @include color_theme_light;
-    @include code_theme_light;
+    @include color_mode.color_theme_light;
+    @include color_mode.code_theme_light;
   }
 }
 
 :root[color-theme="dark"] {
-  @include color_theme_dark;
-  @include code_theme_dark;
+  @include color_mode.color_theme_dark;
+  @include color_mode.code_theme_dark;
 }
 
 :root[code-theme="dark"] {
-  @include code_theme_dark;
+  @include color_mode.code_theme_dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    @include color_theme_dark;
-    @include code_theme_dark;
+    @include color_mode.color_theme_dark;
+    @include color_mode.code_theme_dark;
   }
 }
 
@@ -258,7 +259,7 @@ svg.gblog-icon {
     line-height: defaults.$padding-24;
     color: defaults.$gray-100;
     text-decoration: none;
-    padding: defaults.$padding-4 $padding-8;
+    padding: defaults.$padding-4 defaults.$padding-8;
     border: defaults.$border-1 solid;
     border-radius: defaults.$border-radius;
     display: inline-block;
@@ -419,7 +420,7 @@ svg.gblog-icon {
     }
 
     .gblog-button {
-      margin: 0 $padding-2 0 0;
+      margin: 0 defaults.$padding-2 0 0;
     }
 
     &--head {
@@ -444,7 +445,7 @@ svg.gblog-icon {
       display: table-caption;
       caption-side: bottom;
       background-color: var(--accent-color);
-      padding: 0 $padding-4 defaults.$padding-4;
+      padding: 0 defaults.$padding-4 defaults.$padding-4;
       text-align: center;
       border-bottom-left-radius: defaults.$border-radius;
       border-bottom-right-radius: defaults.$border-radius;
