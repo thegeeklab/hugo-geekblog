@@ -1,3 +1,5 @@
+@use "defaults";
+
 @media print {
   .gblog-nav,
   .gblog-header,
@@ -22,7 +24,7 @@
   }
 
   .chroma code {
-    padding: $padding-8 !important;
+    padding: defaults.$padding-8 !important;
     font-weight: normal !important;
   }
 

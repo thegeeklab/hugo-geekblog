@@ -1,14 +1,17 @@
-@media screen and (max-width: $sm-breakpoint) {
+@use "sass:color";
+@use "defaults";
+
+@media screen and (max-width: defaults.$sm-breakpoint) {
   .gblog-header__col-2.justify-center,
   .gblog-header__col-2 .justify-center {
     justify-content: flex-start;
   }
 
   .gblog-brand {
-    font-size: $font-size-32;
+    font-size: defaults.$font-size-32;
 
     &__subtitle {
-      font-size: $font-size-20;
+      font-size: defaults.$font-size-20;
     }
 
     &__img {
@@ -23,7 +26,7 @@
     }
 
     &__list {
-      background: color.scale($second-color, $lightness: 10%);
+      background: color.scale(defaults.$second-color, $lightness: 10%);
       flex-direction: column;
       justify-content: center;
       max-height: 0;
@@ -32,7 +35,7 @@
     }
 
     &__entry {
-      padding: $padding-16 0;
+      padding: defaults.$padding-16 0;
       border: 0;
       border-radius: 0;
       display: block;
@@ -42,7 +45,7 @@
       &:hover,
       &:visited:hover,
       &.is-active {
-        background: color.scale($second-color, $lightness: 5%);
+        background: color.scale(defaults.$second-color, $lightness: 5%);
       }
     }
 
@@ -52,28 +55,28 @@
       user-select: none;
 
       label {
-        padding: $padding-16 0;
+        padding: defaults.$padding-16 0;
       }
     }
   }
 
   .gblog-error {
-    padding: $padding-96 $padding-16;
+    padding: defaults.$padding-96 defaults.$padding-16;
 
     svg.gblog-icon {
-      font-size: $font-size-96;
+      font-size: defaults.$font-size-96;
     }
 
     &__message {
-      padding-left: $padding-32;
+      padding-left: defaults.$padding-32;
     }
 
     &__line {
-      padding: $padding-4 0;
+      padding: defaults.$padding-4 0;
     }
 
     &__title {
-      font-size: $font-size-16 * 2;
+      font-size: defaults.$font-size-16 * 2;
     }
   }
 
@@ -81,7 +84,7 @@
     flex-direction: column;
 
     &.gblog-columns {
-      margin: $padding-32 0;
+      margin: defaults.$padding-32 0;
     }
 
     .gblog-columns__content {
