@@ -1,3 +1,5 @@
+@use "defaults";
+
 .gblog-markdown {
   line-height: 1.6rem;
 
@@ -10,8 +12,8 @@
     font-weight: 600;
 
     > code {
-      border-top: $border-4 solid var(--accent-color);
-      font-size: $font-size-12 !important;
+      border-top: defaults.$border-4 solid var(--accent-color);
+      font-size: defaults.$font-size-12 !important;
     }
   }
 
@@ -19,7 +21,7 @@
   h5,
   h6 {
     > code {
-      font-size: $font-size-14 !important;
+      font-size: defaults.$font-size-14 !important;
     }
   }
 
@@ -31,16 +33,16 @@
 
   &__link--raw {
     text-decoration: none !important;
-    color: $body-font-color !important;
+    color: defaults.$body-font-color !important;
 
     &:hover {
       background: none !important;
-      color: $body-font-color !important;
+      color: defaults.$body-font-color !important;
       text-decoration: none !important;
     }
 
     &:visited {
-      color: $body-font-color !important;
+      color: defaults.$body-font-color !important;
     }
   }
 
@@ -64,36 +66,36 @@
 
   img {
     max-width: 100%;
-    border-radius: $border-radius;
+    border-radius: defaults.$border-radius;
   }
 
   blockquote {
-    margin: $padding-16 0;
-    padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
+    margin: defaults.$padding-16 0;
+    padding: defaults.$padding-8 defaults.$padding-16 defaults.$padding-8 (defaults.$padding-16 - defaults.$padding-4); //to keep total left space 16dp
 
-    border-left: $border-4 solid var(--accent-color);
-    border-radius: $border-radius;
+    border-left: defaults.$border-4 solid var(--accent-color);
+    border-radius: defaults.$border-radius;
   }
 
   table:not(.lntable) {
     display: table;
     border-spacing: 0;
     border-collapse: collapse;
-    margin: $padding-16 0;
+    margin: defaults.$padding-16 0;
     width: 100%;
     text-align: left;
 
     thead {
-      border-bottom: $border-4 solid var(--accent-color);
+      border-bottom: defaults.$border-4 solid var(--accent-color);
     }
 
     tr th,
     tr td {
-      padding: $padding-8 $padding-16;
+      padding: defaults.$padding-8 defaults.$padding-16;
     }
 
     tr {
-      border-bottom: $border-2 solid var(--accent-color);
+      border-bottom: defaults.$border-2 solid var(--accent-color);
     }
 
     tr:nth-child(2n) {
@@ -102,43 +104,43 @@
   }
 
   hr {
-    height: $border-2;
+    height: defaults.$border-2;
     border: none;
     background: var(--accent-color);
   }
 
   ul,
   ol {
-    padding-left: $padding-32;
+    padding-left: defaults.$padding-32;
   }
 
   dl {
     dt {
       font-weight: bolder;
-      margin-top: $padding-16;
+      margin-top: defaults.$padding-16;
     }
 
     dd {
-      margin-left: $padding-32;
+      margin-left: defaults.$padding-32;
     }
   }
 
   code {
-    padding: $padding-4 $padding-8;
+    padding: defaults.$padding-4 defaults.$padding-8;
   }
 
   pre,
   code {
     background-color: var(--code-background);
-    border-radius: $border-radius;
+    border-radius: defaults.$border-radius;
     color: var(--code-font-color);
-    font-size: $font-size-14;
-    line-height: $padding-16;
+    font-size: defaults.$font-size-14;
+    line-height: defaults.$padding-16;
   }
 
   pre code {
     display: block;
-    padding: $padding-16;
+    padding: defaults.$padding-16;
     width: 100%;
   }
 
@@ -147,8 +149,8 @@
   }
 
   section.footnotes {
-    margin-top: $padding-32;
+    margin-top: defaults.$padding-32;
     color: var(--body-font-color);
-    font-size: $font-size-14;
+    font-size: defaults.$font-size-14;
   }
 }
