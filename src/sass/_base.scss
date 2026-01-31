@@ -1,42 +1,48 @@
+@use "sass:color";
+@use "sass:meta";
+@use "sass:map";
+@use "color_mode";
+@use "defaults";
+
 :root {
   --code-max-height: none;
 
-  --header-font-family: #{meta.inspect($header-font-family)};
-  --body-font-family: #{meta.inspect($body-font-family)};
-  --code-font-family: #{meta.inspect($code-font-family)};
+  --header-font-family: #{meta.inspect(defaults.$header-font-family)};
+  --body-font-family: #{meta.inspect(defaults.$body-font-family)};
+  --code-font-family: #{meta.inspect(defaults.$code-font-family)};
 }
 
 :root,
 :root[color-theme="light"] {
-  @include color_theme_light;
-  @include code_theme_light;
+  @include color_mode.color_theme_light;
+  @include color_mode.code_theme_light;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    @include color_theme_light;
-    @include code_theme_light;
+    @include color_mode.color_theme_light;
+    @include color_mode.code_theme_light;
   }
 }
 
 :root[color-theme="dark"] {
-  @include color_theme_dark;
-  @include code_theme_dark;
+  @include color_mode.color_theme_dark;
+  @include color_mode.code_theme_dark;
 }
 
 :root[code-theme="dark"] {
-  @include code_theme_dark;
+  @include color_mode.code_theme_dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    @include color_theme_dark;
-    @include code_theme_dark;
+    @include color_mode.color_theme_dark;
+    @include color_mode.code_theme_dark;
   }
 }
 
 html {
-  font-size: $font-size-base;
+  font-size: defaults.$font-size-base;
   letter-spacing: 0.33px;
   scroll-behavior: smooth;
 
@@ -87,7 +93,7 @@ html {
 
 html,
 body {
-  min-width: $body-min-width;
+  min-width: defaults.$body-min-width;
   overflow-x: hidden;
 }
 
@@ -95,7 +101,7 @@ body {
   color: var(--body-font-color);
   background: var(--body-background);
 
-  font-weight: $body-font-weight;
+  font-weight: defaults.$body-font-weight;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -113,7 +119,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $body-font-weight;
+  font-weight: defaults.$body-font-weight;
   display: flex;
   align-items: center;
 }
@@ -121,7 +127,7 @@ h6 {
 h4,
 h5,
 h6 {
-  font-size: $font-size-16 !important;
+  font-size: defaults.$font-size-16 !important;
 }
 
 a {
@@ -130,7 +136,7 @@ a {
 
   &:hover {
     background: var(--link-color);
-    color: $gray-100;
+    color: defaults.$gray-100;
     text-decoration: none;
   }
 
@@ -139,7 +145,7 @@ a {
 
     &:hover {
       background: var(--link-color-visited);
-      color: $gray-100;
+      color: defaults.$gray-100;
     }
   }
 }
@@ -178,15 +184,15 @@ img {
 
 .container {
   width: 100%;
-  max-width: $container-max-width;
+  max-width: defaults.$container-max-width;
   margin: 0 auto;
-  padding: $padding-20;
+  padding: defaults.$padding-20;
 }
 
 svg.gblog-icon {
   display: inline-block;
-  width: $padding-24;
-  height: $padding-24;
+  width: defaults.$padding-24;
+  height: defaults.$padding-24;
   vertical-align: middle;
   stroke-width: 0;
   stroke: currentColor;
@@ -197,7 +203,7 @@ svg.gblog-icon {
 .gblog-header {
   background: var(--header-background);
   color: var(--header-font-color);
-  padding: $padding-16 0;
+  padding: defaults.$padding-16 0;
 
   &__col-1,
   &__col-3 {
@@ -220,29 +226,29 @@ svg.gblog-icon {
 }
 
 .gblog-brand {
-  font-size: $font-size-32;
+  font-size: defaults.$font-size-32;
 
   &__subtitle {
-    margin-top: $padding-16;
-    font-size: $font-size-20;
+    margin-top: defaults.$padding-16;
+    font-size: defaults.$font-size-20;
     font-weight: bolder;
   }
 
   &__img {
-    margin-right: $padding-16;
-    width: $padding-32;
-    height: $padding-32;
+    margin-right: defaults.$padding-16;
+    width: defaults.$padding-32;
+    height: defaults.$padding-32;
   }
 }
 
 .gblog-nav {
-  background: $second-color;
-  color: $gray-100;
-  min-height: $padding-4;
+  background: defaults.$second-color;
+  color: defaults.$gray-100;
+  min-height: defaults.$padding-4;
 
   .container {
-    padding-top: $padding-8;
-    padding-bottom: $padding-8;
+    padding-top: defaults.$padding-8;
+    padding-bottom: defaults.$padding-8;
   }
 
   li {
@@ -250,19 +256,19 @@ svg.gblog-icon {
   }
 
   &__entry {
-    line-height: $padding-24;
-    color: $gray-100;
+    line-height: defaults.$padding-24;
+    color: defaults.$gray-100;
     text-decoration: none;
-    padding: $padding-4 $padding-8;
-    border: $border-1 solid;
-    border-radius: $border-radius;
+    padding: defaults.$padding-4 defaults.$padding-8;
+    border: defaults.$border-1 solid;
+    border-radius: defaults.$border-radius;
     display: inline-block;
-    margin: $padding-4;
+    margin: defaults.$padding-4;
 
     &:hover,
     &.is-active,
     &:visited:hover {
-      background: color.scale($second-color, $lightness: 10%);
+      background: color.scale(defaults.$second-color, $lightness: 10%);
     }
 
     &:visited {
@@ -280,7 +286,7 @@ svg.gblog-icon {
     }
 
     svg.gblog-icon {
-      margin-right: $padding-4;
+      margin-right: defaults.$padding-4;
     }
 
     svg.gblog-icon.gblog_menu {
@@ -293,14 +299,14 @@ svg.gblog-icon {
 }
 
 .gblog-page {
-  min-width: $body-min-width;
+  min-width: defaults.$body-min-width;
   flex-grow: 1;
 }
 
 .gblog-post {
   word-wrap: break-word;
-  border-top: $border-2 dashed var(--accent-color-dark);
-  padding: $padding-32 0;
+  border-top: defaults.$border-2 dashed var(--accent-color-dark);
+  padding: defaults.$padding-32 0;
 
   &__title {
     margin-top: 0;
@@ -323,7 +329,7 @@ svg.gblog-icon {
   }
 
   &__readmore {
-    margin: $padding-32 0;
+    margin: defaults.$padding-32 0;
 
     a:visited {
       color: var(--link-color);
@@ -332,7 +338,7 @@ svg.gblog-icon {
     a:hover,
     a:visited:hover {
       background: var(--link-color);
-      color: $gray-100;
+      color: defaults.$gray-100;
     }
   }
 
@@ -361,29 +367,29 @@ svg.gblog-icon {
 
   &__feature {
     position: relative;
-    margin-bottom: $padding-32;
+    margin-bottom: defaults.$padding-32;
 
     img {
       width: 100%;
       min-height: 180px;
       object-fit: cover;
       overflow: hidden;
-      border-radius: $border-radius;
+      border-radius: defaults.$border-radius;
     }
 
     span {
-      background: $gray-800;
+      background: defaults.$gray-800;
       position: absolute;
       bottom: 0;
       right: 0;
-      padding: $padding-4 $padding-8;
-      color: $gray-100;
-      border-radius: $border-radius 0;
+      padding: defaults.$padding-4 defaults.$padding-8;
+      color: defaults.$gray-100;
+      border-radius: defaults.$border-radius 0;
     }
 
     a {
       text-decoration: none;
-      color: $link-color-dark;
+      color: defaults.$link-color-dark;
     }
 
     a:hover {
@@ -393,7 +399,7 @@ svg.gblog-icon {
 
     a:visited,
     a:visited:hover {
-      color: $link-color-dark;
+      color: defaults.$link-color-dark;
     }
   }
 
@@ -403,32 +409,32 @@ svg.gblog-icon {
     }
 
     > span {
-      margin: $padding-4 0;
+      margin: defaults.$padding-4 0;
       &:not(:last-child) {
-        margin-right: $padding-8;
+        margin-right: defaults.$padding-8;
       }
     }
 
     svg.gblog-icon {
-      font-size: $font-size-20;
+      font-size: defaults.$font-size-20;
     }
 
     .gblog-button {
-      margin: 0 $padding-2 0 0;
+      margin: 0 defaults.$padding-2 0 0;
     }
 
     &--head {
-      margin-bottom: $padding-32;
+      margin-bottom: defaults.$padding-32;
     }
   }
 
   &__figure {
-    padding: $padding-4;
-    margin: $padding-16 0;
+    padding: defaults.$padding-4;
+    margin: defaults.$padding-16 0;
     background-color: var(--accent-color);
     display: table;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    border-top-left-radius: defaults.$border-radius;
+    border-top-right-radius: defaults.$border-radius;
 
     &--round,
     &--round img {
@@ -439,10 +445,10 @@ svg.gblog-icon {
       display: table-caption;
       caption-side: bottom;
       background-color: var(--accent-color);
-      padding: 0 $padding-4 $padding-4;
+      padding: 0 defaults.$padding-4 defaults.$padding-4;
       text-align: center;
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: defaults.$border-radius;
+      border-bottom-right-radius: defaults.$border-radius;
     }
 
     img {
@@ -462,19 +468,19 @@ svg.gblog-icon {
   &__codecopy {
     visibility: hidden;
     position: absolute;
-    top: $padding-8;
-    right: $padding-8;
+    top: defaults.$padding-8;
+    right: defaults.$padding-8;
 
-    border: $border-2 solid var(--code-copy-border-color);
-    border-radius: $border-radius;
+    border: defaults.$border-2 solid var(--code-copy-border-color);
+    border-radius: defaults.$border-radius;
     background: var(--code-copy-background);
-    width: $padding-32;
-    height: $padding-32;
+    width: defaults.$padding-32;
+    height: defaults.$padding-32;
 
     svg.gblog-icon {
       top: 0;
-      width: $font-size-20;
-      height: $font-size-20;
+      width: defaults.$font-size-20;
+      height: defaults.$font-size-20;
       color: var(--code-copy-font-color);
     }
 
@@ -497,18 +503,18 @@ svg.gblog-icon {
 }
 
 .gblog-footer {
-  background: $second-color;
-  color: $gray-100;
+  background: defaults.$second-color;
+  color: defaults.$gray-100;
 
   .fake-link {
     background-image: linear-gradient(var(--footer-link-color), var(--footer-link-color));
   }
 
   &__item {
-    line-height: $padding-32;
+    line-height: defaults.$padding-32;
 
     &--row {
-      margin-right: $padding-16;
+      margin-right: defaults.$padding-16;
     }
   }
 
@@ -518,7 +524,7 @@ svg.gblog-icon {
     &:hover,
     &:visited:hover {
       background: var(--footer-link-color);
-      color: $body-font-color;
+      color: defaults.$body-font-color;
     }
 
     &:visited {
@@ -528,7 +534,7 @@ svg.gblog-icon {
 }
 
 .gblog-paging {
-  padding: $padding-16 0;
+  padding: defaults.$padding-16 0;
 
   &__item {
     flex: 1 1 0;
@@ -540,7 +546,7 @@ svg.gblog-icon {
     a:hover,
     a:visited:hover {
       background: var(--link-color);
-      color: $gray-100;
+      color: defaults.$gray-100;
     }
 
     &--next {
@@ -554,12 +560,12 @@ svg.gblog-icon {
 }
 
 .gblog-error {
-  padding: $padding-96 $padding-16;
+  padding: defaults.$padding-96 defaults.$padding-16;
   margin: 0 auto;
   max-width: 45em;
 
   svg.gblog-icon {
-    font-size: $font-size-128;
+    font-size: defaults.$font-size-128;
     color: var(--body-font-color);
   }
 
@@ -569,15 +575,15 @@ svg.gblog-icon {
   }
 
   &__message {
-    padding-left: $padding-64;
+    padding-left: defaults.$padding-64;
   }
 
   &__line {
-    padding: $padding-8 0;
+    padding: defaults.$padding-8 0;
   }
 
   &__title {
-    font-size: $font-size-64;
+    font-size: defaults.$font-size-64;
   }
 
   &__code {
@@ -586,10 +592,10 @@ svg.gblog-icon {
 }
 
 .gblog-toc {
-  margin: $padding-16 0;
+  margin: defaults.$padding-16 0;
 
   li {
-    margin: $padding-4 0;
+    margin: defaults.$padding-4 0;
   }
 
   // Classes to hide nested levels of ToC/Menu
@@ -605,7 +611,7 @@ svg.gblog-icon {
   a:hover,
   a:visited:hover {
     background: var(--link-color);
-    color: $gray-100;
+    color: defaults.$gray-100;
   }
 
   a,
