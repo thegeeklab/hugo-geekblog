@@ -455,6 +455,14 @@ svg.gblog-icon {
       max-width: 100%;
       height: auto;
     }
+
+    &:has(audio) {
+      width: 100%;
+
+      audio {
+        width: 100%;
+      }
+    }
   }
 
   &__codecontainer {
