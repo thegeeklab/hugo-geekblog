@@ -4,13 +4,14 @@
 
 
 <blockquote class="gblog-hint {{ $type | lower }}">
-  <div class="gblog-hint__title flex align-center">
+  <div class="gblog-hint__title flex gap-8 align-center">
     {{- with $icon -}}
       <svg class="gblog-icon {{ . }}"><use xlink:href="#{{ . }}"></use></svg>
       <span>{{ $title }}</span>
     {{- else -}}
-      <i class="fa {{ $type | lower }}" title="{{ $title }}"></i>
-    {{- end -}}
+      <i class="fa {{ $type | lower }}"></i>
+      <span>{{ $title }}</span>
+      {{- end -}}
   </div>
   <div class="gblog-hint__text">{{ .Inner | $.Page.RenderString }}</div>
 </blockquote>
