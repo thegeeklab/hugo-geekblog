@@ -1,16 +1,15 @@
 import path from "path"
 import { glob } from "glob"
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url"
 
 import { WebpackManifestPlugin } from "webpack-manifest-plugin"
-import GitVersionPlugin from "@eloquent/git-version-webpack-plugin"
 import FaviconsWebpackPlugin from "favicons-webpack-plugin"
 import RemoveEmptyScriptsPlugin from "webpack-remove-empty-scripts"
 import CopyPlugin from "copy-webpack-plugin"
-import SRIPlugin from "./webpack.plugins.js"
+import { SRIPlugin, GitVersionPlugin } from "./webpack.plugins.js"
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const nodeModulesPath = path.resolve(__dirname, "node_modules")
 
 var config = {
@@ -87,7 +86,7 @@ var config = {
       generate(seed, files) {
         let manifest = {}
 
-        files.forEach(function (element, index) {
+        files.forEach(function (element) {
           if (element.name.endsWith("VERSION")) return
           if (element.name.endsWith(".svg")) return
           if (element.name.startsWith("fonts/")) return
@@ -107,14 +106,14 @@ var config = {
     }),
 
     new GitVersionPlugin({
-      path: "../VERSION"
+      outputFile: "../VERSION"
     })
   ]
 }
 
-export default (argv) => {
+export default (env, argv) => {
   if (argv.mode === "development") {
-    config.devtool = "eval-cheap-source-map"
+    config.devtool = "source-map"
   }
 
   config.module = {
@@ -124,7 +123,7 @@ export default (argv) => {
         type: "asset/resource",
         generator: {
           filename: "fonts/[name][ext]"
-        },
+        }
       },
       {
         test: /\.(sa|sc|c)ss$/i,
