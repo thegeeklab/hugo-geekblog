@@ -26,6 +26,9 @@
               {{ relref $current .ref }}
             {{- end }}"
             class="gblog-footer__link"
+            {{ if .rel -}}
+              rel="{{ .rel }}"
+            {{- end }}
           >
             {{ .name }}
           </a>
@@ -39,6 +42,9 @@
               {{ relref $current .ref }}
             {{- end }}"
             class="gblog-nav__entry{{ if $isCurrent }}{{ printf " %s" "is-active" }}{{ end }}"
+            {{ if .rel -}}
+              rel="{{ .rel }}"
+            {{- end }}
           >
             <span class="flex align-center">
               {{ if $icon }}
