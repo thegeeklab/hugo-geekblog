@@ -3,7 +3,7 @@
 {{- $group := printf "grid-%s" $id }}
 
 
-<div class="flex flex-gap flex-fill">
+<div class="flex gap-16 flex-fill">
   {{- range $index, $box := .Scratch.Get $group }}
     <div
       class="flex justify-center gblog-box gblog-box--{{ $box.Size }}
