@@ -1,5 +1,6 @@
 {{- $value := default 0 (.Get "value") -}}
 {{- $label := default (printf "%v %%" $value) (.Get "label") -}}
+{{- $type := default "main" (.Get "type") -}}
 {{- $title := .Get "title" -}}
 {{- $icon := .Get "icon" -}}
 
@@ -16,7 +17,7 @@
   </div>
   <div class="gblog-progress__wrap">
     <div
-      class="gblog-progress__bar"
+      class="gblog-progress__bar {{ $type | lower }}"
       data-percent="{{ $value }}"
       style="width: {{ $value }}%; max-width: 100%; min-width: 0"
     ></div>

@@ -1,10 +1,20 @@
 ---
 properties:
+  - name: type
+    type: string
+    description: Color type of the progress bar. Supported values are `main|note|tip|important|caution|warning`.
+    required: false
+    defaultValue: main
   - name: value
     type: integer
     description: Progress value.
     required: false
     defaultValue: 0
+  - name: label
+    type: string
+    description: Value to display.
+    required: false
+    defaultValue: "`value`"
   - name: icon
     type: string
     description: Icon to use. The value need to be an icon from an [SVG sprite](/posts/features/icon-sets/).
