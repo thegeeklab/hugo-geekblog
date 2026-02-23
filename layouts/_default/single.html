@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <article class="gblog-post">
+  <article class="gblog-post" id="main-content" tabindex="-1">
     <header class="gblog-post__header">
       {{ $source := ($.Resources.ByType "image").GetMatch "{*feature*,*cover*,*thumbnail*}" }}
       {{ with $source }}

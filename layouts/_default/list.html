@@ -4,6 +4,7 @@
     {{ $pages = where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
   {{ end }}
 
+  <div id="main-content" tabindex="-1">
   {{ $paginator := .Paginate $pages }}
   {{ range $paginator.Pages }}
     <article class="gblog-post">
@@ -36,5 +37,6 @@
       </footer>
     </article>
   {{ end }}
+  </div>
   {{ partial "pagination.html" . }}
 {{ end }}
