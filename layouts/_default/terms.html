@@ -1,4 +1,5 @@
 {{ define "main" }}
+  <div id="main-content" tabindex="-1">
   {{ $paginator := .Paginate .Paginator.Pages }}
   {{ range $paginator.Pages.ByTitle }}
     <article class="gblog-post">
@@ -45,5 +46,6 @@
       </footer>
     </article>
   {{ end }}
+  </div>
   {{ partial "pagination.html" . }}
 {{ end }}
