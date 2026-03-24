@@ -1,30 +1,30 @@
 import Clipboard from "clipboard"
 
-document.addEventListener("DOMContentLoaded", function () {
-  let clipboard = new Clipboard(".clip")
+document.addEventListener("DOMContentLoaded", () => {
+  const clipboard = new Clipboard(".clip")
 
-  clipboard.on("success", function (e) {
-    const trigger = e.trigger
+  clipboard.on("success", (e) => {
+    const { trigger, clearSelection } = e
 
     if (trigger.hasAttribute("data-copy-feedback")) {
       trigger.classList.add("gblog-post__codecopy--success", "gblog-post__codecopy--out")
       trigger.querySelector(".gblog-icon.copy").classList.add("hidden")
       trigger.querySelector(".gblog-icon.check").classList.remove("hidden")
 
-      setTimeout(function () {
+      setTimeout(() => {
         trigger.classList.remove("gblog-post__codecopy--success", "gblog-post__codecopy--out")
         trigger.querySelector(".gblog-icon.copy").classList.remove("hidden")
         trigger.querySelector(".gblog-icon.check").classList.add("hidden")
       }, 3000)
     }
 
-    e.clearSelection()
+    clearSelection()
   })
 
-  document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv))
+  document.querySelectorAll(".highlight").forEach(createCopyButton)
 })
 
-function createCopyButton(highlightDiv) {
+const createCopyButton = (highlightDiv) => {
   const button = document.createElement("span")
 
   let codeSelector = "pre > code"
