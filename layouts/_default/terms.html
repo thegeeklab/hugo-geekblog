@@ -30,7 +30,7 @@
             {{ $ac := 0 }}
             {{ with $latet.Params.authors }}
               {{ range sort . }}
-                {{ $author := index $.Site.Data.authors . }}
+                {{ $author := index hugo.Data.authors . }}
                 {{ with $.Site.GetPage (printf "/authors/%s" . | urlize) }}
                   {{ if eq $ac 0 }}
                     {{ template "post-author" dict "name" $author.name "page" . }}

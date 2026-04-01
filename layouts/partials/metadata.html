@@ -25,7 +25,7 @@
 {{ $ac := 0 }}
 {{ with .Params.authors }}
   {{ range sort . }}
-    {{ $author := index $.Site.Data.authors . }}
+    {{ $author := index hugo.Data.authors . }}
     {{ with $.Site.GetPage (printf "/authors/%s" . | urlize) }}
       {{ if eq $ac 0 }}
         <span class="flex align-center no-wrap gblog-post__meta--author">

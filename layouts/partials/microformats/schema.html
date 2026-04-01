@@ -4,7 +4,7 @@
       "@context": "http://schema.org",
       "@type": "WebSite",
       {{ with .Site.Params.geekblogAuthor -}}
-      {{ with index $.Site.Data.authors . }}"author": "{{ .name }}",{{ end }}
+      {{ with index hugo.Data.authors . }}"author": "{{ .name }}",{{ end }}
       {{- end }}
       "name": {{ .Site.Title }},
       "url": {{ .Site.Home.Permalink }},
@@ -60,7 +60,7 @@
           {{- range sort . }}
           {{- with . -}}
           {{- $ac = (add $ac 1) }}
-          {{- $author := index $.Site.Data.authors . }}
+          {{- $author := index hugo.Data.authors . }}
           {
               "@type": "Person",
               "name": "{{ $author.name }}"
