@@ -3,9 +3,9 @@
 {{- $order := default "asc" (.Get "order") -}}
 {{- $showAnchor := (and (default true .Page.Params.geekblogAnchor) (default true .Page.Site.Params.geekblogAnchor)) -}}
 
-{{- if .Site.Data.properties }}
+{{- if hugo.Data.properties }}
   <dl class="gblog-props">
-    {{- with (index .Site.Data.properties (split $name ".")) }}
+    {{- with (index hugo.Data.properties (split $name ".")) }}
       {{- $properties := .properties }}
       {{- with $sort }}
         {{- $properties = (sort $properties . $order) }}

@@ -18,7 +18,7 @@
     {{- end }}
     <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
     {{- with .Site.Params.geekblogAuthor -}}
-        {{- with index $.Site.Data.authors . }}
+        {{- with index hugo.Data.authors . }}
         <author>
             <name>{{ .name }}</name>
             {{- with .email }}
@@ -39,7 +39,7 @@
             <id>{{ .Permalink }}</id>
             {{- with .Params.authors }}
                 {{- range sort . }}
-                    {{- $author := index $.Site.Data.authors . }}
+                    {{- $author := index hugo.Data.authors . }}
                     <author>
                         <name>{{ $author.name }}</name>
                     </author>

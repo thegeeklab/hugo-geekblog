@@ -22,7 +22,7 @@
   {{- $list := slice -}}
   {{- range sort . }}
     {{- with . }}
-      {{- $author := index $.Site.Data.authors . -}}
+      {{- $author := index hugo.Data.authors . -}}
       {{- $list = $list | append $author.name -}}
     {{- end }}
   {{- end }}

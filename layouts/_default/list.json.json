@@ -13,7 +13,7 @@
     "feed_url": "{{ .Permalink }}",
     {{- end }}
     {{- with .Site.Params.geekblogAuthor -}}
-    {{ with index $.Site.Data.authors . }}
+    {{ with index hugo.Data.authors . }}
     "authors": [
         {
             "name": "{{ .name }}"{{ with .url }},
@@ -45,7 +45,7 @@
                 {{- $authors := (sort .) }}
                 {{- $authors_len := (len $authors) }}
                 {{- range $i, $element := $authors -}}
-                {{- $author := index $.Site.Data.authors $element }}
+                {{- $author := index hugo.Data.authors $element }}
                 {
                     "name": "{{ $author.name }}"
                 }{{ if ne (add $i 1) $authors_len }},{{ end }}
