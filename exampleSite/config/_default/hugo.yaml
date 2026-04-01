@@ -5,7 +5,7 @@ theme: hugo-geekblog
 pygmentsUseClasses: true
 pygmentsCodeFences: true
 enableGitInfo: true
-timeout: 180000
+timeout: "180000s"
 pluralizeListTitles: false
 
 pagination:
