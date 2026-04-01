@@ -43,7 +43,7 @@ my_project/
 ├── assets
 │   └── sprites
 │       └── regular.svg
-├── config.yaml
+├── hugo.yaml
 ├── content
 │   ├── _index.md
 │   ├── ...
