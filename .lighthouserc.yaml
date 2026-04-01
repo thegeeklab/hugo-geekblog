@@ -1,3 +1,4 @@
+---
 ci:
   collect:
     numberOfRuns: 3
@@ -9,7 +10,29 @@ ci:
     settings:
       chromeFlags: "--no-sandbox --headless --disable-dev-shm-usage"
       onlyCategories: ["performance", "accessibility", "best-practices", "seo"]
-      skipAudits: ["color-contrast", "uses-long-cache-ttl", "csp-xss", "bf-cache", "is-crawlable", "image-size-responsive", "render-blocking-resources", "largest-contentful-paint", "unused-css-rules", "network-dependency-tree-insight", "legacy-javascript", "errors-in-console", "max-potential-fid", "interactive", "dom-size", "forced-reflow-insight", "unused-javascript", "cls-culprits-insight", "cache-insight", "render-blocking-insight"]
+      skipAudits:
+        [
+          "color-contrast",
+          "uses-long-cache-ttl",
+          "csp-xss",
+          "bf-cache",
+          "is-crawlable",
+          "image-size-responsive",
+          "render-blocking-resources",
+          "largest-contentful-paint",
+          "unused-css-rules",
+          "network-dependency-tree-insight",
+          "legacy-javascript",
+          "errors-in-console",
+          "max-potential-fid",
+          "interactive",
+          "dom-size",
+          "forced-reflow-insight",
+          "unused-javascript",
+          "cls-culprits-insight",
+          "cache-insight",
+          "render-blocking-insight"
+        ]
   assert:
     preset: "lighthouse:no-pwa"
     assertions:
