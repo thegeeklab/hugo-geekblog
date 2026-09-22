@@ -41,7 +41,15 @@
             {{- end }}
           </div>
           <div class="gblog-props__default">
-            {{- with default "none" (.defaultValue | string) }}
+            {{- $default := "" }}
+            {{- if and (eq .type "list") .defaultValue }}
+              {{- $default = delimit .defaultValue ", " }}
+            {{- else if and (eq .type "dict") .defaultValue }}
+              {{- $default = .defaultValue | jsonify }}
+            {{- else if .defaultValue }}
+              {{- $default = .defaultValue | string }}
+            {{- end }}
+            {{- with default "none" $default }}
               <span>Default:</span>
               <span>{{ . }}</span>
             {{- end }}
