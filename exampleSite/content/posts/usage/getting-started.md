@@ -274,6 +274,7 @@ There are a lot more things to discover. To get the most out of the Theme we hav
   - [Advanced Images](/posts/post-with-images/)
   - [Includes](/posts/advanced/includes/)
   - [Table of Content](/posts/advanced/toc/)
+  - [Video](/posts/video/)
 - **Asciidoc**
   - [Admonitions](/posts/asciidoc/admonitions/)
   - [Admonition Icons](/posts/asciidoc/admonition-icons/)
