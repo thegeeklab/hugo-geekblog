@@ -482,6 +482,14 @@ svg.gblog-icon {
         width: 100%;
       }
     }
+
+    &:has(video) {
+      width: 100%;
+
+      video {
+        width: 100%;
+      }
+    }
   }
 
   &__codecontainer {
