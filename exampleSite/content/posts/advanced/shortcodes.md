@@ -7,6 +7,7 @@ tags:
   - Documentation
   - Shortcodes
 geekblogToC: 1
+geekblogMath: true
 # cspell:ignore Emojify infty
 ---
 
@@ -450,14 +451,20 @@ C -->|Two| E[Result 2]
 
 ## KaTeX
 
-[KaTeX](https://katex.org/) shortcode let you render math typesetting in markdown document.
+The [KaTeX](https://katex.org/) integration lets you render math typesetting in markdown documents. The theme supports two ways to write math: the `katex` shortcode and `$$...$$` / `\(...\)` delimiters.
+
+### Enabling KaTeX
+
+To use raw `$$...$$` or `\(...\)` delimiters in your content, set `geekblogMath: true` either site-wide in the params config or per-page in the front matter. When enabled, the KaTeX assets are loaded in the page `<head>`. The `katex` shortcode does not require this flag, it lazy-loads the assets on first use, so it works on any page out of the box.
 
 ### Usage
 
 ```latex
-{{</* katex [display] [class="text-center"] */>}}
+{{</* katex display [class="text-center"] */>}}
 f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 {{</* /katex */>}}
+
+KaTeX can be used inline, for example {{</* katex */>}}\pi(x){{</* /katex */>}}, or as display math with the `display` parameter as shown above.
 ```
 
 #### Attributes
@@ -478,7 +485,47 @@ f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 
 <!-- cSpell:enable -->
 
-KaTeX can be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter as above.
+KaTeX can be used inline, for example {{< katex >}}\pi(x){{< /katex >}}, or as display math with the `display` parameter as shown above.
+
+### Delimiters
+
+When math is enabled, expressions wrapped in `$$...$$` are auto-rendered as display math (block-level), and expressions wrapped in `\(...\)` are auto-rendered as inline math.
+
+````markdown
+$$
+f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+$$
+
+KaTeX can be used inline, for example \(\pi(x)\), or as display math with `$$...$$` as shown above.
+````
+
+The theme intentionally uses `\(...\)` for inline math instead of the more common `$...$` to avoid collisions with literal dollar signs in prose (for example `it costs $5 to $10` would otherwise be interpreted as math). Content inside fenced code blocks and inline code spans is left untouched.
+
+To prevent Goldmark from interpreting the LaTeX source as Markdown, configure the [passthrough extension](https://gohugo.io/configuration/markup/#passthrough) in your Hugo config so the delimited content is forwarded to KaTeX untouched:
+
+```yaml
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ["$$", "$$"]
+            - ["\\[", "\\]"]
+          inline:
+            - ["\\(", "\\)"]
+```
+
+#### Example
+
+<!-- cSpell:disable -->
+$$
+f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+$$
+
+KaTeX can be used inline, for example \(\pi(x)\), or as display math with `$$...$$` as shown above.
+<!-- cSpell:enable -->
 
 ## Progress
 
