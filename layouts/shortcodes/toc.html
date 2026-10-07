@@ -1,8 +1,13 @@
-{{ $tocLevels := default (default 6 .Site.Params.geekblogToC) .Page.Params.geekblogToC }}
+{{- $format := default "html" (.Get "format") }}
+{{- $tocLevels := default (default 6 .Site.Params.geekblogToC) .Page.Params.geekblogToC }}
 
-{{ if and $tocLevels .Page.TableOfContents }}
-  <div class="gblog-toc gblog-toc__level--{{ $tocLevels }}">
+{{- if and $tocLevels .Page.TableOfContents -}}
+  {{- if not (eq ($format | lower) "raw") -}}
+    <div class="gblog-toc gblog-toc__level--{{ $tocLevels }}">
+      {{ .Page.TableOfContents }}
+      <hr />
+    </div>
+  {{- else -}}
     {{ .Page.TableOfContents }}
-    <hr />
-  </div>
-{{ end }}
+  {{- end -}}
+{{- end -}}
