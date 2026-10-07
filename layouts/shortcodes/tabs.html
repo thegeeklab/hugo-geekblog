@@ -10,13 +10,13 @@
       class="gblog-tabs__control hidden"
       name="{{ $group }}"
       id="{{ printf "%s-%d" $group $index }}"
-      {{ if not $index }}checked="checked"{{ end }}
+      {{ if not $index }}checked="checked"{{ end -}}
     />
     <label for="{{ printf "%s-%d" $group $index }}" class="gblog-tabs__label">
       {{ $tab.Name }}
     </label>
     <div class="gblog-markdown--nested gblog-tabs__content">
-      {{ .Content | $.Page.RenderString }}
+      {{ .Content | $.Page.RenderString -}}
     </div>
   {{- end }}
 </div>
