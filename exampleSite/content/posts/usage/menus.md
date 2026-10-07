@@ -14,7 +14,7 @@ The theme supports different kinds of menus.
 
 ## Extra menu
 
-If you want to customize the menus (header and footer), this can be achieved by a data file. This file needs to be written in YAML and placed at data/menu/extra.yml.
+If you want to customize the header and footer menu, this can be achieved by using a data file written in YAML and placed at `data/menu/extra.yaml`.
 
 **Example:**
 

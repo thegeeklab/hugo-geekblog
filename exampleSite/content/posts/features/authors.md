@@ -15,9 +15,9 @@ The theme supports multiple authors. The required information for each author ne
 ```shell
 data/
 └── authors
-   ├── john-doe.yml
-   ├── richard-roe.yml
-   └── Special User.yml
+   ├── john-doe.yaml
+   ├── richard-roe.yaml
+   └── Special User.yaml
 ```
 
 The name of the file will be used as the reference later, so if you prefer some kind of naming convention this need to covered by the file names. Example authors file:
