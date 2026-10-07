@@ -12,10 +12,22 @@ Simple wrapper to generate a page Table of Content from a shortcode.
 
 <!--more-->
 
+## Usage
+
 <!-- prettier-ignore -->
 ```tpl
-{{</* toc */>}}
+{{</* toc (format=[html|raw]) */>}}
 ```
+
+### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- cspell:disable -->
+{{< propertylist name=shortcode-toc sort=name order=asc >}}
+<!-- cspell:enable -->
+<!-- prettier-ignore-end -->
+
+## Example
 
 {{< toc >}}
 
